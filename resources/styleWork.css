@@ -1,0 +1,95 @@
+
+/* #sketch-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0% 20%;
+  }*/
+ 
+  #sketch-holder {
+   padding: 0;
+   margin: 0;
+   display: flex;
+  }
+    
+
+  #reset-button {
+    background-color: #e5e5e5;
+    border: black solid 1px;
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+ 
+
+  #canvasControls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+
+  #resetbutton:hover {
+    cursor: pointer;
+  }
+
+  .Navbar {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    
+  }
+
+  .Navbar li {
+padding: 0px 10px;
+list-style: none;
+display: inline-block;
+  
+  }
+  
+  #Palette-Button{
+    position: fixed;
+    right: 20px;
+  }
+  .theme {
+     font-family: "forma-djr-display", sans-serif;
+      font-style: normal;
+      padding: 0;
+      margin: 0;
+      user-select: none;
+      transition: background-color 0.5s, color 0.5s;
+    
+  }
+
+* {
+  /*  border: red solid .5px; */
+    margin: 0px;
+    padding: 0px;
+  
+    text-decoration: none;
+    color: inherit;
+}
+
+.workContainer {
+    background-color: rgb(246, 242, 244);
+    border: red solid 1px;
+    margin: 10px;
+    padding: 0px;
+  
+
+.projectContainer {
+    border: greenyellow 3px;
+
+   
+}
+}
