@@ -35,7 +35,8 @@ button {
 
 button:hover {
     color: inherit;
-    background-color: currentColor;
+    font-weight:900;
+    cursor: pointer;
 }
 
 #colourButton {
@@ -51,6 +52,18 @@ button:hover {
     cursor: pointer;
 }
 
+#contactButton {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+#contactButton:hover {
+    transition: background-color 0.5s, color 0.5s;
+
+}
+
+#workButton {
+    transition: background-color 0.5s, color 0.5s;
+}
 .buttonContainer {}
 
 #sketch-holder {
@@ -123,11 +136,20 @@ button:hover {
     z-index: 0; 
    
 }
+
 .material-symbols-outlined {
     padding: 0;
     font-variation-settings:
     'FILL' 0,
-    'wght' 200,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24;
+}
+.material-symbols-outlined:hover {
+    padding: 0;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
     'GRAD' 0,
     'opsz' 24;
 }
@@ -230,6 +252,9 @@ button:hover {
     
 }
 
+#Switchy {
+   
+}
 .slider {
     position: absolute;
     cursor: pointer;
@@ -290,13 +315,42 @@ input:checked + .slider:before {
 
 #brushes {
     display: flex;
-    background-color: blue;
     height: auto;
     width: auto;
+    border: 0.08em solid;
+    color: inherit;
+    transition: background-color 0.5s, color 0.5s;
+    margin: .5em 0;
+    border-radius: 2em;
+    background-color: inherit;
 }
 
 #brushes img {
-    height: 5em;
-    width: 5em;
+    height: 4em;
+    width: 4em;
     padding: 0em .5em;
+    margin: .3em 0 0 0;
+}
+
+#imageOne {
+ transition: background-color 0.3s, color 0.3s;
+}
+
+#imageTwo {
+    transition: background-color 0.3s, color 0.3s;
+}
+#imageThree {
+    transition: background-color 0.3s, color 0.3s;
+}
+#imageFour {
+    transition: background-color 0.3s, color 0.3s;
+}
+#imageFive {
+    transition: background-color 0.3s, color 0.3s;
+}
+#imageSix {
+    transition: background-color 0.3s, color 0.3s;
+}
+#imageSeven {
+    transition: background-color 0.3s, color 0.3s;
 }

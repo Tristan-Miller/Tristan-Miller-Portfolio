@@ -1,5 +1,6 @@
 let backgroundColor, textColor;
-
+const contactButton = document.getElementById('contactButton');
+const sliderButton = document.getElementById('slider');
 function getRandomColor() {
     // Generate a random color in hexadecimal format
     return '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -35,7 +36,65 @@ function getRandomColor() {
     return luminance;
   }
   
-  
+function brushPanelColor() {
+    if(brushSelect == 0){
+        imageOne.style.backgroundColor = textColor;
+        imageTwo.style.backgroundColor = backgroundColor;
+        imageThree.style.backgroundColor = backgroundColor;
+        imageFour.style.backgroundColor = backgroundColor;
+        imageFive.style.backgroundColor = backgroundColor;
+        imageSix.style.backgroundColor = backgroundColor;
+        imageSeven.style.backgroundColor = backgroundColor;
+    } else if(brushSelect == 1 ){
+        imageOne.style.backgroundColor = backgroundColor;
+        imageTwo.style.backgroundColor = textColor;
+        imageThree.style.backgroundColor = backgroundColor;
+        imageFour.style.backgroundColor = backgroundColor;
+        imageFive.style.backgroundColor = backgroundColor;
+        imageSix.style.backgroundColor = backgroundColor;
+        imageSeven.style.backgroundColor = backgroundColor;
+    } else if(brushSelect == 2 ){
+        imageOne.style.backgroundColor = backgroundColor;
+        imageTwo.style.backgroundColor = backgroundColor;
+        imageThree.style.backgroundColor = textColor;
+        imageFour.style.backgroundColor = backgroundColor;
+        imageFive.style.backgroundColor = backgroundColor;
+        imageSix.style.backgroundColor = backgroundColor;
+        imageSeven.style.backgroundColor = backgroundColor;
+    } else if(brushSelect == 3 ){
+        imageOne.style.backgroundColor = backgroundColor;
+        imageTwo.style.backgroundColor = backgroundColor;
+        imageThree.style.backgroundColor = backgroundColor;
+        imageFour.style.backgroundColor = textColor;
+        imageFive.style.backgroundColor = backgroundColor;
+        imageSix.style.backgroundColor = backgroundColor;
+        imageSeven.style.backgroundColor = backgroundColor;
+    } else if(brushSelect == 4 ){
+        imageOne.style.backgroundColor = backgroundColor;
+        imageTwo.style.backgroundColor = backgroundColor;
+        imageThree.style.backgroundColor = backgroundColor;
+        imageFour.style.backgroundColor = backgroundColor;
+        imageFive.style.backgroundColor = textColor;
+        imageSix.style.backgroundColor = backgroundColor;
+        imageSeven.style.backgroundColor = backgroundColor;
+    } else if(brushSelect == 5 ){
+        imageOne.style.backgroundColor = backgroundColor;
+        imageTwo.style.backgroundColor = backgroundColor;
+        imageThree.style.backgroundColor = backgroundColor;
+        imageFour.style.backgroundColor = backgroundColor;
+        imageFive.style.backgroundColor = backgroundColor;
+        imageSix.style.backgroundColor = textColor;
+        imageSeven.style.backgroundColor = backgroundColor;
+    } else if(brushSelect == 6 ){
+        imageOne.style.backgroundColor = backgroundColor;
+        imageTwo.style.backgroundColor = backgroundColor;
+        imageThree.style.backgroundColor = backgroundColor;
+        imageFour.style.backgroundColor = backgroundColor;
+        imageFive.style.backgroundColor = backgroundColor;
+        imageSix.style.backgroundColor = backgroundColor;
+        imageSeven.style.backgroundColor = textColor;
+    }
+}
 
 function changeColors() {
 
@@ -49,14 +108,30 @@ function changeColors() {
     const themeContainer = document.getElementById('themeContainer');
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
+    contactButton.style.backgroundColor = backgroundColor;
+    workButton.style.backgroundColor = backgroundColor;
+    colourButton.style.backgroundColor = backgroundColor;
+    Switchy.style.backgroundColor = backgroundColor;
+    brushPanelColor();
   }
 
+  
   function setInitalColours() {
     backgroundColor = "#000000";
     textColor = "#FFFFFF"
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
-
+    contactButton.style.backgroundColor = backgroundColor;
+    workButton.style.backgroundColor = backgroundColor;
+    Switchy.style.backgroundColor = backgroundColor;
+    colourButton.style.backgroundColor = backgroundColor;
+    imageOne.style.backgroundColor = textColor;
+    imageTwo.style.backgroundColor = backgroundColor;
+    imageThree.style.backgroundColor = backgroundColor;
+    imageFour.style.backgroundColor = backgroundColor;
+    imageFive.style.backgroundColor = backgroundColor;
+    imageSix.style.backgroundColor = backgroundColor;
+    imageSeven.style.backgroundColor = backgroundColor;
   }
 
   document.addEventListener("DOMContentLoaded", function() {
