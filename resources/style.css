@@ -213,6 +213,7 @@ button:hover {
     text-transform: uppercase;
 }
 
+
 @media (max-width: 600px) {
     #movingWork {
         width: 20vw;
