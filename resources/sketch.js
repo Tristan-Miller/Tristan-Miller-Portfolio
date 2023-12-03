@@ -1,199 +1,74 @@
-let brushType = 1;
-let drawShapes = true;
-let shapes = []; // Array to store shape information
-
-let movingObject;
-let isHovering = false;
 let img;
+let isDrawing = false;
+let drawingEnable = false;
+let drawingDisabled = false;
+let canvas; // Define the canvas variable
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the switch and brushes holder elements
+  var switchElement = document.getElementById('mySwitch');
+  var brushesHolder = document.getElementById('brushes-holder');
+
+  // Add an event listener to the switch
+  switchElement.addEventListener('change', function () {
+    // Check if the switch is on
+    if (switchElement.checked) {
+      drawingEnable = true;
+    } else {
+      drawingEnable = false;
+    }
+  });
+
+  switchElement.addEventListener('change', function () {
+    // Check if the switch is on
+    if (switchElement.unchecked) {
+      drawingDisabled = true;
+    } else {
+      drawingDisabled = false;
+    }
+  });
+});
+
 function preload() {
   // Load your image here
-  
+  img = loadImage('https://png.pngtree.com/png-vector/20191126/ourmid/pngtree-image-of-cute-radish-vector-or-color-illustration-png-image_2040180.jpg');
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  ButtonReset();
-  ButtonBrushOne();
-  ButtonBrushTwo();
-  ButtonBrushThree();
-  ButtonBrushFour();
-  ButtonRandomColour();
-  
-  let canvasControls = select("#canvasControls");
-  canvasControls.mousePressed(canvasControlsClicked);
-
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent('canvas-container'); // Set the parent container
 }
 
 function draw() {
-    //background(backgroundColor);
-    console.log(isHovering)
+  imageMode(CENTER);
 
-  if (!isHovering) {
+  if (isDrawing & drawingEnable == true) {
+    // Draw the image at the mouse/finger position
+    image(img, mouseX, mouseY, 100, 100);
+  }
 
-    
-    // Update and draw each shape in the array
-    for (let i = 0; i < shapes.length; i++) {
-      shapes[i].x += shapes[i].xSpeed;
-      shapes[i].y += shapes[i].ySpeed;
-
-      // Bounce off the edges
-      if (shapes[i].x < 0 || shapes[i].x > width) {
-        shapes[i].xSpeed *= -1;
-      }
-
-      if (shapes[i].y < 0 || shapes[i].y > height) {
-        shapes[i].ySpeed *= -1;
-      }
-
-      // Draw based on the shape type
-      if (shapes[i].type == 1) {
-        ellipse(shapes[i].x, shapes[i].y, width / 5, width / 5);
-        fill(255);
-      } else if (shapes[i].type == 2) {
-        rect(
-          shapes[i].x - (width / 5) / 2,
-          shapes[i].y - (width / 5) / 2,
-          width / 5,
-          width / 5
-        );
-        fill(255);
-      } else if (shapes[i].type == 3) {
-        let triangleSize = 20; // Adjust the size of the triangle
-        triangle(
-          shapes[i].x,
-          shapes[i].y,
-          shapes[i].x + triangleSize,
-          shapes[i].y,
-          shapes[i].x,
-          shapes[i].y - triangleSize
-        );
-        fill(255);
-      } else if (shapes[i].type == 4) {
-        ellipse(shapes[i].x, shapes[i].y, width / 5, width / 5);
-        fill(255);
-      }
-    }
+  if (drawingEnable == false) {
+    clear();
   }
 }
 
-function mousePressed() {
-  // Add a new shape to the array when the mouse is pressed
-  let newShape = {
-    x: mouseX,
-    y: mouseY,
-    type: brushType,
-    xSpeed: random(-5, 5),
-    ySpeed: random(-5, 5),
-  };
-  shapes.push(newShape);
+function touchStarted() {
+  // For mobile devices, touchStarted() is called when the screen is touched
+  isDrawing = true;
+  return false; // prevent default
 }
 
-
-
-
-function resetCanvas() {
-  shapes = []; // Clear the array of shapes
-  createCanvas(windowWidth, windowHeight);
-  background(backgroundColor);
-//  background(255);
+function touchMoved() {
+  // For mobile devices, touchMoved() is called when the finger is dragged
+  return false; // prevent default
 }
 
-function canvasControlsClicked() {
-  // Toggle the drawShapes flag when canvasControls is clicked
-  drawShapes = drawShapes;
-
-
+function touchEnded() {
+  // For mobile devices, touchEnded() is called when the finger is lifted
+  isDrawing = false;
+  return false; // prevent default
 }
 
-function windowResized() {
-  createCanvas(windowWidth, windowHeight);
- // background(255);
-
+function mouseClicked() {
+  // Your mouseClicked() function goes here
 }
-
-
-
-function ButtonReset() {
-   // Create a button
-   resetButton = createSpan('refresh');
-   resetButton.mousePressed(resetCanvas)
-   resetButton.style('font-family', 'Material Symbols Outlined');
-   resetButton.style('font-size', '24px'); // Adjust font size as needed
-   resetButton.id("resetbutton"); 
-   resetButton.style('user-select', 'none');
-   resetButton.parent("canvasControls");
-   
-}
-
-function ButtonBrushOne() {
-   BrushOne = createSpan('Circle');
-   BrushOne.mousePressed(BrushTypeOne);
-   BrushOne.style('font-family', 'Material Symbols Outlined');
-   BrushOne.style('font-size', '24px'); // Adjust font size as needed
-  // BrushOne.id("resetbutton"); 
-   BrushOne.style('user-select', 'none');
-   BrushOne.parent("canvasControls");
-}
-
-function ButtonBrushTwo() {
-  BrushOne = createSpan('Circle');
-  BrushOne.mousePressed(BrushTypeTwo);
-  BrushOne.style('font-family', 'Material Symbols Outlined');
-  BrushOne.style('font-size', '24px'); // Adjust font size as needed
-  //BrushOne.id("resetbutton"); 
-  BrushOne.style('user-select', 'none');
-  BrushOne.parent("canvasControls");
-}
-
-function ButtonBrushThree() {
-  BrushOne = createSpan('Change_History');
-  BrushOne.mousePressed(BrushTypeThree);
-  BrushOne.style('font-family', 'Material Symbols Outlined');
-  BrushOne.style('font-size', '24px'); // Adjust font size as needed
- // BrushOne.id("resetbutton"); 
-  BrushOne.style('user-select', 'none');
-  BrushOne.parent("canvasControls");
-}
-
-function ButtonBrushFour() {
-  BrushOne = createSpan('Hexagon');
-  BrushOne.mousePressed(BrushTypeFour);
-  BrushOne.style('font-family', 'Material Symbols Outlined');
-  BrushOne.style('font-size', '24px'); // Adjust font size as needed
-  //BrushOne.id("resetbutton"); 
-  BrushOne.style('user-select', 'none');
-  BrushOne.parent("canvasControls");
-}
-
-function ButtonRandomColour() {
-  // Create a button
-  colorButton = createSpan('palette');
-  colorButton.mousePressed(changeColors);
-  colorButton.style('font-family', 'Material Symbols Outlined');
-  colorButton.style('font-size', '24px'); // Adjust font size as needed
-  colorButton.id("Palette-Button"); 
-  colorButton.style('user-select', 'none');
-  colorButton.parent("header-holder");
-}
-
-function BrushTypeOne() {
-  brushType = 1;
-  console.log(brushType);
-}
-
-function BrushTypeTwo() {
-  brushType = 2;
-  console.log(brushType);
-}
-
-function BrushTypeThree() {
-  brushType = 3;
-  console.log(brushType);
-}
-
-function BrushTypeFour() {
-  brushType = 4;
-  console.log(brushType);
-}
-
-

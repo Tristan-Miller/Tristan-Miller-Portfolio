@@ -1,152 +1,169 @@
+body {
+    overflow: hidden;
+    
+}
+
 #menu {
-    height: 50px; /* Set an appropriate height for your footer */
-   
+    height: 50px;
     bottom: 0;
 }
- 
-  #sketch-holder {
-   padding: 0;
-   margin: 0;
-   display: flex;
-  }
 
-  #movingWork {
-    width: 100px;
-    height: 100px;
+#header-holder {
+    overflow: visible;
+    margin: 1em auto; /* Set margin to 1em and auto for left and right margins */
+    display: flex;
+    justify-content: center; /* Align items horizontally to the center */
+    align-items: center; /* Align items vertically to the center */
+ 
+    position: fixed;
+    top: 0; /* Fix the header to the top */
+    left: 0; /* Align the header to the left */
+    right: 0; /* Align the header to the right */
+    z-index: 20;
+}
+
+button {
+    border: 0.08em solid;
+    background: none;
+    color: inherit;
+    padding: .7em;
+    margin: 0 .5em;
+    border-radius: 2em;
+    background-color: inherit;
+   
+}
+
+button:hover {
+    color: inherit;
+    background-color: currentColor;
+}
+
+#colourButton {
+    width: 3em;
+    height: 3em;
+    padding: .3em;
+    margin: 0 1em;
+    right: 0.1em;
+    position: fixed;
+    display: inline-block;
+    color: inherit;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.buttonContainer {}
+
+#sketch-holder {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#movingWork {
+    width: 10vw;
+    height: 10vw;
     position: absolute;
     border-radius: 50%;
     transition: width .5s ease-out, height .5s ease-out, border-radius .2s ease-out, transform .5s ease-out;
     display: flex;
     align-items: center;
     justify-content: center;
-  
-  }
+}
 
-  #movingWork:hover {
-    width: 200px;
-    height: 200px;
+#movingWork:hover {
+    width: 20vw;
+    height: 20vw;
     position: absolute;
     border-radius: 3%;
-    transform: translate(-75px, -75px);
+    transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 10;
-  }
+}
 
-    
-/*------------work one------------*/
+.movingWorkOne {}
 
-  .movingWorkOne {
-    
-  }
+.movingWorkOne:hover {}
 
-  .movingWorkOne:hover {
-   
-  }
+.movingWorkTwo {}
 
-    
-/*------------work two------------*/
+.movingWorkTwo:hover {}
 
-  .movingWorkTwo {
-   
-  }
+.movingWorkThree {}
 
-  .movingWorkTwo:hover {
-    
-  }
+.movingWorkThree:hover {}
 
-  /*------------work3------------*/
+.movingWorkFour {}
 
-  .movingWorkThree {
-    
-  }
+.movingWorkFour:hover {}
 
-  .movingWorkThree:hover {
-   
-   
-  }
+.movingWorkFive {}
 
-  /*------------work4------------*/
+.movingWorkFive:hover {}
 
-  .movingWorkFour {
-    
-   
-  }
-
-  .movingWorkFour:hover {
-   
-   
-  }
-
-    /*------------work5------------*/
-
-    .movingWorkFive {
-       
-     }
-    
-    .movingWorkFive:hover {
-        
-    }
-    
-
-
-  #reset-button {
+#reset-button {
     background-color: #e5e5e5;
     border: black solid 1px;
     padding: 5px;
     border-radius: 50%;
-  }
+}
 
-  #canvasControls {
+#canvasControls {
     position: fixed;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-  }
+}
 
-  .material-symbols-outlined {
+#canvas-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; 
+   
+}
+.material-symbols-outlined {
+    padding: 0;
     font-variation-settings:
     'FILL' 0,
-    'wght' 400,
+    'wght' 200,
     'GRAD' 0,
-    'opsz' 24
-  }
+    'opsz' 24;
+}
 
-  #resetbutton:hover {
+#resetbutton:hover {
     cursor: pointer;
-  }
+}
 
-  .Navbar {
+.Navbar {
     position: fixed;
     top: 30px;
     left: 50%;
     transform: translateX(-50%);
-    
-    
-  }
+}
 
-  .Navbar li {
-padding: 0px 10px;
-list-style: none;
-display: inline-block;
-  
-  }
-  
-  #Palette-Button{
+.Navbar li {
+    padding: 0px 10px;
+    list-style: none;
+    display: inline-block;
+}
+
+#Palette-Button {
     position: fixed;
     right: 20px;
-  }
-  .theme {
-     font-family: "forma-djr-display", sans-serif;
-      font-style: normal;
-      padding: 0;
-      margin: 0;
-      user-select: none;
-      transition: background-color 0.5s, color 0.5s;
-    
-  }
+}
+
+.theme {
+    font-family: "forma-djr-display", sans-serif;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    transition: background-color 0.5s, color 0.5s;
+}
 
 * {
-  /*  border: red solid .5px; */
     margin: 0px;
     padding: 0px;
     overflow: hidden;
@@ -161,9 +178,7 @@ display: inline-block;
     padding: 0px;
     min-width: 400px;
     min-height: 400px;
-
 }
-
 
 .projectTitle {
     position: fixed;
@@ -174,4 +189,114 @@ display: inline-block;
     border-radius: 5px;
     z-index: 20;
     text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+    #movingWork {
+        width: 20vw;
+        height: 20vw;
+        position: absolute;
+        border-radius: 50%;
+        transition: width .5s ease-out, height .5s ease-out, border-radius .2s ease-out, transform .5s ease-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #movingWork:hover {
+        width: 30vw;
+        height: 30vw;
+        position: absolute;
+        border-radius: 3%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 10;
+    }
+}
+
+.switch {
+    left: 1em;
+    position: fixed;
+    display: inline-block;
+    width: 3.75em;
+    height: 2.125em;
+    overflow: visible;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    outline: solid 0.08em;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.625em;
+    width: 1.625em;
+    left: 0.25em;
+    bottom: 0.25em;
+    outline: solid 0.08em;
+    -webkit-transition: .4s;
+    transition: width .4s, height .4, transform .4s;
+    
+}
+
+input:checked + .slider {
+ 
+}
+
+input:focus + .slider {}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(1.625em);
+    -ms-transform: translateX(1.625em);
+    transform: translateX(1.625em);
+    background-color: currentColor;
+}
+
+.slider.round {
+    border-radius: 2.125em;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#brushes-holder {
+    position: fixed;
+    left: 0;
+    bottom: -100px ;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+  }
+
+#brushes {
+    display: flex;
+    background-color: blue;
+    height: auto;
+    width: auto;
+}
+
+#brushes img {
+    height: 5em;
+    width: 5em;
+    padding: 0em .5em;
 }

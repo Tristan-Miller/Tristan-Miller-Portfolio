@@ -66,3 +66,25 @@ initializeMovingDivs("movingWorkTwo", "weel");
 initializeMovingDivs("movingWorkThree", "rolus");
 initializeMovingDivs("movingWorkFour", "youi");
 initializeMovingDivs("movingWorkFive", "personal");
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the switch and brushes holder elements
+  var switchElement = document.getElementById('mySwitch');
+  var brushesHolder = document.getElementById('brushes-holder');
+
+  // Add an event listener to the switch
+  switchElement.addEventListener('change', function () {
+    // Check if the switch is on
+    if (switchElement.checked) {
+      // Move the brushes holder div up (you can adjust the value accordingly)
+      brushesHolder.style.transform = 'translateY(-100px)';
+    } else {
+      // Move the brushes holder div back to its original position
+      brushesHolder.style.transform = 'translateY(0)';
+    }
+  });
+});

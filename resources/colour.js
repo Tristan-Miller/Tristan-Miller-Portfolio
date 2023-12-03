@@ -52,11 +52,12 @@ function changeColors() {
   }
 
   function setInitalColours() {
-    backgroundColor = "#bfbfbf";
-    textColor = "#0000ff"
+    backgroundColor = "#000000";
+    textColor = "#FFFFFF"
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
-}
+
+  }
 
   document.addEventListener("DOMContentLoaded", function() {
     var themeContainer = document.getElementById('themeContainer');
@@ -67,7 +68,7 @@ function changeColors() {
     // Initial color change
    // changeColors();
    setInitalColours();
-
+  //document.querySelector('.switch input').addEventListener('change', changeColors);
   });
   
   
