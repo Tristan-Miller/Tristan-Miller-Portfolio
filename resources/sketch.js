@@ -6,6 +6,7 @@ let brushSelect = 0;
 let canvas;
 let buttonClicked = false;
 
+
 const switchyElement = document.getElementById('mySwitch');
 const brushesHolder = document.getElementById('brushes-holder');
 const imageElements = Array.from(document.querySelectorAll('[id^="image"]'));
@@ -62,7 +63,7 @@ function setup() {
 function draw() {
   imageMode(CENTER);
 
-  if (isDrawing && drawingEnable && mouseY < windowHeight - 100) {
+  if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
     const currentImage = brushSelect % 2 === 0 ? img : imgTwo;
     image(currentImage, mouseX, mouseY, 100, 100);
   } else if (!isDrawing && !drawingEnable) {
@@ -70,6 +71,11 @@ function draw() {
   }
 
   console.log(buttonClicked);
+  if (workPageVis == true & drawingEnable == false) {
+    canvasContainer.style.zIndex = 0;
+  } else if (workPageVis == true & drawingEnable == true) {
+    canvasContainer.style.zIndex = 5;
+  }
 }
 
 function touchStarted() {

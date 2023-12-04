@@ -1,6 +1,7 @@
 let backgroundColor, textColor;
 const contactButton = document.getElementById('contactButton');
 const sliderButton = document.getElementById('slider');
+const workPaged = document.getElementById('workPage');
 function getRandomColor() {
     // Generate a random color in hexadecimal format
     return '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -109,13 +110,20 @@ function changeColors() {
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
     contactButton.style.backgroundColor = backgroundColor;
-    workButton.style.backgroundColor = backgroundColor;
+    contactButton.style.color = textColor;
     colourButton.style.backgroundColor = backgroundColor;
     Switchy.style.backgroundColor = backgroundColor;
-    workButton.style.backgroundColor = backgroundColor;
-    workButton.style.color = textColor;
-    workPages[i].style.backgroundColor = backgroundColor; 
+    
+    workPaged.style.backgroundColor = backgroundColor;
+    if (workPageVis == true) {
+      workButton.style.color = backgroundColor;
+      workButton.style.backgroundColor = textColor;
+    } else {
+      workButton.style.backgroundColor = backgroundColor;
+      workButton.style.color = textColor;
+    }
     brushPanelColor();
+
   }
 
   
@@ -125,7 +133,6 @@ function changeColors() {
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
     contactButton.style.backgroundColor = backgroundColor;
-    workButton.style.backgroundColor = backgroundColor;
     Switchy.style.backgroundColor = backgroundColor;
     colourButton.style.backgroundColor = backgroundColor;
     imageOne.style.backgroundColor = textColor;
@@ -135,9 +142,14 @@ function changeColors() {
     imageFive.style.backgroundColor = backgroundColor;
     imageSix.style.backgroundColor = backgroundColor;
     imageSeven.style.backgroundColor = backgroundColor;
-    workButton.style.backgroundColor = backgroundColor;
-    workButton.style.color = textColor;
-    workPages[i].style.backgroundColor = backgroundColor; 
+    workPaged.style.backgroundColor = backgroundColor;
+    if (workPageVis == true) {
+      workButton.style.color = backgroundColor;
+      workButton.style.backgroundColor = textColor;
+    } else {
+      workButton.style.backgroundColor = backgroundColor;
+      workButton.style.color = textColor;
+    } 
   }
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -149,7 +161,12 @@ function changeColors() {
     // Initial color change
    // changeColors();
    setInitalColours();
+   colourButton.addEventListener('touchstart', function () {
+    // Iterate through all elements with the class 'workPage'
+    changeColors()
+   });
+   
   //document.querySelector('.switch input').addEventListener('change', changeColors);
   });
-  
+ 
   

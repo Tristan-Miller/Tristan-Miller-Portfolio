@@ -64,7 +64,7 @@ button:hover {
     height: 10vw;
     position: absolute;
     border-radius: 50%;
-    transition: width 0.5s ease-out, height 0.5s ease-out, border-radius 0.2s ease-out, transform 0.5s ease-out;
+    transition: 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,16 +176,15 @@ button:hover {
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 3;
     }
 
     #movingWork:hover {
-        width: 30vw;
-        height: 30vw;
+        width: 20vw;
+        height: 20vw;
         position: absolute;
-        border-radius: 3%;
-        transform: translate(-50%, -50%);
         cursor: pointer;
-        z-index: 10;
+        z-index: 3;
     }
 }
 
@@ -313,10 +312,8 @@ body,
     height: 100%;
 }
 
-
-.workPage {
-    display: flex;
-    overflow: scroll;
+#workPage{
+    transition: 0.5s;
     position: absolute;
     left: 0;
     top: 0;
@@ -324,10 +321,18 @@ body,
     height: 100%;
     z-index: 1;  
     opacity: 0;
-   flex-wrap: wrap;
-   justify-content: center;
-    transition: opacity 0.5s ease-in-out;
 }
+
+#allWorkContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: scroll;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
 
 .workContainer {
     background-color: rgb(242, 81, 162);

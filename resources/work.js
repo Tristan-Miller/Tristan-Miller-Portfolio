@@ -1,3 +1,8 @@
+let workPageVis = false;
+const workPages = document.getElementsByClassName('workPage');
+const workButton = document.getElementById('workButton');
+const canvasContainer = document.getElementById('canvas-container');
+
 function initializeMovingDivs(movingDivClass, tooltipId) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
   let isHovered = false;
@@ -68,8 +73,8 @@ initializeMovingDivs("movingWorkFour", "youi");
 initializeMovingDivs("movingWorkFive", "personal");
 
 document.addEventListener('DOMContentLoaded', function () {
-  const workPages = document.getElementsByClassName('workPage');
-  const workButton = document.getElementById('workButton');
+  
+
 
   workButton.addEventListener('click', function () {
     // Iterate through all elements with the class 'workPage'
@@ -82,11 +87,42 @@ document.addEventListener('DOMContentLoaded', function () {
         workButton.style.color = backgroundColor;
         workPages[i].style.backgroundColor = backgroundColor; 
         workPages[i].style.zIndex = 4;
+        canvasContainer.style.zIndex = 5;
+        brushesHolder.style.zIndex = 6;
+        workPageVis = true;
       } else {
         workPages[i].style.opacity = 0;
         workButton.style.backgroundColor = backgroundColor;
         workButton.style.color = textColor;
         workPages[i].style.zIndex = 1;
+        canvasContainer.style.zIndex = 2;
+        brushesHolder.style.zIndex = 3;
+        workPageVis = false;
+      }
+    }
+  });
+  workButton.addEventListener('touchstart', function () {
+    // Iterate through all elements with the class 'workPage'
+    for (let i = 0; i < workPages.length; i++) {
+      const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
+
+      if (currentOpacity === 0) {
+        workPages[i].style.opacity = 1;
+        workButton.style.backgroundColor = textColor;
+        workButton.style.color = backgroundColor;
+        workPages[i].style.backgroundColor = backgroundColor; 
+        workPages[i].style.zIndex = 4;
+        canvasContainer.style.zIndex = 5;
+        brushesHolder.style.zIndex = 6;
+        workPageVis = true;
+      } else {
+        workPages[i].style.opacity = 0;
+        workButton.style.backgroundColor = backgroundColor;
+        workButton.style.color = textColor;
+        workPages[i].style.zIndex = 1;
+        canvasContainer.style.zIndex = 2;
+        brushesHolder.style.zIndex = 3;
+        workPageVis = false;
       }
     }
   });
