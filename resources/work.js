@@ -67,6 +67,34 @@ initializeMovingDivs("movingWorkThree", "rolus");
 initializeMovingDivs("movingWorkFour", "youi");
 initializeMovingDivs("movingWorkFive", "personal");
 
+document.addEventListener('DOMContentLoaded', function () {
+  const workPages = document.getElementsByClassName('workPage');
+  const workButton = document.getElementById('workButton');
+
+  workButton.addEventListener('click', function () {
+    // Iterate through all elements with the class 'workPage'
+    for (let i = 0; i < workPages.length; i++) {
+      const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
+
+      if (currentOpacity === 0) {
+        workPages[i].style.opacity = 1;
+        workButton.style.backgroundColor = textColor;
+        workButton.style.color = backgroundColor;
+        workPages[i].style.backgroundColor = backgroundColor; 
+        workPages[i].style.zIndex = 4;
+      } else {
+        workPages[i].style.opacity = 0;
+        workButton.style.backgroundColor = backgroundColor;
+        workButton.style.color = textColor;
+        workPages[i].style.zIndex = 1;
+      }
+    }
+  });
+});
+
+
+
+
 
 
 

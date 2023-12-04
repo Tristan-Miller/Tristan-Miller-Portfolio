@@ -112,6 +112,9 @@ function changeColors() {
     workButton.style.backgroundColor = backgroundColor;
     colourButton.style.backgroundColor = backgroundColor;
     Switchy.style.backgroundColor = backgroundColor;
+    workButton.style.backgroundColor = backgroundColor;
+    workButton.style.color = textColor;
+    workPages[i].style.backgroundColor = backgroundColor; 
     brushPanelColor();
   }
 
@@ -132,6 +135,9 @@ function changeColors() {
     imageFive.style.backgroundColor = backgroundColor;
     imageSix.style.backgroundColor = backgroundColor;
     imageSeven.style.backgroundColor = backgroundColor;
+    workButton.style.backgroundColor = backgroundColor;
+    workButton.style.color = textColor;
+    workPages[i].style.backgroundColor = backgroundColor; 
   }
 
   document.addEventListener("DOMContentLoaded", function() {
