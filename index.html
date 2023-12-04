@@ -18,7 +18,7 @@
 </head>
 
 <body class="theme" id="themeContainer">
-
+  <div id="custom-cursor"></div>
   <main class="allMain">
      <!-- Container for p5.js canvas -->
   <div id="canvas-container"></div>
@@ -116,26 +116,23 @@
   </main>
   <div id="workPage" class="workPage">
     <div id="allWorkContainer">
-      <div class="workContainer">
-        <h3>Work</h3>
+      <div id="workContainerOne" class="workContainer" onmouseover="changeImage(this)" onmouseout="resetImage(this)">
+        <img id="image1" src="resources/Images/sydneyFestival.png">
       </div>
-      <div class="workContainer">
-        <h3>Work</h3>
+      <div id="workContainerTwo" class="workContainer">
+        <img src="resources/Images/brocc.png">
       </div>
-      <div class="workContainer">
-        <h3>Work</h3>
+      <div id="workContainerThree" class="workContainer">
+        <img src="resources/Images/dAndAD.png">
       </div>
-      <div class="workContainer">
-        <h3>Work</h3>
+      <div id="workContainerFour" class="workContainer">
+        <img src="resources/Images/hera.png">
       </div>
-      <div class="workContainer">
-        <h3>Work</h3>
+      <div id="workContainerFive" class="workContainer">
+        <img src="resources/Images/optus.png">
       </div>
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-      <div class="workContainer">
-        <h3>Work</h3>
+      <div id="workContainerSix" class="workContainer">
+        <img src="resources/Images/peanuts.png">
       </div>
     </div>
   </div>

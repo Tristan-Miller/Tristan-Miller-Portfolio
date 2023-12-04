@@ -1,6 +1,22 @@
 body {
     overflow: hidden;
+ 
 }
+* {
+    cursor: none;
+}
+#custom-cursor {
+    position: fixed;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 2px solid #fff;
+      mix-blend-mode: difference; /* Invert colors */
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+  }
 
 #menu {
     height: 50px;
@@ -33,7 +49,6 @@ button {
 button:hover {
     color: inherit;
     font-weight: 900;
-    cursor: pointer;
 }
 
 #colourButton {
@@ -46,7 +61,6 @@ button:hover {
     display: inline-block;
     color: inherit;
     overflow: visible;
-    cursor: pointer;
 }
 
 #contactButton,
@@ -139,15 +153,13 @@ button:hover {
 .theme {
     font-family: "forma-djr-display", sans-serif;
     font-style: normal;
-    padding: 0;
-    margin: 0;
+    
     user-select: none;
     transition: background-color 0.5s, color 0.5s;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+
     overflow: hidden;
     text-decoration: none;
     color: inherit;
@@ -166,27 +178,7 @@ button:hover {
     text-transform: uppercase;
 }
 
-@media (max-width: 600px) {
-    #movingWork {
-        width: 20vw;
-        height: 20vw;
-        position: absolute;
-        border-radius: 50%;
-        transition: width 0.5s ease-out, height 0.5s ease-out, border-radius 0.2s ease-out, transform 0.5s ease-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 3;
-    }
 
-    #movingWork:hover {
-        width: 20vw;
-        height: 20vw;
-        position: absolute;
-        cursor: pointer;
-        z-index: 3;
-    }
-}
 
 .switch {
     left: 1em;
@@ -321,26 +313,67 @@ body,
     height: 100%;
     z-index: 1;  
     opacity: 0;
+    align-items: baseline;
+}
+
+#workPage img{
+    width: 100%;
+    height: 100%;
 }
 
 #allWorkContainer {
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
     display: flex;
     overflow: scroll;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     
+    padding: 3.8em 0.7em 0.7em 0.7em;
 }
 
 
 .workContainer {
-    background-color: rgb(242, 81, 162);
-    flex-grow: 1;
-    margin: 10px;
-    padding: 0;
-    min-width: 48%;
-    min-height: 48%;
-    max-width: 100%;
-   
+    box-sizing: border-box;
+    
+    width: 50%;
+    height: auto;
+    margin: 0; 
+    padding: 0.7em;
+    
+}
+
+@media (max-width: 600px) {
+    #movingWork {
+        width: 20vw;
+        height: 20vw;
+        position: absolute;
+        border-radius: 50%;
+        transition: width 0.5s ease-out, height 0.5s ease-out, border-radius 0.2s ease-out, transform 0.5s ease-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+    }
+
+    #movingWork:hover {
+        width: 20vw;
+        height: 20vw;
+        position: absolute;
+       
+        z-index: 3;
+    }
+
+    .workContainer {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: .7em;
+        box-sizing: border-box; /* Add this line */
+    }
+
+    
+    
 }

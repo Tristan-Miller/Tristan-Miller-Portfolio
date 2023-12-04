@@ -128,9 +128,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+function changeImage(element) {
+  document.getElementById('image1').src = 'resources/Images/peanuts.png';
+}
 
+function resetImage(element) {
+  document.getElementById('image1').src = 'resources/Images/sydneyFestival.png';
+}
 
-
+document.addEventListener('mousemove', (e) => {
+  const cursor = document.getElementById('custom-cursor');
+  cursor.style.left = `${e.pageX}px`;
+  cursor.style.top = `${e.pageY}px`;
+});
 
 
 
