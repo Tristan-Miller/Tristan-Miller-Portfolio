@@ -113,8 +113,8 @@ function changeColors() {
     contactButton.style.color = textColor;
     colourButton.style.backgroundColor = backgroundColor;
     Switchy.style.backgroundColor = backgroundColor;
-    
     workPaged.style.backgroundColor = backgroundColor;
+    projectOne.style.backgroundColor = backgroundColor;
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
       workButton.style.backgroundColor = textColor;
@@ -143,6 +143,7 @@ function changeColors() {
     imageSix.style.backgroundColor = backgroundColor;
     imageSeven.style.backgroundColor = backgroundColor;
     workPaged.style.backgroundColor = backgroundColor;
+    projectOne.style.backgroundColor = backgroundColor;
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
       workButton.style.backgroundColor = textColor;

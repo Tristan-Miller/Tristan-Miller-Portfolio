@@ -62,7 +62,7 @@ function setup() {
 
 function draw() {
   imageMode(CENTER);
-  
+
   if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
     const currentImage = brushSelect % 2 === 0 ? img : imgTwo;
     image(currentImage, mouseX, mouseY, 100, 100);
@@ -71,8 +71,6 @@ function draw() {
   }
   
 
-  console.log(workPageVis);
-  console.log(drawingEnable +'DE')
   if (workPageVis == true & drawingEnable == false) {
     canvasContainer.style.zIndex = 0;
   } else if (workPageVis == true & drawingEnable == true) {
@@ -102,5 +100,5 @@ function mouseClicked() {
   // Your mouseClicked() function goes here
 }
 
-console.log(brushSelect);
+
 

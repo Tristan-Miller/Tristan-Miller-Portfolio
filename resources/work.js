@@ -1,7 +1,12 @@
 let workPageVis = false;
 const workPages = document.getElementsByClassName('workPage');
+const workContainer = document.getElementsByClassName('workContainer');
+const projectPage = document.getElementsByClassName('projectPage');
+const projectOne = document.getElementById('projectOne');
 const workButton = document.getElementById('workButton');
+const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
+const Switchy = document.getElementById('Switchy');
 
 function initializeMovingDivs(movingDivClass, tooltipId) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
@@ -71,6 +76,7 @@ initializeMovingDivs("movingWorkTwo", "weel");
 initializeMovingDivs("movingWorkThree", "rolus");
 initializeMovingDivs("movingWorkFour", "youi");
 initializeMovingDivs("movingWorkFive", "personal");
+initializeMovingDivs("movingWorkSix", "dAndAD");
 
 document.addEventListener('DOMContentLoaded', function () {
   
@@ -90,6 +96,10 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
+        for (let j = 0; j < workContainer.length; j++) {
+          workContainer[j].style.top = '0px'; // Setting the top property to '0px'
+          
+        }
       } else {
         workPages[i].style.opacity = 0;
         workButton.style.backgroundColor = backgroundColor;
@@ -98,6 +108,10 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 2;
         brushesHolder.style.zIndex = 3;
         workPageVis = false;
+        for (let j = 0; j < workContainer.length; j++) {
+        workContainer[j].style.top = '50px';
+       
+        }
       }
     }
   });
@@ -115,6 +129,11 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
+        // Set the top property for all elements with the workContainer class
+        for (let j = 0; j < workContainer.length; j++) {
+          workContainer[j].style.top = '0px'; // Setting the top property to '0px'
+          
+        }
       } else {
         workPages[i].style.opacity = 0;
         workButton.style.backgroundColor = backgroundColor;
@@ -123,9 +142,22 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 2;
         brushesHolder.style.zIndex = 3;
         workPageVis = false;
+        for (let j = 0; j < workContainer.length; j++) {
+        workContainer[j].style.top = '50px';
+        
+        }
       }
     }
   });
+
+  workContainerOne.addEventListener('click', function () {
+    // Iterate through all elements with the class 'workPage'
+    projectOne.style.opacity = 1;
+    projectOne.style.zIndex = 999;
+
+  });
+
+//This is end of DOM
 });
 
 function changeImage(element) {
@@ -141,6 +173,13 @@ document.addEventListener('mousemove', (e) => {
   cursor.style.left = `${e.pageX}px`;
   cursor.style.top = `${e.pageY}px`;
 });
+
+function closeProject() {
+  projectOne.style.opacity = 0;
+  projectOne.style.zIndex = 0;
+
+
+}
 
 
 
