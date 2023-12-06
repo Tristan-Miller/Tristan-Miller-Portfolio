@@ -54,7 +54,8 @@ function preload() {
   imgTwo = loadImage('https://m.media-amazon.com/images/I/71LTb+BcX5L._UC256,256_CACC,256,256_.jpg');
   video = createVideo('resources/Images/lemon.webm', () => {
     video.autoplay();
-  });
+   });
+   
    // Set attributes for autoplay and mute
    video.elt.autoplay = true;
    video.elt.muted = true;
