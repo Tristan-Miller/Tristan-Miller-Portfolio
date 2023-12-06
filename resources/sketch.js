@@ -114,5 +114,7 @@ function mouseClicked() {
   // Your mouseClicked() function goes here
 }
 
-
+function muteVideo() {
+  video.volume(0);
+}
 
