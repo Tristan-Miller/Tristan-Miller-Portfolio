@@ -54,16 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function preload() {
-  img = loadImage('https://png.pngtree.com/png-vector/20191126/ourmid/pngtree-image-of-cute-radish-vector-or-color-illustration-png-image_2040180.jpg');
-  imgTwo = loadImage('https://m.media-amazon.com/images/I/71LTb+BcX5L._UC256,256_CACC,256,256_.jpg');
-}
 
-function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('canvas-container');
-  imageElements.forEach((image, i) => {
-    image.style.backgroundColor = i === brushSelect ? textColor : backgroundColor;
-  });
   lemon = createVideo('resources/Images/lemon.webm');
     // Set attributes, including autoplay and mute
   lemon.autoplay(true);
@@ -99,6 +90,15 @@ function setup() {
   apple.autoplay(true);
   apple.volume(0); // Mute the video
   apple.loop(); // Optional: loop the video
+}
+
+function setup() {
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent('canvas-container');
+  imageElements.forEach((image, i) => {
+    image.style.backgroundColor = i === brushSelect ? textColor : backgroundColor;
+  });
+  
 
 
 }

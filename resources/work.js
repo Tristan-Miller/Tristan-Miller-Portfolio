@@ -8,7 +8,6 @@ const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 
-
 function initializeMovingDivs(movingDivClass, tooltipId) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
   let isHovered = false;
@@ -24,7 +23,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
   hoverElement.addEventListener("mouseout", function () {
     tooltipElement.style.display = "none";
   });
- 
+
   for (const movingDiv of movingDivs) {
     movingDiv.addEventListener("mouseover", () => {
       isHovered = true;
@@ -66,13 +65,11 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
 
       update();
     }
-     
+
     moveDiv();
-
   }
- }
+}
 
-// Call the function for each set of elements
 initializeMovingDivs("movingWorkOne", "sydneyFestival");
 initializeMovingDivs("movingWorkTwo", "weel");
 initializeMovingDivs("movingWorkThree", "rolus");
@@ -81,11 +78,7 @@ initializeMovingDivs("movingWorkFive", "personal");
 initializeMovingDivs("movingWorkSix", "dAndAD");
 
 document.addEventListener('DOMContentLoaded', function () {
-  
-
-
   workButton.addEventListener('click', function () {
-    // Iterate through all elements with the class 'workPage'
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
 
@@ -93,14 +86,13 @@ document.addEventListener('DOMContentLoaded', function () {
         workPages[i].style.opacity = 1;
         workButton.style.backgroundColor = textColor;
         workButton.style.color = backgroundColor;
-        workPages[i].style.backgroundColor = backgroundColor; 
+        workPages[i].style.backgroundColor = backgroundColor;
         workPages[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
         for (let j = 0; j < workContainer.length; j++) {
-          workContainer[j].style.top = '0px'; // Setting the top property to '0px'
-          
+          workContainer[j].style.top = '0px';
         }
       } else {
         workPages[i].style.opacity = 0;
@@ -111,14 +103,13 @@ document.addEventListener('DOMContentLoaded', function () {
         brushesHolder.style.zIndex = 3;
         workPageVis = false;
         for (let j = 0; j < workContainer.length; j++) {
-        workContainer[j].style.top = '50px';
-       
+          workContainer[j].style.top = '50px';
         }
       }
     }
   });
+
   workButton.addEventListener('touchstart', function () {
-    // Iterate through all elements with the class 'workPage'
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
 
@@ -126,15 +117,13 @@ document.addEventListener('DOMContentLoaded', function () {
         workPages[i].style.opacity = 1;
         workButton.style.backgroundColor = textColor;
         workButton.style.color = backgroundColor;
-        workPages[i].style.backgroundColor = backgroundColor; 
+        workPages[i].style.backgroundColor = backgroundColor;
         workPages[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
-        // Set the top property for all elements with the workContainer class
         for (let j = 0; j < workContainer.length; j++) {
-          workContainer[j].style.top = '0px'; // Setting the top property to '0px'
-          
+          workContainer[j].style.top = '0px';
         }
       } else {
         workPages[i].style.opacity = 0;
@@ -145,21 +134,19 @@ document.addEventListener('DOMContentLoaded', function () {
         brushesHolder.style.zIndex = 3;
         workPageVis = false;
         for (let j = 0; j < workContainer.length; j++) {
-        workContainer[j].style.top = '50px';
-        
+          workContainer[j].style.top = '50px';
         }
       }
     }
   });
 
   workContainerOne.addEventListener('click', function () {
-    // Iterate through all elements with the class 'workPage'
     projectOne.style.opacity = 1;
     projectOne.style.zIndex = 999;
-
   });
 
-//This is end of DOM
+  // ... (your existing code)
+
 });
 
 function changeImage(element) {
@@ -179,10 +166,4 @@ document.addEventListener('mousemove', (e) => {
 function closeProject() {
   projectOne.style.opacity = 0;
   projectOne.style.zIndex = 0;
-
-
 }
-
-
-
-
