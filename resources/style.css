@@ -283,7 +283,7 @@ input:checked + .slider:before {
     background-color: inherit;
 }
 
-#brushes img {
+#brushes video {
     height: 4em;
     width: 4em;
     padding: 0em .5em;

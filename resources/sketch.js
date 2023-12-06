@@ -6,6 +6,11 @@ let brushSelect = 0;
 let canvas;
 let buttonClicked = false;
 let lemon;
+let banana;
+let berry;
+let avocado;
+let apple;
+let pepper;
 
 
 const switchyElement = document.getElementById('mySwitch');
@@ -65,27 +70,53 @@ function setup() {
   lemon.volume(0); // Mute the video
   lemon.loop(); // Optional: loop the video
 
+  pepper = createVideo('resources/Images/pepper.webm');
+  // Set attributes, including autoplay and mute
+  pepper.autoplay(true);
+  pepper.volume(0); // Mute the video
+  pepper.loop(); // Optional: loop the video
+
+  berry = createVideo('resources/Images/berry.webm');
+    // Set attributes, including autoplay and mute
+  berry.autoplay(true);
+  berry.volume(0); // Mute the video
+  berry.loop(); // Optional: loop the video
+
+  banana = createVideo('resources/Images/banana.webm');
+    // Set attributes, including autoplay and mute
+  banana.autoplay(true);
+  banana.volume(0); // Mute the video
+  banana.loop(); // Optional: loop the video
+
+  avocado = createVideo('resources/Images/avocado.webm');
+    // Set attributes, including autoplay and mute
+  avocado.autoplay(true);
+  avocado.volume(0); // Mute the video
+  avocado.loop(); // Optional: loop the video
+
+  apple = createVideo('resources/Images/apple.webm');
+    // Set attributes, including autoplay and mute
+  apple.autoplay(true);
+  apple.volume(0); // Mute the video
+  apple.loop(); // Optional: loop the video
 
 
 }
 
 function draw() {
   imageMode(CENTER);
-
-  // Draw the video frame
-  if (drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
-    const currentImage = brushSelect % 2 === 0 ? lemon : imgTwo;
+console.log(brushSelect);
+  if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
+    const currentImage = brushSelect % 6 === 0 ? lemon : (brushSelect % 6 === 1 ? pepper : (brushSelect % 6 === 2 ? berry : (brushSelect % 6 === 3 ? banana : (brushSelect % 6 === 4 ? avocado : apple))));
     image(currentImage, mouseX, mouseY, 100, 100);
-  }
-
-  // Clear the canvas when not drawing
-  if (!drawingEnable) {
+  } else if (!isDrawing && !drawingEnable) {
     clear();
   }
+  
 
-  if (workPageVis && !drawingEnable) {
+  if (workPageVis == true & drawingEnable == false) {
     canvasContainer.style.zIndex = 0;
-  } else if (workPageVis && drawingEnable) {
+  } else if (workPageVis == true & drawingEnable == true) {
     canvasContainer.style.zIndex = 5;
   }
 }
