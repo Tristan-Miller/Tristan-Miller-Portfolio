@@ -72,17 +72,20 @@ function setup() {
 function draw() {
   imageMode(CENTER);
 
-  if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
+  // Draw the video frame
+  if (drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
     const currentImage = brushSelect % 2 === 0 ? lemon : imgTwo;
     image(currentImage, mouseX, mouseY, 100, 100);
-  } else if (!isDrawing && !drawingEnable) {
+  }
+
+  // Clear the canvas when not drawing
+  if (!drawingEnable) {
     clear();
   }
-  
 
-  if (workPageVis == true & drawingEnable == false) {
+  if (workPageVis && !drawingEnable) {
     canvasContainer.style.zIndex = 0;
-  } else if (workPageVis == true & drawingEnable == true) {
+  } else if (workPageVis && drawingEnable) {
     canvasContainer.style.zIndex = 5;
   }
 }
