@@ -8,6 +8,7 @@ const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 
+
 function initializeMovingDivs(movingDivClass, tooltipId) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
   let isHovered = false;
@@ -23,7 +24,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
   hoverElement.addEventListener("mouseout", function () {
     tooltipElement.style.display = "none";
   });
-
+ 
   for (const movingDiv of movingDivs) {
     movingDiv.addEventListener("mouseover", () => {
       isHovered = true;
@@ -65,10 +66,11 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
 
       update();
     }
-
+     
     moveDiv();
+
   }
-}
+ }
 
 // Call the function for each set of elements
 initializeMovingDivs("movingWorkOne", "sydneyFestival");

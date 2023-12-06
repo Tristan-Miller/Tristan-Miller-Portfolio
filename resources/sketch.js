@@ -105,7 +105,7 @@ function setup() {
 
 function draw() {
   imageMode(CENTER);
-console.log(brushSelect);
+console.log(drawingEnable);
   if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
     const currentImage = brushSelect % 6 === 0 ? lemon : (brushSelect % 6 === 1 ? pepper : (brushSelect % 6 === 2 ? berry : (brushSelect % 6 === 3 ? banana : (brushSelect % 6 === 4 ? avocado : apple))));
     image(currentImage, mouseX, mouseY, 100, 100);

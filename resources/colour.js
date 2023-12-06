@@ -45,7 +45,7 @@ function brushPanelColor() {
         imageFour.style.backgroundColor = backgroundColor;
         imageFive.style.backgroundColor = backgroundColor;
         imageSix.style.backgroundColor = backgroundColor;
-        imageSeven.style.backgroundColor = backgroundColor;
+        
     } else if(brushSelect == 1 ){
         imageOne.style.backgroundColor = backgroundColor;
         imageTwo.style.backgroundColor = textColor;
@@ -53,7 +53,7 @@ function brushPanelColor() {
         imageFour.style.backgroundColor = backgroundColor;
         imageFive.style.backgroundColor = backgroundColor;
         imageSix.style.backgroundColor = backgroundColor;
-        imageSeven.style.backgroundColor = backgroundColor;
+        
     } else if(brushSelect == 2 ){
         imageOne.style.backgroundColor = backgroundColor;
         imageTwo.style.backgroundColor = backgroundColor;
@@ -61,7 +61,7 @@ function brushPanelColor() {
         imageFour.style.backgroundColor = backgroundColor;
         imageFive.style.backgroundColor = backgroundColor;
         imageSix.style.backgroundColor = backgroundColor;
-        imageSeven.style.backgroundColor = backgroundColor;
+        
     } else if(brushSelect == 3 ){
         imageOne.style.backgroundColor = backgroundColor;
         imageTwo.style.backgroundColor = backgroundColor;
@@ -69,7 +69,7 @@ function brushPanelColor() {
         imageFour.style.backgroundColor = textColor;
         imageFive.style.backgroundColor = backgroundColor;
         imageSix.style.backgroundColor = backgroundColor;
-        imageSeven.style.backgroundColor = backgroundColor;
+       
     } else if(brushSelect == 4 ){
         imageOne.style.backgroundColor = backgroundColor;
         imageTwo.style.backgroundColor = backgroundColor;
@@ -77,7 +77,7 @@ function brushPanelColor() {
         imageFour.style.backgroundColor = backgroundColor;
         imageFive.style.backgroundColor = textColor;
         imageSix.style.backgroundColor = backgroundColor;
-        imageSeven.style.backgroundColor = backgroundColor;
+        
     } else if(brushSelect == 5 ){
         imageOne.style.backgroundColor = backgroundColor;
         imageTwo.style.backgroundColor = backgroundColor;
@@ -85,7 +85,7 @@ function brushPanelColor() {
         imageFour.style.backgroundColor = backgroundColor;
         imageFive.style.backgroundColor = backgroundColor;
         imageSix.style.backgroundColor = textColor;
-        imageSeven.style.backgroundColor = backgroundColor;
+       
     } else if(brushSelect == 6 ){
         imageOne.style.backgroundColor = backgroundColor;
         imageTwo.style.backgroundColor = backgroundColor;
@@ -93,7 +93,7 @@ function brushPanelColor() {
         imageFour.style.backgroundColor = backgroundColor;
         imageFive.style.backgroundColor = backgroundColor;
         imageSix.style.backgroundColor = backgroundColor;
-        imageSeven.style.backgroundColor = textColor;
+        
     }
 }
 
@@ -141,7 +141,7 @@ function changeColors() {
     imageFour.style.backgroundColor = backgroundColor;
     imageFive.style.backgroundColor = backgroundColor;
     imageSix.style.backgroundColor = backgroundColor;
-    imageSeven.style.backgroundColor = backgroundColor;
+  
     workPaged.style.backgroundColor = backgroundColor;
     projectOne.style.backgroundColor = backgroundColor;
     if (workPageVis == true) {
