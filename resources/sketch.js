@@ -60,14 +60,14 @@ function setup() {
   });
 
    // Load the WebM video
-   lemon = createVideo(['resources/Images/lemon.webm']);
+   video = createVideo(['resources/Images/lemon.webm']);
   
    // Set attributes for autoplay and mute
-   lemon.elt.autoplay = true;
-   lemon.elt.muted = true;
+   video.elt.autoplay = true;
+   video.elt.muted = true;
    
    // Hide the default controls
-   lemon.hide();
+   video.hide();
 
 }
 
@@ -75,8 +75,8 @@ function draw() {
   imageMode(CENTER);
 
   if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
-    const currentImage = brushSelect % 2 === 0 ? img : imgTwo;
-    image(lemon, mouseX, mouseY, 100, 100);
+    const currentImage = brushSelect % 2 === 0 ? video : imgTwo;
+    image(currentImage, mouseX, mouseY, 100, 100);
   } else if (!isDrawing && !drawingEnable) {
     clear();
   }
