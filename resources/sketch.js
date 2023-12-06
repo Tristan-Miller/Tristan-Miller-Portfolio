@@ -55,41 +55,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function preload() {
 
-  lemon = createVideo('resources/Images/lemon.webm');
-    // Set attributes, including autoplay and mute
-  lemon.autoplay(true);
-  lemon.volume(0); // Mute the video
-  lemon.loop(); // Optional: loop the video
-
-  pepper = createVideo('resources/Images/pepper.webm');
-  // Set attributes, including autoplay and mute
-  pepper.autoplay(true);
-  pepper.volume(0); // Mute the video
-  pepper.loop(); // Optional: loop the video
-
-  berry = createVideo('resources/Images/berry.webm');
-    // Set attributes, including autoplay and mute
-  berry.autoplay(true);
-  berry.volume(0); // Mute the video
-  berry.loop(); // Optional: loop the video
-
-  banana = createVideo('resources/Images/banana.webm');
-    // Set attributes, including autoplay and mute
-  banana.autoplay(true);
-  banana.volume(0); // Mute the video
-  banana.loop(); // Optional: loop the video
-
-  avocado = createVideo('resources/Images/avocado.webm');
-    // Set attributes, including autoplay and mute
-  avocado.autoplay(true);
-  avocado.volume(0); // Mute the video
-  avocado.loop(); // Optional: loop the video
-
-  apple = createVideo('resources/Images/apple.webm');
-    // Set attributes, including autoplay and mute
-  apple.autoplay(true);
-  apple.volume(0); // Mute the video
-  apple.loop(); // Optional: loop the video
+  lemon = createImg('resources/Images/lemon.png');
+  lemon.position(-10000, -10000);
+  pepper = createImg('resources/Images/pepper.png');
+  pepper.position(-10000, -10000);
+  berry = createImg('resources/Images/berry.png');
+  berry.position(-10000, -10000);
+  banana = createImg('resources/Images/bananna.png');
+  banana.position(-10000, -10000);
+  avocado = createImg('resources/Images/avocado.png');
+  avocado.position(-10000, -10000);
+  apple = createImg('resources/Images/apple.png');
+  apple.position(-10000, -10000);
 }
 
 function setup() {
@@ -107,7 +84,7 @@ function draw() {
   imageMode(CENTER);
 console.log(drawingEnable);
   if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
-    const currentImage = brushSelect % 6 === 0 ? lemon : (brushSelect % 6 === 1 ? pepper : (brushSelect % 6 === 2 ? berry : (brushSelect % 6 === 3 ? banana : (brushSelect % 6 === 4 ? avocado : apple))));
+    const currentImage = brushSelect % 6 === 0 ? lemon : (brushSelect % 6 === 1 ? pepper : (brushSelect % 6 === 2 ? berry : (brushSelect % 6 === 3 ? banana : (brushSelect % 6 === 4 ? avocado : (brushSelect % 6 === 5 ? apple : apple)))));
     image(currentImage, mouseX, mouseY, 100, 100);
   } else if (!isDrawing && !drawingEnable) {
     clear();
