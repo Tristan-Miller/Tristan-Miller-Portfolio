@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
 function preload() {
   img = loadImage('https://png.pngtree.com/png-vector/20191126/ourmid/pngtree-image-of-cute-radish-vector-or-color-illustration-png-image_2040180.jpg');
   imgTwo = loadImage('https://m.media-amazon.com/images/I/71LTb+BcX5L._UC256,256_CACC,256,256_.jpg');
-  video = createVideo(['resources/Images/lemon.webm'], muteVideo);
-    
+  video = createVideo('resources/Images/lemon.webm', () => {
+    video.autoplay();
+  });
    // Set attributes for autoplay and mute
    video.elt.autoplay = true;
    video.elt.muted = true;
