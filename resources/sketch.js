@@ -58,6 +58,10 @@ function preload() {
    
    // Hide the default controls
    video.hide();
+
+   function muteVideo() {
+    video.volume(0);
+  }
 }
 
 function setup() {
@@ -114,7 +118,5 @@ function mouseClicked() {
   // Your mouseClicked() function goes here
 }
 
-function muteVideo() {
-  video.volume(0);
-}
+
 
