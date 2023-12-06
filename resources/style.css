@@ -1,9 +1,14 @@
 body {
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+  /*  overflow-x: hidden; /* Allow vertical overflow but hide horizontal overflow */
  
 }
 * {
     cursor: none;
+    box-sizing: border-box
+  /*  overflow: hidden; */
 }
 #custom-cursor {
     position: fixed;
@@ -214,7 +219,6 @@ button:hover {
 
 .slider {
     position: absolute;
-    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
@@ -256,6 +260,7 @@ input:checked + .slider:before {
 }
 
 #brushes-holder {
+    
     visibility: visible;
     position: fixed;
     left: 0;
@@ -272,6 +277,7 @@ input:checked + .slider:before {
 }
 
 #brushes {
+    
     display: flex;
     height: auto;
     width: auto;
@@ -279,7 +285,7 @@ input:checked + .slider:before {
     color: inherit;
     transition: background-color 0.5s, color 0.5s;
     margin: .5em 0;
-    border-radius: 2em;
+    border-radius: 3em;
     background-color: inherit;
 }
 
@@ -435,6 +441,7 @@ position: fixed;
         align-items: center;
         justify-content: center;
         z-index: 3;
+        
     }
 
     #movingWork:hover {
@@ -459,8 +466,10 @@ position: fixed;
 
     * {
         cursor: auto;
+       /* overflow: auto;  */
     }
-    
+
+   
     
 }
 
