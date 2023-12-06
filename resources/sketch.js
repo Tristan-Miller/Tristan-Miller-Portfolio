@@ -5,8 +5,7 @@ let drawingEnable = false;
 let brushSelect = 0;
 let canvas;
 let buttonClicked = false;
-let video; // Declare video as a global variable
-
+let lemon;
 
 
 const switchyElement = document.getElementById('mySwitch');
@@ -52,20 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function preload() {
   img = loadImage('https://png.pngtree.com/png-vector/20191126/ourmid/pngtree-image-of-cute-radish-vector-or-color-illustration-png-image_2040180.jpg');
   imgTwo = loadImage('https://m.media-amazon.com/images/I/71LTb+BcX5L._UC256,256_CACC,256,256_.jpg');
-  video = createVideo('resources/Images/lemon.webm', () => {
-    video.autoplay();
-   });
-   
-   // Set attributes for autoplay and mute
-   video.elt.autoplay = true;
-   video.elt.muted = true;
-   
-   // Hide the default controls
-   video.hide();
-
-   function muteVideo() {
-    video.volume(0);
-  }
 }
 
 function setup() {
@@ -74,9 +59,11 @@ function setup() {
   imageElements.forEach((image, i) => {
     image.style.backgroundColor = i === brushSelect ? textColor : backgroundColor;
   });
-
-   // Load the WebM video
-   
+  lemon = createVideo('resources/Images/lemon.webm');
+    // Set attributes, including autoplay and mute
+  lemon.autoplay(true);
+  lemon.volume(0); // Mute the video
+  lemon.loop(); // Optional: loop the video
 
 
 
@@ -86,7 +73,7 @@ function draw() {
   imageMode(CENTER);
 
   if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
-    const currentImage = brushSelect % 2 === 0 ? video : imgTwo;
+    const currentImage = brushSelect % 2 === 0 ? lemon : imgTwo;
     image(currentImage, mouseX, mouseY, 100, 100);
   } else if (!isDrawing && !drawingEnable) {
     clear();
