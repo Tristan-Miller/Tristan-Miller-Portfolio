@@ -8,6 +8,7 @@ let buttonClicked = false;
 let video; // Declare video as a global variable
 
 
+
 const switchyElement = document.getElementById('mySwitch');
 const brushesHolder = document.getElementById('brushes-holder');
 const imageElements = Array.from(document.querySelectorAll('[id^="image"]'));
