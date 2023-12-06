@@ -58,6 +58,17 @@ function setup() {
   imageElements.forEach((image, i) => {
     image.style.backgroundColor = i === brushSelect ? textColor : backgroundColor;
   });
+
+   // Load the WebM video
+   lemon = createVideo(['resources/Images/lemon.webm']);
+  
+   // Set attributes for autoplay and mute
+   lemon.elt.autoplay = true;
+   lemon.elt.muted = true;
+   
+   // Hide the default controls
+   lemon.hide();
+
 }
 
 function draw() {
@@ -65,7 +76,7 @@ function draw() {
 
   if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
     const currentImage = brushSelect % 2 === 0 ? img : imgTwo;
-    image(currentImage, mouseX, mouseY, 100, 100);
+    image(lemon, mouseX, mouseY, 100, 100);
   } else if (!isDrawing && !drawingEnable) {
     clear();
   }
