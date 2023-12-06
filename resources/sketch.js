@@ -5,6 +5,7 @@ let drawingEnable = false;
 let brushSelect = 0;
 let canvas;
 let buttonClicked = false;
+let video; // Declare video as a global variable
 
 
 const switchyElement = document.getElementById('mySwitch');
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function preload() {
   img = loadImage('https://png.pngtree.com/png-vector/20191126/ourmid/pngtree-image-of-cute-radish-vector-or-color-illustration-png-image_2040180.jpg');
   imgTwo = loadImage('https://m.media-amazon.com/images/I/71LTb+BcX5L._UC256,256_CACC,256,256_.jpg');
-  let video = createVideo(['resources/Images/lemon.webm'], muteVideo);
+  video = createVideo(['resources/Images/lemon.webm'], muteVideo);
     
    // Set attributes for autoplay and mute
    video.elt.autoplay = true;
