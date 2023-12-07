@@ -7,6 +7,7 @@ const workButton = document.getElementById('workButton');
 const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
+const allWorkContainer = document.getElementById('allWorkContainer');
 
 function initializeMovingDivs(movingDivClass, tooltipId) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
@@ -149,10 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
     Switchy.style.backgroundColor = "#000000";
     workPaged.style.backgroundColor = "#000000";
     workButton.style.backgroundColor = "#000000";
-      workButton.style.color = "#000000";
+    workButton.style.color = "#000000";
+    allWorkContainer.style.opacity = 0;
     setTimeout(function () {
       window.location.href = 'projectOne.html';
-    }, 500);
+    }, 300);
   });
 
   // ... (your existing code)

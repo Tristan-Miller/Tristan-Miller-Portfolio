@@ -3,8 +3,34 @@ body {
     padding: 0;
     justify-content: center;
   /*  overflow-x: hidden; /* Allow vertical overflow but hide horizontal overflow */
- 
+    animation: fadeIn .3s;
+    -webkit-animation: fadeIn .3s;
+    -moz-animation: fadeIn .3s;
+    -o-animation: fadeIn .3s;
+    -ms-animation: fadeIn .3s;
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
 * {
     cursor: none;
     box-sizing: border-box
@@ -72,12 +98,12 @@ button:hover {
 
 #contactButton,
 #workButton {
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #contactButton:hover,
 #workButton:hover {
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #closeButton {
@@ -100,7 +126,7 @@ button:hover {
     height: 10vw;
     position: absolute;
     border-radius: 50%;
-    transition: transform 0.5s, border-radius 0.5s;
+    transition: transform 0.3s, border-radius 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,7 +201,7 @@ button:hover {
     background-color: black;
     color: white;
     user-select: none;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 * {
@@ -216,7 +242,7 @@ button:hover {
 }
 
 #Switchy {
-  transition: visibility 0.5s;
+  transition: visibility 0.3s;
    visibility: visible;
 }
 
@@ -286,7 +312,7 @@ input:checked + .slider:before {
     width: auto;
     border: 1px solid;
     color: inherit;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.3s, color 0.3s;
     margin: .5em 0;
     border-radius: 3em;
     background-color: inherit;
@@ -330,7 +356,7 @@ body,
 }
 
 #workPage{
-    transition: 0.5s;
+    transition: 0.3s;
     position: absolute;
     left: 0;
     top: 0;
@@ -347,6 +373,7 @@ body,
 }
 
 #allWorkContainer {
+    transition: 0.3s;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -356,6 +383,7 @@ body,
     justify-content: flex-start;
     align-items: flex-start;
     padding: 3.8em 0.7em 0.7em 0.7em;
+    opacity: 1;
 }
 
 
@@ -367,7 +395,8 @@ body,
     padding: 0.7em;
     transition: .3s;
     position: relative;
-    top: 50px 
+    top: 50px; 
+    
 }
 
 .workContainer img {
@@ -406,7 +435,7 @@ position: fixed;
     height: 100%;
     align-items: baseline;
     
-    transition: 0.5s;
+    transition: 0.3s;
    
 }
 
@@ -439,7 +468,7 @@ position: fixed;
         height: 20vw;
         position: absolute;
         border-radius: 50%;
-        transition: width 0.5s ease-out, height 0.5s ease-out, border-radius 0.2s ease-out, transform 0.5s ease-out;
+        transition: width 0.3s ease-out, height 0.3s ease-out, border-radius 0.3s ease-out, transform 0.3s ease-out;
         display: flex;
         align-items: center;
         justify-content: center;
