@@ -1,7 +1,10 @@
 let backgroundColor, textColor;
+var buttons = document.getElementsByClassName('myButton');
+var slideColor = document.getElementsByClassName('slider');
 const contactButton = document.getElementById('contactButton');
 const sliderButton = document.getElementById('slider');
 const workPaged = document.getElementById('workPage');
+const brushes = document.getElementById('brushes');
 function getRandomColor() {
     // Generate a random color in hexadecimal format
     return '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -107,13 +110,6 @@ function changeColors() {
     } while (calculateContrast(backgroundColor, textColor) < 4.5);
   
     const themeContainer = document.getElementById('themeContainer');
-    if (workPageVis == true) {
-      workButton.style.color = backgroundColor;
-      workButton.style.backgroundColor = textColor;
-    } else {
-      workButton.style.backgroundColor = backgroundColor;
-      workButton.style.color = textColor;
-    }
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
     contactButton.style.backgroundColor = backgroundColor;
@@ -121,8 +117,14 @@ function changeColors() {
     colourButton.style.backgroundColor = backgroundColor;
     Switchy.style.backgroundColor = backgroundColor;
     workPaged.style.backgroundColor = backgroundColor;
-    projectOne.style.backgroundColor = backgroundColor;
-    
+    brushes.style.color = textColor;
+    if (workPageVis == true) {
+      workButton.style.color = backgroundColor;
+      workButton.style.backgroundColor = textColor;
+    } else {
+      workButton.style.backgroundColor = backgroundColor;
+      workButton.style.color = textColor;
+    }
     brushPanelColor();
 
   }
@@ -131,7 +133,13 @@ function changeColors() {
   function setInitalColours() {
     backgroundColor = "#000000";
     textColor = "#FFFFFF"
-    /*
+    if (workPageVis == true) {
+      workButton.style.color = backgroundColor;
+      workButton.style.backgroundColor = textColor;
+    } else {
+      workButton.style.backgroundColor = backgroundColor;
+      workButton.style.color = textColor;
+    } 
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
     contactButton.style.backgroundColor = backgroundColor;
@@ -143,17 +151,9 @@ function changeColors() {
     imageFour.style.backgroundColor = backgroundColor;
     imageFive.style.backgroundColor = backgroundColor;
     imageSix.style.backgroundColor = backgroundColor;
-  
     workPaged.style.backgroundColor = backgroundColor;
-    projectOne.style.backgroundColor = backgroundColor;
-    if (workPageVis == true) {
-      workButton.style.color = backgroundColor;
-      workButton.style.backgroundColor = textColor;
-    } else {
-      workButton.style.backgroundColor = backgroundColor;
-      workButton.style.color = textColor;
-    } 
-    */
+    
+    
   }
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -173,4 +173,18 @@ function changeColors() {
   //document.querySelector('.switch input').addEventListener('change', changeColors);
   });
  
-  
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('mouseover', function() {
+        this.style.backgroundColor = textColor;
+        this.style.color = backgroundColor;
+        
+    });
+
+    buttons[i].addEventListener('mouseout', function() {
+        // Reset to the original background color or any other desired color
+        this.style.backgroundColor = backgroundColor;
+        this.style.color = textColor;
+    });
+  }
+
+ 

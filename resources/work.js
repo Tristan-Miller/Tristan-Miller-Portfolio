@@ -7,7 +7,7 @@ const workButton = document.getElementById('workButton');
 const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
-const allWorkContainer = document.getElementById('allWorkContainer');
+const fadeToBlack = document.getElementById('fadeToBlack');
 
 function initializeMovingDivs(movingDivClass, tooltipId) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
@@ -142,16 +142,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   workContainerOne.addEventListener('click', function () {
-    themeContainer.style.backgroundColor =  "#000000";
-    themeContainer.style.color = "#000000";
-    contactButton.style.backgroundColor = "#000000";
-    contactButton.style.color = "#000000";
-    colourButton.style.backgroundColor = "#000000";
-    Switchy.style.backgroundColor = "#000000";
-    workPaged.style.backgroundColor = "#000000";
-    workButton.style.backgroundColor = "#000000";
-    workButton.style.color = "#000000";
-    allWorkContainer.style.opacity = 0;
+    fadeToBlack.style.visibility = 'visible';
+    fadeToBlack.style.opacity = 1;
     setTimeout(function () {
       window.location.href = 'projectOne.html';
     }, 300);

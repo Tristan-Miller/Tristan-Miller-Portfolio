@@ -20,22 +20,23 @@
 </head>
 
 <body class="theme" id="themeContainer">
+  <div id="fadeToBlack"></div>
   <div id="custom-cursor"></div>
   <main class="allMain">
      <!-- Container for p5.js canvas -->
   <div id="canvas-container"></div>
   <header id="header-holder">
-   <label class="switch" style="font-size: 1rem">
+   <label class="switch " style="font-size: 1rem">
      <input type="checkbox" id="mySwitch">
-     <span id="Switchy" class="slider round"></span>
+     <span id="Switchy" class="slider round "></span>
    </label>
 
    <div class="buttonContainer">
-     <button id="workButton" type="button" >WORK</button>
-     <button id="contactButton" type="button" onclick="alert('Hello world!')">CONTACT</button>
+     <button class="myButton" id="workButton" type="button" >WORK</button>
+     <button  class="myButton" id="contactButton" type="button" onclick="alert('Hello world!')">CONTACT</button>
 
    </div>
-   <button id="colourButton" type="button" onclick="changeColors()"><span class="material-symbols-outlined">
+   <button class="myButton" id="colourButton" type="button" onclick="changeColors()"><span class="material-symbols-outlined">
      palette
      </span></button>
 
