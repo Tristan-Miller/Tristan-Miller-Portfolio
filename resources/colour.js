@@ -1,9 +1,10 @@
 let backgroundColor, textColor;
 var buttons = document.getElementsByClassName('myButton');
 var slideColor = document.getElementsByClassName('slider');
-const contactButton = document.getElementById('contactButton');
 const sliderButton = document.getElementById('slider');
 const workPaged = document.getElementById('workPage');
+const aboutPage = document.getElementsByClassName('aboutPage');
+const aboutPage2 = document.getElementById('aboutPage');
 const brushes = document.getElementById('brushes');
 function getRandomColor() {
     // Generate a random color in hexadecimal format
@@ -112,11 +113,12 @@ function changeColors() {
     const themeContainer = document.getElementById('themeContainer');
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
-    contactButton.style.backgroundColor = backgroundColor;
-    contactButton.style.color = textColor;
+    aboutButton.style.backgroundColor = backgroundColor;
+    aboutButton.style.color = textColor;
     colourButton.style.backgroundColor = backgroundColor;
     Switchy.style.backgroundColor = backgroundColor;
     workPaged.style.backgroundColor = backgroundColor;
+    aboutPage2.style.backgroundColor = backgroundColor;
     brushes.style.color = textColor;
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
@@ -124,6 +126,13 @@ function changeColors() {
     } else {
       workButton.style.backgroundColor = backgroundColor;
       workButton.style.color = textColor;
+    }
+    if (aboutPageVis == true) {
+      aboutButton.style.color = backgroundColor;
+      aboutButton.style.backgroundColor = textColor;
+    } else {
+      aboutButton.style.backgroundColor = backgroundColor;
+      aboutButton.style.color = textColor;
     }
     brushPanelColor();
 
@@ -140,9 +149,16 @@ function changeColors() {
       workButton.style.backgroundColor = backgroundColor;
       workButton.style.color = textColor;
     } 
+    if (aboutPageVis == true) {
+      aboutButton.style.color = backgroundColor;
+      aboutButton.style.backgroundColor = textColor;
+    } else {
+      aboutButton.style.backgroundColor = backgroundColor;
+      aboutButton.style.color = textColor;
+    } 
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
-    contactButton.style.backgroundColor = backgroundColor;
+    aboutButton.style.backgroundColor = backgroundColor;
     Switchy.style.backgroundColor = backgroundColor;
     colourButton.style.backgroundColor = backgroundColor;
     imageOne.style.backgroundColor = textColor;
@@ -152,7 +168,7 @@ function changeColors() {
     imageFive.style.backgroundColor = backgroundColor;
     imageSix.style.backgroundColor = backgroundColor;
     workPaged.style.backgroundColor = backgroundColor;
-    
+    aboutPage2.style.backgroundColor = backgroundColor;
     
   }
 

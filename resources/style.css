@@ -105,13 +105,14 @@ button {
     overflow: visible;
 }
 
-#contactButton,
+
 #workButton,
-#colourButton {
+#colourButton, 
+#aboutButton{
     transition: background-color 0.3s, color 0.3s;
 }
 
-#contactButton:hover,
+#aboutButton:hover,
 #workButton:hover,
 #colourButton:hover {
     transition: background-color 0.3s, color 0.3s;
@@ -358,6 +359,21 @@ html,
 body,
 #canvas-container {
     height: 100%;
+}
+
+#aboutPage {
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;  
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 #workPage{

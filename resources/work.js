@@ -1,5 +1,7 @@
 let workPageVis = false;
 const workPages = document.getElementsByClassName('workPage');
+let aboutPageVis = false;
+const aboutButton = document.getElementById('aboutButton');
 const workContainer = document.getElementsByClassName('workContainer');
 const projectPage = document.getElementsByClassName('projectPage');
 const projectOne = document.getElementById('projectOne');
@@ -73,16 +75,23 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
 
 initializeMovingDivs("movingWorkOne", "sydneyFestival");
 initializeMovingDivs("movingWorkTwo", "weel");
-//initializeMovingDivs("movingWorkThree", "rolus");
+initializeMovingDivs("movingWorkThree", "rolus");
 //initializeMovingDivs("movingWorkFour", "youi");
 //initializeMovingDivs("movingWorkFive", "personal");
 //initializeMovingDivs("movingWorkSix", "dAndAD");
 
 document.addEventListener('DOMContentLoaded', function () {
   workButton.addEventListener('click', function () {
+    for (let i = 0; i < aboutPage.length; i++) {
+      const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
+      aboutPageVis = false;
+      aboutPage[i].style.opacity = 0;
+      aboutButton.style.backgroundColor = backgroundColor;
+      aboutButton.style.color = textColor;
+      aboutPage[i].style.zIndex = 1;
+    }
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
-
       if (currentOpacity === 0) {
         workPages[i].style.opacity = 1;
         workButton.style.backgroundColor = textColor;
@@ -111,6 +120,15 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   workButton.addEventListener('touchstart', function () {
+    for (let i = 0; i < aboutPage.length; i++) {
+      const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
+
+    aboutPageVis = false;
+    aboutPage[i].style.opacity = 0;
+    aboutButton.style.backgroundColor = backgroundColor;
+    aboutButton.style.color = textColor;
+    aboutPage[i].style.zIndex = 1;
+    }
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
 
@@ -141,15 +159,75 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  workContainerOne.addEventListener('click', function () {
-    fadeToBlack.style.visibility = 'visible';
-    fadeToBlack.style.opacity = 1;
-    setTimeout(function () {
-      window.location.href = 'projectOne.html';
-    }, 300);
+  //Contact Page
+
+  aboutButton.addEventListener('click', function () {
+    for (let i = 0; i < workPages.length; i++) {
+      const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
+
+    workPageVis = false;
+    workPages[i].style.opacity = 0;
+    workButton.style.backgroundColor = backgroundColor;
+    workButton.style.color = textColor;
+    workPages[i].style.zIndex = 1;
+    }
+    for (let i = 0; i < aboutPage.length; i++) {
+      const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
+
+      if (currentOpacity === 0) {
+        aboutPage[i].style.opacity = 1;
+        aboutButton.style.backgroundColor = textColor;
+        aboutButton.style.color = backgroundColor;
+        aboutPage[i].style.backgroundColor = backgroundColor;
+        aboutPage[i].style.zIndex = 4;
+        canvasContainer.style.zIndex = 5;
+        brushesHolder.style.zIndex = 6;
+        aboutPageVis = true;
+      } else {
+        aboutPage[i].style.opacity = 0;
+        aboutButton.style.backgroundColor = backgroundColor;
+        aboutButton.style.color = textColor;
+        aboutPage[i].style.zIndex = 1;
+        canvasContainer.style.zIndex = 2;
+        brushesHolder.style.zIndex = 3;
+        aboutPageVis = false;
+      }
+    }
   });
 
-  // ... (your existing code)
+  aboutButton.addEventListener('touchstart', function () {
+    for (let i = 0; i < workPages.length; i++) {
+      const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
+
+    workPageVis = false;
+    workPages[i].style.opacity = 0;
+    workButton.style.backgroundColor = backgroundColor;
+    workButton.style.color = textColor;
+    workPages[i].style.zIndex = 1;
+    }
+    for (let i = 0; i < aboutPage.length; i++) {
+      const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
+
+      if (currentOpacity === 0) {
+        aboutPage[i].style.opacity = 1;
+        aboutButton.style.backgroundColor = textColor;
+        aboutButton.style.color = backgroundColor;
+        aboutPage[i].style.backgroundColor = backgroundColor;
+        aboutPage[i].style.zIndex = 4;
+        canvasContainer.style.zIndex = 5;
+        brushesHolder.style.zIndex = 6;
+        aboutPageVis = true;
+      } else {
+        aboutPage[i].style.opacity = 0;
+        aboutButton.style.backgroundColor = backgroundColor;
+        aboutButton.style.color = textColor;
+        aboutPage[i].style.zIndex = 1;
+        canvasContainer.style.zIndex = 2;
+        brushesHolder.style.zIndex = 3;
+        aboutPageVis = false;
+      }
+    }
+  });
 
 });
 
@@ -161,6 +239,13 @@ function resetImage(element) {
   document.getElementById('image1').src = 'resources/Images/sydneyFestival.png';
 }
 
+workContainerOne.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectOne.html';
+  }, 300);
+});
 
 
 function closeProject() {
