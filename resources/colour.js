@@ -107,6 +107,13 @@ function changeColors() {
     } while (calculateContrast(backgroundColor, textColor) < 4.5);
   
     const themeContainer = document.getElementById('themeContainer');
+    if (workPageVis == true) {
+      workButton.style.color = backgroundColor;
+      workButton.style.backgroundColor = textColor;
+    } else {
+      workButton.style.backgroundColor = backgroundColor;
+      workButton.style.color = textColor;
+    }
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
     contactButton.style.backgroundColor = backgroundColor;
@@ -115,13 +122,7 @@ function changeColors() {
     Switchy.style.backgroundColor = backgroundColor;
     workPaged.style.backgroundColor = backgroundColor;
     projectOne.style.backgroundColor = backgroundColor;
-    if (workPageVis == true) {
-      workButton.style.color = backgroundColor;
-      workButton.style.backgroundColor = textColor;
-    } else {
-      workButton.style.backgroundColor = backgroundColor;
-      workButton.style.color = textColor;
-    }
+    
     brushPanelColor();
 
   }
@@ -130,6 +131,7 @@ function changeColors() {
   function setInitalColours() {
     backgroundColor = "#000000";
     textColor = "#FFFFFF"
+    /*
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
     contactButton.style.backgroundColor = backgroundColor;
@@ -151,6 +153,7 @@ function changeColors() {
       workButton.style.backgroundColor = backgroundColor;
       workButton.style.color = textColor;
     } 
+    */
   }
 
   document.addEventListener("DOMContentLoaded", function() {

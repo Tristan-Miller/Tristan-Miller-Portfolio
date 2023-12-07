@@ -141,8 +141,18 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   workContainerOne.addEventListener('click', function () {
-    projectOne.style.opacity = 1;
-    projectOne.style.zIndex = 999;
+    themeContainer.style.backgroundColor =  "#000000";
+    themeContainer.style.color = "#000000";
+    contactButton.style.backgroundColor = "#000000";
+    contactButton.style.color = "#000000";
+    colourButton.style.backgroundColor = "#000000";
+    Switchy.style.backgroundColor = "#000000";
+    workPaged.style.backgroundColor = "#000000";
+    workButton.style.backgroundColor = "#000000";
+      workButton.style.color = "#000000";
+    setTimeout(function () {
+      window.location.href = 'projectOne.html';
+    }, 500);
   });
 
   // ... (your existing code)
@@ -157,11 +167,7 @@ function resetImage(element) {
   document.getElementById('image1').src = 'resources/Images/sydneyFestival.png';
 }
 
-document.addEventListener('mousemove', (e) => {
-  const cursor = document.getElementById('custom-cursor');
-  cursor.style.left = `${e.pageX}px`;
-  cursor.style.top = `${e.pageY}px`;
-});
+
 
 function closeProject() {
   projectOne.style.opacity = 0;

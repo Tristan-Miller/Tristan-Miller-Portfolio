@@ -23,6 +23,8 @@ body {
       transform: translate(-50%, -50%);
   }
 
+  
+
 #menu {
     height: 50px;
     bottom: 0;
@@ -170,7 +172,8 @@ button:hover {
 .theme {
     font-family: "forma-djr-display", sans-serif;
     font-style: normal;
-    
+    background-color: black;
+    color: white;
     user-select: none;
     transition: background-color 0.5s, color 0.5s;
 }
@@ -264,7 +267,7 @@ input:checked + .slider:before {
     visibility: visible;
     position: fixed;
     left: 0;
-    bottom: -100px;
+    bottom: -150px;
     width: 100%;
     height: auto;
     padding: 10px;
@@ -289,11 +292,10 @@ input:checked + .slider:before {
     background-color: inherit;
 }
 
-#brushes video {
-    height: 4em;
-    width: 4em;
-    padding: 0em .5em;
-    margin: .3em 0 0 0;
+#brushes img {
+    height: 70px;
+    width: 70px;
+    padding: 5px;
 }
 
 #imageOne,
@@ -303,6 +305,8 @@ input:checked + .slider:before {
 #imageFive,
 #imageSix,
 #imageSeven {
+    width: 70px;
+    height: 70px;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -407,9 +411,8 @@ position: fixed;
 }
 
 #projectOne {
+    opacity: 1;
     z-index: 0;
-    opacity: 0;
-    
 }
 
 .projectPage img{

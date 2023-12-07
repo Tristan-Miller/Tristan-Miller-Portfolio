@@ -39,7 +39,7 @@ function handleInteraction(event) {
     drawingEnable = switchyElement.checked;
   }
 
-  brushesHolder.style.transform = switchyElement.checked ? 'translateY(-100px)' : 'translateY(0)';
+  brushesHolder.style.transform = switchyElement.checked ? 'translateY(-150px)' : 'translateY(0)';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   switchyElement.addEventListener('change', () => {
-    brushesHolder.style.transform = switchyElement.checked ? 'translateY(-100px)' : 'translateY(0)';
+    brushesHolder.style.transform = switchyElement.checked ? 'translateY(-150px)' : 'translateY(0)';
   });
 });
 
