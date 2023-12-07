@@ -10,6 +10,7 @@ const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 const fadeToBlack = document.getElementById('fadeToBlack');
+const movingWorkFour = document.getElementsByClassName('movingWorkFour');
 
 function initializeMovingDivs(movingDivClass, tooltipId) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
@@ -76,7 +77,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
 initializeMovingDivs("movingWorkOne", "sydneyFestival");
 initializeMovingDivs("movingWorkTwo", "weel");
 initializeMovingDivs("movingWorkThree", "rolus");
-//initializeMovingDivs("movingWorkFour", "youi");
+initializeMovingDivs("movingWorkFour", "youi");
 //initializeMovingDivs("movingWorkFive", "personal");
 //initializeMovingDivs("movingWorkSix", "dAndAD");
 
@@ -89,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
       aboutButton.style.backgroundColor = backgroundColor;
       aboutButton.style.color = textColor;
       aboutPage[i].style.zIndex = 1;
+      movingWorkFour[i].style.zIndex = 0;
+      movingWorkFour[i].style.opacity = 0;
     }
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
@@ -181,7 +184,11 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutPage[i].style.backgroundColor = backgroundColor;
         aboutPage[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
-        brushesHolder.style.zIndex = 6;
+        for (let i = 0; i < movingWorkFour.length; i++) {
+          movingWorkFour[i].style.zIndex = 6;
+          movingWorkFour[i].style.opacity = 1;
+        }
+        brushesHolder.style.zIndex = 7;
         aboutPageVis = true;
       } else {
         aboutPage[i].style.opacity = 0;
@@ -189,6 +196,10 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutButton.style.color = textColor;
         aboutPage[i].style.zIndex = 1;
         canvasContainer.style.zIndex = 2;
+        for (let i = 0; i < movingWorkFour.length; i++) {
+        movingWorkFour[i].style.zIndex = 0;
+        movingWorkFour[i].style.opacity = 0;
+        }
         brushesHolder.style.zIndex = 3;
         aboutPageVis = false;
       }
@@ -215,7 +226,11 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutPage[i].style.backgroundColor = backgroundColor;
         aboutPage[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
-        brushesHolder.style.zIndex = 6;
+        for (let i = 0; i < movingWorkFour.length; i++) {
+          movingWorkFour[i].style.zIndex = 6;
+          movingWorkFour[i].style.opacity = 1;
+        }
+        brushesHolder.style.zIndex = 7;
         aboutPageVis = true;
       } else {
         aboutPage[i].style.opacity = 0;
@@ -223,6 +238,10 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutButton.style.color = textColor;
         aboutPage[i].style.zIndex = 1;
         canvasContainer.style.zIndex = 2;
+        for (let i = 0; i < movingWorkFour.length; i++) {
+          movingWorkFour[i].style.zIndex = 0;
+          movingWorkFour[i].style.opacity = 0;
+        }
         brushesHolder.style.zIndex = 3;
         aboutPageVis = false;
       }
@@ -237,6 +256,46 @@ function changeImage(element) {
 
 function resetImage(element) {
   document.getElementById('image1').src = 'resources/Images/sydneyFestival.png';
+}
+
+function changeImage2(element) {
+  document.getElementById('image2').src = 'resources/Images/peanuts.png';
+}
+
+function resetImage2(element) {
+  document.getElementById('image2').src = 'resources/Images/sydneyFestival.png';
+}
+
+function changeImage3(element) {
+  document.getElementById('image3').src = 'resources/Images/peanuts.png';
+}
+
+function resetImage3(element) {
+  document.getElementById('image3').src = 'resources/Images/sydneyFestival.png';
+}
+
+function changeImage4(element) {
+  document.getElementById('image4').src = 'resources/Images/peanuts.png';
+}
+
+function resetImage4(element) {
+  document.getElementById('image4').src = 'resources/Images/sydneyFestival.png';
+}
+
+function changeImage5(element) {
+  document.getElementById('image5').src = 'resources/Images/peanuts.png';
+}
+
+function resetImage5(element) {
+  document.getElementById('image5').src = 'resources/Images/sydneyFestival.png';
+}
+
+function changeImage6(element) {
+  document.getElementById('image6').src = 'resources/Images/peanuts.png';
+}
+
+function resetImage6(element) {
+  document.getElementById('image6').src = 'resources/Images/sydneyFestival.png';
 }
 
 workContainerOne.addEventListener('click', function () {

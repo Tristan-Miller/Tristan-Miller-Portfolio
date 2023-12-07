@@ -133,6 +133,15 @@ button {
     border: 0px;
 }
 
+.movingWorkFour {
+    z-index: 0;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+
+
+
 
 
 #movingWork {
@@ -153,6 +162,7 @@ button {
     border-radius: 3%;
   
 }
+
 
 #reset-button {
     background-color: #e5e5e5;
@@ -429,13 +439,13 @@ body,
     transform: scale(1.05);
 }
 
-#workContainerOne {
+#workContainerOne, #workContainerTwo, #workContainerThree, #workContainerFour, #workContainerFive, #workContainerSix {
 display: flex;
 align-items: center;
 justify-content: center;
 }
 
-#workContainerOne h1 {
+#workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1 {
 position: fixed;
    
     transition: 0.3s;
@@ -445,9 +455,10 @@ position: fixed;
     text-transform: uppercase;
 }
 
-#workContainerOne:hover h1 {
+#workContainerOne:hover h1, #workContainerTwo:hover h1, #workContainerThree:hover h1, #workContainerFour:hover h1, #workContainerFive:hover h1, #workContainerSix:hover h1 {
     opacity: 1;
 }
+
 
 .projectPage {
     position: absolute;

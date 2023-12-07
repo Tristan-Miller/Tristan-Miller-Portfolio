@@ -198,8 +198,13 @@ function changeColors() {
 
     buttons[i].addEventListener('mouseout', function() {
         // Reset to the original background color or any other desired color
+        if (aboutPageVis == true || workPageVis == true) {
+          this.style.backgroundColor = textColor
+          this.style.color = backgroundColor;
+        } else {
         this.style.backgroundColor = backgroundColor;
         this.style.color = textColor;
+        }
     });
   }
 
