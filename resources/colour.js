@@ -140,8 +140,8 @@ function changeColors() {
 
   
   function setInitalColours() {
-    backgroundColor = "#000000";
-    textColor = "#FFFFFF"
+    backgroundColor = "#f2eee1";
+    textColor = "#000000"
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
       workButton.style.backgroundColor = textColor;

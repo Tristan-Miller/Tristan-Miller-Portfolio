@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('HELVETICANEUELTSTD-ROMAN.OTF') format('opentype');
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,6 +14,8 @@ body {
     -o-animation: fadeIn .3s;
     -ms-animation: fadeIn .3s;
 }
+
+
 
 @keyframes fadeIn {
     0% { opacity: 0; }
@@ -85,10 +92,11 @@ button {
     border: 1px solid;
     background: none;
     color: inherit;
-    padding: .7em;
+    padding: .9em .7em .7em .7em;
     margin: 0 .5em;
     border-radius: 2em;
     background-color: inherit;
+    font-family: 'CustomFont', sans-serif; 
 }
 
 
@@ -212,7 +220,7 @@ button {
 }
 
 .theme {
-    font-family: "forma-djr-display", sans-serif;
+    font-family: "CustomFont", sans-serif;
     font-style: normal;
     background-color: black;
     color: white;
@@ -411,33 +419,36 @@ body,
     display: flex;
     overflow: scroll;
     flex-wrap: wrap;
-
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 3.8em 0.7em 0.7em 0.7em;
     opacity: 1;
-    justify-content: center;
+    
 }
 
 
 .workContainer {
     box-sizing: border-box;
-    width: 70%;
+    width: 50%;
     height: auto;
     margin: 0; 
     padding: 0.7em;
     transition: .3s;
     position: relative;
     top: 50px; 
-    border: 2px solid red;
+    /* border: 2px solid red; */
     
 }
-
+.projectPage .workContainer {
+    width: 70%;
+}
 .workContainer img {
     transition: .3s;
     border-radius: 5px;
 }
 
 #workPage .workContainer:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 #workContainerOne, #workContainerTwo, #workContainerThree, #workContainerFour, #workContainerFive, #workContainerSix {
@@ -562,6 +573,16 @@ position: fixed;
     transition: opacity 0.5s ease-in-out;
 }
 
+#tm {
+    position: absolute;
+    bottom: 0;
+    
+    width: 100vw; /* 100% of viewport width */
+    height: 90vh; /* 100% of viewport height */
+    
+}
+
+
 footer {
     position: fixed;
     bottom: 0;
@@ -573,6 +594,7 @@ footer {
     align-items: center;
     justify-content: center;
     font-weight: 200;
-    opacity: .5;
+ 
     
 }
+
