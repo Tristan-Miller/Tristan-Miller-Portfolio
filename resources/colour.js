@@ -198,9 +198,16 @@ function changeColors() {
 
     buttons[i].addEventListener('mouseout', function() {
         // Reset to the original background color or any other desired color
-        if (aboutPageVis == true || workPageVis == true) {
-          this.style.backgroundColor = textColor
-          this.style.color = backgroundColor;
+        if (workPageVis == true) {
+          workButton.style.color = backgroundColor;
+          workButton.style.backgroundColor = textColor;
+          aboutButton.style.backgroundColor = backgroundColor;
+          aboutButton.style.color = textColor;
+        } else if (aboutPageVis == true) {
+          workButton.style.color = textColor;
+          workButton.style.backgroundColor = backgroundColor;
+          aboutButton.style.backgroundColor = textColor;
+          aboutButton.style.color = backgroundColor;
         } else {
         this.style.backgroundColor = backgroundColor;
         this.style.color = textColor;

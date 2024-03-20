@@ -16,7 +16,7 @@
       var scrollPosition = scrollContainer.scrollTop;
   
       // Set the opacity based on the scroll position
-      projectName.style.opacity = 1 - scrollPosition / 200; // You can adjust the divisor for a smoother or faster effect
+      projectName.style.opacity = 1 - scrollPosition / 100; // You can adjust the divisor for a smoother or faster effect
     });
   });
   
