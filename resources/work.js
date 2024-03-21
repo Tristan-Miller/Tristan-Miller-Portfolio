@@ -10,7 +10,7 @@ const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 const fadeToBlack = document.getElementById('fadeToBlack');
-const movingWorkFour = document.getElementsByClassName('movingWorkFour');
+//const movingWorkFour = document.getElementsByClassName('movingWorkFour');
 
 function initializeMovingDivs(movingDivClass, tooltipId) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
@@ -38,7 +38,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
     });
 
     function moveDiv() {
-      const speed = 1;
+      const speed = 1.5;
       let x = Math.floor(Math.random() * window.innerWidth / 1.8);
       let y = Math.floor(Math.random() * window.innerHeight / 1.8);
 
@@ -77,7 +77,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
 initializeMovingDivs("movingWorkOne", "sydneyFestival");
 initializeMovingDivs("movingWorkTwo", "weel");
 initializeMovingDivs("movingWorkThree", "rolus");
-initializeMovingDivs("movingWorkFour", "youi");
+////initializeMovingDivs("movingWorkFour", "youi");
 //initializeMovingDivs("movingWorkFive", "personal");
 //initializeMovingDivs("movingWorkSix", "dAndAD");
 
@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function () {
       drawingEnable = false;
       brushesHolder.style.transform = 'translateY(0px)'; 
       aboutPage[i].style.zIndex = 1;
-      movingWorkFour[i].style.zIndex = 0;
-      movingWorkFour[i].style.opacity = 0;
+     // movingWorkFour[i].style.zIndex = 0;
+      //movingWorkFour[i].style.opacity = 0;
     }
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
@@ -194,10 +194,10 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutPage[i].style.backgroundColor = backgroundColor;
         aboutPage[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
-        for (let i = 0; i < movingWorkFour.length; i++) {
-          movingWorkFour[i].style.zIndex = 6;
-          movingWorkFour[i].style.opacity = 1;
-        }
+        //for (let i = 0; i < movingWorkFour.length; i++) {
+        //  movingWorkFour[i].style.zIndex = 6;
+         // movingWorkFour[i].style.opacity = 1;
+       // }
         brushesHolder.style.zIndex = 7;
         aboutPageVis = true;
       } else {
@@ -207,10 +207,10 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutPage[i].style.zIndex = 1;
         canvasContainer.style.zIndex = 2;
         funButton.style.visibility = "visible";
-        for (let i = 0; i < movingWorkFour.length; i++) {
-        movingWorkFour[i].style.zIndex = 0;
-        movingWorkFour[i].style.opacity = 0;
-        }
+        //for (let i = 0; i < movingWorkFour.length; i++) {
+       // movingWorkFour[i].style.zIndex = 0;
+       //movingWorkFour[i].style.opacity = 0;
+        //}
         brushesHolder.style.zIndex = 3;
         aboutPageVis = false;
       }
@@ -240,10 +240,10 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutPage[i].style.backgroundColor = backgroundColor;
         aboutPage[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
-        for (let i = 0; i < movingWorkFour.length; i++) {
-          movingWorkFour[i].style.zIndex = 6;
-          movingWorkFour[i].style.opacity = 1;
-        }
+        //for (let i = 0; i < movingWorkFour.length; i++) {
+         // movingWorkFour[i].style.zIndex = 6;
+         // movingWorkFour[i].style.opacity = 1;
+       // }
         brushesHolder.style.zIndex = 7;
         aboutPageVis = true;
       } else {
@@ -252,10 +252,10 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutButton.style.color = textColor;
         aboutPage[i].style.zIndex = 1;
         canvasContainer.style.zIndex = 2;
-        for (let i = 0; i < movingWorkFour.length; i++) {
-          movingWorkFour[i].style.zIndex = 0;
-          movingWorkFour[i].style.opacity = 0;
-        }
+        //for (let i = 0; i < movingWorkFour.length; i++) {
+        //  movingWorkFour[i].style.zIndex = 0;
+        //  movingWorkFour[i].style.opacity = 0;
+       // }
         brushesHolder.style.zIndex = 3;
         aboutPageVis = false;
       }

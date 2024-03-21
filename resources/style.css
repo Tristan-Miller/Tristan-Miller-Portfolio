@@ -85,7 +85,7 @@ body {
     left: 0; /* Add left: 0 to ensure it starts from the left edge of the viewport */
     height: 5em;
     width: 100%;
-    z-index: 20;
+    z-index: 1000;
    /* border: 2px solid red;*/
 }
 
@@ -160,33 +160,68 @@ button {
     border: 0px;
 }
 
-.movingWorkFour {
-    z-index: 0;
-    opacity: 0;
-    transition: 0.3s;
+#showreelContainer {
+    
+    width: 100%; /* Adjust width as needed */
+    height: 100%; /* Adjust height as needed */
+    position: fixed;
+    max-width: 1300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#showreel {
+    height: auto; /* Let the height adjust according to the video's aspect ratio */
+    width: 100%;
+    max-width: 100%;
+    z-index: 1003;
+    border-radius: 3em;
+    padding: .5em;
 }
 
 
+#showreel video {
+    width: 100%; /* Ensure the video fills its container */
+    height: 100%; /* Ensure the video fills its container */
+}
 
+#showreel video::-webkit-media-controls {
+    display: none; /* Hide default browser controls */
+}
 
+#showreel video::-webkit-media-controls-enclosure {
+    width: 100%; /* Ensure the custom controls fill the video container */
+    height: 100%; /* Ensure the custom controls fill the video container */
+}
+
+#showreel video::-webkit-media-controls-panel {
+    width: 100%; /* Ensure the custom controls fill the video container */
+    height: 100%; /* Ensure the custom controls fill the video container */
+}
 
 
 #movingWork {
-    width: 10vw;
-    height: 10vw;
+    width: 10em;
+    height: 10em;
     position: absolute;
     border-radius: 50%;
     transition: transform 0.3s, border-radius 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 3;
+    z-index: 1001;
 }
 
 
 #movingWork:hover {
     transform: scale(2);
     border-radius: 3%;
+    z-index: 1002;
   
 }
 
@@ -263,7 +298,7 @@ button {
     padding: 10px;
     margin: 15px;
     border-radius: 5px;
-    z-index: 20;
+    z-index: 1002;
     text-transform: uppercase;
 }
 
@@ -547,25 +582,9 @@ position: fixed;
 
 @media only screen and (max-width: 600px) {
    
-    #movingWork {
-        width: 20vw;
-        height: 20vw;
-        position: absolute;
-        border-radius: 50%;
-        transition: width 0.3s ease-out, height 0.3s ease-out, border-radius 0.3s ease-out, transform 0.3s ease-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 3;
-        
-    }
-
     #movingWork:hover {
-        width: 20vw;
-        height: 20vw;
-        position: absolute;
-       
-        z-index: 3;
+        transform: scale(1);
+        border-radius: 50%;
     }
 
     .workContainer {
@@ -594,14 +613,6 @@ position: fixed;
     transition: opacity 0.5s ease-in-out;
 }
 
-#tm {
-    position: absolute;
-    bottom: 0;
-    
-    width: 100vw; /* 100% of viewport width */
-    height: 90vh; /* 100% of viewport height */
-    
-}
 
 
 footer {
