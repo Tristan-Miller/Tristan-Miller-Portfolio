@@ -76,33 +76,36 @@ body {
 }
 
 #header-holder {
-    overflow: visible;
-    margin: 1em auto;
+    overflow: hidden; /* Change overflow to hidden to prevent content from extending beyond its boundaries */
+    margin: 0; /* Remove margin */
+    padding: 0.5em; /* Add padding instead of margin */
     display: flex;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; /* Add top: 0 to stick the header to the top of the page */
+    left: 0; /* Add left: 0 to ensure it starts from the left edge of the viewport */
+    height: 5em;
+    width: 100%;
     z-index: 20;
+    border: 2px solid red;
 }
 
 .buttonContainer {
     position: fixed;
-    right: 2em;
+    right: .5em;
 }
 
 
 
 
 button {
-    border: 2px solid;
+    border: .05em solid;
     background: none;
     color: inherit;
-    padding: .4em .5em .25em .5em;
+    padding: .4em .5em .2em .5em;
     border-radius: 2em;
     background-color: inherit;
     font-family: 'CustomFont', sans-serif; 
-    font-size: 40px;
+    font-size: 2em;
 }
 
 
@@ -118,10 +121,9 @@ button {
 
 #animation-container{
     position: fixed;
-    top: 4em;
-    left: 4em;
-    width: 3em;
-    height: 3em; 
+    left:  .5em;
+    width: auto;
+    height: 100%; 
 }
 
 
@@ -539,6 +541,7 @@ position: fixed;
 }
 
 @media only screen and (max-width: 600px) {
+   
     #movingWork {
         width: 20vw;
         height: 20vw;
