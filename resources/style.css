@@ -121,7 +121,7 @@ button {
 
 #animation-container{
     position: fixed;
-    left:  .5em;
+    left:  5px;
     top: .5em;
     width: auto;
     height: 3em; 
