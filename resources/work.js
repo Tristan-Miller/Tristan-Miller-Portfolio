@@ -89,6 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
       aboutPage[i].style.opacity = 0;
       aboutButton.style.backgroundColor = backgroundColor;
       aboutButton.style.color = textColor;
+      funButton.style.visibility = "hidden";
+      drawingEnable = false;
+      brushesHolder.style.transform = 'translateY(0px)'; 
       aboutPage[i].style.zIndex = 1;
       movingWorkFour[i].style.zIndex = 0;
       movingWorkFour[i].style.opacity = 0;
@@ -109,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       } else {
         workPages[i].style.opacity = 0;
+        funButton.style.visibility = "visible";
         workButton.style.backgroundColor = backgroundColor;
         workButton.style.color = textColor;
         workPages[i].style.zIndex = 1;
@@ -125,7 +129,9 @@ document.addEventListener('DOMContentLoaded', function () {
   workButton.addEventListener('touchstart', function () {
     for (let i = 0; i < aboutPage.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
-
+      funButton.style.visibility = "hidden";
+      drawingEnable = false;
+      brushesHolder.style.transform = 'translateY(0px)'; 
     aboutPageVis = false;
     aboutPage[i].style.opacity = 0;
     aboutButton.style.backgroundColor = backgroundColor;
@@ -149,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       } else {
         workPages[i].style.opacity = 0;
+        funButton.style.visibility = "visible";
         workButton.style.backgroundColor = backgroundColor;
         workButton.style.color = textColor;
         workPages[i].style.zIndex = 1;
@@ -169,6 +176,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
 
     workPageVis = false;
+    funButton.style.visibility = "hidden";
+    drawingEnable = false;
+    brushesHolder.style.transform = 'translateY(0px)';
     workPages[i].style.opacity = 0;
     workButton.style.backgroundColor = backgroundColor;
     workButton.style.color = textColor;
@@ -196,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutButton.style.color = textColor;
         aboutPage[i].style.zIndex = 1;
         canvasContainer.style.zIndex = 2;
+        funButton.style.visibility = "visible";
         for (let i = 0; i < movingWorkFour.length; i++) {
         movingWorkFour[i].style.zIndex = 0;
         movingWorkFour[i].style.opacity = 0;
@@ -215,6 +226,9 @@ document.addEventListener('DOMContentLoaded', function () {
     workButton.style.backgroundColor = backgroundColor;
     workButton.style.color = textColor;
     workPages[i].style.zIndex = 1;
+    funButton.style.visibility = "hidden";
+    drawingEnable = false;
+    brushesHolder.style.transform = 'translateY(0px)';
     }
     for (let i = 0; i < aboutPage.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
