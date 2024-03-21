@@ -11,9 +11,10 @@ let berry;
 let avocado;
 let apple;
 let pepper;
+let funButtonPressed = false;
 
 
-const switchyElement = document.getElementById('mySwitch');
+const funButton = document.getElementById('funButton');
 const brushesHolder = document.getElementById('brushes-holder');
 const imageElements = Array.from(document.querySelectorAll('[id^="image"]'));
 
@@ -24,6 +25,25 @@ function selectBrush(index) {
   });
   buttonClicked = true;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  funButton.addEventListener('click', function () {
+    if(!funButtonPressed){ // Use !funButtonPressed instead of funButtonPressed == false
+      brushesHolder.style.transform = 'translateY(-150px)'; // Corrected syntax for setting transform property
+      drawingEnabled = true; // Corrected assignment operator from == to =
+      funButtonPressed = true; // Corrected assignment operator from == to =
+      console.log(funButtonPressed);
+    } else { // Removed unnecessary condition since if funButtonPressed is not false, it must be true
+      funButtonPressed = false; // Corrected assignment operator from == to =
+      drawingEnabled = false; // Corrected assignment operator from == to =
+      brushesHolder.style.transform = 'translateY(0px)'; // Corrected syntax for setting transform property
+    }
+  });
+   
+   funButton.addEventListener('touchstart', function () {
+
+  });
+});
 
 imageElements.forEach((image, index) => {
   image.addEventListener('click', () => selectBrush(index));

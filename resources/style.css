@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'CustomFont';
-    src: url('HELVETICANEUELTSTD-MD.OTF') format('opentype');
+    src: url('HELVETICANEUELTSTD-ROMAN.OTF') format('opentype');
 }
 
 body {
@@ -88,7 +88,7 @@ body {
 
 .buttonContainer {
     position: fixed;
-    right: 1em;
+    right: 7em;
 }
 
 #animation-container {
@@ -108,7 +108,7 @@ button {
     border-radius: 2em;
     background-color: inherit;
     font-family: 'CustomFont', sans-serif; 
-    font-size: 30px;
+    font-size: 40px;
 }
 
 
@@ -271,6 +271,8 @@ button {
     width: 3.75em;
     height: 2.125em;
     overflow: visible;
+    right: 2em;
+    top: 1.5em;
     
 }
 
@@ -291,7 +293,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    outline: solid 1px;
+    outline: solid 2px;
 }
 
 .slider:before {
@@ -301,7 +303,7 @@ button {
     width: 1.625em;
     left: 0.25em;
     bottom: 0.25em;
-    outline: solid 1px;
+    outline: solid 2px;
     -webkit-transition: .4s;
     transition: width 0.4s, height 0.4s, transform 0.4s;
 }
