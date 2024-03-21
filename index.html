@@ -11,7 +11,8 @@
   <script src="resources/work.js" defer></script>
   <script src="resources/colour.js" defer></script>
   <script src="resources/cursor.js" defer></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.10/lottie.min.js"></script>
+
 
  
   <link rel="stylesheet" href="resources/style.css">
@@ -26,6 +27,18 @@
      <!-- Container for p5.js canvas -->
   <div id="canvas-container"></div>
   <header id="header-holder">
+   <div id="animation-container"></div>
+   <script>
+    // Load animation
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('animation-container'), // Container to embed the animation
+      renderer: 'svg', // Renderer type
+      loop: true, // Whether the animation should loop
+      autoplay: true, // Whether the animation should play as soon as it's ready
+      path: 'TM_Logo_Animation.json' // Path to your JSON animation file
+    });
+  </script>
+  
    <label class="switch " style="font-size: 1rem">
      <input type="checkbox" id="mySwitch">
      <span id="Switchy" class="slider round "></span>
