@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
   funButton.addEventListener('click', function () {
     if(!funButtonPressed){ // Use !funButtonPressed instead of funButtonPressed == false
       brushesHolder.style.transform = 'translateY(-150px)'; // Corrected syntax for setting transform property
-      drawingEnabled = true; // Corrected assignment operator from == to =
+      drawingEnable = true; // Corrected assignment operator from == to =
       funButtonPressed = true; // Corrected assignment operator from == to =
       console.log(funButtonPressed);
     } else { // Removed unnecessary condition since if funButtonPressed is not false, it must be true
       funButtonPressed = false; // Corrected assignment operator from == to =
-      drawingEnabled = false; // Corrected assignment operator from == to =
+      drawingEnable = false; // Corrected assignment operator from == to =
       brushesHolder.style.transform = 'translateY(0px)'; // Corrected syntax for setting transform property
     }
   });
@@ -50,28 +50,7 @@ imageElements.forEach((image, index) => {
   image.addEventListener('touchstart', () => selectBrush(index));
 });
 
-function handleInteraction(event) {
-  const x = event.clientX || (event.touches && event.touches[0].clientX);
-  const y = event.clientY || (event.touches && event.touches[0].clientY);
 
-  if (x < 70 && y < 50) {
-    switchyElement.checked = !switchyElement.checked;
-    drawingEnable = switchyElement.checked;
-  }
-
-  brushesHolder.style.transform = switchyElement.checked ? 'translateY(-150px)' : 'translateY(0)';
-}
-
-document.addEventListener('DOMContentLoaded', function () {
- 
-
-  switchyElement.addEventListener('click', () => (drawingEnable = switchyElement.checked));
-
-
-  switchyElement.addEventListener('change', () => {
-    brushesHolder.style.transform = switchyElement.checked ? 'translateY(-150px)' : 'translateY(0)';
-  });
-});
 
 function preload() {
 

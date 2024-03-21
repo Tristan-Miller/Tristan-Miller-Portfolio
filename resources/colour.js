@@ -116,7 +116,7 @@ function changeColors() {
     aboutButton.style.backgroundColor = backgroundColor;
     aboutButton.style.color = textColor;
     colourButton.style.backgroundColor = backgroundColor;
-    //Switchy.style.backgroundColor = backgroundColor;
+    funButton.style.backgroundColor = backgroundColor;
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
     brushes.style.color = textColor;
@@ -140,7 +140,7 @@ function changeColors() {
 
   
   function setInitalColours() {
-    backgroundColor = "#f2eee1";
+    backgroundColor = "#FFFFFF";
     textColor = "#000000"
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
@@ -159,7 +159,7 @@ function changeColors() {
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
-   // Switchy.style.backgroundColor = backgroundColor;
+    funButton.style.backgroundColor = backgroundColor;
     colourButton.style.backgroundColor = textColor;
     imageOne.style.backgroundColor = textColor;
     imageTwo.style.backgroundColor = backgroundColor;
@@ -208,9 +208,18 @@ function changeColors() {
           workButton.style.backgroundColor = backgroundColor;
           aboutButton.style.backgroundColor = textColor;
           aboutButton.style.color = backgroundColor;
+        } else if(drawingEnable == true) {
+          funButton.style.backgroundColor = textColor;
+          funButton.style.color = backgroundColor;
+          workButton.style.color = textColor;
+          workButton.style.backgroundColor = backgroundColor;
+          aboutButton.style.backgroundColor = backgroundColor;
+          aboutButton.style.color = textColor;
         } else {
         this.style.backgroundColor = backgroundColor;
         this.style.color = textColor;
+        funButton.style.backgroundColor = backgroundColor;
+        funButton.style.color = textColor;
         }
     });
   }

@@ -88,23 +88,17 @@ body {
 
 .buttonContainer {
     position: fixed;
-    right: 7em;
+    right: 2em;
 }
 
-#animation-container {
-    position: fixed;
-    left: 1em;
-    width: .5em;
-    height: .5em;
-}
+
 
 
 button {
-    border: 0px solid;
+    border: 2px solid;
     background: none;
     color: inherit;
     padding: .4em .5em .25em .5em;
- 
     border-radius: 2em;
     background-color: inherit;
     font-family: 'CustomFont', sans-serif; 
@@ -124,18 +118,20 @@ button {
 
 #animation-container{
     position: fixed;
-    left: 1em;
-    width: .5em;
-    height: .5em; 
+    top: 4em;
+    left: 4em;
+    width: 3em;
+    height: 3em; 
 }
 
 
 #workButton,
+#funButton,
 #colourButton, 
 #aboutButton{
     transition: background-color 0.3s, color 0.3s;
 }
-
+#funButton:hover,
 #aboutButton:hover,
 #workButton:hover,
 #colourButton:hover {
@@ -238,8 +234,8 @@ button {
 .theme {
     font-family: "CustomFont", sans-serif;
     font-style: normal;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     user-select: none;
     transition: background-color 0.3s, color 0.3s;
 }
