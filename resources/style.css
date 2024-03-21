@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'CustomFont';
-    src: url('HELVETICANEUELTSTD-ROMAN.OTF') format('opentype');
+    src: url('HELVETICANEUELTSTD-MD.OTF') format('opentype');
 }
 
 body {
@@ -79,8 +79,6 @@ body {
     overflow: visible;
     margin: 1em auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -88,29 +86,47 @@ body {
     z-index: 20;
 }
 
+.buttonContainer {
+    position: fixed;
+    right: 1em;
+}
+
+#animation-container {
+    position: fixed;
+    left: 1em;
+    width: .5em;
+    height: .5em;
+}
+
+
 button {
-    border: 1px solid;
+    border: 0px solid;
     background: none;
     color: inherit;
-    padding: .9em .7em .7em .7em;
-    margin: 0 .5em;
+    padding: .4em .5em .25em .5em;
+ 
     border-radius: 2em;
     background-color: inherit;
     font-family: 'CustomFont', sans-serif; 
+    font-size: 30px;
 }
 
 
 
 #colourButton {
-    width: 3em;
-    height: 3em;
-    padding: .3em;
-    margin: 0 1em;
-    right: 0.1em;
-    position: fixed;
-    display: inline-block;
+    width: .5em;
+    padding: 0;
+    height: .5em;
     color: inherit;
     overflow: visible;
+   
+}
+
+#animation-container{
+    position: fixed;
+    left: 1em;
+    width: .5em;
+    height: .5em; 
 }
 
 
@@ -249,14 +265,13 @@ button {
 }
 
 
-
 .switch {
-    left: 1em;
     position: fixed;
     display: inline-block;
     width: 3.75em;
     height: 2.125em;
     overflow: visible;
+    
 }
 
 .switch input {

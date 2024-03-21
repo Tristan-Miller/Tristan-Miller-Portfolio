@@ -115,7 +115,7 @@ function changeColors() {
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
     aboutButton.style.color = textColor;
-    colourButton.style.backgroundColor = backgroundColor;
+    colourButton.style.backgroundColor = textColor;
     Switchy.style.backgroundColor = backgroundColor;
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
@@ -160,7 +160,7 @@ function changeColors() {
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
     Switchy.style.backgroundColor = backgroundColor;
-    colourButton.style.backgroundColor = backgroundColor;
+    colourButton.style.backgroundColor = textColor;
     imageOne.style.backgroundColor = textColor;
     imageTwo.style.backgroundColor = backgroundColor;
     imageThree.style.backgroundColor = backgroundColor;
@@ -189,30 +189,6 @@ function changeColors() {
   //document.querySelector('.switch input').addEventListener('change', changeColors);
   });
  
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('mouseover', function() {
-        this.style.backgroundColor = textColor;
-        this.style.color = backgroundColor;
-        
-    });
-
-    buttons[i].addEventListener('mouseout', function() {
-        // Reset to the original background color or any other desired color
-        if (workPageVis == true) {
-          workButton.style.color = backgroundColor;
-          workButton.style.backgroundColor = textColor;
-          aboutButton.style.backgroundColor = backgroundColor;
-          aboutButton.style.color = textColor;
-        } else if (aboutPageVis == true) {
-          workButton.style.color = textColor;
-          workButton.style.backgroundColor = backgroundColor;
-          aboutButton.style.backgroundColor = textColor;
-          aboutButton.style.color = backgroundColor;
-        } else {
-        this.style.backgroundColor = backgroundColor;
-        this.style.color = textColor;
-        }
-    });
-  }
+  
 
  
