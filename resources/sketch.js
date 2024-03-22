@@ -28,15 +28,26 @@ function selectBrush(index) {
 
 document.addEventListener('DOMContentLoaded', function () {
   funButton.addEventListener('click', function () {
+    var pagetotal = document.body.scrollHeight; // Total height of the webpage
+    var containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
+    var translateYValue = pagetotal - containerHeight; // Calculate the translateY value
+    var finalTranslate = translateYValue/2 + containerHeight/3 + 150; 
+    
     if(!funButtonPressed){ // Use !funButtonPressed instead of funButtonPressed == false
       brushesHolder.style.transform = 'translateY(-150px)'; // Corrected syntax for setting transform property
       drawingEnable = true; // Corrected assignment operator from == to =
       funButtonPressed = true; // Corrected assignment operator from == to =
       console.log(funButtonPressed);
+      showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
     } else { // Removed unnecessary condition since if funButtonPressed is not false, it must be true
       funButtonPressed = false; // Corrected assignment operator from == to =
       drawingEnable = false; // Corrected assignment operator from == to =
       brushesHolder.style.transform = 'translateY(0px)'; // Corrected syntax for setting transform property
+      var pagetotal = document.body.scrollHeight; // Total height of the webpage
+      var containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
+      var translateYValue = pagetotal - containerHeight; // Calculate the translateY value
+      var finalTranslate = translateYValue/2 + containerHeight/3; 
+      showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
     }
   });
    

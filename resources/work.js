@@ -5,11 +5,14 @@ const aboutButton = document.getElementById('aboutButton');
 const workContainer = document.getElementsByClassName('workContainer');
 const projectPage = document.getElementsByClassName('projectPage');
 const projectOne = document.getElementById('projectOne');
+const showreelVis = document.getElementById('showreelVis');
+const showreelContainer = document.getElementById('showreelContainer');
 const workButton = document.getElementById('workButton');
 const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 const fadeToBlack = document.getElementById('fadeToBlack');
+let reelVis = true;
 //const movingWorkFour = document.getElementsByClassName('movingWorkFour');
 
 function initializeMovingDivs(movingDivClass, tooltipId) {
@@ -325,3 +328,34 @@ function closeProject() {
   projectOne.style.opacity = 0;
   projectOne.style.zIndex = 0;
 }
+
+function closeShowreel() {
+  showreelVis.style.opacity = 0;
+  setTimeout(function() {
+    showreelVis.style.zIndex = 1;
+  }, 1000); // 1000 milliseconds = 1 second
+  var pagetotal = document.body.scrollHeight; // Total height of the webpage
+  var containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
+  var translateYValue = pagetotal - containerHeight; // Calculate the translateY value
+  var finalTranslate = translateYValue/2 + containerHeight/2.8; 
+  showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+  reelVis = false;
+ console.log('vis ' + reelVis);
+}
+
+function showReel(){
+  if (reelVis == false) {
+    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
+    showreelVis.style.zIndex = 1004;
+    setTimeout(function() {
+      showreelVis.style.opacity = 0.2;
+    }, 1000); // 1000 milliseconds = 1 second
+   
+    reelVis = true;
+    console.log('vis ' + reelVis);
+  } else if (reelVis == true) {
+    console.log('vis ' + reelVis);
+  }
+}
+
+window.onload = showReel;

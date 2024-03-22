@@ -161,27 +161,40 @@ button {
 }
 
 #showreelContainer {
-    
+   /* border: 2px solid red;*/
     width: 100%; /* Adjust width as needed */
-    height: 100%; /* Adjust height as needed */
+    height: auto; /* Adjust height as needed */
     position: fixed;
-    max-width: 1300px;
-    top: 50%;
+    max-width: 900px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%;
+    padding: 0.5em;
+    transform: translate(-50%, -50%); /* Move the container horizontally to the center */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 1005;
+    overflow: visible;
+    transition: 1s;
 }
 
 #showreel {
     height: auto; /* Let the height adjust according to the video's aspect ratio */
     width: 100%;
-    max-width: 100%;
-    z-index: 1003;
-    border-radius: 3em;
-    padding: .5em;
+    border-radius: 2em;
+   
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+#showreelVis {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 1004;
+    opacity: 0.2;
+    transition: 1s;
 }
 
 
@@ -629,4 +642,6 @@ footer {
  
     
 }
+
+
 
