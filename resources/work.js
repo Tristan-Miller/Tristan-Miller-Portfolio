@@ -361,7 +361,7 @@ function closeShowreel() {
   }, 1000); // 1000 milliseconds = 1 second
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
   setTimeout(function() {
-    showreelContainer.style.filter = 'blur(20px)';
+    showreelContainer.style.filter = 'blur(10px)';
   }, 250); 
   showreelContainer.style.zIndex = 1000;
   reelVis = false;
@@ -393,7 +393,7 @@ showreelContainer.addEventListener('mouseenter', function() {
 
 showreelContainer.addEventListener('mouseleave', function() {
   if (reelVis == false){
-  showreelContainer.style.filter = 'blur(20px)';
+  showreelContainer.style.filter = 'blur(10px)';
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
   }
 });
