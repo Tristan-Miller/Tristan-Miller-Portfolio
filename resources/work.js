@@ -12,7 +12,13 @@ const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 const fadeToBlack = document.getElementById('fadeToBlack');
-let reelVis = true;
+const movingWork = document.getElementById('containerDiv');
+let reelVis = false;
+let pagetotal = document.body.scrollHeight; // Total height of the webpage
+let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
+let translateYValue = pagetotal - containerHeight; // Calculate the translateY value
+let finalTranslate = translateYValue/2 + containerHeight/2.8; 
+let hideShowReel = translateYValue/2 + containerHeight/3 + 150; 
 //const movingWorkFour = document.getElementsByClassName('movingWorkFour');
 
 function initializeMovingDivs(movingDivClass, tooltipId) {
@@ -110,6 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
+        movingWork.style.display = 'none';
+        showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '0px';
         }
@@ -122,6 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 2;
         brushesHolder.style.zIndex = 3;
         workPageVis = false;
+        movingWork.style.display = 'initial';
+        showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '50px';
         }
@@ -153,6 +163,8 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
+        movingWork.style.display = 'none';
+        showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '0px';
         }
@@ -165,6 +177,8 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 2;
         brushesHolder.style.zIndex = 3;
         workPageVis = false;
+        movingWork.style.display = 'initial';
+        showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '50px';
         }
@@ -203,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
        // }
         brushesHolder.style.zIndex = 7;
         aboutPageVis = true;
+        showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
       } else {
         aboutPage[i].style.opacity = 0;
         aboutButton.style.backgroundColor = backgroundColor;
@@ -216,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //}
         brushesHolder.style.zIndex = 3;
         aboutPageVis = false;
+        showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
       }
     }
   });
@@ -249,6 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
        // }
         brushesHolder.style.zIndex = 7;
         aboutPageVis = true;
+        showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
       } else {
         aboutPage[i].style.opacity = 0;
         aboutButton.style.backgroundColor = backgroundColor;
@@ -261,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
        // }
         brushesHolder.style.zIndex = 3;
         aboutPageVis = false;
+        showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
       }
     }
   });
@@ -329,15 +347,18 @@ function closeProject() {
   projectOne.style.zIndex = 0;
 }
 
+function initiateReel(){
+  showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+  showreelVis.style.zIndex = 1;
+  showreelVis.style.opacity = 0;
+  reelVis = false;
+}
+
 function closeShowreel() {
   showreelVis.style.opacity = 0;
   setTimeout(function() {
     showreelVis.style.zIndex = 1;
   }, 1000); // 1000 milliseconds = 1 second
-  var pagetotal = document.body.scrollHeight; // Total height of the webpage
-  var containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
-  var translateYValue = pagetotal - containerHeight; // Calculate the translateY value
-  var finalTranslate = translateYValue/2 + containerHeight/2.8; 
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
   reelVis = false;
  console.log('vis ' + reelVis);
@@ -348,7 +369,7 @@ function showReel(){
     showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
     showreelVis.style.zIndex = 1004;
     setTimeout(function() {
-      showreelVis.style.opacity = 0.2;
+      showreelVis.style.opacity = 0.8;
     }, 1000); // 1000 milliseconds = 1 second
    
     reelVis = true;
@@ -357,5 +378,8 @@ function showReel(){
     console.log('vis ' + reelVis);
   }
 }
+
+
+
 
 window.onload = showReel;
