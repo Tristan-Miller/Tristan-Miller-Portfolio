@@ -76,22 +76,21 @@ body {
 }
 
 #header-holder {
-    overflow: hidden; /* Change overflow to hidden to prevent content from extending beyond its boundaries */
+    overflow: visible; /* Change overflow to hidden to prevent content from extending beyond its boundaries */
     margin: 0; /* Remove margin */
     padding: 0.5em; /* Add padding instead of margin */
-    display: flex;
-    position: fixed;
-    top: 0; /* Add top: 0 to stick the header to the top of the page */
-    left: 0; /* Add left: 0 to ensure it starts from the left edge of the viewport */
     height: 5em;
-    width: 100%;
     z-index: 1000;
-   /* border: 2px solid red;*/
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Make it full width */
+    position: absolute;
+    top: 0; /* Position at the top of the page */
 }
 
 .buttonContainer {
-    position: fixed;
-    right: .5em;
+    overflow: visible
 }
 
 
@@ -125,9 +124,6 @@ button {
 
 
 #animation-container {
-    position: fixed;
-    left: 10px; /* Adjust as needed */
-    top: 10px; /* Adjust as needed */
     width: auto;
     height: 3em;
 }
