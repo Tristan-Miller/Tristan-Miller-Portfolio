@@ -81,7 +81,7 @@ body {
     padding: 0.5em; /* Add padding instead of margin */
     height: 5em;
     z-index: 1000;
-    border: 2px solid red;
+  /*  border: 2px solid red;*/
     display: flex;
     justify-content: space-between;
     width: 100%; /* Make it full width */
