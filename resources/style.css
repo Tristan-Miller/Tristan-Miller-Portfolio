@@ -315,7 +315,6 @@ button {
     margin: 15px;
     border-radius: 5px;
     z-index: 1002;
-    text-transform: uppercase;
     mix-blend-mode: difference;
 }
 
@@ -603,7 +602,43 @@ containerDiv {
     max-width: 700px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
+
+    #showreelContainer {
+        top: 40%;
+    }   
+    #movingWork:hover {
+        transform: scale(1);
+        border-radius: 50%;
+    }
+
+    .workContainer {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: .7em;
+
+        box-sizing: border-box; /* Add this line */
+    }
+    
+    #custom-cursor {
+        visibility: hidden;
+      }
+
+      .projectTitle {
+        visibility: hidden;
+      }
+
+    * {
+        cursor: auto;
+       /* overflow: auto;  */
+    }
+
+   
+    
+}
+
+@media only screen and (max-height: 500px) and (orientation: landscape) {
    
     #movingWork:hover {
         transform: scale(1);
@@ -620,6 +655,10 @@ containerDiv {
     }
     
     #custom-cursor {
+        visibility: hidden;
+      }
+
+      .projectTitle {
         visibility: hidden;
       }
 
