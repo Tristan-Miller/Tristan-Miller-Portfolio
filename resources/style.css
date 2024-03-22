@@ -179,6 +179,11 @@ button {
     z-index: 1005;
     overflow: visible;
     transition: 1s;
+    filter: blur(0px);
+}
+
+#showreelContainer:hover {
+    transform: translate(-50%, 200%);
 }
 
 #showreel {
@@ -466,15 +471,17 @@ body,
 }
 
 #workPage{
+    
     transition: 0.3s;
     position: absolute;
     left: 0;
-    top: 0;
+    top: .3em;
     width: 100%;
     height: 100%;
     z-index: 1;  
     opacity: 0;
     align-items: baseline;
+    
 }
 
 #workPage img{

@@ -13,7 +13,7 @@ const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 const fadeToBlack = document.getElementById('fadeToBlack');
 const movingWork = document.getElementById('containerDiv');
-let reelVis = false;
+let reelVis = true;
 let pagetotal = document.body.scrollHeight; // Total height of the webpage
 let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
 let translateYValue = pagetotal - containerHeight; // Calculate the translateY value
@@ -360,18 +360,23 @@ function closeShowreel() {
     showreelVis.style.zIndex = 1;
   }, 1000); // 1000 milliseconds = 1 second
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+  setTimeout(function() {
+    showreelContainer.style.filter = 'blur(20px)';
+  }, 250); 
+  showreelContainer.style.zIndex = 1000;
   reelVis = false;
  console.log('vis ' + reelVis);
 }
 
 function showReel(){
   if (reelVis == false) {
+    showreelContainer.style.zIndex = 1006;
     showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
     showreelVis.style.zIndex = 1004;
     setTimeout(function() {
       showreelVis.style.opacity = 0.8;
     }, 1000); // 1000 milliseconds = 1 second
-   
+    showreelContainer.style.filter = 'blur(0px)';
     reelVis = true;
     console.log('vis ' + reelVis);
   } else if (reelVis == true) {
@@ -379,7 +384,32 @@ function showReel(){
   }
 }
 
+showreelContainer.addEventListener('mouseenter', function() {
+  if (reelVis == false){
+  showreelContainer.style.filter = 'blur(0px)';
+  showreelContainer.style.transform = 'translateY(' + (finalTranslate - 50) + 'px) translateX(-50%)';
+}
+});
+
+showreelContainer.addEventListener('mouseleave', function() {
+  if (reelVis == false){
+  showreelContainer.style.filter = 'blur(20px)';
+  showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+  }
+});
+
+function intialReelLoad(){
+  reelVis = true;
+    showreelContainer.style.zIndex = 1006;
+    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
+    showreelVis.style.zIndex = 1004;
+    setTimeout(function() {
+      showreelVis.style.opacity = 0.8;
+    }, 1000); // 1000 milliseconds = 1 second
+    showreelContainer.style.filter = 'blur(0px)';
+    console.log('vis ' + reelVis);
+}
 
 
 
-window.onload = showReel;
+window.onload = intialReelLoad;
