@@ -123,13 +123,14 @@ button {
    
 }
 
-#animation-container{
+#animation-container {
     position: fixed;
-    left:  5px;
-    top: .5em;
+    left: 10px; /* Adjust as needed */
+    top: 10px; /* Adjust as needed */
     width: auto;
-    height: 3em; 
+    height: 3em;
 }
+
 
 
 #workButton,
