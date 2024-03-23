@@ -6,6 +6,7 @@ const workPaged = document.getElementById('workPage');
 const aboutPage = document.getElementsByClassName('aboutPage');
 const aboutPage2 = document.getElementById('aboutPage');
 const brushes = document.getElementById('brushes');
+const colourButton = document.getElementById('animation-container');
 function getRandomColor() {
     // Generate a random color in hexadecimal format
     return '#' + Math.floor(Math.random()*16777215).toString(16);
