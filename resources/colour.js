@@ -116,7 +116,7 @@ function changeColors() {
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
     aboutButton.style.color = textColor;
-    colourButton.style.backgroundColor = backgroundColor;
+    //colourButton.style.backgroundColor = backgroundColor;
     funButton.style.backgroundColor = backgroundColor;
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
@@ -161,7 +161,7 @@ function changeColors() {
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
     funButton.style.backgroundColor = backgroundColor;
-    colourButton.style.backgroundColor = textColor;
+   //colourButton.style.backgroundColor = textColor;
     imageOne.style.backgroundColor = textColor;
     imageTwo.style.backgroundColor = backgroundColor;
     imageThree.style.backgroundColor = backgroundColor;

@@ -604,6 +604,17 @@ containerDiv {
 
 @media only screen and (max-width: 500px) {
 
+    button {
+        border: .05em solid;
+        background: none;
+        color: inherit;
+        padding: .4em .5em .2em .5em;
+        border-radius: 2em;
+        background-color: inherit;
+        font-family: 'CustomFont', sans-serif; 
+        font-size: 7vw;
+    }
+
     #showreelContainer {
         top: 40%;
     }   
