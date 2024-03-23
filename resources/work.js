@@ -355,6 +355,12 @@ function initiateReel(){
 }
 
 function closeShowreel() {
+  // Pause the video
+  var video = document.getElementById('showreel');
+  if (video) {
+    video.pause();
+  }
+
   showreelVis.style.opacity = 0;
   setTimeout(function() {
     showreelVis.style.zIndex = 1;
@@ -365,8 +371,9 @@ function closeShowreel() {
   }, 250); 
   showreelContainer.style.zIndex = 1000;
   reelVis = false;
- console.log('vis ' + reelVis);
+  console.log('vis ' + reelVis);
 }
+
 
 function showReel(){
   if (reelVis == false) {
@@ -409,6 +416,39 @@ function intialReelLoad(){
     showreelContainer.style.filter = 'blur(0px)';
     console.log('vis ' + reelVis);
 }
+
+// Function to create and append a mute button
+function createMuteButton() {
+  var video = document.getElementById('showreel');
+  if (video) {
+    // Create mute button
+    var muteButton = document.createElement('button');
+    muteButton.innerHTML = '<i class="material-icons">volume_off</i>';
+    muteButton.classList.add('mute-button');
+
+    // Add event listener to toggle mute/unmute
+    muteButton.addEventListener('click', function() {
+      if (video.muted) {
+        video.muted = false;
+        muteButton.innerHTML = '<i class="material-icons">volume_up</i>';
+      } else {
+        video.muted = true;
+        muteButton.innerHTML = '<i class="material-icons">volume_off</i>';
+      }
+    });
+
+    // Append the mute button to the video container
+    video.parentNode.insertBefore(muteButton, video.nextSibling);
+  }
+}
+
+// Call the function when the video is loaded
+document.getElementById('showreel').addEventListener('loadedmetadata', function() {
+  createMuteButton();
+});
+
+
+
 
 
 

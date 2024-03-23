@@ -118,9 +118,17 @@ function changeColors() {
     aboutButton.style.color = textColor;
     //colourButton.style.backgroundColor = backgroundColor;
     funButton.style.backgroundColor = backgroundColor;
+    funButton.style.color = textColor;
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
     brushes.style.color = textColor;
+    animation.addEventListener('DOMLoaded', function() {
+      var elements = animationContainer.querySelectorAll('.element-class'); // Replace '.element-class' with the actual class or ID of the elements you want to change
+
+      elements.forEach(function(element) {
+        element.setAttribute('fill', textColor); // Change the fill color of each element
+      });
+    });
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
       workButton.style.backgroundColor = textColor;

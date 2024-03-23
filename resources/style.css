@@ -84,6 +84,7 @@ body {
   /*  border: 2px solid red;*/
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%; /* Make it full width */
     position: absolute;
     top: 0; /* Position at the top of the page */
@@ -94,10 +95,21 @@ body {
 }
 
 
+.mute-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-size: 1em;
+    mix-blend-mode: difference;
+    color: white;
 
+  }
+
+  
 
 button {
-    border: .05em solid;
+    border: 1.5px solid;
     background: none;
     color: inherit;
     padding: .4em .5em .2em .5em;
@@ -124,8 +136,10 @@ button {
 
 
 #animation-container {
-    width: 5.547em;
-    height: 3em;
+    width:  3.698em;
+    height: 2em;
+    
+
 }
 
 
@@ -189,6 +203,8 @@ button {
    
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
+
+
 
 #showreelVis {
     position: fixed;
@@ -316,6 +332,8 @@ button {
     border-radius: 5px;
     z-index: 1002;
     mix-blend-mode: difference;
+    font-family: 'CustomFont', sans-serif; 
+    font-size: 2em;
 }
 
 
@@ -649,13 +667,15 @@ containerDiv {
     
 }
 
-@media only screen and (max-height: 500px) and (orientation: landscape) {
+@media only screen and (max-height: 600px) and (orientation: landscape) {
    
     #movingWork:hover {
         transform: scale(1);
         border-radius: 50%;
     }
-
+    #showreelContainer { 
+        max-width: 80%;
+    }
     .workContainer {
         width: 100%;
         height: auto;
