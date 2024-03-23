@@ -182,10 +182,7 @@ function changeColors() {
     // Initial color change
    // changeColors();
    setInitalColours();
-   colourButton.addEventListener('touchstart', function () {
-    // Iterate through all elements with the class 'workPage'
-    changeColors()
-   });
+ 
    
   //document.querySelector('.switch input').addEventListener('change', changeColors);
   });
