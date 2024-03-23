@@ -553,9 +553,9 @@ position: fixed;
    
     transition: 0.3s;
     opacity: 0;
-    font-size: 100%;
-   
-    text-transform: uppercase;
+    font-size: 1.5em;
+    color: white;
+    mix-blend-mode: difference;
 }
 
 #workContainerOne:hover h1, #workContainerTwo:hover h1, #workContainerThree:hover h1, #workContainerFour:hover h1, #workContainerFive:hover h1, #workContainerSix:hover h1 {
@@ -633,6 +633,10 @@ containerDiv {
         font-size: 7vw;
     }
 
+    #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1 {
+        opacity: 0;
+        }
+
     #showreelContainer {
         top: 40%;
     }   
@@ -684,6 +688,10 @@ containerDiv {
 
         box-sizing: border-box; /* Add this line */
     }
+    #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1 {
+        opacity: 0;
+        }
+   
     
     #custom-cursor {
         visibility: hidden;
@@ -704,6 +712,7 @@ containerDiv {
 
 .projectName {
     transition: opacity 0.5s ease-in-out;
+    font-size: 2em;
 }
 
 

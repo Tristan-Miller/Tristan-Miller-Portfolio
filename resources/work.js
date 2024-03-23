@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
-
+if (window.innerWidth > 600) {
 function changeImage(element) {
   document.getElementById('image1').src = 'resources/Images/peanuts.png';
 }
@@ -332,7 +332,7 @@ function changeImage6(element) {
 function resetImage6(element) {
   document.getElementById('image6').src = 'resources/Images/sydneyFestival.png';
 }
-
+}
 workContainerOne.addEventListener('click', function () {
   fadeToBlack.style.visibility = 'visible';
   fadeToBlack.style.opacity = 1;
