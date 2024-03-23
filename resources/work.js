@@ -449,7 +449,9 @@ document.getElementById('showreel').addEventListener('loadedmetadata', function(
 
 
 
-
+window.addEventListener("orientationchange", function() {
+  location.reload();
+});
 
 
 window.onload = intialReelLoad;
