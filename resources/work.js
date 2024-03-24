@@ -286,11 +286,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 if (window.innerWidth > 600) {
 function changeImage(element) {
-  document.getElementById('image1').src = 'resources/Images/peanuts.png';
+  document.getElementById('image1').src = 'resources/Images/Pencil-Interstitials_Yellow.gif';
 }
 
 function resetImage(element) {
-  document.getElementById('image1').src = 'resources/Images/sydneyFestival.png';
+  document.getElementById('image1').src = 'resources/Images/1498224365.png';
 }
 
 function changeImage2(element) {
@@ -446,6 +446,8 @@ function createMuteButton() {
 document.getElementById('showreel').addEventListener('loadedmetadata', function() {
   createMuteButton();
 });
+
+
 
 
 

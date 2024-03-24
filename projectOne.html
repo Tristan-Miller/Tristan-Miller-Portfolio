@@ -19,11 +19,21 @@
   <div id="custom-cursor"></div>
   <div id="fadeToBlack"></div>
   <main class="allMain">
-  <header id="header-holder">
-   <button id="closeButton" type="button" onclick="goBack()"><span class="material-symbols-outlined">
-     close
-     </span></button>
-     <h1 class="projectName">SYDNEY FESTIVAL</h1> 
+  <header id="header-holder-project">
+    <div onclick="changeColors()" id="animation-container"></div>
+    <script>
+      // Load animation
+      var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animation-container'), // Container to embed the animation
+        renderer: 'svg', // Renderer type
+        loop: true, // Whether the animation should loop
+        autoplay: true, // Whether the animation should play as soon as it's ready
+        path: 'TM_Logo_Animation.json' // Path to your JSON animation file
+      });
+    </script>
+    <h1 class="projectName">D&AD 2023</h1> 
+    <button onclick="goBack()" class="" id="closeButton" type="button" ><span class="material-symbols-outlined">
+     close</span></button>
  </header>
  
  <div id="projectOne" class="projectPage">
