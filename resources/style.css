@@ -664,7 +664,7 @@ position: fixed;
 #projectOneContainer {
     box-sizing: border-box;
     width: 100%;
-    border: red solid 2px; 
+   /* border: red solid 2px; */
    
     display: flex;
     flex-wrap: wrap;
