@@ -27,6 +27,7 @@
     <div class="container">
     </div>
     <div  id="showreelContainer">
+      <p id="showReelFooter">Showreel</p>
       <video onclick="showReel()" id="showreel" controls autoplay muted playsinline >
         <source src="resources/Images/Reel-2024_1.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -36,7 +37,7 @@
      <!-- Container for p5.js canvas -->
   <div id="canvas-container"></div>
 
-  <header  id="header-holder">
+  <header  class="header-holder">
     <div onclick="changeColors()" id="animation-container"></div>
     <script>
       // Load animation
@@ -151,27 +152,27 @@
   </main>
   <div id="workPage" class="workPage">
     <div id="allWorkContainer">
-      <div id="workContainerOne" class="workContainer" onmouseover="changeImage(this)" onmouseout="resetImage(this)">
+      <div id="workContainerOne" class="projectContainer" onmouseover="changeImage(this)" onmouseout="resetImage(this)">
         <h1>D&AD 2023</h1>
         <img id="image1" src="resources/Images/D_AD_Project_Static_A.jpg">
       </div>
-      <div id="workContainerTwo" class="workContainer" onmouseover="changeImage2(this)" onmouseout="resetImage2(this)">
+      <div id="workContainerTwo" class="projectContainer" onmouseover="changeImage2(this)" onmouseout="resetImage2(this)">
         <h1>Rolus</h1>
         <img id="image2" src="resources/Images/D_AD_Project_Static_B.jpg">
       </div>
-      <div id="workContainerThree" class="workContainer" onmouseover="changeImage3(this)" onmouseout="resetImage3(this)">
+      <div id="workContainerThree" class="projectContainer" onmouseover="changeImage3(this)" onmouseout="resetImage3(this)">
         <h1>Sydney Festival</h1>
         <img id="image3" src="resources/Images/dAndAD.png">
       </div>
-      <div id="workContainerFour" class="workContainer" onmouseover="changeImage4(this)" onmouseout="resetImage4(this)">
+      <div id="workContainerFour" class="projectContainer" onmouseover="changeImage4(this)" onmouseout="resetImage4(this)">
         <h1>Youi</h1>
         <img id="image4" src="resources/Images/hera.png">
       </div>
-      <div id="workContainerFive" class="workContainer" onmouseover="changeImage5(this)" onmouseout="resetImage5(this)">
+      <div id="workContainerFive" class="projectContainer" onmouseover="changeImage5(this)" onmouseout="resetImage5(this)">
         <h1>Peanut Packaging</h1>
         <img id="image5" src="resources/Images/optus.png">
       </div>
-      <div id="workContainerSix" class="workContainer" onmouseover="changeImage6(this)" onmouseout="resetImage6(this)">
+      <div id="workContainerSix" class="projectContainer" onmouseover="changeImage6(this)" onmouseout="resetImage6(this)">
         <h1>Weel</h1>
         <img id="image6" src="resources/Images/peanuts.png">
       </div>
@@ -183,7 +184,7 @@
       <p>Designed and developed by Tristan Miller</p>
     </footer>
   </div>
-  
+ 
 </body>
 
 </html>

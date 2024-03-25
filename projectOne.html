@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tristan Miller</title>
   <script src="resources/cursor.js" defer></script>
-  <script src="resources/workProject.js" defer></script>
+  <script src="resources/work.js" defer></script>
   
 
  
@@ -19,7 +19,7 @@
   <div id="custom-cursor"></div>
   <div id="fadeToBlack"></div>
   <main class="allMain">
-  <header id="header-holder-project">
+  <header  class="header-holder-project">
     <div onclick="changeColors()" id="animation-container"></div>
     <script>
       // Load animation
@@ -30,15 +30,16 @@
         autoplay: true, // Whether the animation should play as soon as it's ready
         path: 'TM_Logo_Animation.json' // Path to your JSON animation file
       });
-    </script> 
-
-    <button onclick="goBack()" class="" id="closeButton" type="button" ><span class="material-symbols-outlined">
-     close</span></button>
+    </script>
+   <div class="buttonContainer">  
+     <button onclick="goBack()" class="myButton" id="closeButton" type="button">Close</button>
+   </div>
+  
  </header>
 
  <div id="projectOne" class="projectPage">
   <video class="mainVideo" autoplay muted loop controls>
-    <source src="resources/Images/Youi_End frame_VO.mp4" type="video/mp4">
+    <source src="resources/Images/D&AD/Ceremony-OpeningReel-1920x1080-45sec.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
     <div id="projectOneContainer">

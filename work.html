@@ -7,61 +7,66 @@
   <title>Tristan Miller</title>
   <script src="resources/P5/p5.min.js"></script>
   <!-- <script src="resources/P5/addons/p5.sound.js"></script> -->
-  <script src="resources/sketch.js"></script>
-  <link rel="stylesheet" href="resources/styleWork.css">
+  <script src="resources/sketch.js" defer></script>
+  <script src="resources/work.js" defer></script>
+  <script src="resources/colour.js" defer></script>
+  <script src="resources/cursor.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.10/lottie.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ 
+  <link rel="stylesheet" href="resources/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://use.typekit.net/adn5sjd.css">
 </head>
 
 <body class="theme" id="themeContainer">
-  <main>
-    <header id="header-holder">
-      <ul class="Navbar">
-        <li>Work</li>
-        <li><a href="./index.html">Play</a></li>
-        <li>About</li>
-      </ul>
-    </header>
-    <div class="projectContainer">
-      <div class="workContainer">
-        <h3>Work</h3>
+  <div id="fadeToBlack"></div>
+  <div id="custom-cursor"></div>
+  <main class="allMain">
+    <header  class="header-holder">
+      <div onclick="goBack()" id="animation-container"></div>
+      <script>
+        // Load animation
+        var animation = bodymovin.loadAnimation({
+          container: document.getElementById('animation-container'), // Container to embed the animation
+          renderer: 'svg', // Renderer type
+          loop: true, // Whether the animation should loop
+          autoplay: true, // Whether the animation should play as soon as it's ready
+          path: 'TM_Logo_Animation.json' // Path to your JSON animation file
+        });
+      </script>
+      <div class="buttonContainer">  
+        <button class="myButton" id="workButton" type="button" >Work</button>
+        <button  class="myButton" id="aboutButton" type="button">About</button>  
       </div>
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-    </div>
-    <div class="projectContainer">
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-    </div>
-    <div class="projectContainer">
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-      <div class="workContainer">
-        <h3>Work</h3>
-      </div>
-      <div class="workContainer">
-        <h3>Work</h3>
+    </header>      
+    <div id="workPage" class="workPage">
+      <div id="allWorkContainer">
+        <div id="workContainerOne" class="projectContainer" onmouseover="changeImage(this)" onmouseout="resetImage(this)">
+          <h1>D&AD 2023</h1>
+          <img id="image1" src="resources/Images/D_AD_Project_Static_A.jpg">
+        </div>
+        <div id="workContainerTwo" class="projectContainer" onmouseover="changeImage2(this)" onmouseout="resetImage2(this)">
+          <h1>Rolus</h1>
+          <img id="image2" src="resources/Images/D_AD_Project_Static_B.jpg">
+        </div>
+        <div id="workContainerThree" class="projectContainer" onmouseover="changeImage3(this)" onmouseout="resetImage3(this)">
+          <h1>Sydney Festival</h1>
+          <img id="image3" src="resources/Images/dAndAD.png">
+        </div>
+        <div id="workContainerFour" class="projectContainer" onmouseover="changeImage4(this)" onmouseout="resetImage4(this)">
+          <h1>Youi</h1>
+          <img id="image4" src="resources/Images/hera.png">
+        </div>
+        <div id="workContainerFive" class="projectContainer" onmouseover="changeImage5(this)" onmouseout="resetImage5(this)">
+          <h1>Peanut Packaging</h1>
+          <img id="image5" src="resources/Images/optus.png">
+        </div>
+        <div id="workContainerSix" class="projectContainer" onmouseover="changeImage6(this)" onmouseout="resetImage6(this)">
+          <h1>Weel</h1>
+          <img id="image6" src="resources/Images/peanuts.png">
+        </div>
       </div>
     </div>
   </main>

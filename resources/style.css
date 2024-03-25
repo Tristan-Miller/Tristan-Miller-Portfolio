@@ -75,7 +75,7 @@ body {
     bottom: 0;
 }
 
-#header-holder {
+.header-holder {
     overflow: visible; /* Change overflow to hidden to prevent content from extending beyond its boundaries */
     margin: 0; /* Remove margin */
     padding: 1.4em .8em 1.4em 1.4em; /* Add padding instead of margin */
@@ -90,19 +90,19 @@ body {
     top: 1.4em; /* Position at the top of the page */
 }
 
-#header-holder-project {
+.header-holder-project {
     overflow: visible; /* Change overflow to hidden to prevent content from extending beyond its boundaries */
-   /* border: 2px solid red;*/
-    padding: 1.4em; /* Add padding instead of margin */
+    margin: 0; /* Remove margin */
+    padding: 1.4em .8em 1.4em 1.4em; /* Add padding instead of margin */
     height: 5em;
     z-index: 1000;
-    margin-top: 20px;
+    /* border: 2px solid red;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%; /* Make it full width */
     position: absolute;
-    top: 0; /* Position at the top of the page */
+    top: 1.4em; /* Position at the top of the page */
 }
 
 
@@ -123,6 +123,13 @@ body {
   }
 
   
+#closeButton {
+    border-radius: 0;
+    border-width: 0;
+   
+    color: white;
+    mix-blend-mode: difference;
+}
 
 button {
     border: 0px solid;
@@ -133,12 +140,9 @@ button {
     background-color: inherit;
     font-family: 'CustomFont', sans-serif; 
     font-size: 2em;
+    
 }
 
-#closeButton {
-    border-radius: 0;
-    border-width: 0;
-}
 
 #funButton {
     visibility: visible;
@@ -190,7 +194,7 @@ button {
     max-width: 900px;
     left: 50%;
     top: 50%;
-    padding: 0.5em;
+   
     transform: translate(-50%, 250%); /* Move the container horizontally to the center */
     display: flex;
     flex-direction: column;
@@ -210,10 +214,13 @@ button {
     height: auto; /* Let the height adjust according to the video's aspect ratio */
     width: 100%;
     border-radius: 2em;
-   
+    transition: 1s;
+    filter: blur(0px);
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
-
+#showreelTitle {
+    border: 1px pink solid;
+}
 
 
 #showreelVis {
@@ -225,6 +232,19 @@ button {
     opacity: 0;
     transition: 1s;
 }
+
+#showReelFooter {
+    position: fixed;
+    z-index: 9001;
+    color: white;
+    mix-blend-mode: difference;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+    text-align: center;
+}
+
 
 
 #showreel video {
@@ -292,7 +312,9 @@ button {
 }
 
 .material-symbols-outlined {
-    
+    border: 1px red solid;
+    padding: 0;
+    margin: 0;
     font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
 }
 
@@ -527,11 +549,24 @@ body,
    
     
 }
-
+.projectContainer {
+    box-sizing: border-box;
+    width: 50%;
+    
+    height: auto;
+    margin: 0; 
+    padding: 1vw;
+    transition: .3s;
+    position: relative;
+    overflow: hidden;
+    top: 50px; 
+    /* border: 2px solid red; */
+    
+}
 
 .workContainer {
     box-sizing: border-box;
-    width: 50%;
+    width: 100%;
     
     height: auto;
     margin: 0; 
@@ -547,10 +582,13 @@ body,
 
 
 
-.projectPage .workContainer {
-    width: 70%;
+
+.projectContainer img {
+    transition: .3s;
+    border-radius: 5px;
 }
-.workContainer img {
+
+.projectContainer img {
     transition: .3s;
     border-radius: 5px;
 }
@@ -677,7 +715,7 @@ position: fixed;
 @media only screen and (max-width: 500px) {
 
     button {
-        border: .05em solid;
+        border: .0em solid;
         background: none;
         color: inherit;
         padding: .4em .5em .2em .5em;
@@ -700,6 +738,15 @@ position: fixed;
     }
 
     .workContainer {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: .7em;
+
+        box-sizing: border-box; /* Add this line */
+    }
+
+    .projectContainer {
         width: 100%;
         height: auto;
         margin: 0;
@@ -742,6 +789,15 @@ position: fixed;
 
         box-sizing: border-box; /* Add this line */
     }
+
+    .projectContainer {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: .7em;
+
+        box-sizing: border-box; /* Add this line */
+    }
     #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1 {
         opacity: 0;
         }
@@ -769,23 +825,29 @@ position: fixed;
         width: 100%;
         
     }
+    .projectContainer {
+        width: 100%;
+        
+    }
 }
 
 @media only screen and (min-width: 500px) {
-    #workPage .workContainer:hover {
+   
+
+    #workPage .projectContainer:hover {
         transform: scale(1.02);
     }
 }
 
 
 @media only screen and (min-width: 1200px) {
-    #header-holder {
+    .header-holder {
         padding: 1.4em 10vw 1.4em 11vw; /* Add padding instead of margin */
       
     
     }
     #allWorkContainer {
-        padding: 7em 1vw 1vw 1vw;
+        padding: 7em 10vw 1vw 10vw;
        
         
     }

@@ -7,7 +7,9 @@ const projectPage = document.getElementsByClassName('projectPage');
 const projectOne = document.getElementById('projectOne');
 const showreelVis = document.getElementById('showreelVis');
 const showreelContainer = document.getElementById('showreelContainer');
+const showreel = document.getElementById('showreel');
 const workButton = document.getElementById('workButton');
+const showReelFooter = document.getElementById('showReelFooter');
 const workContainerOne = document.getElementById('workContainerOne');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
@@ -47,7 +49,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
     });
 
     function moveDiv() {
-      const speed = 1.5;
+      const speed = 1;
       let x = Math.floor(Math.random() * window.innerWidth / 1.8);
       let y = Math.floor(Math.random() * window.innerHeight / 1.8);
 
@@ -342,10 +344,7 @@ workContainerOne.addEventListener('click', function () {
 });
 
 
-function closeProject() {
-  projectOne.style.opacity = 0;
-  projectOne.style.zIndex = 0;
-}
+
 
 function initiateReel(){
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
@@ -367,7 +366,7 @@ function closeShowreel() {
   }, 1000); // 1000 milliseconds = 1 second
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
   setTimeout(function() {
-    showreelContainer.style.filter = 'blur(10px)';
+    showreel.style.filter = 'blur(10px)';
   }, 250); 
   showreelContainer.style.zIndex = 1000;
   reelVis = false;
@@ -383,7 +382,7 @@ function showReel(){
     setTimeout(function() {
       showreelVis.style.opacity = 0.8;
     }, 1000); // 1000 milliseconds = 1 second
-    showreelContainer.style.filter = 'blur(0px)';
+    showreel.style.filter = 'blur(0px)';
     reelVis = true;
     console.log('vis ' + reelVis);
   } else if (reelVis == true) {
@@ -393,14 +392,23 @@ function showReel(){
 
 showreelContainer.addEventListener('mouseenter', function() {
   if (reelVis == false){
-  showreelContainer.style.filter = 'blur(0px)';
+    showreel.style.filter = 'blur(0px)';
   showreelContainer.style.transform = 'translateY(' + (finalTranslate - 50) + 'px) translateX(-50%)';
+  showReelFooter.style.opacity = 0;
+  setTimeout(function() {
+    showReelFooter.style.display = 'none';
+  }, 300); // 1000 milliseconds = 1 second
+  
 }
 });
 
 showreelContainer.addEventListener('mouseleave', function() {
   if (reelVis == false){
-  showreelContainer.style.filter = 'blur(10px)';
+    showreel.style.filter = 'blur(10px)';
+      showReelFooter.style.display = 'initial';
+      setTimeout(function() {
+    showReelFooter.style.opacity = 1;
+     }, 1);
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
   }
 });
@@ -413,7 +421,7 @@ function intialReelLoad(){
     setTimeout(function() {
       showreelVis.style.opacity = 0.8;
     }, 1000); // 1000 milliseconds = 1 second
-    showreelContainer.style.filter = 'blur(0px)';
+    showreel.style.filter = 'blur(0px)';
     console.log('vis ' + reelVis);
 }
 
@@ -456,4 +464,13 @@ window.addEventListener("orientationchange", function() {
 });
 
 
-window.onload = intialReelLoad;
+function goBack() {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  intialLoad = true;
+  setTimeout(function () {
+    window.location.href = 'index.html';
+  }, 300);
+}
+
+window.onload = closeShowreel;
