@@ -52,7 +52,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
       let y = Math.floor(Math.random() * window.innerHeight / 1.8);
 
       function update() {
-        if (!isHovered) {
+        if (!isHovered && !workPageVis && !drawingEnable) {
           const rect = movingDiv.getBoundingClientRect();
 
           if (x < 0 || x + rect.width > window.innerWidth) {
@@ -284,21 +284,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
-if (window.innerWidth > 600) {
+if (window.innerWidth > 500) {
 function changeImage(element) {
-  document.getElementById('image1').src = 'resources/Images/Pencil-Interstitials_Yellow.gif';
+  document.getElementById('image1').src = 'resources/Images/D_AD_Project_Motion_A.gif';
 }
 
 function resetImage(element) {
-  document.getElementById('image1').src = 'resources/Images/1498224365.png';
+  document.getElementById('image1').src = 'resources/Images/D_AD_Project_Static_A.jpg';
 }
 
 function changeImage2(element) {
-  document.getElementById('image2').src = 'resources/Images/peanuts.png';
+  document.getElementById('image2').src = 'resources/Images/D_AD_Project_Motion_B.gif';
 }
 
 function resetImage2(element) {
-  document.getElementById('image2').src = 'resources/Images/sydneyFestival.png';
+  document.getElementById('image2').src = 'resources/Images/D_AD_Project_Static_B.jpg';
 }
 
 function changeImage3(element) {

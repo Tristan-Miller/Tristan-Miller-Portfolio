@@ -78,22 +78,22 @@ body {
 #header-holder {
     overflow: visible; /* Change overflow to hidden to prevent content from extending beyond its boundaries */
     margin: 0; /* Remove margin */
-    padding: 0.5em; /* Add padding instead of margin */
+    padding: 1.4em .8em 1.4em 1.4em; /* Add padding instead of margin */
     height: 5em;
     z-index: 1000;
-  /*  border: 2px solid red;*/
+    /* border: 2px solid red;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%; /* Make it full width */
     position: absolute;
-    top: 0; /* Position at the top of the page */
+    top: 1.4em; /* Position at the top of the page */
 }
 
 #header-holder-project {
     overflow: visible; /* Change overflow to hidden to prevent content from extending beyond its boundaries */
    /* border: 2px solid red;*/
-    padding: 0.5em; /* Add padding instead of margin */
+    padding: 1.4em; /* Add padding instead of margin */
     height: 5em;
     z-index: 1000;
     margin-top: 20px;
@@ -125,7 +125,7 @@ body {
   
 
 button {
-    border: 1.5px solid;
+    border: 0px solid;
     background: none;
     color: inherit;
     padding: .4em .5em .2em .5em;
@@ -157,9 +157,9 @@ button {
 
 
 #animation-container {
-    width:  3.698em;
-    height: 2em;
-    
+    width:  7.396em;
+    height: 4em;
+    border: 2px solid red;
 
 }
 
@@ -522,8 +522,10 @@ body,
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 3.8em 0.7em 0.7em 0.7em;
+    margin-top: 7em;
+    padding: 1vw;
     opacity: 1;
+   
     
 }
 
@@ -531,9 +533,10 @@ body,
 .workContainer {
     box-sizing: border-box;
     width: 50%;
+    
     height: auto;
     margin: 0; 
-    padding: 0.7em;
+    padding: 1vw;
     transition: .3s;
     position: relative;
     overflow: hidden;
@@ -553,9 +556,7 @@ body,
     border-radius: 5px;
 }
 
-#workPage .workContainer:hover {
-    transform: scale(1.02);
-}
+
 
 #workContainerOne, #workContainerTwo, #workContainerThree, #workContainerFour, #workContainerFive, #workContainerSix {
 display: flex;
@@ -725,13 +726,51 @@ containerDiv {
     
 }
 
+@media only screen and (max-width: 800px) {
+    .workContainer {
+        width: 100%;
+        
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    #workPage .workContainer:hover {
+        transform: scale(1.02);
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    #header-holder {
+        padding: 1.4em 10vw 1.4em 11vw; /* Add padding instead of margin */
+      
+    
+    }
+    #allWorkContainer {
+        transition: 0.3s;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: scroll;
+        flex-wrap: wrap;
+        margin-top: 7em;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0 10vw 0 10vw;;
+        opacity: 1;
+       
+        
+    }
+}
+
 .projectName {
     transition: opacity 0.5s ease-in-out;
     font-size: 5vw;
     padding-top: 10px;
     color: black;
    
-
+}
 
 
 footer {
