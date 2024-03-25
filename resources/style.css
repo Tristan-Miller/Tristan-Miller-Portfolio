@@ -52,7 +52,7 @@ body {
     height: 100%;
     opacity: 0;
     background-color: white;
-    z-index: 999;
+    z-index: 9999;
 }
 
 #custom-cursor {
@@ -157,9 +157,9 @@ button {
 
 
 #animation-container {
-    width:  7.396em;
-    height: 4em;
-    border: 2px solid red;
+    width:  3.698em;
+    height: 2em;
+   /*border: 2px solid red;*/
 
 }
 
@@ -522,8 +522,7 @@ body,
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 7em;
-    padding: 1vw;
+    padding: 7em 1vw 1vw 1vw;
     opacity: 1;
    
     
@@ -585,7 +584,7 @@ position: fixed;
     width: 100%;
     height: 100%;
     align-items: baseline;
-    
+    overflow: scroll;
     transition: 0.3s;
    
 }
@@ -593,6 +592,7 @@ position: fixed;
 #projectOne {
     opacity: 1;
     z-index: 0;
+    
 }
 
 .projectPage img{
@@ -600,21 +600,9 @@ position: fixed;
     height: 100%;
 }
 
-#projectOneContainer {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    overflow: scroll;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 3.8em 0.7em 0.7em 0.7em;
-}
 
-containerDiv {
-    display: initial;
-}
+
+
 
 .videoContainer {
    /* border: red solid 2px; */
@@ -628,13 +616,63 @@ containerDiv {
     border-radius: 5px;
 }
 
-.projectExplainer {
-   /* border: red solid 4px; */
-    box-sizing: border-box;
-    margin: 50px 0 0 0;
-    width: 80%;
-    max-width: 700px;
+.mainVideo {
+ width: 100vw;
 }
+
+.projectName {
+    transition: opacity 0.5s ease-in-out;
+    color: black;
+    /* border: blue solid 2px; */
+    width: 50%;
+    margin: 0;
+}
+
+.projectDate {
+    transition: opacity 0.5s ease-in-out;
+    color: black;
+     /*border: blue solid 2px; */
+    width: 50%;
+    margin: 0;
+}
+
+.emptyDiv {
+    margin: 0;
+   /* border: pink solid 2px; */
+    width: 50%;
+}
+
+.projectText {
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   /* border: red solid 2px; */
+   
+}
+
+.projectExplainer {
+    width: 50%;
+    /* border: greenyellow solid 2px; */
+    margin: 2em 0 0 0;
+   
+}
+
+#projectOneContainer {
+    box-sizing: border-box;
+    width: 100%;
+    border: red solid 2px; 
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3.8em 0.7em 0.7em 0.7em;
+}
+
 
 @media only screen and (max-width: 500px) {
 
@@ -747,30 +785,18 @@ containerDiv {
     
     }
     #allWorkContainer {
-        transition: 0.3s;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        overflow: scroll;
-        flex-wrap: wrap;
-        margin-top: 7em;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 0 10vw 0 10vw;;
-        opacity: 1;
+        padding: 7em 1vw 1vw 1vw;
        
         
     }
+
+    #projectOneContainer {
+        padding: 3.5em 10vw 3.5em 10vw;
+    }
+    
 }
 
-.projectName {
-    transition: opacity 0.5s ease-in-out;
-    font-size: 5vw;
-    padding-top: 10px;
-    color: black;
-   
-}
+
 
 
 footer {

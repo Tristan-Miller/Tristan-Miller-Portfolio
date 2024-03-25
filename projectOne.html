@@ -30,22 +30,26 @@
         autoplay: true, // Whether the animation should play as soon as it's ready
         path: 'TM_Logo_Animation.json' // Path to your JSON animation file
       });
-    </script>
-    <h1 class="projectName">D&AD 2023</h1> 
+    </script> 
+
     <button onclick="goBack()" class="" id="closeButton" type="button" ><span class="material-symbols-outlined">
      close</span></button>
  </header>
- 
+
  <div id="projectOne" class="projectPage">
+  <video class="mainVideo" autoplay muted loop controls>
+    <source src="resources/Images/Youi_End frame_VO.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
     <div id="projectOneContainer">
-      
-        
-       <p class="projectExplainer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat erat purus, at eleifend neque tincidunt a. Proin quis sagittis lorem. Vestibulum sit amet metus rutrum, faucibus mi ac, luctus nisl. Nullam condimentum turpis in nulla convallis ultrices.</p>
-      <div  class="workContainer">
-        <video class="videoContainer" autoplay muted loop>
-          <source src="resources/Images/Youi_End frame_VO.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <div class="projectText"> 
+        <p class="projectName">D&AD</p> 
+        <p class="projectDate">2023</p> 
+        <div class="emptyDiv"></div>
+        <p class="projectExplainer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat erat purus, at eleifend neque tincidunt a. Proin quis sagittis lorem. Vestibulum sit amet metus rutrum, faucibus mi ac, luctus nisl. Nullam condimentum turpis in nulla convallis ultrices.</p>
+      </div>
+       <div  class="workContainer">
+        <img src="resources/Images/brocc.png">
       </div>
       <div class="workContainer">
         <img src="resources/Images/brocc.png">
