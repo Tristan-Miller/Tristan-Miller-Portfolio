@@ -1,5 +1,6 @@
 let workPageVis = false;
 const workPages = document.getElementsByClassName('workPage');
+const movingWorkOne = document.getElementsByClassName('movingWorkOne')[0];
 let aboutPageVis = false;
 const aboutButton = document.getElementById('aboutButton');
 const workContainer = document.getElementsByClassName('workContainer');
@@ -86,8 +87,8 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
   }
 }
 
-initializeMovingDivs("movingWorkOne", "sydneyFestival");
-initializeMovingDivs("movingWorkTwo", "weel");
+initializeMovingDivs("movingWorkOne", "D_AD");
+initializeMovingDivs("movingWorkTwo", "sydneyFestival");
 initializeMovingDivs("movingWorkThree", "rolus");
 ////initializeMovingDivs("movingWorkFour", "youi");
 //initializeMovingDivs("movingWorkFive", "personal");
@@ -142,52 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  workButton.addEventListener('touchstart', function () {
-    for (let i = 0; i < aboutPage.length; i++) {
-      const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
-      funButton.style.visibility = "hidden";
-      drawingEnable = false;
-      brushesHolder.style.transform = 'translateY(0px)'; 
-    aboutPageVis = false;
-    aboutPage[i].style.opacity = 0;
-    aboutButton.style.backgroundColor = backgroundColor;
-    aboutButton.style.color = textColor;
-    aboutPage[i].style.zIndex = 1;
-    }
-    for (let i = 0; i < workPages.length; i++) {
-      const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
-
-      if (currentOpacity === 0) {
-        workPages[i].style.opacity = 1;
-        workButton.style.backgroundColor = textColor;
-        workButton.style.color = backgroundColor;
-        workPages[i].style.backgroundColor = backgroundColor;
-        workPages[i].style.zIndex = 4;
-        canvasContainer.style.zIndex = 5;
-        brushesHolder.style.zIndex = 6;
-        workPageVis = true;
-        movingWork.style.display = 'none';
-        showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
-        for (let j = 0; j < workContainer.length; j++) {
-          workContainer[j].style.top = '0px';
-        }
-      } else {
-        workPages[i].style.opacity = 0;
-        funButton.style.visibility = "visible";
-        workButton.style.backgroundColor = backgroundColor;
-        workButton.style.color = textColor;
-        workPages[i].style.zIndex = 1;
-        canvasContainer.style.zIndex = 2;
-        brushesHolder.style.zIndex = 3;
-        workPageVis = false;
-        movingWork.style.display = 'initial';
-        showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
-        for (let j = 0; j < workContainer.length; j++) {
-          workContainer[j].style.top = '50px';
-        }
-      }
-    }
-  });
+  
 
   //Contact Page
 
@@ -291,6 +247,13 @@ workContainerOne.addEventListener('click', function () {
   }, 300);
 });
 
+movingWorkOne.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectOne.html';
+  }, 300);
+});
 
 
 
