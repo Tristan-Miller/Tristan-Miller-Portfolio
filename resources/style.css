@@ -41,7 +41,7 @@ body {
 * {
     cursor: none;
     box-sizing: border-box
-  /*  overflow: hidden; */
+    
 }
 
 #fadeToBlack {
@@ -56,7 +56,7 @@ body {
 }
 
 #custom-cursor {
-    position: fixed;
+      position: fixed;
       width: 20px;
       height: 20px;
       border-radius: 50%;
@@ -76,33 +76,18 @@ body {
 }
 
 .header-holder {
-    overflow: visible; /* Change overflow to hidden to prevent content from extending beyond its boundaries */
-    margin: 0; /* Remove margin */
-    padding: 1.4em .8em 1.4em 1.4em; /* Add padding instead of margin */
+    overflow: visible;
+    margin-top: 20px;
+    padding: 0 20px 0 20px;
     height: 5em;
     z-index: 1000;
-    /* border: 2px solid red;*/
+    /*border: 2px solid red;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%; /* Make it full width */
     position: absolute;
-    top: 1.4em; /* Position at the top of the page */
-}
-
-.header-holder-project {
-    overflow: visible; /* Change overflow to hidden to prevent content from extending beyond its boundaries */
-    margin: 0; /* Remove margin */
-    padding: 1.4em .8em 1.4em 1.4em; /* Add padding instead of margin */
-    height: 5em;
-    z-index: 1000;
-    /* border: 2px solid red;*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Make it full width */
-    position: absolute;
-    top: 1.4em; /* Position at the top of the page */
+    top: 0 /* Position at the top of the page */
 }
 
 
@@ -124,22 +109,19 @@ body {
 
   
 #closeButton {
-    border-radius: 0;
     border-width: 0;
-   
-    color: white;
+    background-color: white; 
     mix-blend-mode: difference;
 }
 
 button {
     border: 0px solid;
-    background: none;
     color: inherit;
     padding: .4em .5em .2em .5em;
     border-radius: 2em;
     background-color: inherit;
     font-family: 'CustomFont', sans-serif; 
-    font-size: 2em;
+    font-size: 2.5em;
     
 }
 
@@ -163,7 +145,7 @@ button {
 #animation-container {
     width:  3.698em;
     height: 2em;
-   /*border: 2px solid red;*/
+    border: 2px solid red;
 
 }
 
@@ -243,6 +225,7 @@ button {
     transform: translateX(-50%);
     transition: .3s;
     text-align: center;
+    opacity: 1;
 }
 
 
@@ -287,14 +270,6 @@ button {
   
 }
 
-
-#reset-button {
-    background-color: #e5e5e5;
-    border: black solid 1px;
-    padding: 5px;
-    border-radius: 50%;
-}
-
 #canvasControls {
     position: fixed;
     bottom: 30px;
@@ -312,30 +287,13 @@ button {
 }
 
 .material-symbols-outlined {
-    border: 1px red solid;
     padding: 0;
     margin: 0;
     font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
 }
 
 
-.Navbar {
-    position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-.Navbar li {
-    padding: 0px 10px;
-    list-style: none;
-    display: inline-block;
-}
-
-#Palette-Button {
-    position: fixed;
-    right: 20px;
-}
 
 .theme {
     font-family: "CustomFont", sans-serif;
@@ -368,70 +326,6 @@ button {
     font-size: 2em;
 }
 
-
-.switch {
-    position: fixed;
-    display: inline-block;
-    width: 3.75em;
-    height: 2.125em;
-    overflow: visible;
-    right: 2em;
-    top: 1.5em;
-    
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-#Switchy {
-  transition: visibility 0.3s;
-   visibility: visible;
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    outline: solid 2px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 1.625em;
-    width: 1.625em;
-    left: 0.25em;
-    bottom: 0.25em;
-    outline: solid 2px;
-    -webkit-transition: .4s;
-    transition: width 0.4s, height 0.4s, transform 0.4s;
-}
-
-input:checked + .slider {
-}
-
-input:focus + .slider {
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(1.625em);
-    -ms-transform: translateX(1.625em);
-    transform: translateX(1.625em);
-    background-color: currentColor;
-}
-
-.slider.round {
-    border-radius: 2.125em;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
 
 #brushes-holder {
     
@@ -544,7 +438,7 @@ body,
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 7em 1vw 1vw 1vw;
+    padding: 80px 10px 10px 10px;
     opacity: 1;
    
     
@@ -552,10 +446,9 @@ body,
 .projectContainer {
     box-sizing: border-box;
     width: 50%;
-    
     height: auto;
-    margin: 0; 
-    padding: 1vw;
+    padding: 10px; 
+    margin: 0;
     transition: .3s;
     position: relative;
     overflow: hidden;
@@ -565,32 +458,19 @@ body,
 }
 
 .workContainer {
-    box-sizing: border-box;
     width: 100%;
-    
     height: auto;
-    margin: 0; 
-    padding: 1vw;
+    box-sizing: border-box;
+    margin: 0 0 80px 0;
+    padding: 0; 
     transition: .3s;
     position: relative;
-    overflow: hidden;
-    top: 50px; 
-    /* border: 2px solid red; */
-    
-}
-
-
-
-
-
-.projectContainer img {
-    transition: .3s;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 .projectContainer img {
     transition: .3s;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 
@@ -633,29 +513,16 @@ position: fixed;
     
 }
 
-.projectPage img{
-    width: 100%;
-    height: 100%;
-}
 
 
 
 
 
-.videoContainer {
-   /* border: red solid 2px; */
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    transition: .3s;
-
-    position: relative;
-
-    border-radius: 5px;
-}
 
 .mainVideo {
- width: 100vw;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
 }
 
 .projectName {
@@ -672,6 +539,7 @@ position: fixed;
      /*border: blue solid 2px; */
     width: 50%;
     margin: 0;
+    opacity: .5;
 }
 
 .emptyDiv {
@@ -682,47 +550,45 @@ position: fixed;
 
 .projectText {
    padding: 0;
-   margin: 0;
+   margin: 80px 0;
    width: 100%;
    height: 100%;
    display: flex;
    flex-wrap: wrap;
    align-items: flex-start;
-   /* border: red solid 2px; */
+    /*border: red solid 2px;*/
    
 }
 
 .projectExplainer {
     width: 50%;
-    /* border: greenyellow solid 2px; */
-    margin: 2em 0 0 0;
+    /* border: greenyellow solid 2px;*/
+    margin: 40px 0 0 0;
    
 }
 
-#projectOneContainer {
+#fullProjectContainer {
     box-sizing: border-box;
     width: 100%;
-   /* border: red solid 2px; */
-   
+    /* border: blue solid 2px;*/
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    padding: 3.8em 0.7em 0.7em 0.7em;
+    padding: 0 20px;
 }
 
 
 @media only screen and (max-width: 500px) {
+    .header-holder {
+        margin-top: 0;
+    }
 
     button {
-        border: .0em solid;
-        background: none;
-        color: inherit;
-        padding: .4em .5em .2em .5em;
-        border-radius: 2em;
-        background-color: inherit;
-        font-family: 'CustomFont', sans-serif; 
         font-size: 7vw;
+        border-width: 1.5px;
+        margin: 0;
     }
 
     #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1 {
@@ -737,20 +603,10 @@ position: fixed;
         border-radius: 50%;
     }
 
-    .workContainer {
-        width: 100%;
-        height: auto;
-        margin: 0;
-        padding: .7em;
-
-        box-sizing: border-box; /* Add this line */
-    }
-
     .projectContainer {
         width: 100%;
         height: auto;
         margin: 0;
-        padding: .7em;
 
         box-sizing: border-box; /* Add this line */
     }
@@ -785,17 +641,12 @@ position: fixed;
         width: 100%;
         height: auto;
         margin: 0;
-        padding: .7em;
-
-        box-sizing: border-box; /* Add this line */
     }
 
     .projectContainer {
         width: 100%;
         height: auto;
         margin: 0;
-        padding: .7em;
-
         box-sizing: border-box; /* Add this line */
     }
     #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1 {
@@ -829,6 +680,17 @@ position: fixed;
         width: 100%;
         
     }
+
+    .projectExplainer {
+        width: 100%;
+    }
+
+    .projectDate {
+        width: 100%;
+        padding-top: 2px;
+    }
+
+    
 }
 
 @media only screen and (min-width: 500px) {
@@ -842,18 +704,18 @@ position: fixed;
 
 @media only screen and (min-width: 1200px) {
     .header-holder {
-        padding: 1.4em 10vw 1.4em 11vw; /* Add padding instead of margin */
+        padding:0vw 11vw 0vw 11vw; /* Add padding instead of margin */
       
     
     }
     #allWorkContainer {
-        padding: 7em 10vw 1vw 10vw;
+        padding: 5em 10vw 1vw 10vw;
        
         
     }
 
-    #projectOneContainer {
-        padding: 3.5em 10vw 3.5em 10vw;
+    #fullProjectContainer {
+        padding: 0vw 10vw 1vw 10vw;
     }
     
 }

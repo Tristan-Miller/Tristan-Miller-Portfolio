@@ -15,6 +15,7 @@ const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 const fadeToBlack = document.getElementById('fadeToBlack');
 const movingWork = document.getElementById('containerDiv');
+const muteButton = document.createElement('button');
 let reelVis = true;
 let pagetotal = document.body.scrollHeight; // Total height of the webpage
 let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
@@ -359,7 +360,11 @@ function closeShowreel() {
   if (video) {
     video.pause();
   }
-
+  showReelFooter.style.display = 'initial';
+  setTimeout(function() {
+    showReelFooter.style.opacity = 1;
+    muteButton.style.opacity = 0;
+ }, 1);
   showreelVis.style.opacity = 0;
   setTimeout(function() {
     showreelVis.style.zIndex = 1;
@@ -379,6 +384,7 @@ function showReel(){
     showreelContainer.style.zIndex = 1006;
     showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
     showreelVis.style.zIndex = 1004;
+    muteButton.style.opacity = 1;
     setTimeout(function() {
       showreelVis.style.opacity = 0.8;
     }, 1000); // 1000 milliseconds = 1 second
@@ -407,7 +413,8 @@ showreelContainer.addEventListener('mouseleave', function() {
     showreel.style.filter = 'blur(10px)';
       showReelFooter.style.display = 'initial';
       setTimeout(function() {
-    showReelFooter.style.opacity = 1;
+        showReelFooter.style.opacity = 1;
+        muteButton.style.opacity = 0;
      }, 1);
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
   }
@@ -430,10 +437,10 @@ function createMuteButton() {
   var video = document.getElementById('showreel');
   if (video) {
     // Create mute button
-    var muteButton = document.createElement('button');
+  
     muteButton.innerHTML = '<i class="material-icons">volume_off</i>';
     muteButton.classList.add('mute-button');
-
+    muteButton.style.opacity = 0;
     // Add event listener to toggle mute/unmute
     muteButton.addEventListener('click', function() {
       if (video.muted) {
@@ -472,5 +479,6 @@ function goBack() {
     window.location.href = 'index.html';
   }, 300);
 }
+
 
 window.onload = closeShowreel;

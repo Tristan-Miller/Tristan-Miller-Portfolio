@@ -7,6 +7,10 @@ const aboutPage = document.getElementsByClassName('aboutPage');
 const aboutPage2 = document.getElementById('aboutPage');
 const brushes = document.getElementById('brushes');
 const colourButton = document.getElementById('animation-container');
+
+
+
+
 function getRandomColor() {
     // Generate a random color in hexadecimal format
     return '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -116,7 +120,7 @@ function changeColors() {
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
     aboutButton.style.color = textColor;
-    //colourButton.style.backgroundColor = backgroundColor;
+    colourButton.style.fill = textColor;
     funButton.style.backgroundColor = backgroundColor;
     funButton.style.color = textColor;
     workPaged.style.backgroundColor = backgroundColor;
@@ -169,7 +173,7 @@ function changeColors() {
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
     funButton.style.backgroundColor = backgroundColor;
-   //colourButton.style.backgroundColor = textColor;
+    colourButton.style.fill = textColor;
     imageOne.style.backgroundColor = textColor;
     imageTwo.style.backgroundColor = backgroundColor;
     imageThree.style.backgroundColor = backgroundColor;

@@ -19,8 +19,8 @@
   <div id="custom-cursor"></div>
   <div id="fadeToBlack"></div>
   <main class="allMain">
-  <header  class="header-holder-project">
-    <div onclick="changeColors()" id="animation-container"></div>
+  <header  class="header-holder">
+    <div  onclick="goBack()" id="animation-container"></div>
     <script>
       // Load animation
       var animation = bodymovin.loadAnimation({
@@ -31,9 +31,8 @@
         path: 'TM_Logo_Animation.json' // Path to your JSON animation file
       });
     </script>
-   <div class="buttonContainer">  
-     <button onclick="goBack()" class="myButton" id="closeButton" type="button">Close</button>
-   </div>
+    <!--<button onclick="goBack()" id="closeButton" type="button">Close</button>-->
+
   
  </header>
 
@@ -42,32 +41,21 @@
     <source src="resources/Images/D&AD/Ceremony-OpeningReel-1920x1080-45sec.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-    <div id="projectOneContainer">
+    <div id="fullProjectContainer">
       <div class="projectText"> 
         <p class="projectName">D&AD</p> 
         <p class="projectDate">2023</p> 
         <div class="emptyDiv"></div>
         <p class="projectExplainer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat erat purus, at eleifend neque tincidunt a. Proin quis sagittis lorem. Vestibulum sit amet metus rutrum, faucibus mi ac, luctus nisl. Nullam condimentum turpis in nulla convallis ultrices.</p>
       </div>
-       <div  class="workContainer">
-        <img src="resources/Images/brocc.png">
-      </div>
-      <div class="workContainer">
-        <img src="resources/Images/brocc.png">
-      </div>
-      <div  class="workContainer">
-        <img src="resources/Images/dAndAD.png">
-      </div>
-      <div  class="workContainer">
-        <img src="resources/Images/hera.png">
-      </div>
-      <div  class="workContainer">
-        <img src="resources/Images/optus.png">
-      </div>
-      <div class="workContainer">
-        <img src="resources/Images/peanuts.png">
-      </div>
-    </div>
+      <video class="workContainer" autoplay muted loop>
+        <source src="resources/Images/D&AD/Ceremony-OpeningReel-1920x1080-45sec.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <img class="workContainer" src="resources/Images/dAndAD.png">
+      <img class="workContainer" src="resources/Images/dAndAD.png">
+      <img class="workContainer" src="resources/Images/dAndAD.png">
+      <img class="workContainer" src="resources/Images/dAndAD.png">
   </div>
   </main>
 </body>
