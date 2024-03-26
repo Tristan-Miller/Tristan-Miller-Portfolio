@@ -149,6 +149,15 @@ button {
 
 }
 
+#animation-container-project {
+    width:  3.698em;
+    height: 2em;
+    border: 2px solid red;
+    fill: white;
+    mix-blend-mode: difference;
+
+}
+
 
 
 #workButton,
