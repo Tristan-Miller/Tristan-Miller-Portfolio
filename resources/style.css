@@ -146,19 +146,18 @@ button {
 #animation-container {
     width:  3.698em;
     height: 2em;
-    border: 2px solid red;
 
 }
 
 #animation-container-project {
     width:  3.698em;
     height: 2em;
-    border: 2px solid red;
     fill: white;
 
 }
 
 #animation-container-project svg {
+    fill: white;
     mix-blend-mode: difference; /* Apply mix-blend-mode to the SVG */
   }
 
@@ -468,6 +467,9 @@ body,
     /* border: 2px solid red; */
     
 }
+.projectContainer:hover {
+    transform: scale(1.02);
+}
 
 .workContainer {
     width: 100%;
@@ -620,6 +622,14 @@ position: fixed;
 }
 
 @media only screen and (max-width: 500px) {
+
+    #workPage .projectContainer:hover {
+        transform: scale(1);
+    }
+
+    #workPage .projectContainer:hover h1 {
+        display: none;
+    }
     #showreelContainer {
         top: 43%;
     }   
@@ -697,9 +707,7 @@ position: fixed;
         margin: 0;
         box-sizing: border-box; /* Add this line */
     }
-    #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1 {
-        opacity: 0;
-        }
+   
    
     
     #custom-cursor {
@@ -724,9 +732,7 @@ position: fixed;
         top: 45%;
     }   
 
-    #workPage .projectContainer:hover {
-        transform: scale(1.02);
-    }
+   
 }
 
 @media only screen and (min-width: 700px) {
