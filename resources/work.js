@@ -7,7 +7,6 @@ let aboutPageVis = false;
 const aboutButton = document.getElementById('aboutButton');
 const workContainer = document.getElementsByClassName('workContainer');
 const projectPage = document.getElementsByClassName('projectPage');
-const projectOne = document.getElementById('projectOne');
 const showreelVis = document.getElementById('showreelVis');
 const showreelContainer = document.getElementById('showreelContainer');
 const showreel = document.getElementById('showreel');

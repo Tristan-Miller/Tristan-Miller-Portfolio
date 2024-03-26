@@ -3,6 +3,13 @@
     src: url('HELVETICANEUELTSTD-ROMAN.OTF') format('opentype');
 }
 
+@font-face {
+    font-family: 'CustomFont-Light';
+    src: url('HELVETICANEUELTSTD-LT.OTF') format('opentype'); /* Change the file name */
+    /* Specify the font weight */
+    /* Add more font properties if needed */
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -161,15 +168,15 @@ button {
 #animation-container-project {
     width:  3.698em;
     height: 2em;
-    fill: white;
+}
 
+#animation-container-project svg path {
+    fill: white; /* Set the fill color of the SVG path to white */
 }
 
 #animation-container-project svg {
-    fill: white;
     mix-blend-mode: difference; /* Apply mix-blend-mode to the SVG */
-  }
-
+}
 
 #workButton,
 #funButton,
@@ -481,14 +488,18 @@ body,
 }
 
 .workContainer {
-    width: 100%;
-    height: auto;
+    
     box-sizing: border-box;
     margin: 0 0 80px 0;
     padding: 0; 
     transition: .3s;
     position: relative;
     border-radius: 0px;
+}
+
+.workContainer img, video  {
+    width: 100%;
+    height: auto;
 }
 
 .projectContainer img {
@@ -531,7 +542,7 @@ position: fixed;
    
 }
 
-#projectOne {
+#project {
     opacity: 1;
     z-index: 0;
     
@@ -572,6 +583,14 @@ position: fixed;
     width: 50%;
 }
 
+.caption {
+    padding: 0;
+    margin: 0;
+    opacity: .5;
+    font-size: 12px;
+    font-family: 'CustomFont-Light', sans-serif;
+}
+
 .projectText {
    padding: 0;
    margin: 80px 0;
@@ -581,7 +600,7 @@ position: fixed;
    flex-wrap: wrap;
    align-items: flex-start;
     /*border: red solid 2px;*/
-   
+   font-size: 20px;
 }
 
 .projectExplainer {
