@@ -6,9 +6,8 @@ const workPaged = document.getElementById('workPage');
 const aboutPage = document.getElementsByClassName('aboutPage');
 const aboutPage2 = document.getElementById('aboutPage');
 const brushes = document.getElementById('brushes');
-const colourButton = document.getElementById('animation-container');
-
-
+const animationContainer = document.getElementById('animation-container');
+const svgElements = animationContainer.getElementsByTagName('path');
 
 
 function getRandomColor() {
@@ -120,7 +119,10 @@ function changeColors() {
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
     aboutButton.style.color = textColor;
-    colourButton.style.fill = textColor;
+     // Change the fill color of each SVG element
+     for (let i = 0; i < svgElements.length; i++) {
+      svgElements[i].style.fill = textColor;
+  }
     funButton.style.backgroundColor = backgroundColor;
     funButton.style.color = textColor;
     workPaged.style.backgroundColor = backgroundColor;
@@ -173,7 +175,6 @@ function changeColors() {
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
     funButton.style.backgroundColor = backgroundColor;
-    colourButton.style.fill = textColor;
     imageOne.style.backgroundColor = textColor;
     imageTwo.style.backgroundColor = backgroundColor;
     imageThree.style.backgroundColor = backgroundColor;

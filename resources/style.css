@@ -704,7 +704,7 @@ position: fixed;
 
 @media only screen and (min-width: 1200px) {
     .header-holder {
-        padding:0vw 11vw 0vw 11vw; /* Add padding instead of margin */
+        padding:0vw 10vw 0vw 10vw; /* Add padding instead of margin */
       
     
     }
