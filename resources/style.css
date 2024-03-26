@@ -149,6 +149,15 @@ button {
 
 }
 
+.threeMe {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: auto;
+}
+
+
 #animation-container-project {
     width:  3.698em;
     height: 2em;
@@ -312,7 +321,7 @@ button {
     background-color: white;
     color: black;
     user-select: none;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s; 
 }
 
 * {
@@ -541,7 +550,7 @@ position: fixed;
 }
 
 .projectName {
-    transition: opacity 0.5s ease-in-out;
+   
     color: black;
     /* border: blue solid 2px; */
     width: 50%;
@@ -549,7 +558,7 @@ position: fixed;
 }
 
 .projectDate {
-    transition: opacity 0.5s ease-in-out;
+  
     color: black;
      /*border: blue solid 2px; */
     width: 50%;

@@ -106,8 +106,7 @@ function brushPanelColor() {
 }
 
 function changeColors() {
-
-
+  if(!workPageVis && !aboutPageVis) {
     // Generate random colors until the contrast ratio is sufficient
     do {
       backgroundColor = getRandomColor();
@@ -122,7 +121,7 @@ function changeColors() {
      // Change the fill color of each SVG element
      for (let i = 0; i < svgElements.length; i++) {
       svgElements[i].style.fill = textColor;
-  }
+    }
     funButton.style.backgroundColor = backgroundColor;
     funButton.style.color = textColor;
     workPaged.style.backgroundColor = backgroundColor;
@@ -150,7 +149,39 @@ function changeColors() {
       aboutButton.style.color = textColor;
     }
     brushPanelColor();
+  }else{
+    backgroundColor = "#ffffff";
+    textColor = "#000000"
+    workPages[0].style.opacity = 0;
+    funButton.style.visibility = "visible";
+    workButton.style.backgroundColor = backgroundColor;
+    workButton.style.color = textColor;
+    workPages[0].style.zIndex = 1;
+    canvasContainer.style.zIndex = 2;
+    brushesHolder.style.zIndex = 3;
+    workPageVis = false;
+    movingWorkOne.style.transform = 'scale(1)';
+    movingWorkTwo.style.transform = 'scale(1)';
+    movingWorkThree.style.transform = 'scale(1)';
+    showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+    for (let j = 0; j < workContainer.length; j++) {
+      workContainer[j].style.top = '50px';
+    }
+    aboutPageVis = false;
+    
+    aboutButton.style.backgroundColor = backgroundColor;
+    aboutButton.style.color = textColor;
+    funButton.style.backgroundColor = backgroundColor;
+    funButton.style.color = textColor;
+    themeContainer.style.backgroundColor = backgroundColor;
+    themeContainer.style.color = textColor;
+    aboutPage[0].style.backgroundColor = backgroundColor;
+    aboutPage[0].style.opacity = 0;
+    aboutButton.style.backgroundColor = backgroundColor;
+    aboutButton.style.color = textColor;
+    aboutPage[0].style.zIndex = 1;
 
+  }
   }
 
   

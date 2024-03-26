@@ -1,6 +1,8 @@
 let workPageVis = false;
 const workPages = document.getElementsByClassName('workPage');
 const movingWorkOne = document.getElementsByClassName('movingWorkOne')[0];
+const movingWorkTwo = document.getElementsByClassName('movingWorkTwo')[0];
+const movingWorkThree = document.getElementsByClassName('movingWorkThree')[0];
 let aboutPageVis = false;
 const aboutButton = document.getElementById('aboutButton');
 const workContainer = document.getElementsByClassName('workContainer');
@@ -17,12 +19,15 @@ const Switchy = document.getElementById('Switchy');
 const fadeToBlack = document.getElementById('fadeToBlack');
 const movingWork = document.getElementById('containerDiv');
 const muteButton = document.createElement('button');
+const currentOpacity = parseFloat(getComputedStyle(workPages[0]).opacity);
+
 let reelVis = true;
 let pagetotal = document.body.scrollHeight; // Total height of the webpage
 let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
 let translateYValue = pagetotal - containerHeight; // Calculate the translateY value
 let finalTranslate = translateYValue/2 + containerHeight/2.8; 
 let hideShowReel = translateYValue/2 + containerHeight/3 + 150; 
+
 //const movingWorkFour = document.getElementsByClassName('movingWorkFour');
 
 function initializeMovingDivs(movingDivClass, tooltipId) {
@@ -56,7 +61,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
       let y = Math.floor(Math.random() * window.innerHeight / 1.8);
 
       function update() {
-        if (!isHovered && !workPageVis && !drawingEnable) {
+        if (!isHovered && !workPageVis && !drawingEnable && !aboutPageVis) {
           const rect = movingDiv.getBoundingClientRect();
 
           if (x < 0 || x + rect.width > window.innerWidth) {
@@ -98,6 +103,16 @@ document.addEventListener('DOMContentLoaded', function () {
   workButton.addEventListener('click', function () {
     for (let i = 0; i < aboutPage.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
+      backgroundColor = "#ffffff";
+      textColor = "#000000"
+      aboutButton.style.backgroundColor = backgroundColor;
+      aboutButton.style.color = textColor;
+      funButton.style.backgroundColor = backgroundColor;
+      funButton.style.color = textColor;
+      workButton.style.backgroundColor = backgroundColor;
+      workButton.style.color = textColor;
+      themeContainer.style.backgroundColor = backgroundColor;
+      themeContainer.style.color = textColor;
       aboutPageVis = false;
       aboutPage[i].style.opacity = 0;
       aboutButton.style.backgroundColor = backgroundColor;
@@ -110,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
       //movingWorkFour[i].style.opacity = 0;
     }
     for (let i = 0; i < workPages.length; i++) {
-      const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
+      
       if (currentOpacity === 0) {
         workPages[i].style.opacity = 1;
         workButton.style.backgroundColor = textColor;
@@ -120,7 +135,9 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
-        movingWork.style.display = 'none';
+        movingWorkOne.style.transform = 'scale(0)';
+        movingWorkTwo.style.transform = 'scale(0)';
+        movingWorkThree.style.transform = 'scale(0)';
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '0px';
@@ -134,7 +151,9 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 2;
         brushesHolder.style.zIndex = 3;
         workPageVis = false;
-        movingWork.style.display = 'initial';
+        movingWorkOne.style.transform = 'scale(1)';
+        movingWorkTwo.style.transform = 'scale(1)';
+        movingWorkThree.style.transform = 'scale(1)';
         showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '50px';
@@ -165,9 +184,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (currentOpacity === 0) {
         aboutPageVis = true;
+        
+        movingWorkOne.style.transform = 'scale(0)';
+        movingWorkTwo.style.transform = 'scale(0)';
+        movingWorkThree.style.transform = 'scale(0)';
         aboutPage[i].style.opacity = 1;
+        backgroundColor = "#000000";
+        textColor = "#ffffff"
         aboutButton.style.backgroundColor = textColor;
         aboutButton.style.color = backgroundColor;
+        workButton.style.backgroundColor = backgroundColor;
+        workButton.style.color = textColor;
+        funButton.style.backgroundColor = backgroundColor;
+        funButton.style.color = textColor;
+        themeContainer.style.backgroundColor = backgroundColor;
+        themeContainer.style.color = textColor;
         aboutPage[i].style.backgroundColor = backgroundColor;
         aboutPage[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
@@ -175,6 +206,20 @@ document.addEventListener('DOMContentLoaded', function () {
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
       } else {
         aboutPageVis = false;
+        backgroundColor = "#ffffff";
+        textColor = "#000000"
+        aboutButton.style.backgroundColor = backgroundColor;
+        aboutButton.style.color = textColor;
+        funButton.style.backgroundColor = backgroundColor;
+        funButton.style.color = textColor;
+        workButton.style.backgroundColor = backgroundColor;
+        workButton.style.color = textColor;
+        themeContainer.style.backgroundColor = backgroundColor;
+        themeContainer.style.color = textColor;
+        aboutPage[i].style.backgroundColor = backgroundColor;
+        movingWorkOne.style.transform = 'scale(1)';
+        movingWorkTwo.style.transform = 'scale(1)';
+        movingWorkThree.style.transform = 'scale(1)';
         aboutPage[i].style.opacity = 0;
         aboutButton.style.backgroundColor = backgroundColor;
         aboutButton.style.color = textColor;
