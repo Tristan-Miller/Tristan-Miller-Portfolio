@@ -208,32 +208,24 @@ document.addEventListener('DOMContentLoaded', function () {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
 
       if (currentOpacity === 0) {
+        aboutPageVis = true;
         aboutPage[i].style.opacity = 1;
         aboutButton.style.backgroundColor = textColor;
         aboutButton.style.color = backgroundColor;
         aboutPage[i].style.backgroundColor = backgroundColor;
         aboutPage[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
-        //for (let i = 0; i < movingWorkFour.length; i++) {
-        //  movingWorkFour[i].style.zIndex = 6;
-         // movingWorkFour[i].style.opacity = 1;
-       // }
         brushesHolder.style.zIndex = 7;
-        aboutPageVis = true;
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
       } else {
+        aboutPageVis = false;
         aboutPage[i].style.opacity = 0;
         aboutButton.style.backgroundColor = backgroundColor;
         aboutButton.style.color = textColor;
         aboutPage[i].style.zIndex = 1;
         canvasContainer.style.zIndex = 2;
         funButton.style.visibility = "visible";
-        //for (let i = 0; i < movingWorkFour.length; i++) {
-       // movingWorkFour[i].style.zIndex = 0;
-       //movingWorkFour[i].style.opacity = 0;
-        //}
         brushesHolder.style.zIndex = 3;
-        aboutPageVis = false;
         showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
       }
     }
@@ -256,31 +248,24 @@ document.addEventListener('DOMContentLoaded', function () {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
 
       if (currentOpacity === 0) {
+        aboutPageVis = true;
         aboutPage[i].style.opacity = 1;
         aboutButton.style.backgroundColor = textColor;
         aboutButton.style.color = backgroundColor;
         aboutPage[i].style.backgroundColor = backgroundColor;
         aboutPage[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
-        //for (let i = 0; i < movingWorkFour.length; i++) {
-         // movingWorkFour[i].style.zIndex = 6;
-         // movingWorkFour[i].style.opacity = 1;
-       // }
         brushesHolder.style.zIndex = 7;
-        aboutPageVis = true;
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
       } else {
+        aboutPageVis = false;
         aboutPage[i].style.opacity = 0;
         aboutButton.style.backgroundColor = backgroundColor;
         aboutButton.style.color = textColor;
         aboutPage[i].style.zIndex = 1;
         canvasContainer.style.zIndex = 2;
-        //for (let i = 0; i < movingWorkFour.length; i++) {
-        //  movingWorkFour[i].style.zIndex = 0;
-        //  movingWorkFour[i].style.opacity = 0;
-       // }
+        funButton.style.visibility = "visible";
         brushesHolder.style.zIndex = 3;
-        aboutPageVis = false;
         showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
       }
     }
