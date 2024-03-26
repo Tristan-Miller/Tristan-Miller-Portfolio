@@ -35,12 +35,16 @@ document.addEventListener('DOMContentLoaded', function () {
     
     if(!funButtonPressed){ // Use !funButtonPressed instead of funButtonPressed == false
       brushesHolder.style.transform = 'translateY(-150px)'; // Corrected syntax for setting transform property
+      funButton.style.backgroundColor = textColor;
+      funButton.style.color = backgroundColor;
       movingWork.style.display = 'none';
       drawingEnable = true; // Corrected assignment operator from == to =
       funButtonPressed = true; // Corrected assignment operator from == to =
       console.log(funButtonPressed);
       showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
     } else { // Removed unnecessary condition since if funButtonPressed is not false, it must be true
+      funButton.style.backgroundColor = backgroundColor;
+      funButton.style.color = textColor;
       funButtonPressed = false; // Corrected assignment operator from == to =
       movingWork.style.display = 'initial';
       drawingEnable = false; // Corrected assignment operator from == to =
