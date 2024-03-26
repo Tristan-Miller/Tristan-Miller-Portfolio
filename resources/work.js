@@ -13,6 +13,8 @@ const showreel = document.getElementById('showreel');
 const workButton = document.getElementById('workButton');
 const showReelFooter = document.getElementById('showReelFooter');
 const workContainerOne = document.getElementById('workContainerOne');
+const workContainerTwo = document.getElementById('workContainerTwo');
+const workContainerThree = document.getElementById('workContainerThree');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 const fadeToBlack = document.getElementById('fadeToBlack');
@@ -296,6 +298,38 @@ movingWorkOne.addEventListener('click', function () {
   fadeToBlack.style.opacity = 1;
   setTimeout(function () {
     window.location.href = 'projectOne.html';
+  }, 300);
+});
+
+workContainerTwo.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectTwo.html';
+  }, 300);
+});
+
+movingWorkTwo.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectTwo.html';
+  }, 300);
+});
+
+workContainerThree.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectThree.html';
+  }, 300);
+});
+
+movingWorkThree.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectThree.html';
   }, 300);
 });
 
