@@ -505,6 +505,7 @@ position: fixed;
 
 #workContainerOne:hover h1, #workContainerTwo:hover h1, #workContainerThree:hover h1, #workContainerFour:hover h1, #workContainerFive:hover h1, #workContainerSix:hover h1 {
     opacity: 1;
+    display: initial;
 }
 
 
@@ -641,6 +642,7 @@ position: fixed;
 
     #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1 {
         opacity: 0;
+        display: none;
         }
   
     #movingWork:hover {
