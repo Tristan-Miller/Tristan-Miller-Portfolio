@@ -231,45 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  aboutButton.addEventListener('touchstart', function () {
-    for (let i = 0; i < workPages.length; i++) {
-      const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
-
-    workPageVis = false;
-    workPages[i].style.opacity = 0;
-    workButton.style.backgroundColor = backgroundColor;
-    workButton.style.color = textColor;
-    workPages[i].style.zIndex = 1;
-    funButton.style.visibility = "hidden";
-    drawingEnable = false;
-    brushesHolder.style.transform = 'translateY(0px)';
-    }
-    for (let i = 0; i < aboutPage.length; i++) {
-      const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
-
-      if (currentOpacity === 0) {
-        aboutPageVis = true;
-        aboutPage[i].style.opacity = 1;
-        aboutButton.style.backgroundColor = textColor;
-        aboutButton.style.color = backgroundColor;
-        aboutPage[i].style.backgroundColor = backgroundColor;
-        aboutPage[i].style.zIndex = 4;
-        canvasContainer.style.zIndex = 5;
-        brushesHolder.style.zIndex = 7;
-        showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
-      } else {
-        aboutPageVis = false;
-        aboutPage[i].style.opacity = 0;
-        aboutButton.style.backgroundColor = backgroundColor;
-        aboutButton.style.color = textColor;
-        aboutPage[i].style.zIndex = 1;
-        canvasContainer.style.zIndex = 2;
-        funButton.style.visibility = "visible";
-        brushesHolder.style.zIndex = 3;
-        showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
-      }
-    }
-  });
+  
 
 });
 if (window.innerWidth > 500) {
@@ -347,7 +309,7 @@ function closeShowreel() {
   }
   showReelFooter.style.display = 'initial';
   setTimeout(function() {
-    showReelFooter.style.opacity = 1;
+    showReelFooter.style.opacity = .5;
     muteButton.style.opacity = 0;
  }, 1);
   showreelVis.style.opacity = 0;
@@ -398,7 +360,7 @@ showreelContainer.addEventListener('mouseleave', function() {
     showreel.style.filter = 'blur(10px)';
       showReelFooter.style.display = 'initial';
       setTimeout(function() {
-        showReelFooter.style.opacity = 1;
+        showReelFooter.style.opacity = .5;
         muteButton.style.opacity = 0;
      }, 1);
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';

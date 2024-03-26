@@ -236,7 +236,7 @@ button {
     transform: translateX(-50%);
     transition: .3s;
     text-align: center;
-    opacity: 1;
+    opacity: .5;
 }
 
 
@@ -262,8 +262,8 @@ button {
 
 
 #movingWork {
-    width: 10em;
-    height: 10em;
+    width: 175px;
+    height: 175px;
     position: absolute;
     border-radius: 50%;
     transition: transform 0.3s, border-radius 0.3s;
@@ -590,8 +590,44 @@ position: fixed;
     padding: 0 20px;
 }
 
+@media only screen and (max-width: 800px) {
+    #movingWork {
+        width: 150px;
+        height: 150px;
+    }
+    .workContainer {
+        width: 100%;
+        
+    }
+    .projectContainer {
+        width: 100%;
+        
+    }
+
+    .projectExplainer {
+        width: 100%;
+    }
+
+    .projectDate {
+        width: 100%;
+        padding-top: 2px;
+    }
+    
+
+    
+}
 
 @media only screen and (max-width: 500px) {
+    #showreelContainer {
+        top: 43%;
+    }   
+    #movingWork {
+        width: 120px;
+        height: 120px;
+    }
+    .mute-button {
+        display: none;
+    }
     .header-holder {
         margin-top: 0;
     }
@@ -605,10 +641,7 @@ position: fixed;
     #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1 {
         opacity: 0;
         }
-
-    #showreelContainer {
-        top: 40%;
-    }   
+  
     #movingWork:hover {
         transform: scale(1);
         border-radius: 50%;
@@ -682,38 +715,33 @@ position: fixed;
     
 }
 
-@media only screen and (max-width: 800px) {
-    .workContainer {
-        width: 100%;
-        
-    }
-    .projectContainer {
-        width: 100%;
-        
-    }
-
-    .projectExplainer {
-        width: 100%;
-    }
-
-    .projectDate {
-        width: 100%;
-        padding-top: 2px;
-    }
-
-    
-}
-
 @media only screen and (min-width: 500px) {
-   
+    #showreelContainer {
+        top: 45%;
+    }   
 
     #workPage .projectContainer:hover {
         transform: scale(1.02);
     }
 }
 
+@media only screen and (min-width: 700px) {
+    #showreelContainer {
+        top: 48%;
+    }   
+}
+
 
 @media only screen and (min-width: 1200px) {
+    #showreelContainer {
+        top: 49%;
+    } 
+    #movingWork {
+width: 200px;
+height: 200px;
+    }
+   
+
     .header-holder {
         padding:0vw 10vw 0vw 10vw; /* Add padding instead of margin */
       
