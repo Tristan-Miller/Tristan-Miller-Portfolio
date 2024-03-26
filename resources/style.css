@@ -154,10 +154,12 @@ button {
     height: 2em;
     border: 2px solid red;
     fill: white;
-    mix-blend-mode: difference;
 
 }
 
+#animation-container-project svg {
+    mix-blend-mode: difference; /* Apply mix-blend-mode to the SVG */
+  }
 
 
 #workButton,
