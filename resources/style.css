@@ -507,6 +507,9 @@ body,
     border-radius: 0px;
 }
 
+.whitebackground {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
 
 
 #workContainerOne, #workContainerTwo, #workContainerThree, #workContainerFour, #workContainerFive, #workContainerSix {
