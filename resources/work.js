@@ -155,6 +155,8 @@ document.addEventListener('DOMContentLoaded', function () {
         workPages[i].style.zIndex = 1;
         canvasContainer.style.zIndex = 2;
         brushesHolder.style.zIndex = 3;
+        brushPanelColor();
+        brushes.style.color = textColor;
         workPageVis = false;
         movingWorkOne.style.transform = 'scale(1)';
         movingWorkTwo.style.transform = 'scale(1)';
@@ -217,6 +219,8 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutPageVis = false;
         backgroundColor = "#ffffff";
         textColor = "#000000"
+        brushPanelColor();
+        brushes.style.color = textColor;
         aboutButton.style.backgroundColor = backgroundColor;
         aboutButton.style.color = textColor;
         funButton.style.backgroundColor = backgroundColor;

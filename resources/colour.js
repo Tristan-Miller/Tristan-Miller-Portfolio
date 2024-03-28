@@ -122,8 +122,6 @@ function changeColors() {
      for (let i = 0; i < svgElements.length; i++) {
       svgElements[i].style.fill = textColor;
     }
-    funButton.style.backgroundColor = backgroundColor;
-    funButton.style.color = textColor;
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
     brushes.style.color = textColor;
@@ -147,6 +145,14 @@ function changeColors() {
     } else {
       aboutButton.style.backgroundColor = backgroundColor;
       aboutButton.style.color = textColor;
+    }
+
+    if (drawingEnable == true) {
+      funButton.style.backgroundColor = textColor;
+      funButton.style.color = backgroundColor;
+    } else {
+      funButton.style.backgroundColor = backgroundColor;
+      funButton.style.color = textColor;
     }
     brushPanelColor();
   }else{
