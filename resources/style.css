@@ -419,28 +419,16 @@ body,
     transition: 0.3s;
     position: absolute;
     left: 0;
-    top: .3em;
+    top: 0;
     width: 100%;
     height: 100%;
     z-index: 1;  
     opacity: 0;
-    
+
     
 }
 
-#aboutPageContainer {
-    border: 2px greenyellow solid;
-    transition: 0.3s;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    overflow: scroll;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 10px 10px 10px;;
-}
+
 
 #awardsContainer,
 .awardText,
@@ -449,46 +437,127 @@ body,
 #headshotCaption,
 #SocialButtonContainer,
 .socialButton, #awards {
-    border: 1px red solid;
 }
 
 #SocialButtonContainer {
-    position: fixed;
-    bottom: 15px;
-    width: 100%;
     display: flex;
+    position: fixed; /* Position the container relative to the viewport */
+    bottom: 0; /* Align the container to the bottom of the viewport */
+    left: 0; /* Optionally, align the container to the left */
+    width: 100%; /* Make the container full width */
+    justify-content: center; /* Align the items horizontally */
+    padding: 0 20px; /* Optional padding */
+    
 }
+
+#aboutPageContainer {
+    width: 100%;
+    margin: 0; /* Center the container horizontally */
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+  }
+  
 
 #awardsContainer {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row ;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
   }
   
   #awards {
     width: 100%;
+    padding: 0px 0 10px 0;
+    margin: 0;
+    font-size: 12px;
+    opacity: .5;
+  }
+
+  #awardCompany {
+    min-width: 220px;
+  }
+
+  #awardLevel {
+    min-width: 100px;
+  }
+
+  #awardClient {
+    min-width: 140px;
+  }
+
+  #awardClientMobile {
+    display: none;
+  }
+
+  #awardDate {
+    text-align: right;
   }
   
   .awardText {
-   width: 25%;
+   width: 20%;
+   padding: 0;
+    margin: 0
   }
 
 
 .socialButton {
-    width: 33%;
+    width: 33.33%;
+    font-size: 5vw;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#Instagram {
+    text-align: left;
+}
+
+#Email {
+    text-align: center;
+}
+
+#LinkedIn {
+    text-align: right;
 }
 
 #threeDeeMe {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 150px;
+    max-height: 150px;
+    padding: 0;
+    margin: 0
 }
+
+#headshotCaption {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+    opacity: .5;
+}
+
+#headshotContainer { 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 100px 0;
+    margin: 0;
+}
+
+
 
 #workPage{
     
     transition: 0.3s;
     position: absolute;
     left: 0;
-    top: .3em;
+    top: 0;
     width: 100%;
     height: 100%;
     z-index: 1;  
@@ -693,12 +762,40 @@ position: fixed;
         width: 100%;
         padding-top: 2px;
     }
+
+    #awardDate {
+        display: none;
+    }
+
+    #awardClient  {
+        text-align: right;
+    }
     
 
     
 }
 
 @media only screen and (max-width: 500px) {
+    #awardCompany {
+        width: 50%;
+    }
+
+    #awardClient  {
+        display: none;
+    }
+    #awardClientMobile {
+        width: 50%;
+        text-align: right;
+        display: initial;
+    }
+
+    #awardLevel {
+        display: none;
+    }
+
+    #emptyTextdiv {
+        display: none;
+    }
 
     #workPage .projectContainer:hover {
         transform: scale(1);
@@ -764,6 +861,8 @@ position: fixed;
 }
 
 @media only screen and (max-height: 600px) and (orientation: landscape) {
+
+   
    
     #movingWork:hover {
         transform: scale(1);
@@ -816,6 +915,7 @@ position: fixed;
     #showreelContainer {
         top: 48%;
     }   
+
 }
 
 
