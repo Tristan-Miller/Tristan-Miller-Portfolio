@@ -160,6 +160,7 @@ function changeColors() {
     canvasContainer.style.zIndex = 2;
     brushesHolder.style.zIndex = 3;
     workPageVis = false;
+    drawingEnable = false;
     movingWorkOne.style.transform = 'scale(1)';
     movingWorkTwo.style.transform = 'scale(1)';
     movingWorkThree.style.transform = 'scale(1)';
@@ -168,7 +169,7 @@ function changeColors() {
       workContainer[j].style.top = '50px';
     }
     aboutPageVis = false;
-    
+    drawingEnable = false;
     aboutButton.style.backgroundColor = backgroundColor;
     aboutButton.style.color = textColor;
     funButton.style.backgroundColor = backgroundColor;

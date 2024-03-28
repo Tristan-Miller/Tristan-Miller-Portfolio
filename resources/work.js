@@ -115,6 +115,10 @@ document.addEventListener('DOMContentLoaded', function () {
       themeContainer.style.backgroundColor = backgroundColor;
       themeContainer.style.color = textColor;
       aboutPageVis = false;
+      // Change the fill color of each SVG element
+      for (let i = 0; i < svgElements.length; i++) {
+        svgElements[i].style.fill = textColor;
+      }
       aboutPage[i].style.opacity = 0;
       aboutButton.style.backgroundColor = backgroundColor;
       aboutButton.style.color = textColor;
@@ -126,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
       //movingWorkFour[i].style.opacity = 0;
     }
     for (let i = 0; i < workPages.length; i++) {
-      
+      const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
       if (currentOpacity === 0) {
         workPages[i].style.opacity = 1;
         workButton.style.backgroundColor = textColor;
@@ -201,6 +205,10 @@ document.addEventListener('DOMContentLoaded', function () {
         themeContainer.style.backgroundColor = backgroundColor;
         themeContainer.style.color = textColor;
         aboutPage[i].style.backgroundColor = backgroundColor;
+        // Change the fill color of each SVG element
+        for (let i = 0; i < svgElements.length; i++) {
+          svgElements[i].style.fill = textColor;
+        }
         aboutPage[i].style.zIndex = 4;
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 7;
@@ -218,6 +226,10 @@ document.addEventListener('DOMContentLoaded', function () {
         themeContainer.style.backgroundColor = backgroundColor;
         themeContainer.style.color = textColor;
         aboutPage[i].style.backgroundColor = backgroundColor;
+        // Change the fill color of each SVG element
+        for (let i = 0; i < svgElements.length; i++) {
+          svgElements[i].style.fill = textColor;
+        }
         movingWorkOne.style.transform = 'scale(1)';
         movingWorkTwo.style.transform = 'scale(1)';
         movingWorkThree.style.transform = 'scale(1)';
