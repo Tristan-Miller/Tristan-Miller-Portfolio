@@ -437,32 +437,32 @@ body,
 #headshotCaption,
 #SocialButtonContainer,
 .socialButton, #awards {
+  /* border: 1px red solid; */
 }
 
 #SocialButtonContainer {
     display: flex;
-    position: fixed; /* Position the container relative to the viewport */
-    bottom: 0; /* Align the container to the bottom of the viewport */
-    left: 0; /* Optionally, align the container to the left */
     width: 100%; /* Make the container full width */
     justify-content: center; /* Align the items horizontally */
-    padding: 0 20px; /* Optional padding */
+    margin: 0;
+    padding: 0; /* Optional padding */
+   
     
 }
 
 #aboutPageContainer {
     width: 100%;
     margin: 0; /* Center the container horizontally */
-    padding: 20px;
+    padding: 130px 20px 20px 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
+   
+    justify-content: space-between; /* Distribute space between flex items */
   }
   
 
-#awardsContainer {
+#awardsTextContainer {
     width: 100%;
     display: flex;
     flex-direction: row ;
@@ -482,26 +482,30 @@ body,
 
   #awardCompany {
     min-width: 220px;
+    flex-grow: 1;
   }
 
   #awardLevel {
     min-width: 100px;
+    flex-grow: 1;
   }
 
   #awardClient {
     min-width: 140px;
+    flex-grow: 1;
   }
 
   #awardClientMobile {
     display: none;
+    flex-grow: 1;
   }
 
   #awardDate {
     text-align: right;
+    flex-grow: 1;
   }
   
   .awardText {
-   width: 20%;
    padding: 0;
     margin: 0
   }
@@ -509,10 +513,15 @@ body,
 
 .socialButton {
     width: 33.33%;
-    font-size: 5vw;
+    font-size: 5.5vw;
     padding: 0;
     margin: 0;
     text-transform: uppercase;
+    overflow: visible;
+}
+
+.socialButton:hover {
+    text-decoration: underline;
 }
 
 #Instagram {
@@ -531,7 +540,7 @@ body,
     max-width: 150px;
     max-height: 150px;
     padding: 0;
-    margin: 0
+    margin: 0;
 }
 
 #headshotCaption {
@@ -544,10 +553,13 @@ body,
 
 #headshotContainer { 
     align-items: center;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 0 100px 0;
+    padding: 0;
     margin: 0;
+    opacity: 0;
+    transition: .1s;
 }
 
 
@@ -793,10 +805,6 @@ position: fixed;
         display: none;
     }
 
-    #emptyTextdiv {
-        display: none;
-    }
-
     #workPage .projectContainer:hover {
         transform: scale(1);
     }
@@ -942,6 +950,14 @@ height: 200px;
 
     #fullProjectContainer {
         padding: 0vw 10vw 1vw 10vw;
+    }
+
+    #aboutPageContainer {
+        padding: 130px 10vw 20px 10vw;
+    }
+
+    .socialButton {
+        font-size: 4.5vw;
     }
     
 }

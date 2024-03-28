@@ -21,7 +21,7 @@ const fadeToBlack = document.getElementById('fadeToBlack');
 const movingWork = document.getElementById('containerDiv');
 const muteButton = document.createElement('button');
 const currentOpacity = parseFloat(getComputedStyle(workPages[0]).opacity);
-
+const headshotContainer = document.getElementById('headshotContainer');
 let reelVis = true;
 let pagetotal = document.body.scrollHeight; // Total height of the webpage
 let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
@@ -191,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (currentOpacity === 0) {
         aboutPageVis = true;
-        
         movingWorkOne.style.transform = 'scale(0)';
         movingWorkTwo.style.transform = 'scale(0)';
         movingWorkThree.style.transform = 'scale(0)';
@@ -211,11 +210,16 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < svgElements.length; i++) {
           svgElements[i].style.fill = textColor;
         }
-        aboutPage[i].style.zIndex = 4;
+        aboutPage[i].style.zIndex = 999;
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 7;
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
+        setTimeout(function () {
+          headshotContainer.style.opacity = 1;
+        }, 200);
       } else {
+        headshotContainer.style.opacity = 0;
+        setTimeout(function () { 
         aboutPageVis = false;
         backgroundColor = "#ffffff";
         textColor = "#000000"
@@ -245,6 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
         funButton.style.visibility = "visible";
         brushesHolder.style.zIndex = 3;
         showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+      }, 100);
       }
     }
   });
