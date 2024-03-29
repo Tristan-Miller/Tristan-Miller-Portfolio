@@ -442,12 +442,30 @@ body,
 
 #SocialButtonContainer {
     display: flex;
+    flex-wrap: wrap;
     width: 100%; /* Make the container full width */
-    justify-content: center; /* Align the items horizontally */
+    justify-content: space-between; /* Align the items horizontally */
     margin: 0;
     padding: 0; /* Optional padding */
    
     
+}
+
+#hiCaption {
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    opacity: .5;
+}
+
+#developedTag {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+    opacity: .5;
 }
 
 #aboutPageContainer {
@@ -512,12 +530,16 @@ body,
 
 
 .socialButton {
-    width: 33.33%;
-    font-size: 5.5vw;
+  
+    font-size: 6.7vw;
     padding: 0;
     margin: 0;
     text-transform: uppercase;
     overflow: visible;
+}
+
+#LinkedIn {
+   
 }
 
 .socialButton:hover {
@@ -805,6 +827,15 @@ position: fixed;
         display: none;
     }
 
+    .socialButton{
+        font-size: 8vw;
+    }
+
+    #LinkedIn {
+        width: 100%;
+        text-align: center;
+    }
+
     #workPage .projectContainer:hover {
         transform: scale(1);
     }
@@ -928,12 +959,16 @@ position: fixed;
 
 
 @media only screen and (min-width: 1200px) {
+    .socialButton{
+        font-size: 5.6vw;
+    }
+
     #showreelContainer {
         top: 49%;
     } 
     #movingWork {
-width: 200px;
-height: 200px;
+        width: 200px;
+        height: 200px;
     }
    
 
@@ -956,10 +991,7 @@ height: 200px;
         padding: 130px 10vw 20px 10vw;
     }
 
-    .socialButton {
-        font-size: 4.5vw;
-    }
-    
+   
 }
 
 

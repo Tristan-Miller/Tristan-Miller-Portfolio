@@ -22,6 +22,7 @@ const movingWork = document.getElementById('containerDiv');
 const muteButton = document.createElement('button');
 const currentOpacity = parseFloat(getComputedStyle(workPages[0]).opacity);
 const headshotContainer = document.getElementById('headshotContainer');
+const ouchSound = document.getElementById('ouchSound');
 let reelVis = true;
 let pagetotal = document.body.scrollHeight; // Total height of the webpage
 let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
@@ -476,7 +477,9 @@ document.getElementById('showreel').addEventListener('loadedmetadata', function(
 
 
 window.addEventListener("orientationchange", function() {
-  location.reload();
+  initializeMovingDivs("movingWorkOne", "D_AD");
+initializeMovingDivs("movingWorkTwo", "sydneyFestival");
+initializeMovingDivs("movingWorkThree", "rolus");
 });
 
 
@@ -488,6 +491,10 @@ function goBack() {
     window.location.href = 'index.html';
   }, 300);
 }
+
+headshotContainer.addEventListener("click", function() {
+  ouchSound.play();
+});
 
 
 window.onload = closeShowreel;
