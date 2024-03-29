@@ -40,26 +40,7 @@
 
   <header  class="header-holder">
     <div onclick="changeColors()" id="animation-container" class="clickable"></div>
-    <script>
-      // Load animation
-      var animation = bodymovin.loadAnimation({
-        container: document.getElementById('animation-container'), // Container to embed the animation
-        renderer: 'svg', // Renderer type
-        loop: true, // Whether the animation should loop
-        autoplay: true, // Whether the animation should play as soon as it's ready
-        path: 'TM_Logo_Animation.json' // Path to your JSON animation file
-      });
-
-       // Load animation
-       var smileyanimation = bodymovin.loadAnimation({
-        container: document.getElementById('smiley-animation-container'), // Container to embed the animation
-        renderer: 'svg', // Renderer type
-        loop: true, // Whether the animation should loop
-        autoplay: true, // Whether the animation should play as soon as it's ready
-        path: 'Smiley_Animation.json' // Path to your JSON animation file
-      });
-    </script>
-  
+   
 
    <div class="buttonContainer">  
     <button class="myButton clickable" id="funButton" type="button" > <div id="smiley-animation-container"></div></button>
@@ -67,7 +48,26 @@
      <button  class="myButton clickable" id="aboutButton" type="button">About</button>
      
    </div>
-  
+   <script>
+    // Load animation
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('animation-container'), // Container to embed the animation
+      renderer: 'svg', // Renderer type
+      loop: true, // Whether the animation should loop
+      autoplay: true, // Whether the animation should play as soon as it's ready
+      path: 'TM_Logo_Animation.json' // Path to your JSON animation file
+    });
+
+     // Load animation
+     var smileyanimation = bodymovin.loadAnimation({
+      container: document.getElementById('smiley-animation-container'), // Container to embed the animation
+      renderer: 'svg', // Renderer type
+      loop: true, // Whether the animation should loop
+      autoplay: true, // Whether the animation should play as soon as it's ready
+      path: 'Smiley_Animation.json' // Path to your JSON animation file
+    });
+  </script>
+
  </header>
 
 
