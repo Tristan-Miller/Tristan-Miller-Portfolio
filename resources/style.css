@@ -126,8 +126,8 @@ body {
 }
 
 button {
-    border: 0px solid;
-    margin: 0 5px;
+    border: 1.5px solid;
+    margin: 0px;
     color: inherit;
     padding: .4em .5em .2em .5em;
     border-radius: 2em;
