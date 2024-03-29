@@ -842,22 +842,7 @@ position: fixed;
     }
 
     .socialButton{
-        font-size: 11vw;
-    }
-
-    #LinkedIn {
-        width: 100%;
-        text-align: center;
-    }
-
-    #Instagram {
-        width: 100%;
-        text-align: center;
-    }
-
-    #Email {
-        width: 100%;
-        text-align: center;
+        font-size: 6vw;
     }
 
     #workPage .projectContainer:hover {
