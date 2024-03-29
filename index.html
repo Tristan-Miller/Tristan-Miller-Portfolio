@@ -49,11 +49,20 @@
         autoplay: true, // Whether the animation should play as soon as it's ready
         path: 'TM_Logo_Animation.json' // Path to your JSON animation file
       });
+
+       // Load animation
+       var animation = bodymovin.loadAnimation({
+        container: document.getElementById('smiley-animation-container'), // Container to embed the animation
+        renderer: 'svg', // Renderer type
+        loop: true, // Whether the animation should loop
+        autoplay: true, // Whether the animation should play as soon as it's ready
+        path: 'Smiley_Animation.json' // Path to your JSON animation file
+      });
     </script>
   
 
    <div class="buttonContainer">  
-    <button class="myButton clickable" id="funButton" type="button" >&nbsp;:)&nbsp;</button>
+    <button class="myButton clickable" id="funButton" type="button" > <div id="smiley-animation-container"></div></button>
      <button class="myButton clickable" id="workButton" type="button" >Work</button>
      <button  class="myButton clickable" id="aboutButton" type="button">About</button>
      

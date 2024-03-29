@@ -100,7 +100,10 @@ body {
 
 
 .buttonContainer {
-    overflow: visible
+    overflow: visible;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
@@ -124,6 +127,7 @@ body {
 
 button {
     border: 0px solid;
+    margin: 0 5px;
     color: inherit;
     padding: .4em .5em .2em .5em;
     border-radius: 2em;
@@ -134,8 +138,11 @@ button {
 }
 
 
+
+
 #funButton {
     visibility: visible;
+    padding: .38em .38em .38em .38em;
 }
 
 
@@ -154,6 +161,13 @@ button {
     width:  3.698em;
     height: 2em;
 
+}
+
+#smiley-animation-container {
+    width:  1em;
+    height: 1em;
+   
+border: 1px red solid;
 }
 
 
