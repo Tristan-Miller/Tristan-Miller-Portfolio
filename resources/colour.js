@@ -7,7 +7,9 @@ const aboutPage = document.getElementsByClassName('aboutPage');
 const aboutPage2 = document.getElementById('aboutPage');
 const brushes = document.getElementById('brushes');
 const animationContainer = document.getElementById('animation-container');
+const smileyAnimationContainer = document.getElementById('smiley-animation-container');
 const svgElements = animationContainer.getElementsByTagName('path');
+const smileysvgElements = smileyAnimationContainer.getElementsByTagName('path');
 
 
 function getRandomColor() {
@@ -122,11 +124,22 @@ function changeColors() {
      for (let i = 0; i < svgElements.length; i++) {
       svgElements[i].style.fill = textColor;
     }
+     // Change the fill color of each SVG element
+     for (let i = 0; i < smileysvgElements.length; i++) {
+      smileysvgElements[i].style.fill = textColor;
+    }
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
     brushes.style.color = textColor;
     animation.addEventListener('DOMLoaded', function() {
       var elements = animationContainer.querySelectorAll('.element-class'); // Replace '.element-class' with the actual class or ID of the elements you want to change
+
+      elements.forEach(function(element) {
+        element.setAttribute('fill', textColor); // Change the fill color of each element
+      });
+    });
+    smileyanimation.addEventListener('DOMLoaded', function() {
+      var elements = smileyAnimationContainer.querySelectorAll('.element-class'); // Replace '.element-class' with the actual class or ID of the elements you want to change
 
       elements.forEach(function(element) {
         element.setAttribute('fill', textColor); // Change the fill color of each element
@@ -148,9 +161,23 @@ function changeColors() {
     }
 
     if (drawingEnable == true) {
+      smileyanimation.addEventListener('DOMLoaded', function() {
+        var elements = smileyAnimationContainer.querySelectorAll('.element-class'); // Replace '.element-class' with the actual class or ID of the elements you want to change
+  
+        elements.forEach(function(element) {
+          element.setAttribute('fill', backgroundColor); // Change the fill color of each element
+        });
+      });
       funButton.style.backgroundColor = textColor;
       funButton.style.color = backgroundColor;
     } else {
+      smileyanimation.addEventListener('DOMLoaded', function() {
+        var elements = smileyAnimationContainer.querySelectorAll('.element-class'); // Replace '.element-class' with the actual class or ID of the elements you want to change
+  
+        elements.forEach(function(element) {
+          element.setAttribute('fill', textColor); // Change the fill color of each element
+        });
+      });
       funButton.style.backgroundColor = backgroundColor;
       funButton.style.color = textColor;
     }
