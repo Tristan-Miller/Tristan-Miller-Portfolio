@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
       brushesHolder.style.transform = 'translateY(-150px)'; // Corrected syntax for setting transform property
       funButton.style.backgroundColor = textColor;
       funButton.style.color = backgroundColor;
-      movingWork.style.display = 'none';
+      movingWorkOne.style.transform = 'scale(0)';
+      movingWorkTwo.style.transform = 'scale(0)';
+      movingWorkThree.style.transform = 'scale(0)';
       drawingEnable = true; // Corrected assignment operator from == to =
       funButtonPressed = true; // Corrected assignment operator from == to =
       console.log(funButtonPressed);
@@ -46,7 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
       funButton.style.backgroundColor = backgroundColor;
       funButton.style.color = textColor;
       funButtonPressed = false; // Corrected assignment operator from == to =
-      movingWork.style.display = 'initial';
+      movingWorkOne.style.transform = 'scale(1)';
+        movingWorkTwo.style.transform = 'scale(1)';
+        movingWorkThree.style.transform = 'scale(1)';
       drawingEnable = false; // Corrected assignment operator from == to =
       brushesHolder.style.transform = 'translateY(0px)'; // Corrected syntax for setting transform property
       var pagetotal = document.body.scrollHeight; // Total height of the webpage
