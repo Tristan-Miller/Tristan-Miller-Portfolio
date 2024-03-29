@@ -424,7 +424,7 @@ body,
     height: 100%;
     z-index: 1;  
     opacity: 0;
-
+    overflow: scroll;
     
 }
 
@@ -475,7 +475,7 @@ body,
     height: 100%;
     display: flex;
     flex-direction: column;
-   
+    overflow: scroll;
     justify-content: space-between; /* Distribute space between flex items */
   }
   
@@ -828,10 +828,20 @@ position: fixed;
     }
 
     .socialButton{
-        font-size: 8vw;
+        font-size: 11vw;
     }
 
     #LinkedIn {
+        width: 100%;
+        text-align: center;
+    }
+
+    #Instagram {
+        width: 100%;
+        text-align: center;
+    }
+
+    #Email {
         width: 100%;
         text-align: center;
     }
