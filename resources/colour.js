@@ -123,28 +123,10 @@ function changeColors() {
      // Change the fill color of each SVG element
      for (let i = 0; i < svgElements.length; i++) {
       svgElements[i].style.fill = textColor;
-    }
-     // Change the fill color of each SVG element
-     for (let i = 0; i < smileysvgElements.length; i++) {
-      smileysvgElements[i].style.fill = textColor;
-    }
+     }
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
     brushes.style.color = textColor;
-    animation.addEventListener('DOMLoaded', function() {
-      var elements = animationContainer.querySelectorAll('.element-class'); // Replace '.element-class' with the actual class or ID of the elements you want to change
-
-      elements.forEach(function(element) {
-        element.setAttribute('fill', textColor); // Change the fill color of each element
-      });
-    });
-    smileyanimation.addEventListener('DOMLoaded', function() {
-      var elements = smileyAnimationContainer.querySelectorAll('.element-class'); // Replace '.element-class' with the actual class or ID of the elements you want to change
-
-      elements.forEach(function(element) {
-        element.setAttribute('fill', textColor); // Change the fill color of each element
-      });
-    });
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
       workButton.style.backgroundColor = textColor;
@@ -161,25 +143,17 @@ function changeColors() {
     }
 
     if (drawingEnable == true) {
-      smileyanimation.addEventListener('DOMLoaded', function() {
-        var elements = smileyAnimationContainer.querySelectorAll('.element-class'); // Replace '.element-class' with the actual class or ID of the elements you want to change
-  
-        elements.forEach(function(element) {
-          element.setAttribute('fill', backgroundColor); // Change the fill color of each element
-        });
-      });
+      for (let i = 0; i < smileysvgElements.length; i++) {
+        smileysvgElements[i].style.fill = backgroundColor;
+      }
       funButton.style.backgroundColor = textColor;
       funButton.style.color = backgroundColor;
     } else {
-      smileyanimation.addEventListener('DOMLoaded', function() {
-        var elements = smileyAnimationContainer.querySelectorAll('.element-class'); // Replace '.element-class' with the actual class or ID of the elements you want to change
-  
-        elements.forEach(function(element) {
-          element.setAttribute('fill', textColor); // Change the fill color of each element
-        });
-      });
-      funButton.style.backgroundColor = backgroundColor;
+       for (let i = 0; i < smileysvgElements.length; i++) {
+      smileysvgElements[i].style.fill = textColor;
+     }
       funButton.style.color = textColor;
+      funButton.style.backgroundColor = backgroundColor;
     }
     brushPanelColor();
   }else{
