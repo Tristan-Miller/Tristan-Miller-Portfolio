@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'CustomFont';
-    src: url('HELVETICANEUELTSTD-ROMAN.OTF') format('opentype');
+    src: url('HELVETICANEUELTSTD-ROMAN.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'CustomFont-Light';
-    src: url('HELVETICANEUELTSTD-LT.OTF') format('opentype'); /* Change the file name */
+    src: url('HELVETICANEUELTSTD-LT.woff2') format('woff2'); /* Change the file name */
     /* Specify the font weight */
     /* Add more font properties if needed */
 }
