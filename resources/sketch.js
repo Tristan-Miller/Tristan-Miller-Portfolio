@@ -75,17 +75,17 @@ imageElements.forEach((image, index) => {
 
 function preload() {
 
-  lemon = createImg('resources/Images/lemon.png');
+  lemon = createImg('resources/Images/Fruit/lemon.png');
   lemon.position(-10000, -10000);
-  pepper = createImg('resources/Images/pepper.png');
+  pepper = createImg('resources/Images/Fruit/pepper.png');
   pepper.position(-10000, -10000);
-  berry = createImg('resources/Images/berry.png');
+  berry = createImg('resources/Images/Fruit/berry.png');
   berry.position(-10000, -10000);
-  banana = createImg('resources/Images/bananna.png');
+  banana = createImg('resources/Images/Fruit/bananna.png');
   banana.position(-10000, -10000);
-  avocado = createImg('resources/Images/avocado.png');
+  avocado = createImg('resources/Images/Fruit/avocado.png');
   avocado.position(-10000, -10000);
-  apple = createImg('resources/Images/apple.png');
+  apple = createImg('resources/Images/Fruit/apple.png');
   apple.position(-10000, -10000);
 }
 
