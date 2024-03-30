@@ -559,5 +559,16 @@ headshotContainer.addEventListener("click", function() {
   ouchSound.play();
 });
 
+document.getElementById("Instagram").addEventListener("click", function() {
+  window.open("https://www.instagram.com/tristan_miller/", "_blank");
+});
+
+document.getElementById("Email").addEventListener("click", function() {
+  window.location.href = "mailto:tristanmiller.design@gmail.com";
+});
+
+document.getElementById("LinkedIn").addEventListener("click", function() {
+  window.open("https://www.linkedin.com/in/tristan-m-4ab648142/", "_blank");
+});
 
 window.onload = closeShowreel;

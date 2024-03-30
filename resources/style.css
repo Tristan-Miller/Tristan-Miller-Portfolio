@@ -823,6 +823,11 @@ position: fixed;
 }
 
 @media only screen and (max-width: 500px) {
+    #aboutPageContainer {
+        padding: 130px 20px 5px 20px;
+    }
+
+
     #awardCompany {
         width: 50%;
     }
