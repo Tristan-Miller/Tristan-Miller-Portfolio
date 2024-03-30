@@ -15,6 +15,11 @@ const showReelFooter = document.getElementById('showReelFooter');
 const workContainerOne = document.getElementById('workContainerOne');
 const workContainerTwo = document.getElementById('workContainerTwo');
 const workContainerThree = document.getElementById('workContainerThree');
+const workContainerFour = document.getElementById('workContainerFour');
+const workContainerFive = document.getElementById('workContainerFive');
+const workContainerSix = document.getElementById('workContainerSix');
+const workContainerSeven = document.getElementById('workContainerSeven');
+const workContainerEight = document.getElementById('workContainerEight');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 const fadeToBlack = document.getElementById('fadeToBlack');
@@ -260,51 +265,65 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 if (window.innerWidth > 500) {
 function changeImage(element) {
-  document.getElementById('image1').src = 'resources/Images/D_AD_Project_Motion_A.gif';
+  document.getElementById('image1').src = 'resources/Images/ProjectPreviews/D_AD_Project_Motion.gif';
 }
 
 function resetImage(element) {
-  document.getElementById('image1').src = 'resources/Images/D_AD_Project_Static_A.jpg';
+  document.getElementById('image1').src = 'resources/Images/ProjectPreviews/D_AD_Project_Static.jpg';
 }
 
 function changeImage2(element) {
-  document.getElementById('image2').src = 'resources/Images/D_AD_Project_Motion_B.gif';
+  document.getElementById('image2').src = 'resources/Images/ProjectPreviews/Rolus_Project_Motion.gif';
 }
 
 function resetImage2(element) {
-  document.getElementById('image2').src = 'resources/Images/D_AD_Project_Static_B.jpg';
+  document.getElementById('image2').src = 'resources/Images/ProjectPreviews/Rolus_Project_Static.jpg';
 }
 
 function changeImage3(element) {
-  document.getElementById('image3').src = 'resources/Images/peanuts.png';
+  document.getElementById('image3').src = 'resources/Images/ProjectPreviews/SydneyFest_Project_Motion.gif';
 }
 
 function resetImage3(element) {
-  document.getElementById('image3').src = 'resources/Images/sydneyFestival.png';
+  document.getElementById('image3').src = 'resources/Images/ProjectPreviews/SydneyFest_Project_Static.jpg';
 }
 
 function changeImage4(element) {
-  document.getElementById('image4').src = 'resources/Images/peanuts.png';
+  document.getElementById('image4').src = 'resources/Images/ProjectPreviews/Youi_Project_Motion.gif';
 }
 
 function resetImage4(element) {
-  document.getElementById('image4').src = 'resources/Images/sydneyFestival.png';
+  document.getElementById('image4').src = 'resources/Images/ProjectPreviews/Youi_Project_Static.jpg';
 }
 
 function changeImage5(element) {
-  document.getElementById('image5').src = 'resources/Images/peanuts.png';
+  document.getElementById('image5').src = 'resources/Images/ProjectPreviews/DemoFest_Project_Motion.gif';
 }
 
 function resetImage5(element) {
-  document.getElementById('image5').src = 'resources/Images/sydneyFestival.png';
+  document.getElementById('image5').src = 'resources/Images/ProjectPreviews/DemoFest_Project_Static.jpg';
 }
 
 function changeImage6(element) {
-  document.getElementById('image6').src = 'resources/Images/peanuts.png';
+  document.getElementById('image6').src = 'resources/Images/ProjectPreviews/Peanuts_Project_Motion.gif';
 }
 
 function resetImage6(element) {
-  document.getElementById('image6').src = 'resources/Images/sydneyFestival.png';
+  document.getElementById('image6').src = 'resources/Images/ProjectPreviews/Peanuts_Project_Static.jpg';
+}
+function changeImage7(element) {
+  document.getElementById('image7').src = 'resources/Images/ProjectPreviews/Values_Project_Motion.gif';
+}
+
+function resetImage7(element) {
+  document.getElementById('image7').src = 'resources/Images/ProjectPreviews/Values_Project_Static.jpg';
+}
+function changeImage8(element) {
+  document.getElementById('image8').src = 'resources/Images/ProjectPreviews/Weel_Project_Motion.gif';
+}
+
+function resetImage8(element) {
+  document.getElementById('image8').src = 'resources/Images/ProjectPreviews/Weel_Project_Static.jpg';
 }
 }
 workContainerOne.addEventListener('click', function () {
@@ -352,6 +371,50 @@ movingWorkThree.addEventListener('click', function () {
   fadeToBlack.style.opacity = 1;
   setTimeout(function () {
     window.location.href = 'projectThree.html';
+  }, 300);
+});
+
+workContainerThree.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectThree.html';
+  }, 300);
+});
+workContainerFour.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectFour.html';
+  }, 300);
+});
+workContainerFive.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectFive.html';
+  }, 300);
+});
+workContainerSix.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectSix.html';
+  }, 300);
+});
+workContainerSeven.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectSeven.html';
+  }, 300);
+});
+
+workContainerEight.addEventListener('click', function () {
+  fadeToBlack.style.visibility = 'visible';
+  fadeToBlack.style.opacity = 1;
+  setTimeout(function () {
+    window.location.href = 'projectEight.html';
   }, 300);
 });
 
