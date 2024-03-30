@@ -714,7 +714,18 @@ position: fixed;
 }
 
 
-
+.projectvideo::-webkit-media-controls {
+    display: none;
+  }
+  
+  .projectvideo::-webkit-media-controls-enclosure {
+    display: none;
+  }
+  
+  .projectvideo::-webkit-media-controls-panel {
+    display: none;
+  }
+  
 
 
 
@@ -788,6 +799,19 @@ position: fixed;
 }
 
 @media only screen and (max-width: 800px) {
+
+    .projectvideo::-webkit-media-controls {
+        display: initial;
+      }
+    
+      .projectvideo::-webkit-media-controls-enclosure {
+        display: initial;
+      }
+    
+      .projectvideo::-webkit-media-controls-panel {
+        display: initial;
+      }
+      
     #movingWork {
         width: 150px;
         height: 150px;
