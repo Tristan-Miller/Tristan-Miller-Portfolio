@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
       brushesHolder.style.transform = 'translateY(-150px)'; // Corrected syntax for setting transform property
       funButton.style.backgroundColor = textColor;
       funButton.style.color = backgroundColor;
+      for (let i = 0; i < smileysvgElements.length; i++) {
+        smileysvgElements[i].style.fill = backgroundColor;
+      }
       movingWorkOne.style.transform = 'scale(0)';
       movingWorkTwo.style.transform = 'scale(0)';
       movingWorkThree.style.transform = 'scale(0)';
@@ -47,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
     } else { // Removed unnecessary condition since if funButtonPressed is not false, it must be true
       funButton.style.backgroundColor = backgroundColor;
       funButton.style.color = textColor;
+      for (let i = 0; i < smileysvgElements.length; i++) {
+        smileysvgElements[i].style.fill = textColor;
+      }
       funButtonPressed = false; // Corrected assignment operator from == to =
       movingWorkOne.style.transform = 'scale(1)';
         movingWorkTwo.style.transform = 'scale(1)';
