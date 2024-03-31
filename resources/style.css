@@ -289,7 +289,7 @@ button {
     height: 175px;
     position: absolute;
     border-radius: 50%;
-    transition: transform 0.3s, border-radius 0.3s;
+    transition: transform 0.2s, border-radius 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -335,7 +335,7 @@ button {
     background-color: white;
     color: black;
     user-select: none;
-    transition: background-color 0.3s; 
+    transition: background-color 0.2s; 
 }
 
 * {
@@ -385,7 +385,7 @@ button {
     width: auto;
     border: 1px solid;
     
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.2s, color 0.2s;
     margin: .5em 0;
     border-radius: 3em;
    
@@ -406,7 +406,7 @@ button {
 #imageSeven {
     width: 70px;
     height: 70px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.2s, color 0.32;
 }
 
 #imageOne {
@@ -429,7 +429,7 @@ body,
 }
 
 #aboutPage {
-    transition: 0.3s;
+    transition: 0.2s;
     position: absolute;
     left: 0;
     top: 0;
@@ -594,14 +594,14 @@ body,
     padding: 0;
     margin: 0;
     opacity: 0;
-    transition: .1s;
+    transition: .2s;
 }
 
 
 
 #workPage{
     
-    transition: 0.3s;
+    transition: 0.2s;
     position: absolute;
     left: 0;
     top: 0;
@@ -618,7 +618,7 @@ body,
 }
 
 #allWorkContainer {
-    transition: 0.3s;
+    transition: 0.2s;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -683,7 +683,7 @@ justify-content: center;
 #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1, #workContainerSeven h1, #workContainerEight h1 {
 position: absolute;
    
-    transition: 0.3s;
+    transition: 0.2s;
     opacity: 0;
     font-size: 1.5em;
     color: white;
@@ -704,7 +704,7 @@ position: absolute;
     height: 100%;
     align-items: baseline;
     overflow: scroll;
-    transition: 0.3s;
+    transition: 0.2s;
    
 }
 

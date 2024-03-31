@@ -126,6 +126,9 @@ function changeColors() {
      }
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
+    workButton.style.borderColor = textColor;
+    aboutButton.style.borderColor = textColor;
+    funButton.style.borderColor = textColor;
     brushes.style.color = textColor;
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;

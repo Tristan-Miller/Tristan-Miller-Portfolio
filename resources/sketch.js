@@ -17,6 +17,7 @@ let funButtonPressed = false;
 const funButton = document.getElementById('funButton');
 const brushesHolder = document.getElementById('brushes-holder');
 const imageElements = Array.from(document.querySelectorAll('[id^="image"]'));
+const fruitSalad = document.getElementById('fruitSalad');
 
 function selectBrush(index) {
   brushSelect = index;
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
     var translateYValue = pagetotal - containerHeight; // Calculate the translateY value
     var finalTranslate = translateYValue/2 + containerHeight/3 + 150; 
-    
+    fruitSalad.play();
     if(!funButtonPressed){ // Use !funButtonPressed instead of funButtonPressed == false
       brushesHolder.style.transform = 'translateY(-150px)'; // Corrected syntax for setting transform property
       funButton.style.backgroundColor = textColor;
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else { // Removed unnecessary condition since if funButtonPressed is not false, it must be true
       funButton.style.backgroundColor = backgroundColor;
       funButton.style.color = textColor;
+      fruitSalad.pause();
       for (let i = 0; i < smileysvgElements.length; i++) {
         smileysvgElements[i].style.fill = textColor;
       }

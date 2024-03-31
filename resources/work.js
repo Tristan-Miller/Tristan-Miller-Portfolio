@@ -28,6 +28,7 @@ const muteButton = document.createElement('button');
 const currentOpacity = parseFloat(getComputedStyle(workPages[0]).opacity);
 const headshotContainer = document.getElementById('headshotContainer');
 const ouchSound = document.getElementById('ouchSound');
+
 let reelVis = true;
 let pagetotal = document.body.scrollHeight; // Total height of the webpage
 let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
@@ -108,6 +109,7 @@ initializeMovingDivs("movingWorkThree", "rolus");
 
 document.addEventListener('DOMContentLoaded', function () {
   workButton.addEventListener('click', function () {
+    fruitSalad.pause();
     for (let i = 0; i < aboutPage.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
       backgroundColor = "#ffffff";
@@ -184,6 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //Contact Page
 
   aboutButton.addEventListener('click', function () {
+    fruitSalad.pause();
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
 
