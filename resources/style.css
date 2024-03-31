@@ -190,14 +190,14 @@ button {
 #colourButton,
 #closeButton, 
 #aboutButton{
-    transition: 0.2s;
+    transition:  background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 #funButton:hover,
 #aboutButton:hover,
 #workButton:hover,
 #closeButton:hover,
 #colourButton:hover {
-    transition: 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 
@@ -406,7 +406,7 @@ button {
 #imageSeven {
     width: 70px;
     height: 70px;
-    transition: background-color 0.2s, color 0.32;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #imageOne {

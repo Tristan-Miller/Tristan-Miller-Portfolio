@@ -110,6 +110,10 @@ initializeMovingDivs("movingWorkThree", "rolus");
 document.addEventListener('DOMContentLoaded', function () {
   workButton.addEventListener('click', function () {
     fruitSalad.pause();
+    // Change the fill color of each SVG element
+    for (let i = 0; i < svgElements.length; i++) {
+      svgElements[i].style.fill = textColor;
+     }
     for (let i = 0; i < aboutPage.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
       backgroundColor = "#ffffff";
@@ -187,6 +191,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   aboutButton.addEventListener('click', function () {
     fruitSalad.pause();
+    // Change the fill color of each SVG element
+    for (let i = 0; i < svgElements.length; i++) {
+      svgElements[i].style.fill = textColor;
+     }
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
 
@@ -197,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
     workPages[i].style.opacity = 0;
     workButton.style.backgroundColor = backgroundColor;
     workButton.style.color = textColor;
+    
     workPages[i].style.zIndex = 1;
     }
     for (let i = 0; i < aboutPage.length; i++) {
