@@ -129,16 +129,20 @@ function changeColors() {
     brushes.style.color = textColor;
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
+      workButton.style.borderColor = textColor;
       workButton.style.backgroundColor = textColor;
     } else {
       workButton.style.backgroundColor = backgroundColor;
+      workButton.style.borderColor = textColor;
       workButton.style.color = textColor;
     }
     if (aboutPageVis == true) {
       aboutButton.style.color = backgroundColor;
+      aboutButton.style.borderColor = textColor;
       aboutButton.style.backgroundColor = textColor;
     } else {
       aboutButton.style.backgroundColor = backgroundColor;
+      aboutButton.style.borderColor = textColor;
       aboutButton.style.color = textColor;
     }
 
@@ -199,16 +203,20 @@ function changeColors() {
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
       workButton.style.backgroundColor = textColor;
+      workButton.style.borderColor = textColor;
     } else {
       workButton.style.backgroundColor = backgroundColor;
       workButton.style.color = textColor;
+      workButton.style.borderColor = textColor;
     } 
     if (aboutPageVis == true) {
       aboutButton.style.color = backgroundColor;
       aboutButton.style.backgroundColor = textColor;
+      aboutButton.style.borderColor = textColor;
     } else {
       aboutButton.style.backgroundColor = backgroundColor;
       aboutButton.style.color = textColor;
+      aboutButton.style.borderColor = textColor;
     } 
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
@@ -222,7 +230,9 @@ function changeColors() {
     imageSix.style.backgroundColor = backgroundColor;
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
-    
+    workButton.style.borderColor = textColor;
+    aboutButton.style.borderColor = textColor;
+    funButton.style.borderColor = textColor;
   }
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -243,6 +253,7 @@ function changeColors() {
     buttons[i].addEventListener('mouseover', function() {
         this.style.backgroundColor = textColor;
         this.style.color = backgroundColor;
+        this.style.borderColor = textColor;
         
     });
 
@@ -251,25 +262,34 @@ function changeColors() {
         if (workPageVis == true) {
           workButton.style.color = backgroundColor;
           workButton.style.backgroundColor = textColor;
+          workButton.style.borderColor = textColor;
           aboutButton.style.backgroundColor = backgroundColor;
           aboutButton.style.color = textColor;
+          aboutButton.style.borderColor = textColor;
         } else if (aboutPageVis == true) {
           workButton.style.color = textColor;
           workButton.style.backgroundColor = backgroundColor;
+          workButton.style.borderColor = textColor;
           aboutButton.style.backgroundColor = textColor;
           aboutButton.style.color = backgroundColor;
+          aboutButton.style.borderColor = textColor;
         } else if(drawingEnable == true) {
           funButton.style.backgroundColor = textColor;
           funButton.style.color = backgroundColor;
+          funButton.style.borderColor = textColor;
           workButton.style.color = textColor;
           workButton.style.backgroundColor = backgroundColor;
+          workButton.style.borderColor = textColor;
           aboutButton.style.backgroundColor = backgroundColor;
           aboutButton.style.color = textColor;
+          aboutButton.style.borderColor = textColor;
         } else {
         this.style.backgroundColor = backgroundColor;
         this.style.color = textColor;
+        this.style.borderColor = textColor;
         funButton.style.backgroundColor = backgroundColor;
         funButton.style.color = textColor;
+        funButton.borderColor = textColor;
         }
     });
   }

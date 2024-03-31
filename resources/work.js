@@ -114,10 +114,13 @@ document.addEventListener('DOMContentLoaded', function () {
       textColor = "#000000"
       aboutButton.style.backgroundColor = backgroundColor;
       aboutButton.style.color = textColor;
+      aboutButton.style.borderColor = textColor;
       funButton.style.backgroundColor = backgroundColor;
       funButton.style.color = textColor;
+      funButton.style.borderColor = backgroundColor;
       workButton.style.backgroundColor = backgroundColor;
       workButton.style.color = textColor;
+      workButton.style.borderColor = textColor;
       themeContainer.style.backgroundColor = backgroundColor;
       themeContainer.style.color = textColor;
       aboutPageVis = false;
@@ -163,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
         brushesHolder.style.zIndex = 3;
         brushPanelColor();
         brushes.style.color = textColor;
+        funButton.style.borderColor = textColor;
         workPageVis = false;
         movingWorkOne.style.transform = 'scale(1)';
         movingWorkTwo.style.transform = 'scale(1)';
@@ -205,10 +209,13 @@ document.addEventListener('DOMContentLoaded', function () {
         textColor = "#ffffff"
         aboutButton.style.backgroundColor = textColor;
         aboutButton.style.color = backgroundColor;
+        aboutButton.style.borderColor = textColor;
         workButton.style.backgroundColor = backgroundColor;
         workButton.style.color = textColor;
+        workButton.style.borderColor = textColor;
         funButton.style.backgroundColor = backgroundColor;
         funButton.style.color = textColor;
+        funButton.style.borderColor = backgroundColor;
         themeContainer.style.backgroundColor = backgroundColor;
         themeContainer.style.color = textColor;
         aboutPage[i].style.backgroundColor = backgroundColor;
@@ -233,10 +240,13 @@ document.addEventListener('DOMContentLoaded', function () {
         brushes.style.color = textColor;
         aboutButton.style.backgroundColor = backgroundColor;
         aboutButton.style.color = textColor;
+        aboutButton.style.borderColor = textColor;
         funButton.style.backgroundColor = backgroundColor;
         funButton.style.color = textColor;
+        funButton.style.borderColor = textColor;
         workButton.style.backgroundColor = backgroundColor;
         workButton.style.color = textColor;
+        workButton.style.borderColor = textColor;
         themeContainer.style.backgroundColor = backgroundColor;
         themeContainer.style.color = textColor;
         aboutPage[i].style.backgroundColor = backgroundColor;
@@ -541,8 +551,9 @@ document.getElementById('showreel').addEventListener('loadedmetadata', function(
 
 window.addEventListener("orientationchange", function() {
   initializeMovingDivs("movingWorkOne", "D_AD");
-initializeMovingDivs("movingWorkTwo", "sydneyFestival");
-initializeMovingDivs("movingWorkThree", "rolus");
+  initializeMovingDivs("movingWorkTwo", "sydneyFestival");
+  initializeMovingDivs("movingWorkThree", "rolus");
+  closeShowreel();
 });
 
 

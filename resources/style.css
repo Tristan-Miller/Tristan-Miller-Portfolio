@@ -134,6 +134,7 @@ button {
     background-color: inherit;
     font-family: 'CustomFont', sans-serif; 
     font-size: 2.5em;
+    border-color: inherit;
     
 }
 
@@ -158,8 +159,8 @@ button {
 
 
 #animation-container {
-    width:  5em;
-    height: 2.7em;
+    width:  4.5em;
+    height: 2.43em
 
 }
 
@@ -189,14 +190,14 @@ button {
 #colourButton,
 #closeButton, 
 #aboutButton{
-    transition: background-color 0.3s, color 0.3s;
+    transition: 0.2s;
 }
 #funButton:hover,
 #aboutButton:hover,
 #workButton:hover,
 #closeButton:hover,
 #colourButton:hover {
-    transition: background-color 0.3s, color 0.3s;
+    transition: 0.2s;
 }
 
 
@@ -680,7 +681,7 @@ justify-content: center;
 }
 
 #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1, #workContainerSeven h1, #workContainerEight h1 {
-position: fixed;
+position: absolute;
    
     transition: 0.3s;
     opacity: 0;
@@ -799,6 +800,10 @@ position: fixed;
 }
 
 @media only screen and (max-width: 800px) {
+    #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1, #workContainerSeven h1, #workContainerEight h1 {
+        opacity: 1;
+           
+        }
 
     .projectvideo::-webkit-media-controls {
         display: initial;
@@ -902,10 +907,7 @@ display: none;
         margin: 0;
     }
 
-    #workContainerOne h1, #workContainerTwo h1, #workContainerThree h1, #workContainerFour h1, #workContainerFive h1, #workContainerSix h1, #workContainerSeven h1, #workContainerEight h1 {
-        opacity: 0;
-        display: none;
-        }
+   
   
     #movingWork:hover {
         transform: scale(1);
