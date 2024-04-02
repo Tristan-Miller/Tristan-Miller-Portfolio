@@ -143,6 +143,7 @@ function changeColors() {
       aboutButton.style.color = backgroundColor;
       aboutButton.style.borderColor = textColor;
       aboutButton.style.backgroundColor = textColor;
+      
     } else {
       aboutButton.style.backgroundColor = backgroundColor;
       aboutButton.style.borderColor = textColor;
@@ -216,6 +217,7 @@ function changeColors() {
       aboutButton.style.color = backgroundColor;
       aboutButton.style.backgroundColor = textColor;
       aboutButton.style.borderColor = textColor;
+      
     } else {
       aboutButton.style.backgroundColor = backgroundColor;
       aboutButton.style.color = textColor;

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tristan Miller</title>
+  <script src="resources/cursor.js" defer></script>
+  <script src="resources/work.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.10/lottie.min.js"></script>
+ 
+  <link rel="stylesheet" href="resources/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://use.typekit.net/adn5sjd.css">
+</head>
+
+<body class="theme" id="themeContainer">
+  <div id="custom-cursor"></div>
+  <div id="fadeToBlack"></div>
+  <main class="allMain">
+    <header class="header-holder">
+      <div onclick="goBack()" id="animation-container-project" class="clickable"></div>
+      <script>
+        // Load animation
+        var animation = bodymovin.loadAnimation({
+          container: document.getElementById('animation-container-project'), // Container to embed the animation
+          renderer: 'svg', // Renderer type
+          loop: true, // Whether the animation should loop
+          autoplay: true, // Whether the animation should play as soon as it's ready
+          path: 'TM_Logo_Animation.json' // Path to your JSON animation file
+        });
+      </script>
+    </header>
+
+    <div id="project" class="projectPage">
+      <video class="mainVideo" autoplay muted loop controls>
+        <source src="resources/Images/D&AD/Ceremony-OpeningReel-1920x1080-45sec.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div id="fullProjectContainer">
+        <div class="projectText"> 
+          <p class="projectName">D&AD</p> 
+          <p class="projectDate">2023</p> 
+          <div class="emptyDiv"></div>
+          <p class="projectExplainer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat erat purus, at eleifend neque tincidunt a. Proin quis sagittis lorem. Vestibulum sit amet metus rutrum, faucibus mi ac, luctus nisl. Nullam condimentum turpis in nulla convallis ultrices.</p>
+        </div>
+        <div class="workContainer">
+          <video class="projectvideo" autoplay muted loop controls>
+            <source src="resources/Images/D&AD/D_AD_Casestudy_Mockup.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="caption">Awards Ceremony Assets</p>
+        </div>
+        <div class="workContainer">
+          <img src="resources/Images/D&AD/pencils.png">
+          <p class="caption"></p>
+        </div>
+        <div class="workContainer">
+          <video class="projectvideo" autoplay muted loop controls>
+            <source src="resources/Images/D&AD/D_AD_Casestudy_OOH.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="caption"></p>
+        </div>
+        <div class="workContainer">
+          <img src="resources/Images/D&AD/endframe.png">
+          <p class="caption"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

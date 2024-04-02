@@ -213,6 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (currentOpacity === 0) {
         aboutPageVis = true;
+        aboutPage[i].style.zIndex = 999;
         movingWorkOne.style.transform = 'scale(0)';
         movingWorkTwo.style.transform = 'scale(0)';
         movingWorkThree.style.transform = 'scale(0)';
@@ -235,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < svgElements.length; i++) {
           svgElements[i].style.fill = textColor;
         }
-        aboutPage[i].style.zIndex = 999;
+        
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 7;
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
