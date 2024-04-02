@@ -259,6 +259,9 @@ function changeColors() {
         this.style.backgroundColor = textColor;
         this.style.color = backgroundColor;
         this.style.borderColor = textColor;
+        for (let i = 0; i < smileysvgElements.length; i++) {
+          smileysvgElements[i].style.fill = backgroundColor;
+        }
         
     });
 

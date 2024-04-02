@@ -236,6 +236,9 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < svgElements.length; i++) {
           svgElements[i].style.fill = textColor;
         }
+        for (let i = 0; i < smileysvgElements.length; i++) {
+          smileysvgElements[i].style.fill = textColor;
+        }
         
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 7;
