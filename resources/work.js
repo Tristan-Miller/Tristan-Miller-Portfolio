@@ -103,9 +103,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
 initializeMovingDivs("movingWorkOne", "D_AD");
 initializeMovingDivs("movingWorkTwo", "sydneyFestival");
 initializeMovingDivs("movingWorkThree", "rolus");
-////initializeMovingDivs("movingWorkFour", "youi");
-//initializeMovingDivs("movingWorkFive", "personal");
-//initializeMovingDivs("movingWorkSix", "dAndAD");
+
 
 document.addEventListener('DOMContentLoaded', function () {
   workButton.addEventListener('click', function () {
