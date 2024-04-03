@@ -298,6 +298,9 @@ function changeColors() {
         funButton.style.backgroundColor = backgroundColor;
         funButton.style.color = textColor;
         funButton.borderColor = textColor;
+        for (let i = 0; i < smileysvgElements.length; i++) {
+          smileysvgElements[i].style.fill = textColor;
+        }
         }
     });
 
