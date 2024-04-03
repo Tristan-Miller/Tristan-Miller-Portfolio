@@ -478,7 +478,7 @@ body,
 #aboutPageContainer {
     width: 100%;
     margin: 0; /* Center the container horizontally */
-    padding: 130px 20px 20px 20px;
+    padding: 80px 20px 20px 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -633,7 +633,7 @@ body,
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 80px 10px 10px 10px;
+    padding: 50px 10px 10px 10px;
     opacity: 1;
    
     
@@ -856,7 +856,7 @@ flex-wrap: wrap;
     #awardClient  {
         text-align: right;
     }
-    #awardsTextContainer {
+    #awardsTextContainer, #awards  {
         font-size: 13px;
         }
 
@@ -1023,7 +1023,7 @@ display: none;
     
     }
     #allWorkContainer {
-        padding: 5em 10vw 1vw 10vw;
+        padding: 50px 10vw 1vw 10vw;
        
         
     }
@@ -1033,7 +1033,7 @@ display: none;
     }
 
     #aboutPageContainer {
-        padding: 130px 10vw 20px 10vw;
+        padding: 80px 10vw 20px 10vw;
     }
 
    
