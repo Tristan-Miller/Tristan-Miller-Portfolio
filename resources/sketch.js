@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
         smileysvgElements[i].style.fill = backgroundColor;
       }
       movingWorkOne.style.transform = 'scale(0)';
-      movingWorkTwo.style.transform = 'scale(0)';
-      movingWorkThree.style.transform = 'scale(0)';
+      //movingWorkTwo.style.transform = 'scale(0)';
+      //movingWorkThree.style.transform = 'scale(0)';
       drawingEnable = true; // Corrected assignment operator from == to =
       funButtonPressed = true; // Corrected assignment operator from == to =
       console.log(funButtonPressed);
@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       funButtonPressed = false; // Corrected assignment operator from == to =
       movingWorkOne.style.transform = 'scale(1)';
-        movingWorkTwo.style.transform = 'scale(1)';
-        movingWorkThree.style.transform = 'scale(1)';
+       // movingWorkTwo.style.transform = 'scale(1)';
+       // movingWorkThree.style.transform = 'scale(1)';
       drawingEnable = false; // Corrected assignment operator from == to =
       brushesHolder.style.transform = 'translateY(0px)'; // Corrected syntax for setting transform property
       var pagetotal = document.body.scrollHeight; // Total height of the webpage

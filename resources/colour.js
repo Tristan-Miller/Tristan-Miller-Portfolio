@@ -259,9 +259,6 @@ function changeColors() {
         this.style.backgroundColor = textColor;
         this.style.color = backgroundColor;
         this.style.borderColor = textColor;
-        for (let i = 0; i < smileysvgElements.length; i++) {
-          smileysvgElements[i].style.fill = backgroundColor;
-        }
         
     });
 
@@ -291,6 +288,9 @@ function changeColors() {
           aboutButton.style.backgroundColor = backgroundColor;
           aboutButton.style.color = textColor;
           aboutButton.style.borderColor = textColor;
+          for (let i = 0; i < smileysvgElements.length; i++) {
+          smileysvgElements[i].style.fill = backgroundColor;
+        }
         } else {
         this.style.backgroundColor = backgroundColor;
         this.style.color = textColor;
@@ -300,6 +300,16 @@ function changeColors() {
         funButton.borderColor = textColor;
         }
     });
+
+   
   }
 
- 
+
+    funButton.addEventListener("mouseover", () => {
+      funButton.style.backgroundColor = textColor;
+      funButton.style.color = backgroundColor;
+      funButton.borderColor = textColor;
+      for (let i = 0; i < smileysvgElements.length; i++) {
+        smileysvgElements[i].style.fill = backgroundColor;
+      }
+    });
