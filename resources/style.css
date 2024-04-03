@@ -1,17 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap');
-
-@font-face {
-    font-family: 'CustomFont-Light';
-    src: url('HELVETICANEUELTSTD-LT.woff2') format('woff2'); /* Change the file name */
-    /* Specify the font weight */
-    /* Add more font properties if needed */
-}
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 
 
 body {
-    font-family: "DM Sans", sans-serif;
 
     margin: 0;
     padding: 0;
@@ -129,7 +120,7 @@ body {
 }
 
 button {
-    border: 1.5px solid;
+    border: 2px solid;
     margin: 0px;
     color: inherit;
     padding: .27em .5em;
@@ -139,9 +130,10 @@ button {
     border-color: inherit;
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
-    letter-spacing:-.05em;
+    font-weight: 300;
+    letter-spacing:-.01em;
     text-align: center;
+    font-style: normal;
 }
 
 
@@ -203,6 +195,7 @@ button {
 #closeButton:hover,
 #colourButton:hover {
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    
 }
 
 
@@ -336,8 +329,9 @@ button {
 
 .theme {
     font-family: "DM Sans", sans-serif;
-    
+    font-weight: 400;
     background-color: white;
+    
     color: black;
     user-select: none;
     transition: background-color 0.2s; 
@@ -353,6 +347,7 @@ button {
 
 
 .projectTitle {
+    font-family: "DM Sans", sans-serif;
     position: fixed;
     display: none;
     color: white;
@@ -360,8 +355,9 @@ button {
     margin: 15px;
     border-radius: 5px;
     z-index: 1002;
-    mix-blend-mode: difference;;
-    font-size: 2em;
+    mix-blend-mode: difference;
+    font-weight: 400;
+    font-size: 36px;
 }
 
 
@@ -467,21 +463,16 @@ body,
     
 }
 
-#hiCaption {
-    font-size: 50px;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    opacity: .5;
-}
 
 #developedTag {
     width: 100%;
     padding: 0;
     margin: 0;
-    font-size: 12px;
     text-align: center;
     opacity: .5;
+    font-size: 14px;
+  
+    font-weight: 300;
 }
 
 #aboutPageContainer {
@@ -502,14 +493,14 @@ body,
     justify-content: center;
     padding: 0;
     margin: 0;
-    font-size: 12px;
+    font-size: 18px;
   }
   
   #awards {
     width: 100%;
     padding: 0px 0 10px 0;
     margin: 0;
-    font-size: 12px;
+    font-size: 18px;
     opacity: .5;
   }
 
@@ -551,6 +542,7 @@ body,
     margin: 0;
     text-transform: uppercase;
     overflow: visible;
+    font-weight: 1000;
 }
 
 #LinkedIn {
@@ -558,7 +550,9 @@ body,
 }
 
 .socialButton:hover {
-    text-decoration: underline;
+    font-style: italic;
+
+   
 }
 
 #Instagram {
@@ -583,10 +577,20 @@ body,
 #headshotCaption {
     padding: 0;
     margin: 0;
-    font-size: 12px;
+    font-size: 36px;
     text-align: center;
+    font-weight: 300;
+    opacity: 1;
+}
+#headshotCaption2 {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 300;
     opacity: .5;
 }
+
 
 #headshotContainer { 
     align-items: center;
@@ -683,8 +687,9 @@ flex-wrap: wrap;
 .projectNameWork {
     color: black;
     overflow: visible;
-
-    font-size: 15px;
+    font-weight: 400;
+    letter-spacing:-.01em;
+    font-size: 18px;
     text-align: left;
     margin: 0;
     padding: 0;
@@ -695,8 +700,9 @@ flex-wrap: wrap;
     color: black;
     overflow: visible;
     opacity: 0.5;
-    font-size: 15px;
-    font-family: 'CustomFont-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing:-.01em;
     text-align: right;
     margin: 0;
     padding: 0;
@@ -772,8 +778,8 @@ flex-wrap: wrap;
     padding: 0;
     margin: 0;
     opacity: .5;
-    font-size: 12px;
-    font-family: 'CustomFont-Light', sans-serif;
+    font-size: 14px;
+   
 }
 
 .projectText {
@@ -785,7 +791,7 @@ flex-wrap: wrap;
    flex-wrap: wrap;
    align-items: flex-start;
     /*border: red solid 2px;*/
-   font-size: 20px;
+   font-size: 18px;
 }
 
 .projectExplainer {
@@ -850,7 +856,9 @@ flex-wrap: wrap;
     #awardClient  {
         text-align: right;
     }
-    
+    #awardsTextContainer {
+        font-size: 13px;
+        }
 
     
 }
@@ -861,7 +869,6 @@ flex-wrap: wrap;
 display: none;
     }
    
-
 
     #awardCompany {
         width: 50%;
