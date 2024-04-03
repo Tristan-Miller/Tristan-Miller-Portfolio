@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'CustomFont';
-    src: url('HELVETICANEUELTSTD-ROMAN.woff2') format('woff2');
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap');
 
 @font-face {
     font-family: 'CustomFont-Light';
@@ -10,7 +7,12 @@
     /* Add more font properties if needed */
 }
 
+
+
+
 body {
+    font-family: "DM Sans", sans-serif;
+
     margin: 0;
     padding: 0;
     justify-content: center;
@@ -111,6 +113,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
+  border-width: 0;
     z-index: 1000;
     font-size: 1em;
     mix-blend-mode: difference;
@@ -129,15 +132,17 @@ button {
     border: 1.5px solid;
     margin: 0px;
     color: inherit;
-    padding: .4em .5em .2em .5em;
+    padding: .27em .5em;
     border-radius: 2em;
     background-color: inherit;
-    font-family: 'CustomFont', sans-serif; 
     font-size: 2.5em;
     border-color: inherit;
-    
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    letter-spacing:-.05em;
+    text-align: center;
 }
-
 
 
 
@@ -330,8 +335,8 @@ button {
 
 
 .theme {
-    font-family: "CustomFont", sans-serif;
-    font-style: normal;
+    font-family: "DM Sans", sans-serif;
+    
     background-color: white;
     color: black;
     user-select: none;
@@ -355,8 +360,7 @@ button {
     margin: 15px;
     border-radius: 5px;
     z-index: 1002;
-    mix-blend-mode: difference;
-    font-family: 'CustomFont', sans-serif; 
+    mix-blend-mode: difference;;
     font-size: 2em;
 }
 
@@ -681,7 +685,6 @@ flex-wrap: wrap;
     overflow: visible;
 
     font-size: 15px;
-    font-family: 'CustomFont-Light', sans-serif;
     text-align: left;
     margin: 0;
     padding: 0;

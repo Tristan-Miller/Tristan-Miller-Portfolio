@@ -1,8 +1,8 @@
 let workPageVis = false;
 const workPages = document.getElementsByClassName('workPage');
 const movingWorkOne = document.getElementsByClassName('movingWorkOne')[0];
-const movingWorkTwo = document.getElementsByClassName('movingWorkTwo')[0];
-const movingWorkThree = document.getElementsByClassName('movingWorkThree')[0];
+//const movingWorkTwo = document.getElementsByClassName('movingWorkTwo')[0];
+//const movingWorkThree = document.getElementsByClassName('movingWorkThree')[0];
 let aboutPageVis = false;
 const aboutButton = document.getElementById('aboutButton');
 const workContainer = document.getElementsByClassName('workContainer');
@@ -101,8 +101,8 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
 }
 
 initializeMovingDivs("movingWorkOne", "D_AD");
-initializeMovingDivs("movingWorkTwo", "sydneyFestival");
-initializeMovingDivs("movingWorkThree", "rolus");
+//initializeMovingDivs("movingWorkTwo", "sydneyFestival");
+//initializeMovingDivs("movingWorkThree", "rolus");
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -154,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function () {
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
         movingWorkOne.style.transform = 'scale(0)';
-        movingWorkTwo.style.transform = 'scale(0)';
-        movingWorkThree.style.transform = 'scale(0)';
+        //movingWorkTwo.style.transform = 'scale(0)';
+        //movingWorkThree.style.transform = 'scale(0)';
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '0px';
@@ -173,8 +173,8 @@ document.addEventListener('DOMContentLoaded', function () {
         funButton.style.borderColor = textColor;
         workPageVis = false;
         movingWorkOne.style.transform = 'scale(1)';
-        movingWorkTwo.style.transform = 'scale(1)';
-        movingWorkThree.style.transform = 'scale(1)';
+        //movingWorkTwo.style.transform = 'scale(1)';
+        //movingWorkThree.style.transform = 'scale(1)';
         showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '50px';
@@ -213,8 +213,8 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutPageVis = true;
         aboutPage[i].style.zIndex = 999;
         movingWorkOne.style.transform = 'scale(0)';
-        movingWorkTwo.style.transform = 'scale(0)';
-        movingWorkThree.style.transform = 'scale(0)';
+       // movingWorkTwo.style.transform = 'scale(0)';
+       // movingWorkThree.style.transform = 'scale(0)';
         aboutPage[i].style.opacity = 1;
         backgroundColor = "#000000";
         textColor = "#ffffff"
@@ -269,8 +269,8 @@ document.addEventListener('DOMContentLoaded', function () {
           svgElements[i].style.fill = textColor;
         }
         movingWorkOne.style.transform = 'scale(1)';
-        movingWorkTwo.style.transform = 'scale(1)';
-        movingWorkThree.style.transform = 'scale(1)';
+      //  movingWorkTwo.style.transform = 'scale(1)';
+       // movingWorkThree.style.transform = 'scale(1)';
         aboutPage[i].style.opacity = 0;
         aboutButton.style.backgroundColor = backgroundColor;
         aboutButton.style.color = textColor;
@@ -373,7 +373,7 @@ workContainerTwo.addEventListener('click', function () {
     window.location.href = 'projectTwo.html';
   }, 300);
 });
-
+/*
 movingWorkTwo.addEventListener('click', function () {
   fadeToBlack.style.visibility = 'visible';
   fadeToBlack.style.opacity = 1;
@@ -381,7 +381,7 @@ movingWorkTwo.addEventListener('click', function () {
     window.location.href = 'projectTwo.html';
   }, 300);
 });
-
+*/
 workContainerThree.addEventListener('click', function () {
   fadeToBlack.style.visibility = 'visible';
   fadeToBlack.style.opacity = 1;
@@ -389,7 +389,7 @@ workContainerThree.addEventListener('click', function () {
     window.location.href = 'projectThree.html';
   }, 300);
 });
-
+/*
 movingWorkThree.addEventListener('click', function () {
   fadeToBlack.style.visibility = 'visible';
   fadeToBlack.style.opacity = 1;
@@ -397,7 +397,7 @@ movingWorkThree.addEventListener('click', function () {
     window.location.href = 'projectThree.html';
   }, 300);
 });
-
+*/
 workContainerThree.addEventListener('click', function () {
   fadeToBlack.style.visibility = 'visible';
   fadeToBlack.style.opacity = 1;
@@ -565,8 +565,8 @@ document.getElementById('showreel').addEventListener('loadedmetadata', function(
 
 window.addEventListener("orientationchange", function() {
   initializeMovingDivs("movingWorkOne", "D_AD");
-  initializeMovingDivs("movingWorkTwo", "sydneyFestival");
-  initializeMovingDivs("movingWorkThree", "rolus");
+ // initializeMovingDivs("movingWorkTwo", "sydneyFestival");
+  //initializeMovingDivs("movingWorkThree", "rolus");
   closeShowreel();
 });
 
