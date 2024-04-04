@@ -191,8 +191,8 @@ button {
 }
 
 #intro-animation-container {
-    width: 80vw;
-    height: 30vw;
+    width: 80%;
+    height: 100%;
     border: 1px red solid;
 }
 
