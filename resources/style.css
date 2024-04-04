@@ -190,12 +190,17 @@ button {
     height: 1em;
 }
 
+#intro-animation-container {
+    width: 80vw;
+    height: 30vw;
+    border: 1px red solid;
+}
 
 
 
 #animation-container-project {
-    width:  3.698em;
-    height: 2em;
+    width:  4.5em;
+    height: 2.43em;
 }
 
 #animation-container-project svg path {

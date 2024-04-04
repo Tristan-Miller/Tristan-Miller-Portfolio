@@ -67,6 +67,8 @@
       autoplay: true, // Whether the animation should play as soon as it's ready
       path: 'Smiley_Animation.json' // Path to your JSON animation file
     });
+
+    
   </script>
 
  </header>
@@ -269,9 +271,19 @@
     </audio>
   </div>
   <div class="welcomeMessageContainer">
-      <p class="welcomeMessage">Hi I'm &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,<br> I extrude, code and make things move.</p>
-      <img id="welcomeMessageGif" src="resources/Images/TristanLogoExplode.gif" alt="">
+    <div id="intro-animation-container"></div>
   </div>
+  <script>
+     // Load animation
+     var introanimation = bodymovin.loadAnimation({
+      container: document.getElementById('intro-animation-container'), // Container to embed the animation
+      renderer: 'svg', // Renderer type
+      loop: true, // Whether the animation should loop
+      autoplay: true, // Whether the animation should play as soon as it's ready
+      path: 'TM_Intro_Animation.json' // Path to your JSON animation file
+    });
+
+  </script>
 
 </body>
 
