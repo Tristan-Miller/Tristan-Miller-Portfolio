@@ -191,7 +191,7 @@ button {
 }
 
 #intro-animation-container {
-    width: 80%;
+    width: 50%;
     height: 100%;
     border: 1px red solid;
 }
@@ -894,6 +894,11 @@ flex-wrap: wrap;
 
 @media only screen and (max-width: 500px) {
 
+    #intro-animation-container {
+        width: 100%;
+    }
+
+
     #developedTag{
 display: none;
     }
@@ -1033,6 +1038,11 @@ display: none;
 
 
 @media only screen and (min-width: 1200px) {
+
+    #intro-animation-container {
+        width: 40%;
+    }
+
     .socialButton{
         font-size: 5.6vw;
     }
