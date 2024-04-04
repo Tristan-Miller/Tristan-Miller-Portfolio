@@ -193,7 +193,8 @@ button {
 #intro-animation-container {
     width: 50%;
     height: 100%;
-    border: 1px red solid;
+ /*  border: 1px red solid; */
+    transform: translateY(-10%); 
 }
 
 
