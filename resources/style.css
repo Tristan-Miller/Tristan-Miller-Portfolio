@@ -99,6 +99,30 @@ body {
     align-items: center;
 }
 
+.welcomeMessageContainer {
+    width:100%;
+    height: 100%;
+
+    display: flex; /* This line enables Flexbox */
+    justify-content: center; /* Centers content along the main axis (horizontally if flex-direction is row) */
+    align-items: center; /* Centers content along the cross axis (vertically if flex-direction is row) */
+}
+
+.welcomeMessage {
+    width: 60%;
+    font-weight: 900;
+    font-size: 6vw;
+    text-align: center;
+    line-height: 5.5vw;
+    overflow: visible;
+
+}
+
+#welcomeMessageGif {
+    position: absolute;
+    width: 25.5vw;
+    transform: translate(6.5vw, -5.5vw);
+}
 
 .mute-button {
     position: absolute;
