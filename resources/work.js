@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 0; i < svgElements.length; i++) {
       svgElements[i].style.fill = textColor;
      }
+     for (let i = 0; i < smileysvgElements.length; i++) {
+      smileysvgElements[i].style.fill = textColor;
+    }
     for (let i = 0; i < aboutPage.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
       backgroundColor = "#ffffff";
@@ -235,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
           svgElements[i].style.fill = textColor;
         }
         for (let i = 0; i < smileysvgElements.length; i++) {
-          smileysvgElements[i].style.fill = textColor;
+          smileysvgElements[i].style.fill = backgroundColor;
         }
         
         canvasContainer.style.zIndex = 5;

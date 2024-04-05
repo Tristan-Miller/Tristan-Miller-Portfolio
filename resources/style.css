@@ -194,7 +194,7 @@ button {
     width: 50%;
     height: 100%;
  /*  border: 1px red solid; */
-    transform: translateY(-10%); 
+    transform: translateY(-20%); 
 }
 
 
@@ -846,7 +846,7 @@ flex-wrap: wrap;
 @media only screen and (max-width: 800px) {
 
     #intro-animation-container {
-        width: 80%;
+        width: 70%;
     }
    
     .projectvideo::-webkit-media-controls {
@@ -900,7 +900,7 @@ flex-wrap: wrap;
 @media only screen and (max-width: 500px) {
 
     #intro-animation-container {
-        width: 100%;
+        width: 80%;
     }
 
 
