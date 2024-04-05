@@ -115,6 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
      for (let i = 0; i < smileysvgElements.length; i++) {
       smileysvgElements[i].style.fill = textColor;
     }
+    for (let i = 0; i < introsvgElements.length; i++) {
+      introsvgElements[i].style.fill = textColor;
+     }
     for (let i = 0; i < aboutPage.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
       backgroundColor = "#ffffff";
@@ -195,6 +198,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Change the fill color of each SVG element
     for (let i = 0; i < svgElements.length; i++) {
       svgElements[i].style.fill = textColor;
+     }
+     for (let i = 0; i < introsvgElements.length; i++) {
+      introsvgElements[i].style.fill = textColor;
      }
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);

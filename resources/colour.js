@@ -10,7 +10,8 @@ const animationContainer = document.getElementById('animation-container');
 const smileyAnimationContainer = document.getElementById('smiley-animation-container');
 const svgElements = animationContainer.getElementsByTagName('path');
 const smileysvgElements = smileyAnimationContainer.getElementsByTagName('path');
-
+const introAnimationContainer = document.getElementById('intro-animation-container');
+const introsvgElements = introAnimationContainer.getElementsByTagName('path');
 
 function getRandomColor() {
     // Generate a random color in hexadecimal format
@@ -123,6 +124,9 @@ function changeColors() {
      // Change the fill color of each SVG element
      for (let i = 0; i < svgElements.length; i++) {
       svgElements[i].style.fill = textColor;
+     }
+     for (let i = 0; i < introsvgElements.length; i++) {
+      introsvgElements[i].style.fill = textColor;
      }
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
