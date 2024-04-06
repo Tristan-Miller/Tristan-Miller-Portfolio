@@ -41,13 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let i = 0; i < smileysvgElements.length; i++) {
         smileysvgElements[i].style.fill = backgroundColor;
       }
-      //movingWorkOne.style.transform = 'scale(0)';
-      //movingWorkTwo.style.transform = 'scale(0)';
-      //movingWorkThree.style.transform = 'scale(0)';
+      movingWorkOne.style.transform = 'scale(0)';
       drawingEnable = true; // Corrected assignment operator from == to =
       funButtonPressed = true; // Corrected assignment operator from == to =
-    
+      if (initialReelVis == true){
       showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+      }
     } else { // Removed unnecessary condition since if funButtonPressed is not false, it must be true
       funButton.style.backgroundColor = backgroundColor;
       funButton.style.color = textColor;
@@ -56,16 +55,16 @@ document.addEventListener('DOMContentLoaded', function () {
         smileysvgElements[i].style.fill = textColor;
       }
       funButtonPressed = false; // Corrected assignment operator from == to =
-     // movingWorkOne.style.transform = 'scale(1)';
-       // movingWorkTwo.style.transform = 'scale(1)';
-       // movingWorkThree.style.transform = 'scale(1)';
+      movingWorkOne.style.transform = 'scale(1)';
       drawingEnable = false; // Corrected assignment operator from == to =
       brushesHolder.style.transform = 'translateY(0px)'; // Corrected syntax for setting transform property
       var pagetotal = document.body.scrollHeight; // Total height of the webpage
       var containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
       var translateYValue = pagetotal - containerHeight; // Calculate the translateY value
       var finalTranslate = translateYValue/2 + containerHeight/3; 
+      if (initialReelVis == true){
       showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+      }
     }
   });
    

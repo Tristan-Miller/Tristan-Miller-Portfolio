@@ -180,9 +180,7 @@ function changeColors() {
     brushesHolder.style.zIndex = 3;
     workPageVis = false;
     drawingEnable = false;
-   // movingWorkOne.style.transform = 'scale(1)';
-   // movingWorkTwo.style.transform = 'scale(1)';
-   // movingWorkThree.style.transform = 'scale(1)';
+    movingWorkOne.style.transform = 'scale(1)';
     showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
     for (let j = 0; j < workContainer.length; j++) {
       workContainer[j].style.top = '50px';

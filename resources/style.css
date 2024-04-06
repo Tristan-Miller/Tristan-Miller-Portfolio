@@ -304,11 +304,11 @@ button {
 
 
 #movingWork {
-    width: 175px;
-    height: 175px;
+    width: 120px;
+    height: 120px;
     position: absolute;
     border-radius: 50%;
-    transition: transform 0.2s, border-radius 0.2s;
+    transition: transform 0.3s, scale 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -318,8 +318,6 @@ button {
 
 #movingWork:hover {
     transform: scale(1.2);
-    border-radius: 3%;
-    z-index: 1002;
   
 }
 
@@ -368,17 +366,14 @@ button {
 
 
 .projectTitle {
-    font-family: "DM Sans", sans-serif;
     position: fixed;
     display: none;
     color: white;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 5px;
+    margin: 5px 25px;
     z-index: 1002;
     mix-blend-mode: difference;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 20px;
 }
 
 
@@ -851,8 +846,8 @@ flex-wrap: wrap;
       }
       
     #movingWork {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
     }
     .workContainer {
         width: 100%;
@@ -892,7 +887,7 @@ flex-wrap: wrap;
 
 
     #developedTag{
-display: none;
+      display: none;
     }
    
 
@@ -921,8 +916,8 @@ display: none;
         top: 43%;
     }   
     #movingWork {
-        width: 120px;
-        height: 120px;
+        width: 90px;
+        height: 90px;
     }
     .mute-button {
         display: none;
@@ -1043,8 +1038,8 @@ display: none;
         top: 49%;
     } 
     #movingWork {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
    
 

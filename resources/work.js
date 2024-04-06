@@ -1,8 +1,6 @@
 let workPageVis = false;
 const workPages = document.getElementsByClassName('workPage');
-//const movingWorkOne = document.getElementsByClassName('movingWorkOne')[0];
-//const movingWorkTwo = document.getElementsByClassName('movingWorkTwo')[0];
-//const movingWorkThree = document.getElementsByClassName('movingWorkThree')[0];
+const movingWorkOne = document.getElementsByClassName('movingWorkOne')[0];
 let aboutPageVis = false;
 const aboutButton = document.getElementById('aboutButton');
 const workContainer = document.getElementsByClassName('workContainer');
@@ -29,6 +27,7 @@ const headshotContainer = document.getElementById('headshotContainer');
 const ouchSound = document.getElementById('ouchSound');
 
 let reelVis = true;
+let initialReelVis = false;
 let pagetotal = document.body.scrollHeight; // Total height of the webpage
 let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
 let translateYValue = pagetotal - containerHeight; // Calculate the translateY value
@@ -99,9 +98,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
   }
 }
 
-//initializeMovingDivs("movingWorkOne", "D_AD");
-//initializeMovingDivs("movingWorkTwo", "sydneyFestival");
-//initializeMovingDivs("movingWorkThree", "rolus");
+initializeMovingDivs("movingWorkOne", "D_AD");
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -158,10 +155,10 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
-       // movingWorkOne.style.transform = 'scale(0)';
-        //movingWorkTwo.style.transform = 'scale(0)';
-        //movingWorkThree.style.transform = 'scale(0)';
+        movingWorkOne.style.transform = 'scale(0)';
+        if (initialReelVis == true){
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
+        }
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '0px';
         }
@@ -177,10 +174,10 @@ document.addEventListener('DOMContentLoaded', function () {
         brushes.style.color = textColor;
         funButton.style.borderColor = textColor;
         workPageVis = false;
-        //movingWorkOne.style.transform = 'scale(1)';
-        //movingWorkTwo.style.transform = 'scale(1)';
-        //movingWorkThree.style.transform = 'scale(1)';
+        movingWorkOne.style.transform = 'scale(1)';
+        if (initialReelVis == true){
         showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+        }
         for (let j = 0; j < workContainer.length; j++) {
           workContainer[j].style.top = '50px';
         }
@@ -220,9 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (currentOpacity === 0) {
         aboutPageVis = true;
         aboutPage[i].style.zIndex = 999;
-       // movingWorkOne.style.transform = 'scale(0)';
-       // movingWorkTwo.style.transform = 'scale(0)';
-       // movingWorkThree.style.transform = 'scale(0)';
+        movingWorkOne.style.transform = 'scale(0)';
         aboutPage[i].style.opacity = 1;
         backgroundColor = "#000000";
         textColor = "#ffffff"
@@ -245,10 +240,11 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < smileysvgElements.length; i++) {
           smileysvgElements[i].style.fill = backgroundColor;
         }
-        
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 7;
+        if(initialReelVis == true){
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
+        }
         setTimeout(function () {
           headshotContainer.style.opacity = 1;
         }, 200);
@@ -276,9 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < svgElements.length; i++) {
           svgElements[i].style.fill = textColor;
         }
-       // movingWorkOne.style.transform = 'scale(1)';
-      //  movingWorkTwo.style.transform = 'scale(1)';
-       // movingWorkThree.style.transform = 'scale(1)';
+        movingWorkOne.style.transform = 'scale(1)';
         aboutPage[i].style.opacity = 0;
         aboutButton.style.backgroundColor = backgroundColor;
         aboutButton.style.color = textColor;
@@ -286,7 +280,9 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 2;
         funButton.style.visibility = "visible";
         brushesHolder.style.zIndex = 3;
+        if(initialReelVis == true){
         showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+        }
       }, 100);
       }
     }
@@ -362,9 +358,6 @@ workContainerOne.addEventListener('click', function () {
     window.location.href = 'projectOne.html';
 });
 
-/*movingWorkOne.addEventListener('click', function () {
-    window.location.href = 'projectOne.html';
-});*/
 
 workContainerTwo.addEventListener('click', function () {
     window.location.href = 'projectTwo.html';
@@ -399,13 +392,23 @@ workContainerEight.addEventListener('click', function () {
 });
 
 
+movingWorkOne.addEventListener('click', function () {
+    showreelContainer.style.zIndex = 1006;
+    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
+    showreelVis.style.zIndex = 1004;
+    muteButton.style.opacity = 1;
+    setTimeout(function() {
+      showreelVis.style.opacity = 0.8;
+      movingWorkOne.style.display = 'none';
+    }, 1000); // 1000 milliseconds = 1 second
+    showreel.style.filter = 'blur(0px)';
+    reelVis = true;
+    movingWorkOne.style.transform = 'scale(0)';
+    showReelFooter.style.opacity = 0;
+    initialReelVis = true;
+});
 
-function initiateReel(){
-  showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
-  showreelVis.style.zIndex = 1;
-  showreelVis.style.opacity = 0;
-  reelVis = false;
-}
+
 
 function closeShowreel() {
   // Pause the video
@@ -471,16 +474,6 @@ showreelContainer.addEventListener('mouseleave', function() {
   }
 });
 
-function intialReelLoad(){
-  reelVis = true;
-    showreelContainer.style.zIndex = 1006;
-    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
-    showreelVis.style.zIndex = 1004;
-    setTimeout(function() {
-      showreelVis.style.opacity = 0.8;
-    }, 1000); // 1000 milliseconds = 1 second
-    showreel.style.filter = 'blur(0px)';
-}
 
 // Function to create and append a mute button
 function createMuteButton() {
@@ -517,10 +510,7 @@ document.getElementById('showreel').addEventListener('loadedmetadata', function(
 
 
 window.addEventListener("orientationchange", function() {
- // initializeMovingDivs("movingWorkOne", "D_AD");
- // initializeMovingDivs("movingWorkTwo", "sydneyFestival");
-  //initializeMovingDivs("movingWorkThree", "rolus");
-  closeShowreel();
+ initializeMovingDivs("movingWorkOne", "D_AD");
 });
 
 
@@ -544,4 +534,4 @@ document.getElementById("LinkedIn").addEventListener("click", function() {
   window.open("https://www.linkedin.com/in/tristan-m-4ab648142/", "_blank");
 });
 
-window.onload = closeShowreel;
+
