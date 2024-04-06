@@ -274,16 +274,20 @@
     <div id="intro-animation-container"></div>
   </div>
   <script>
-     // Load animation
-     var introanimation = bodymovin.loadAnimation({
-      container: document.getElementById('intro-animation-container'), // Container to embed the animation
-      renderer: 'svg', // Renderer type
-      loop: true, // Whether the animation should loop
-      autoplay: true, // Whether the animation should play as soon as it's ready
-      path: 'TM_Intro_Animation.json' // Path to your JSON animation file
+    // Delayed load animation
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var introanimation = bodymovin.loadAnimation({
+          container: document.getElementById('intro-animation-container'), // Container to embed the animation
+          renderer: 'svg', // Renderer type
+          loop: true, // Whether the animation should loop
+          autoplay: true, // Whether the animation should play as soon as it's ready
+          path: 'TM_Intro_Animation.json' // Path to your JSON animation file
+        });
+      }, 2000); // Delay in milliseconds (5000ms = 5s)
     });
-
   </script>
+  
 
 </body>
 
