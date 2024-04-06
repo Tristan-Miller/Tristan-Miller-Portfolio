@@ -428,7 +428,7 @@ function closeShowreel() {
   }, 250); 
   showreelContainer.style.zIndex = 1000;
   reelVis = false;
-  console.log('vis ' + reelVis);
+ 
 }
 
 
@@ -443,9 +443,7 @@ function showReel(){
     }, 1000); // 1000 milliseconds = 1 second
     showreel.style.filter = 'blur(0px)';
     reelVis = true;
-    console.log('vis ' + reelVis);
-  } else if (reelVis == true) {
-    console.log('vis ' + reelVis);
+    
   }
 }
 
@@ -482,7 +480,6 @@ function intialReelLoad(){
       showreelVis.style.opacity = 0.8;
     }, 1000); // 1000 milliseconds = 1 second
     showreel.style.filter = 'blur(0px)';
-    console.log('vis ' + reelVis);
 }
 
 // Function to create and append a mute button

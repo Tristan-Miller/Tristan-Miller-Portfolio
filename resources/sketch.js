@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
       //movingWorkThree.style.transform = 'scale(0)';
       drawingEnable = true; // Corrected assignment operator from == to =
       funButtonPressed = true; // Corrected assignment operator from == to =
-      console.log(funButtonPressed);
+    
       showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
     } else { // Removed unnecessary condition since if funButtonPressed is not false, it must be true
       funButton.style.backgroundColor = backgroundColor;
@@ -110,7 +110,6 @@ function setup() {
 
 function draw() {
   imageMode(CENTER);
-console.log(drawingEnable);
   if (isDrawing && drawingEnable && mouseY < windowHeight - 100 && mouseY > 50) {
     const currentImage = brushSelect % 6 === 0 ? lemon : (brushSelect % 6 === 1 ? pepper : (brushSelect % 6 === 2 ? berry : (brushSelect % 6 === 3 ? banana : (brushSelect % 6 === 4 ? avocado : (brushSelect % 6 === 5 ? apple : apple)))));
     image(currentImage, mouseX, mouseY, 100, 100);
