@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let i = 0; i < smileysvgElements.length; i++) {
         smileysvgElements[i].style.fill = backgroundColor;
       }
-      movingWorkOne.style.transform = 'scale(0)';
+      //movingWorkOne.style.transform = 'scale(0)';
       //movingWorkTwo.style.transform = 'scale(0)';
       //movingWorkThree.style.transform = 'scale(0)';
       drawingEnable = true; // Corrected assignment operator from == to =
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         smileysvgElements[i].style.fill = textColor;
       }
       funButtonPressed = false; // Corrected assignment operator from == to =
-      movingWorkOne.style.transform = 'scale(1)';
+     // movingWorkOne.style.transform = 'scale(1)';
        // movingWorkTwo.style.transform = 'scale(1)';
        // movingWorkThree.style.transform = 'scale(1)';
       drawingEnable = false; // Corrected assignment operator from == to =
