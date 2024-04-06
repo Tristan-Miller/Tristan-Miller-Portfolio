@@ -21,7 +21,6 @@ const workContainerEight = document.getElementById('workContainerEight');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
 const movingWork = document.getElementById('containerDiv');
-const muteButton = document.createElement('button');
 const currentOpacity = parseFloat(getComputedStyle(workPages[0]).opacity);
 const headshotContainer = document.getElementById('headshotContainer');
 const ouchSound = document.getElementById('ouchSound');
@@ -31,7 +30,7 @@ let initialReelVis = false;
 let pagetotal = document.body.scrollHeight; // Total height of the webpage
 let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
 let translateYValue = pagetotal - containerHeight; // Calculate the translateY value
-let finalTranslate = translateYValue/2 + containerHeight/2.8; 
+let finalTranslate = translateYValue/2.2 + containerHeight/2.3; 
 let hideShowReel = translateYValue/2 + containerHeight/3 + 150; 
 
 //const movingWorkFour = document.getElementsByClassName('movingWorkFour');
@@ -393,19 +392,22 @@ workContainerEight.addEventListener('click', function () {
 
 
 movingWorkOne.addEventListener('click', function () {
-    showreelContainer.style.zIndex = 1006;
-    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
-    showreelVis.style.zIndex = 1004;
-    muteButton.style.opacity = 1;
-    setTimeout(function() {
-      showreelVis.style.opacity = 0.8;
-      movingWorkOne.style.display = 'none';
-    }, 1000); // 1000 milliseconds = 1 second
+  showreelContainer.style.display = 'flex';
+  setTimeout(function() {
     showreel.style.filter = 'blur(0px)';
     reelVis = true;
     movingWorkOne.style.transform = 'scale(0)';
     showReelFooter.style.opacity = 0;
     initialReelVis = true;
+    showreelContainer.style.zIndex = 1006;
+    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
+    showreelVis.style.zIndex = 1004;
+  }, 10); // 1000 milliseconds = 1 second
+    setTimeout(function() {
+      showreelVis.style.opacity = 0.8;
+      movingWorkOne.style.display = 'none';
+    }, 1000); // 1000 milliseconds = 1 second
+    
 });
 
 
@@ -419,7 +421,6 @@ function closeShowreel() {
   showReelFooter.style.display = 'initial';
   setTimeout(function() {
     showReelFooter.style.opacity = .5;
-    muteButton.style.opacity = 0;
  }, 1);
   showreelVis.style.opacity = 0;
   setTimeout(function() {
@@ -440,7 +441,6 @@ function showReel(){
     showreelContainer.style.zIndex = 1006;
     showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
     showreelVis.style.zIndex = 1004;
-    muteButton.style.opacity = 1;
     setTimeout(function() {
       showreelVis.style.opacity = 0.8;
     }, 1000); // 1000 milliseconds = 1 second
@@ -468,41 +468,9 @@ showreelContainer.addEventListener('mouseleave', function() {
       showReelFooter.style.display = 'initial';
       setTimeout(function() {
         showReelFooter.style.opacity = .5;
-        muteButton.style.opacity = 0;
      }, 1);
   showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
   }
-});
-
-
-// Function to create and append a mute button
-function createMuteButton() {
-  var video = document.getElementById('showreel');
-  if (video) {
-    // Create mute button
-  
-    muteButton.innerHTML = '<i class="material-icons">volume_off</i>';
-    muteButton.classList.add('mute-button');
-    muteButton.style.opacity = 0;
-    // Add event listener to toggle mute/unmute
-    muteButton.addEventListener('click', function() {
-      if (video.muted) {
-        video.muted = false;
-        muteButton.innerHTML = '<i class="material-icons">volume_up</i>';
-      } else {
-        video.muted = true;
-        muteButton.innerHTML = '<i class="material-icons">volume_off</i>';
-      }
-    });
-
-    // Append the mute button to the video container
-    video.parentNode.insertBefore(muteButton, video.nextSibling);
-  }
-}
-
-// Call the function when the video is loaded
-document.getElementById('showreel').addEventListener('loadedmetadata', function() {
-  createMuteButton();
 });
 
 

@@ -229,9 +229,8 @@ button {
     max-width: 900px;
     left: 50%;
     top: 50%;
-   
     transform: translate(-50%, 250%); /* Move the container horizontally to the center */
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -241,9 +240,6 @@ button {
     filter: blur(0px);
 }
 
-#showreelContainer:hover {
-    transform: translate(-50%, 200%);
-}
 
 #showreel {
     height: auto; /* Let the height adjust according to the video's aspect ratio */
