@@ -1,6 +1,6 @@
 let workPageVis = false;
 const workPages = document.getElementsByClassName('workPage');
-const movingWorkOne = document.getElementsByClassName('movingWorkOne')[0];
+//const movingWorkOne = document.getElementsByClassName('movingWorkOne')[0];
 //const movingWorkTwo = document.getElementsByClassName('movingWorkTwo')[0];
 //const movingWorkThree = document.getElementsByClassName('movingWorkThree')[0];
 let aboutPageVis = false;
@@ -22,7 +22,6 @@ const workContainerSeven = document.getElementById('workContainerSeven');
 const workContainerEight = document.getElementById('workContainerEight');
 const canvasContainer = document.getElementById('canvas-container');
 const Switchy = document.getElementById('Switchy');
-const fadeToBlack = document.getElementById('fadeToBlack');
 const movingWork = document.getElementById('containerDiv');
 const muteButton = document.createElement('button');
 const currentOpacity = parseFloat(getComputedStyle(workPages[0]).opacity);
@@ -100,7 +99,7 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
   }
 }
 
-initializeMovingDivs("movingWorkOne", "D_AD");
+//initializeMovingDivs("movingWorkOne", "D_AD");
 //initializeMovingDivs("movingWorkTwo", "sydneyFestival");
 //initializeMovingDivs("movingWorkThree", "rolus");
 
@@ -159,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
         canvasContainer.style.zIndex = 5;
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
-        movingWorkOne.style.transform = 'scale(0)';
+       // movingWorkOne.style.transform = 'scale(0)';
         //movingWorkTwo.style.transform = 'scale(0)';
         //movingWorkThree.style.transform = 'scale(0)';
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
@@ -178,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
         brushes.style.color = textColor;
         funButton.style.borderColor = textColor;
         workPageVis = false;
-        movingWorkOne.style.transform = 'scale(1)';
+        //movingWorkOne.style.transform = 'scale(1)';
         //movingWorkTwo.style.transform = 'scale(1)';
         //movingWorkThree.style.transform = 'scale(1)';
         showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
@@ -221,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (currentOpacity === 0) {
         aboutPageVis = true;
         aboutPage[i].style.zIndex = 999;
-        movingWorkOne.style.transform = 'scale(0)';
+       // movingWorkOne.style.transform = 'scale(0)';
        // movingWorkTwo.style.transform = 'scale(0)';
        // movingWorkThree.style.transform = 'scale(0)';
         aboutPage[i].style.opacity = 1;
@@ -277,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < svgElements.length; i++) {
           svgElements[i].style.fill = textColor;
         }
-        movingWorkOne.style.transform = 'scale(1)';
+       // movingWorkOne.style.transform = 'scale(1)';
       //  movingWorkTwo.style.transform = 'scale(1)';
        // movingWorkThree.style.transform = 'scale(1)';
         aboutPage[i].style.opacity = 0;
@@ -360,95 +359,43 @@ function resetImage8(element) {
 }
 }
 workContainerOne.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
     window.location.href = 'projectOne.html';
-  }, 300);
 });
 
-movingWorkOne.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
+/*movingWorkOne.addEventListener('click', function () {
     window.location.href = 'projectOne.html';
-  }, 300);
-});
+});*/
 
 workContainerTwo.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
     window.location.href = 'projectTwo.html';
-  }, 300);
 });
-/*
-movingWorkTwo.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
-    window.location.href = 'projectTwo.html';
-  }, 300);
-});
-*/
+
 workContainerThree.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
     window.location.href = 'projectThree.html';
-  }, 300);
 });
-/*
-movingWorkThree.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
-    window.location.href = 'projectThree.html';
-  }, 300);
-});
-*/
+
 workContainerThree.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
     window.location.href = 'projectThree.html';
-  }, 300);
 });
+
 workContainerFour.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
     window.location.href = 'projectFour.html';
-  }, 300);
 });
+
 workContainerFive.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
     window.location.href = 'projectFive.html';
-  }, 300);
 });
+
 workContainerSix.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
     window.location.href = 'projectSix.html';
-  }, 300);
 });
+
 workContainerSeven.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
     window.location.href = 'projectSeven.html';
-  }, 300);
 });
 
 workContainerEight.addEventListener('click', function () {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  setTimeout(function () {
     window.location.href = 'projectEight.html';
-  }, 300);
 });
 
 
@@ -573,7 +520,7 @@ document.getElementById('showreel').addEventListener('loadedmetadata', function(
 
 
 window.addEventListener("orientationchange", function() {
-  initializeMovingDivs("movingWorkOne", "D_AD");
+ // initializeMovingDivs("movingWorkOne", "D_AD");
  // initializeMovingDivs("movingWorkTwo", "sydneyFestival");
   //initializeMovingDivs("movingWorkThree", "rolus");
   closeShowreel();
@@ -581,12 +528,7 @@ window.addEventListener("orientationchange", function() {
 
 
 function goBack() {
-  fadeToBlack.style.visibility = 'visible';
-  fadeToBlack.style.opacity = 1;
-  intialLoad = true;
-  setTimeout(function () {
     window.location.href = 'index.html';
-  }, 300);
 }
 
 headshotContainer.addEventListener("click", function() {
