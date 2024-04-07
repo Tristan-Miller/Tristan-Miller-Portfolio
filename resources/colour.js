@@ -193,11 +193,24 @@ function changeColors() {
     funButton.style.color = textColor;
     themeContainer.style.backgroundColor = backgroundColor;
     themeContainer.style.color = textColor;
+    workButton.style.borderColor = textColor;
+    aboutButton.style.borderColor = textColor;
+    funButton.style.borderColor = textColor;
     aboutPage[0].style.backgroundColor = backgroundColor;
     aboutPage[0].style.opacity = 0;
     aboutButton.style.backgroundColor = backgroundColor;
     aboutButton.style.color = textColor;
     aboutPage[0].style.zIndex = 1;
+    for (let i = 0; i < svgElements.length; i++) {
+      svgElements[i].style.fill = textColor;
+     }
+     for (let i = 0; i < introsvgElements.length; i++) {
+      introsvgElements[i].style.fill = textColor;
+     }
+     for (let i = 0; i < smileysvgElements.length; i++) {
+      smileysvgElements[i].style.fill = textColor;
+     }
+
 
   }
   }
