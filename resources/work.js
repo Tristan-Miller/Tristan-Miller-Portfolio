@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
 
 });
-if (window.innerWidth > 500) {
+
 function changeImage(element) {
   document.getElementById('image1').src = 'resources/Images/ProjectPreviews/D_AD_Project_Motion.gif';
 }
@@ -352,7 +352,7 @@ function changeImage8(element) {
 function resetImage8(element) {
   document.getElementById('image8').src = 'resources/Images/ProjectPreviews/Weel_Project_Static.jpg';
 }
-}
+
 workContainerOne.addEventListener('click', function () {
     window.location.href = 'projectOne.html';
 });
@@ -400,12 +400,16 @@ movingWorkOne.addEventListener('click', function () {
     showReelFooter.style.opacity = 0;
     initialReelVis = true;
     showreelContainer.style.zIndex = 1006;
-    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
     showreelVis.style.zIndex = 1004;
   }, 10); // 1000 milliseconds = 1 second
+
+  setTimeout(function() {
+    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
+  }, 500);
     setTimeout(function() {
       showreelVis.style.opacity = 0.8;
       movingWorkOne.style.display = 'none';
+     
     }, 1000); // 1000 milliseconds = 1 second
     
 });
