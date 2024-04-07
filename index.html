@@ -71,7 +71,12 @@
       path: 'Smiley_Animation.json' // Path to your JSON animation file
     });
 
-    
+    document.addEventListener("DOMContentLoaded", function() {
+  var loadingScreen = document.getElementById('loading-screen');
+  if(loadingScreen) {
+    loadingScreen.style.display = 'none';
+  }
+});
   </script>
 
  </header>
