@@ -406,11 +406,12 @@ movingWorkOne.addEventListener('click', function () {
   setTimeout(function() {
     showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
   }, 500);
-    setTimeout(function() {
-      showreelVis.style.opacity = 0.8;
-      movingWorkOne.style.display = 'none';
-     
-    }, 1000); // 1000 milliseconds = 1 second
+  
+  setTimeout(function() {
+    showreelVis.style.opacity = 0.8;
+    movingWorkOne.style.display = 'none';
+    
+  }, 1000); // 1000 milliseconds = 1 second
     
 });
 
