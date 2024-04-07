@@ -60,6 +60,20 @@ body {
       transition: transform .3s ease-out;
   }
 
+  #loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* White background */
+    z-index: 9999; /* Ensure it stays on top */
+  }
+  
+  #loading-screen p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+
   
 
 #menu {

@@ -101,6 +101,10 @@ initializeMovingDivs("movingWorkOne", "D_AD");
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  var loadingScreen = document.getElementById('loading-screen');
+  if(loadingScreen) {
+    loadingScreen.style.display = 'none';
+  }
   workButton.addEventListener('click', function () {
     fruitSalad.pause();
     // Change the fill color of each SVG element
