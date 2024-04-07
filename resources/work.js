@@ -271,6 +271,9 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < svgElements.length; i++) {
           svgElements[i].style.fill = textColor;
         }
+        for (let i = 0; i < introsvgElements.length; i++) {
+          introsvgElements[i].style.fill = textColor;
+         }
         movingWorkOne.style.transform = 'scale(1)';
         aboutPage[i].style.opacity = 0;
         aboutButton.style.backgroundColor = backgroundColor;
