@@ -373,9 +373,9 @@ workContainerThree.addEventListener('click', function () {
     window.location.href = 'projectThree.html';
 });
 
-workContainerFour.addEventListener('click', function () {
-    window.location.href = 'projectFour.html';
-});
+//workContainerFour.addEventListener('click', function () {
+//    window.location.href = 'projectFour.html';
+//});
 
 workContainerFive.addEventListener('click', function () {
     window.location.href = 'projectFive.html';
