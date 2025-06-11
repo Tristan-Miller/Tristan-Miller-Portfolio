@@ -327,11 +327,11 @@ function resetImage4(element) {
 }
 
 function changeImage5(element) {
-  document.getElementById('image5').src = 'resources/Images/ProjectPreviews/DemoFest_Project_Motion.gif';
+  document.getElementById('image5').src = 'resources/Images/ProjectPreviews/CP_Project_Motion.gif';
 }
 
 function resetImage5(element) {
-  document.getElementById('image5').src = 'resources/Images/ProjectPreviews/DemoFest_Project_Static.jpg';
+  document.getElementById('image5').src = 'resources/Images/ProjectPreviews/CP_Project_Static.jpg';
 }
 
 function changeImage6(element) {
