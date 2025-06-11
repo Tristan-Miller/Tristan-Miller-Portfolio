@@ -605,6 +605,16 @@ body,
     opacity: .5;
 }
 
+#headshotCaption3 {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 300;
+    opacity: .5;
+    user-select: text;
+}
+
 
 #headshotContainer { 
     align-items: center;
