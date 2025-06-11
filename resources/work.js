@@ -319,11 +319,11 @@ function resetImage3(element) {
 }
 
 function changeImage4(element) {
-  document.getElementById('image4').src = 'resources/Images/ProjectPreviews/Youi_Project_Motion.gif';
+  document.getElementById('image4').src = 'resources/Images/ProjectPreviews/LCP_Project_Motion.gif';
 }
 
 function resetImage4(element) {
-  document.getElementById('image4').src = 'resources/Images/ProjectPreviews/Youi_Project_Static.jpg';
+  document.getElementById('image4').src = 'resources/Images/ProjectPreviews/LCP_Project_Static.jpg';
 }
 
 function changeImage5(element) {
