@@ -335,11 +335,11 @@ function resetImage5(element) {
 }
 
 function changeImage6(element) {
-  document.getElementById('image6').src = 'resources/Images/ProjectPreviews/Peanuts_Project_Motion.gif';
+  document.getElementById('image6').src = 'resources/Images/ProjectPreviews/Solflare_Project_Motion.gif';
 }
 
 function resetImage6(element) {
-  document.getElementById('image6').src = 'resources/Images/ProjectPreviews/Peanuts_Project_Static.jpg';
+  document.getElementById('image6').src = 'resources/Images/ProjectPreviews/Solflare_Project_Static.jpg';
 }
 function changeImage7(element) {
   document.getElementById('image7').src = 'resources/Images/ProjectPreviews/Values_Project_Motion.gif';
