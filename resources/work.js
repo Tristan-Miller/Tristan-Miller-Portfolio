@@ -393,6 +393,10 @@ workContainerEight.addEventListener('click', function () {
     window.location.href = 'projectEight.html';
 });
 
+workContainerNine.addEventListener('click', function () {
+    window.location.href = 'projectNine.html';
+});
+
 
 movingWorkOne.addEventListener('click', function () {
   showreelContainer.style.display = 'flex';
