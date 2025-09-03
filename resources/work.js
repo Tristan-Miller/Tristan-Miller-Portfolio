@@ -351,6 +351,9 @@ function resetImage7(element) {
 function changeImage8(element) {
   document.getElementById('image8').src = 'resources/Images/ProjectPreviews/Weel_Project_Motion.gif';
 }
+function resetImage8(element) {
+  document.getElementById('image8').src = 'resources/Images/ProjectPreviews/Weel_Project_Static.jpg';
+}
 
 workContainerOne.addEventListener('click', function () {
     window.location.href = 'projectOne.html';
