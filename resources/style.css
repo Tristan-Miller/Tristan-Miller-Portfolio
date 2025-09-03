@@ -319,7 +319,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* semi-transparent tint */
+    background: rgba(0, 0, 0, 0.4.5); /* semi-transparent tint */
     z-index: 1001; /* below h3 but above content */
     border-radius: 50%; /* match circle shape */
 }
