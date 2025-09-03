@@ -352,10 +352,6 @@ function changeImage8(element) {
   document.getElementById('image8').src = 'resources/Images/ProjectPreviews/Weel_Project_Motion.gif';
 }
 
-function resetImage8(element) {
-  document.getElementById('image8').src = 'resources/Images/ProjectPreviews/Weel_Project_Static.jpg';
-}
-
 workContainerOne.addEventListener('click', function () {
     window.location.href = 'projectOne.html';
 });
@@ -393,9 +389,6 @@ workContainerEight.addEventListener('click', function () {
     window.location.href = 'projectEight.html';
 });
 
-workContainerNine.addEventListener('click', function () {
-    window.location.href = 'projectNine.html';
-});
 
 
 movingWorkOne.addEventListener('click', function () {
