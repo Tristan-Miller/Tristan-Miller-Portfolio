@@ -256,17 +256,11 @@ function changeColors() {
   }
 
   document.addEventListener("DOMContentLoaded", function() {
-    var themeContainer = document.getElementById('themeContainer');
-    
-    // Change colors every 3 seconds
-    //setInterval(changeColors, 3000);
-  
-    // Initial color change
-   // changeColors();
-   setInitalColours();
- 
-   
-  //document.querySelector('.switch input').addEventListener('change', changeColors);
+    setInitalColours();
+    // Clicking the logo randomises the theme colours.
+    if (animationContainer) {
+      animationContainer.addEventListener('click', changeColors);
+    }
   });
  
   for (var i = 0; i < buttons.length; i++) {

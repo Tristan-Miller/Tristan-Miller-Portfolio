@@ -1,16 +1,7 @@
-// work.js — home-page interactions plus the shared goBack() helper.
-//
-// Only goBack() is needed on project pages. Everything else is home-only: the
-// element lookups below return null elsewhere (harmless), and the imperative
-// code is guarded by `if (showreelContainer)` / per-element checks so it never
-// runs where those elements are absent. (This file previously threw at load on
-// every project page, at `showreelContainer.clientHeight`, and only survived
-// because goBack() happens to be hoisted.)
-
-// ------------------------------------------------------------- shared ----
-function goBack() {
-  window.location.href = 'index.html';
-}
+// work.js — home-page interactions. Included only by index.html (the project
+// pages no longer load it). Element lookups return null when an expected
+// element is missing, and all imperative code is guarded by
+// `if (showreelContainer)` / per-element checks, so it degrades safely.
 
 // ------------------------------------------------------- home-only state ----
 let workPageVis = false;

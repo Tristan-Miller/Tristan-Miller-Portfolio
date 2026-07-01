@@ -172,10 +172,19 @@ button {
 }
 
 
+/* The logo is a <button> (randomises theme colours) — strip the default
+   button chrome so it looks like the plain logo container it replaced. */
 #animation-container {
     width:  4.5em;
-    height: 2.43em
-
+    height: 2.43em;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border-radius: 0;
+    font-size: 1rem;
+    color: inherit;
+    display: block;
 }
 
 #smiley-animation-container {
@@ -192,9 +201,11 @@ button {
 
 
 
+/* The project-page logo is now an <a> back-link. */
 #animation-container-project {
     width:  4.5em;
     height: 2.43em;
+    display: block;
 }
 
 #animation-container-project svg path {
