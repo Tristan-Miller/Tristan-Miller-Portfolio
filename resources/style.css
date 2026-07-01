@@ -41,7 +41,46 @@ body {
 * {
     cursor: none;
     box-sizing: border-box
-    
+
+}
+
+/* Screen-reader-only text — headings/labels that shouldn't be visible. */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Visible keyboard-focus indicator (the site hides the OS cursor, so this
+   matters for keyboard users). currentColor stays legible because the theme
+   colours are contrast-checked. */
+:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Skip link — off-screen until focused. */
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 10000;
+    padding: 8px 14px;
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+    transform: translateY(-200%);
+    transition: transform 0.2s;
+}
+.skip-link:focus {
+    transform: translateY(0);
 }
 
 
@@ -830,11 +869,11 @@ flex-wrap: wrap;
 }
 
 .projectName {
-   
     color: black;
-    /* border: blue solid 2px; */
     width: 50%;
     margin: 0;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .projectDate {

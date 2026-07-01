@@ -39,10 +39,10 @@
 </head>
 
 <body class="theme" id="themeContainer">
-  
-  
+  <a class="skip-link" href="#mainContent">Skip to content</a>
   <div id="custom-cursor"></div>
-  <main class="allMain">
+  <main class="allMain" id="mainContent" tabindex="-1">
+    <h1 class="visually-hidden">Tristan Miller — 3D Motion Designer</h1>
     <div  id="showreelContainer" class="clickable">
       <p id="showReelFooter"></p>
       <video id="showreel" controls playsinline>
@@ -104,6 +104,7 @@
     </audio>
   </main>
   <div id="workPage" class="workPage">
+    <h2 class="visually-hidden">Selected work</h2>
     <div id="allWorkContainer">
       <a id="workContainerFive" class="projectContainer clickable" href="projectFive.html">
         <h3 class="projectNameWork">Cultural Power</h3>
@@ -174,15 +175,16 @@
   </div>
   <div id="aboutPage" class="aboutPage">
       <div id="aboutPageContainer">
+        <h2 class="visually-hidden">About</h2>
         <div id="headshotContainer">
-         
-          <img id="threeDeeMe" class="clickable" src="resources/Images/ME_3D.gif">
+
+          <img id="threeDeeMe" class="clickable" src="resources/Images/ME_3D.gif" alt="3D avatar of Tristan Miller">
           <p id="headshotCaption">Tristan Miller</p>
           <p id="headshotCaption2">3D Motion Designer</p>
           <p id="headshotCaption3">Tristanmiller.design@gmail.com</p>
         </div>
         <div id="awardsContainer">
-          <p class="" id="awards">Awards</p>
+          <h3 id="awards">Awards</h3>
           <div id="awardsTextContainer">
             <p class="awardText" id="awardCompany">
               AGDA: Emerging Designer Of The Year<br>
