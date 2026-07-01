@@ -368,23 +368,11 @@ if (showreelContainer) {
     initializeMovingDivs('movingWorkOne', 'D_AD');
   });
 
-  // ---- About page: headshot easter egg + social links ----
+  // ---- About page: headshot easter egg ----
+  // (Social links are now real <a> elements, so they need no JS.)
   if (headshotContainer) {
     headshotContainer.addEventListener('click', function() {
       ouchSound.play();
     });
   }
-
-  const instagram = document.getElementById('Instagram');
-  const email = document.getElementById('Email');
-  const linkedin = document.getElementById('LinkedIn');
-  if (instagram) instagram.addEventListener('click', function() {
-    window.open('https://www.instagram.com/tristan_miller/', '_blank');
-  });
-  if (email) email.addEventListener('click', function() {
-    window.location.href = 'mailto:tristanmiller.design@gmail.com';
-  });
-  if (linkedin) linkedin.addEventListener('click', function() {
-    window.open('https://www.linkedin.com/in/tristan-m-4ab648142/', '_blank');
-  });
 }
