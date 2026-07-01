@@ -43,16 +43,14 @@
   
   <div id="custom-cursor"></div>
   <main class="allMain">
-    <div class="container">
-    </div>
     <div  id="showreelContainer" class="clickable">
       <p id="showReelFooter"></p>
-      <video onclick="showReel()" id="showreel" controls playsinline >
+      <video id="showreel" controls playsinline>
         <source src="resources/Images/Reel-2025.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-    <div onclick="closeShowreel()" id="showreelVis"></div>
+    <div id="showreelVis"></div>
      <!-- Container for p5.js canvas -->
   <div id="canvas-container"></div>
 
@@ -71,16 +69,11 @@
 
 
     <div id="containerDiv" class="container">
-      <div id="movingWork" class="movingWorkOne clickable">
-        <h2>Showreel</h2>
-        <div class="overlay"></div>
-        <img src="resources/Images/HomePage/REELGIF.gif" alt="">  
-       
-      </div>
-      <!---<div id="D_AD" class="projectTitle">
-        <h3>Showreel</h3>
-      </div> -->
-     
+      <button id="movingWork" class="movingWorkOne clickable" type="button">
+        <span class="overlay"></span>
+        <span class="reel-label">Showreel</span>
+        <img src="resources/Images/HomePage/REELGIF.gif" alt="">
+      </button>
     </div>
     <div id="brushes-holder">
       <div id="brushes">

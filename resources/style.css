@@ -312,6 +312,7 @@ button {
 }
 
 
+/* The showreel bubble is a <button>; reset the default button chrome. */
 #movingWork {
     width: 120px;
     height: 120px;
@@ -322,6 +323,12 @@ button {
     align-items: center;
     justify-content: center;
     z-index: 1001;
+    border: none;
+    padding: 0;
+    background: none;
+    font-size: 1rem;
+    color: inherit;
+    font-family: inherit;
 }
 
 #movingWork .overlay {
@@ -338,7 +345,7 @@ button {
 
 
 
-#movingWork h2 {
+#movingWork .reel-label {
     position: absolute; /* layer on top of content */
     top: 50%;
     left: 50%;

@@ -50,6 +50,9 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
   for (const movingDiv of movingDivs) {
     movingDiv.addEventListener('mouseover', () => { isHovered = true; });
     movingDiv.addEventListener('mouseout', () => { isHovered = false; });
+    // Pause the bounce while the bubble has keyboard focus, too.
+    movingDiv.addEventListener('focus', () => { isHovered = true; });
+    movingDiv.addEventListener('blur', () => { isHovered = false; });
 
     const speed = 1;
     let x = Math.floor(Math.random() * window.innerWidth / 1.8);
@@ -353,6 +356,14 @@ if (showreelContainer) {
        }, 1);
     showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
     }
+  });
+
+  // Reopen the minimised reel by clicking the video; close it via the backdrop
+  // or the Escape key (keyboard-accessible equivalent of clicking the backdrop).
+  showreel.addEventListener('click', showReel);
+  showreelVis.addEventListener('click', closeShowreel);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && initialReelVis && reelVis) closeShowreel();
   });
 
   window.addEventListener('orientationchange', function() {
