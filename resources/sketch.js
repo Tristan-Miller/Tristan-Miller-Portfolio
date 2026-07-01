@@ -146,5 +146,16 @@ function mouseClicked() {
   // Your mouseClicked() function goes here
 }
 
+// Pause the canvas render loop while the tab is hidden (saves CPU/battery when
+// the page isn't visible); resume when it comes back.
+document.addEventListener('visibilitychange', function () {
+  if (typeof noLoop !== 'function' || typeof loop !== 'function') return;
+  if (document.hidden) {
+    noLoop();
+  } else {
+    loop();
+  }
+});
+
 
 

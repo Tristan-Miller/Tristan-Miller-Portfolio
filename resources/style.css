@@ -1154,8 +1154,23 @@ footer {
     align-items: center;
     justify-content: center;
     font-weight: 200;
- 
-    
+
+
+}
+
+/* Reduced motion: drop the load fade and the slow showreel transitions.
+   (The floating bubble, looping Lottie and auto-playing videos are calmed in
+   JS — see work.js, lottie-init.js.) */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+        -webkit-animation: none;
+    }
+    #showreelContainer,
+    #showreel,
+    #showreelVis {
+        transition: none;
+    }
 }
 
 

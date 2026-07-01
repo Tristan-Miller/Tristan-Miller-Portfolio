@@ -9,6 +9,9 @@ let aboutPageVis = false;
 let reelVis = true;
 let initialReelVis = false;
 
+const prefersReducedMotion = window.matchMedia &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const workPages = document.getElementsByClassName('workPage');
 const movingWorkOne = document.getElementsByClassName('movingWorkOne')[0];
 const aboutButton = document.getElementById('aboutButton');
@@ -53,6 +56,13 @@ function initializeMovingDivs(movingDivClass, tooltipId) {
     // Pause the bounce while the bubble has keyboard focus, too.
     movingDiv.addEventListener('focus', () => { isHovered = true; });
     movingDiv.addEventListener('blur', () => { isHovered = false; });
+
+    // Reduced motion: park the bubble at a fixed spot instead of bouncing.
+    if (prefersReducedMotion) {
+      movingDiv.style.left = Math.max(0, (window.innerWidth - movingDiv.offsetWidth) / 2) + 'px';
+      movingDiv.style.top = Math.round(window.innerHeight * 0.6) + 'px';
+      continue;
+    }
 
     const speed = 1;
     let x = Math.floor(Math.random() * window.innerWidth / 1.8);
