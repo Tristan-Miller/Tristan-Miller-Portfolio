@@ -47,23 +47,41 @@
     }
   }
 
-  // ---- Reduced motion: calm the looping/auto-playing videos ------------------
-  // Project case-study videos are autoplay+loop by default. When the user asks
-  // for reduced motion, pause them and drop the loop so they sit on the first
-  // frame with controls available to play on demand.
-  if (reduce) {
-    document.querySelectorAll('video[autoplay]').forEach(function (v) {
-      v.removeAttribute('autoplay');
-      v.loop = false;
-      v.autoplay = false;
-      if (!v.hasAttribute('controls')) v.setAttribute('controls', '');
-      var stop = function () { v.pause(); v.currentTime = 0; };
-      stop();
-      // Some browsers begin playback before JS runs; catch that too.
-      v.addEventListener('play', function once() {
+  // ---- Video playback management --------------------------------------------
+  // Project case-study videos are autoplay+loop by default.
+  var autoVideos = document.querySelectorAll('video[autoplay]');
+  if (autoVideos.length) {
+    if (reduce) {
+      // Reduced motion: pause, drop the loop, expose controls so each video
+      // rests on its first frame and only plays on demand.
+      autoVideos.forEach(function (v) {
+        v.removeAttribute('autoplay');
+        v.loop = false;
+        v.autoplay = false;
+        if (!v.hasAttribute('controls')) v.setAttribute('controls', '');
+        var stop = function () { v.pause(); v.currentTime = 0; };
         stop();
-        v.removeEventListener('play', once);
+        // Some browsers begin playback before JS runs; catch that too.
+        v.addEventListener('play', function once() {
+          stop();
+          v.removeEventListener('play', once);
+        });
       });
-    });
+    } else if ('IntersectionObserver' in window) {
+      // Only play auto-playing videos while they're on screen, so several large
+      // project videos don't all decode at once off-screen.
+      autoVideos.forEach(function (v) { v.removeAttribute('autoplay'); });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            var p = e.target.play();
+            if (p && p.catch) p.catch(function () {});
+          } else {
+            e.target.pause();
+          }
+        });
+      }, { threshold: 0.2 });
+      autoVideos.forEach(function (v) { io.observe(v); });
+    }
   }
 })();
