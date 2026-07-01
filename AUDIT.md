@@ -194,3 +194,41 @@ Legend: **[S]** small/obviously-safe fix · **[M]** medium refactor (needs sign-
 
 After each phase I'll verify the site still renders and navigation works, and commit in
 small, single-purpose steps so you can review/revert.
+
+---
+
+## Status — done on the `cleanup` branch
+
+All five phases were implemented and verified in a real browser (home + project
+pages, keyboard focus order, desktop + mobile). Highlights:
+
+- **Phase 0** — `.gitignore` + untracked `.DS_Store`; `lang="en"`; per-page titles + meta
+  description + OG/Twitter; comment + `&&` fixes.
+- **Phase 1** — social links, logo, back and showreel are now real `<a>`/`<button>`;
+  single-`<h1>` hierarchy + section headings; awards rebuilt as one responsive `<table>`
+  (fixes the duplicate mobile column and its wrong first row); `:focus-visible`, skip link,
+  alt text.
+- **Phase 2** — 16 image-swap functions + inline handlers → one data-attribute handler;
+  inline Lottie extracted to `resources/lottie-init.js`; `work.js` guarded so it no longer
+  crashes on project pages; dead code + `work.html` removed; `work.js` dropped from project
+  pages (they only needed `goBack`).
+- **Phase 3** — `prefers-reduced-motion` calms Lottie (final frame), the floating bubble
+  (parked), and auto-playing videos (paused); load-fade/showreel transitions disabled; p5
+  loop pauses when the tab is hidden. Auto audio already required the Fun button.
+- **Phase 4** — fonts trimmed to DM Sans only (dropped Material Icons/Symbols, Typekit,
+  unused Helvetica) and de-duped; `defer` on p5/lottie; lazy-loading on images; project
+  videos play only while on-screen (IntersectionObserver); `ME_3D.gif` (2.9 MB) and the
+  showreel bubble GIF converted to muted `<video>`.
+- **Phase 5** — hash routing (`#work` / `#about`) with working Back/Forward and deep links;
+  returning from a project restores the work view.
+
+### Deferred — needs your call (see the final summary)
+
+1. **Project-preview motion GIFs** (12 files, ~24 MB total, loaded only on card hover) →
+   convert to on-hover muted `<video>`. Big savings (~68–88%) but needs a small hover-swap
+   rework and re-encodes your motion previews, so it's opt-in.
+2. **Large existing project MP4s** (74–83 MB each) → recompress. Sample: the 74 MB showreel
+   re-encodes to ~34 MB at high-quality H.264 CRF 23; more aggressive settings go lower.
+   Not applied — awaiting your quality sign-off.
+3. **`.git` is ~976 MB** from large media committed across history. Shrinking it means a
+   history rewrite (destructive) — left out of scope.
