@@ -1,106 +1,128 @@
+// work.js — home-page interactions plus the shared goBack() helper.
+//
+// Only goBack() is needed on project pages. Everything else is home-only: the
+// element lookups below return null elsewhere (harmless), and the imperative
+// code is guarded by `if (showreelContainer)` / per-element checks so it never
+// runs where those elements are absent. (This file previously threw at load on
+// every project page, at `showreelContainer.clientHeight`, and only survived
+// because goBack() happens to be hoisted.)
+
+// ------------------------------------------------------------- shared ----
+function goBack() {
+  window.location.href = 'index.html';
+}
+
+// ------------------------------------------------------- home-only state ----
 let workPageVis = false;
+let aboutPageVis = false;
+let reelVis = true;
+let initialReelVis = false;
+
 const workPages = document.getElementsByClassName('workPage');
 const movingWorkOne = document.getElementsByClassName('movingWorkOne')[0];
-let aboutPageVis = false;
 const aboutButton = document.getElementById('aboutButton');
 const workContainer = document.getElementsByClassName('workContainer');
-const projectPage = document.getElementsByClassName('projectPage');
 const showreelVis = document.getElementById('showreelVis');
 const showreelContainer = document.getElementById('showreelContainer');
 const showreel = document.getElementById('showreel');
 const workButton = document.getElementById('workButton');
 const showReelFooter = document.getElementById('showReelFooter');
-const workContainerOne = document.getElementById('workContainerOne');
-const workContainerTwo = document.getElementById('workContainerTwo');
-const workContainerThree = document.getElementById('workContainerThree');
-const workContainerFour = document.getElementById('workContainerFour');
-const workContainerFive = document.getElementById('workContainerFive');
-const workContainerSix = document.getElementById('workContainerSix');
-const workContainerSeven = document.getElementById('workContainerSeven');
-const workContainerEight = document.getElementById('workContainerEight');
 const canvasContainer = document.getElementById('canvas-container');
-const Switchy = document.getElementById('Switchy');
-const movingWork = document.getElementById('containerDiv');
-const currentOpacity = parseFloat(getComputedStyle(workPages[0]).opacity);
 const headshotContainer = document.getElementById('headshotContainer');
 const ouchSound = document.getElementById('ouchSound');
 
-let reelVis = true;
-let initialReelVis = false;
-let pagetotal = document.body.scrollHeight; // Total height of the webpage
-let containerHeight = showreelContainer.clientHeight; // Height of the showreelContainer
-let translateYValue = pagetotal - containerHeight; // Calculate the translateY value
-let finalTranslate = translateYValue/2.2 + containerHeight/2.3; 
-let hideShowReel = translateYValue/2 + containerHeight/3 + 150; 
+// Showreel geometry — computed on the home page inside the guard below.
+let finalTranslate = 0;
+let hideShowReel = 0;
 
-//const movingWorkFour = document.getElementsByClassName('movingWorkFour');
-
+// Bounces the floating showreel bubble around the viewport until it's hovered
+// or a full-screen view (work / about / draw) is open.
 function initializeMovingDivs(movingDivClass, tooltipId) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
-  let isHovered = false;
-  const hoverElement = document.querySelector("." + movingDivClass);
+  const hoverElement = document.querySelector('.' + movingDivClass);
   const tooltipElement = document.getElementById(tooltipId);
+  if (!hoverElement) return; // nothing to animate on this page
 
-  hoverElement.addEventListener("mousemove", function (event) {
-    tooltipElement.style.display = "block";
-    tooltipElement.style.left = event.clientX + "px";
-    tooltipElement.style.top = event.clientY + "px";
+  let isHovered = false;
+
+  hoverElement.addEventListener('mousemove', function (event) {
+    if (!tooltipElement) return;
+    tooltipElement.style.display = 'block';
+    tooltipElement.style.left = event.clientX + 'px';
+    tooltipElement.style.top = event.clientY + 'px';
   });
 
-  hoverElement.addEventListener("mouseout", function () {
-    tooltipElement.style.display = "none";
+  hoverElement.addEventListener('mouseout', function () {
+    if (tooltipElement) tooltipElement.style.display = 'none';
   });
 
   for (const movingDiv of movingDivs) {
-    movingDiv.addEventListener("mouseover", () => {
-      isHovered = true;
-    });
+    movingDiv.addEventListener('mouseover', () => { isHovered = true; });
+    movingDiv.addEventListener('mouseout', () => { isHovered = false; });
 
-    movingDiv.addEventListener("mouseout", () => {
-      isHovered = false;
-    });
+    const speed = 1;
+    let x = Math.floor(Math.random() * window.innerWidth / 1.8);
+    let y = Math.floor(Math.random() * window.innerHeight / 1.8);
+    let speedX = speed * (Math.random() > 0.5 ? 1 : -1);
+    let speedY = speed * (Math.random() > 0.5 ? 1 : -1);
 
-    function moveDiv() {
-      const speed = 1;
-      let x = Math.floor(Math.random() * window.innerWidth / 1.8);
-      let y = Math.floor(Math.random() * window.innerHeight / 1.8);
-
-      function update() {
-        if (!isHovered && !workPageVis && !drawingEnable && !aboutPageVis) {
-          const rect = movingDiv.getBoundingClientRect();
-
-          if (x < 0 || x + rect.width > window.innerWidth) {
-            speedX = -speedX;
-          }
-
-          if (y < 0 || y + rect.height > window.innerHeight) {
-            speedY = -speedY;
-          }
-
-          x += speedX;
-          y += speedY;
-
-          movingDiv.style.left = x + "px";
-          movingDiv.style.top = y + "px";
-        }
-
-        requestAnimationFrame(update);
+    (function update() {
+      if (!isHovered && !workPageVis && !drawingEnable && !aboutPageVis) {
+        const rect = movingDiv.getBoundingClientRect();
+        if (x < 0 || x + rect.width > window.innerWidth) speedX = -speedX;
+        if (y < 0 || y + rect.height > window.innerHeight) speedY = -speedY;
+        x += speedX;
+        y += speedY;
+        movingDiv.style.left = x + 'px';
+        movingDiv.style.top = y + 'px';
       }
-
-      let speedX = speed * (Math.random() > 0.5 ? 1 : -1);
-      let speedY = speed * (Math.random() > 0.5 ? 1 : -1);
-
-      update();
-    }
-
-    moveDiv();
+      requestAnimationFrame(update);
+    })();
   }
 }
 
-initializeMovingDivs("movingWorkOne", "D_AD");
+// Showreel open/close — called from inline handlers and the toggles below.
+function closeShowreel() {
+  const video = document.getElementById('showreel');
+  if (video) video.pause();
+  showReelFooter.style.display = 'initial';
+  setTimeout(function () { showReelFooter.style.opacity = 0.5; }, 1);
+  showreelVis.style.opacity = 0;
+  setTimeout(function () { showreelVis.style.zIndex = 1; }, 1000);
+  showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+  setTimeout(function () { showreel.style.filter = 'blur(10px)'; }, 250);
+  showreelContainer.style.zIndex = 1000;
+  reelVis = false;
+}
 
+function showReel() {
+  if (reelVis === false) {
+    showreelContainer.style.zIndex = 1006;
+    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
+    showreelVis.style.zIndex = 1004;
+    setTimeout(function () { showreelVis.style.opacity = 0.8; }, 1000);
+    showreel.style.filter = 'blur(0px)';
+    reelVis = true;
+  }
+}
 
-document.addEventListener('DOMContentLoaded', function () {
+// Swaps a project card's static preview for its motion GIF on hover/focus.
+function swapProjectPreview(card, key) {
+  const img = card.querySelector('img[data-static]');
+  if (img && img.dataset[key]) img.src = img.dataset[key];
+}
+
+// ============================================================ home only ====
+if (showreelContainer) {
+  const pagetotal = document.body.scrollHeight;      // Total page height
+  const containerHeight = showreelContainer.clientHeight;
+  const translateYValue = pagetotal - containerHeight;
+  finalTranslate = translateYValue / 2.2 + containerHeight / 2.3;
+  hideShowReel = translateYValue / 2 + containerHeight / 3 + 150;
+
+  initializeMovingDivs('movingWorkOne', 'D_AD');
+
+  // ---- Work view toggle ----
   workButton.addEventListener('click', function () {
     fruitSalad.pause();
     // Change the fill color of each SVG element
@@ -138,10 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
       aboutButton.style.color = textColor;
       funButton.style.visibility = "hidden";
       drawingEnable = false;
-      brushesHolder.style.transform = 'translateY(0px)'; 
+      brushesHolder.style.transform = 'translateY(0px)';
       aboutPage[i].style.zIndex = 1;
-     // movingWorkFour[i].style.zIndex = 0;
-      //movingWorkFour[i].style.opacity = 0;
     }
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
@@ -184,10 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  
-
-  //Contact Page
-
+  // ---- About view toggle ----
   aboutButton.addEventListener('click', function () {
     fruitSalad.pause();
     // Change the fill color of each SVG element
@@ -207,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
     workPages[i].style.opacity = 0;
     workButton.style.backgroundColor = backgroundColor;
     workButton.style.color = textColor;
-    
+
     workPages[i].style.zIndex = 1;
     }
     for (let i = 0; i < aboutPage.length; i++) {
@@ -249,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 200);
       } else {
         headshotContainer.style.opacity = 0;
-        setTimeout(function () { 
+        setTimeout(function () {
         aboutPageVis = false;
         backgroundColor = "#ffffff";
         textColor = "#000000"
@@ -290,230 +307,84 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  
-
-});
-
-function changeImage(element) {
-  document.getElementById('image1').src = 'resources/Images/ProjectPreviews/D_AD_Project_Motion.gif';
-}
-
-function resetImage(element) {
-  document.getElementById('image1').src = 'resources/Images/ProjectPreviews/D_AD_Project_Static.jpg';
-}
-
-function changeImage2(element) {
-  document.getElementById('image2').src = 'resources/Images/ProjectPreviews/Rolus_Project_Motion.gif';
-}
-
-function resetImage2(element) {
-  document.getElementById('image2').src = 'resources/Images/ProjectPreviews/Rolus_Project_Static.jpg';
-}
-
-function changeImage3(element) {
-  document.getElementById('image3').src = 'resources/Images/ProjectPreviews/SydneyFest_Project_Motion.gif';
-}
-
-function resetImage3(element) {
-  document.getElementById('image3').src = 'resources/Images/ProjectPreviews/SydneyFest_Project_Static.jpg';
-}
-
-function changeImage4(element) {
-  document.getElementById('image4').src = 'resources/Images/ProjectPreviews/LCP_Project_Motion.gif';
-}
-
-function resetImage4(element) {
-  document.getElementById('image4').src = 'resources/Images/ProjectPreviews/LCP_Project_Static.jpg';
-}
-
-function changeImage5(element) {
-  document.getElementById('image5').src = 'resources/Images/ProjectPreviews/CP_Project_Motion.gif';
-}
-
-function resetImage5(element) {
-  document.getElementById('image5').src = 'resources/Images/ProjectPreviews/CP_Project_Static.jpg';
-}
-
-function changeImage6(element) {
-  document.getElementById('image6').src = 'resources/Images/ProjectPreviews/Solflare_Project_Motion.gif';
-}
-
-function resetImage6(element) {
-  document.getElementById('image6').src = 'resources/Images/ProjectPreviews/Solflare_Project_Static.jpg';
-}
-function changeImage7(element) {
-  document.getElementById('image7').src = 'resources/Images/ProjectPreviews/Values_Project_Motion.gif';
-}
-
-function resetImage7(element) {
-  document.getElementById('image7').src = 'resources/Images/ProjectPreviews/Values_Project_Static.jpg';
-}
-function changeImage8(element) {
-  document.getElementById('image8').src = 'resources/Images/ProjectPreviews/Weel_Project_Motion.gif';
-}
-
-function resetImage8(element) {
-  document.getElementById('image8').src = 'resources/Images/ProjectPreviews/Weel_Project_Static.jpg';
-}
-
-workContainerOne.addEventListener('click', function () {
-    window.location.href = 'projectOne.html';
-});
-
-
-workContainerTwo.addEventListener('click', function () {
-    window.location.href = 'projectTwo.html';
-});
-
-workContainerThree.addEventListener('click', function () {
-    window.location.href = 'projectThree.html';
-});
-
-workContainerThree.addEventListener('click', function () {
-    window.location.href = 'projectThree.html';
-});
-
-workContainerFour.addEventListener('click', function () {
-   window.location.href = 'projectFour.html';
-});
-
-workContainerFive.addEventListener('click', function () {
-    window.location.href = 'projectFive.html';
-});
-
-workContainerSix.addEventListener('click', function () {
-    window.location.href = 'projectSix.html';
-});
-
-workContainerSeven.addEventListener('click', function () {
-    window.location.href = 'projectSeven.html';
-});
-
-workContainerEight.addEventListener('click', function () {
-    window.location.href = 'projectEight.html';
-});
-
-
-movingWorkOne.addEventListener('click', function () {
-  showreelContainer.style.display = 'flex';
-  setTimeout(function() {
-    showreel.style.filter = 'blur(0px)';
-    reelVis = true;
-    movingWorkOne.style.transform = 'scale(0)';
-    showReelFooter.style.opacity = 0;
-    initialReelVis = true;
-    showreelContainer.style.zIndex = 1006;
-    showreelVis.style.zIndex = 1004;
-  }, 10); // 1000 milliseconds = 1 second
-
-  setTimeout(function() {
-    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
-  }, 500);
-  
-  setTimeout(function() {
-    showreelVis.style.opacity = 0.8;
-    movingWorkOne.style.display = 'none';
-    
-  }, 1000); // 1000 milliseconds = 1 second
-    
-});
-
-
-
-function closeShowreel() {
-  // Pause the video
-  var video = document.getElementById('showreel');
-  if (video) {
-    video.pause();
+  // ---- Project grid: static preview ⇄ motion GIF on hover and keyboard focus.
+  // Cards are real <a> links, so navigation is handled by the browser.
+  const grid = document.getElementById('allWorkContainer');
+  if (grid) {
+    grid.querySelectorAll('.projectContainer').forEach(function (card) {
+      card.addEventListener('mouseenter', () => swapProjectPreview(card, 'motion'));
+      card.addEventListener('mouseleave', () => swapProjectPreview(card, 'static'));
+      card.addEventListener('focus', () => swapProjectPreview(card, 'motion'));
+      card.addEventListener('blur', () => swapProjectPreview(card, 'static'));
+    });
   }
-  showReelFooter.style.display = 'initial';
-  setTimeout(function() {
-    showReelFooter.style.opacity = .5;
- }, 1);
-  showreelVis.style.opacity = 0;
-  setTimeout(function() {
-    showreelVis.style.zIndex = 1;
-  }, 1000); // 1000 milliseconds = 1 second
-  showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
-  setTimeout(function() {
-    showreel.style.filter = 'blur(10px)';
-  }, 250); 
-  showreelContainer.style.zIndex = 1000;
-  reelVis = false;
- 
-}
 
+  // ---- Showreel bubble → open the reel ----
+  movingWorkOne.addEventListener('click', function () {
+    showreelContainer.style.display = 'flex';
+    setTimeout(function() {
+      showreel.style.filter = 'blur(0px)';
+      reelVis = true;
+      movingWorkOne.style.transform = 'scale(0)';
+      showReelFooter.style.opacity = 0;
+      initialReelVis = true;
+      showreelContainer.style.zIndex = 1006;
+      showreelVis.style.zIndex = 1004;
+    }, 10);
 
-function showReel(){
-  if (reelVis == false) {
-    showreelContainer.style.zIndex = 1006;
-    showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
-    showreelVis.style.zIndex = 1004;
+    setTimeout(function() {
+      showreelContainer.style.transform = 'translateY(-50%)' + 'translateX(-50%)';
+    }, 500);
+
     setTimeout(function() {
       showreelVis.style.opacity = 0.8;
-    }, 1000); // 1000 milliseconds = 1 second
-    showreel.style.filter = 'blur(0px)';
-    reelVis = true;
-    
+      movingWorkOne.style.display = 'none';
+    }, 1000);
+  });
+
+  showreelContainer.addEventListener('mouseenter', function() {
+    if (reelVis == false){
+      showreel.style.filter = 'blur(0px)';
+    showreelContainer.style.transform = 'translateY(' + (finalTranslate - 50) + 'px) translateX(-50%)';
+    showReelFooter.style.opacity = 0;
+    setTimeout(function() {
+      showReelFooter.style.display = 'none';
+    }, 300);
   }
-}
+  });
 
-showreelContainer.addEventListener('mouseenter', function() {
-  if (reelVis == false){
-    showreel.style.filter = 'blur(0px)';
-  showreelContainer.style.transform = 'translateY(' + (finalTranslate - 50) + 'px) translateX(-50%)';
-  showReelFooter.style.opacity = 0;
-  setTimeout(function() {
-    showReelFooter.style.display = 'none';
-  }, 300); // 1000 milliseconds = 1 second
-  
-}
-});
+  showreelContainer.addEventListener('mouseleave', function() {
+    if (reelVis == false){
+      showreel.style.filter = 'blur(10px)';
+        showReelFooter.style.display = 'initial';
+        setTimeout(function() {
+          showReelFooter.style.opacity = .5;
+       }, 1);
+    showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+    }
+  });
 
-showreelContainer.addEventListener('mouseleave', function() {
-  if (reelVis == false){
-    showreel.style.filter = 'blur(10px)';
-      showReelFooter.style.display = 'initial';
-      setTimeout(function() {
-        showReelFooter.style.opacity = .5;
-     }, 1);
-  showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+  window.addEventListener('orientationchange', function() {
+    initializeMovingDivs('movingWorkOne', 'D_AD');
+  });
+
+  // ---- About page: headshot easter egg + social links ----
+  if (headshotContainer) {
+    headshotContainer.addEventListener('click', function() {
+      ouchSound.play();
+    });
   }
-});
 
-
-
-
-
-window.addEventListener("orientationchange", function() {
- initializeMovingDivs("movingWorkOne", "D_AD");
-});
-
-
-function goBack() {
-    window.location.href = 'index.html';
+  const instagram = document.getElementById('Instagram');
+  const email = document.getElementById('Email');
+  const linkedin = document.getElementById('LinkedIn');
+  if (instagram) instagram.addEventListener('click', function() {
+    window.open('https://www.instagram.com/tristan_miller/', '_blank');
+  });
+  if (email) email.addEventListener('click', function() {
+    window.location.href = 'mailto:tristanmiller.design@gmail.com';
+  });
+  if (linkedin) linkedin.addEventListener('click', function() {
+    window.open('https://www.linkedin.com/in/tristan-m-4ab648142/', '_blank');
+  });
 }
-
-headshotContainer.addEventListener("click", function() {
-  ouchSound.play();
-});
-
-document.getElementById("Instagram").addEventListener("click", function() {
-  window.open("https://www.instagram.com/tristan_miller/", "_blank");
-});
-
-document.getElementById("Email").addEventListener("click", function() {
-  window.location.href = "mailto:tristanmiller.design@gmail.com";
-});
-
-document.getElementById("LinkedIn").addEventListener("click", function() {
-  window.open("https://www.linkedin.com/in/tristan-m-4ab648142/", "_blank");
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var loadingScreen = document.getElementById('loading-screen');
-  if(loadingScreen) {
-    loadingScreen.style.display = 'none';
-  }
-});
