@@ -117,9 +117,9 @@ function draw() {
   }
   
 
-  if (workPageVis == true & drawingEnable == false) {
+  if (workPageVis == true && drawingEnable == false) {
     canvasContainer.style.zIndex = 0;
-  } else if (workPageVis == true & drawingEnable == true) {
+  } else if (workPageVis == true && drawingEnable == true) {
     canvasContainer.style.zIndex = 5;
   }
 }
