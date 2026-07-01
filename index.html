@@ -69,7 +69,10 @@
       <button id="movingWork" class="movingWorkOne clickable" type="button">
         <span class="overlay"></span>
         <span class="reel-label">Showreel</span>
-        <img src="resources/Images/HomePage/REELGIF.gif" alt="">
+        <video autoplay muted loop playsinline aria-hidden="true">
+          <source src="resources/Images/HomePage/REEL.webm" type="video/webm">
+          <source src="resources/Images/HomePage/REEL.mp4" type="video/mp4">
+        </video>
       </button>
     </div>
     <div id="brushes-holder">
@@ -175,7 +178,10 @@
         <h2 class="visually-hidden">About</h2>
         <div id="headshotContainer">
 
-          <img id="threeDeeMe" class="clickable" loading="lazy" src="resources/Images/ME_3D.gif" alt="3D avatar of Tristan Miller">
+          <video id="threeDeeMe" class="clickable" autoplay muted loop playsinline aria-label="3D avatar of Tristan Miller">
+            <source src="resources/Images/ME_3D.webm" type="video/webm">
+            <source src="resources/Images/ME_3D.mp4" type="video/mp4">
+          </video>
           <p id="headshotCaption">Tristan Miller</p>
           <p id="headshotCaption2">3D Motion Designer</p>
           <p id="headshotCaption3">Tristanmiller.design@gmail.com</p>
