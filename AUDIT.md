@@ -222,13 +222,23 @@ pages, keyboard focus order, desktop + mobile). Highlights:
 - **Phase 5** — hash routing (`#work` / `#about`) with working Back/Forward and deep links;
   returning from a project restores the work view.
 
-### Deferred — needs your call (see the final summary)
+### Video compression — done
 
-1. **Project-preview motion GIFs** (12 files, ~24 MB total, loaded only on card hover) →
-   convert to on-hover muted `<video>`. Big savings (~68–88%) but needs a small hover-swap
-   rework and re-encodes your motion previews, so it's opt-in.
-2. **Large existing project MP4s** (74–83 MB each) → recompress. Sample: the 74 MB showreel
-   re-encodes to ~34 MB at high-quality H.264 CRF 23; more aggressive settings go lower.
-   Not applied — awaiting your quality sign-off.
-3. **`.git` is ~976 MB** from large media committed across history. Shrinking it means a
-   history rewrite (destructive) — left out of scope.
+- **Showreel** `Reel-2025.mp4`: 74 → 47 MB (H.264 CRF 20, preset slow, audio kept). Higher
+  quality because it's the hero, watched full-screen with sound.
+- **Large project case-study videos** (>15 MB, played inline & muted): recompressed at
+  CRF 23, ~286 → ~105 MB total (D&AD ceremony 45→17, Rolus website 69→16, SydFest2 51→28,
+  etc.). Each output's duration was verified against the original before replacing.
+- Kept as-is: the CPI HypeReel (CRF 23 made it larger), two files that barely shrank
+  (MCValue, Weel Sizzle — reverted), and the already-small (<15 MB) clips.
+- Working-tree media dropped from ~1.5 GB to ~490 MB. Originals remain in git history.
+
+### Still deferred — your call
+
+1. **Project-preview motion GIFs** (12 files, ~24 MB, loaded only on card hover) → convert
+   to on-hover muted `<video>`. You chose to hold these; they need a small hover-swap rework
+   and re-encode your motion previews.
+2. **`.git` is now ~1.1 GB** (large media across history; committing the smaller re-encodes
+   added blobs rather than removing the old ones). GitHub Pages serves the working tree, not
+   history, so visitors already get the smaller files — but shrinking `.git` itself needs a
+   destructive history rewrite, left out of scope.
