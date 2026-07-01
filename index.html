@@ -27,6 +27,7 @@
   <script src="resources/colour.js" defer></script>
   <script src="resources/cursor.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.10/lottie.min.js"></script>
+  <script src="resources/lottie-init.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
@@ -59,34 +60,12 @@
     <div onclick="changeColors()" id="animation-container" class="clickable"></div>
    
 
-   <div class="buttonContainer">  
+   <div class="buttonContainer">
     <button class="myButton clickable" id="funButton" type="button" > <div id="smiley-animation-container"></div></button>
      <button class="myButton clickable" id="workButton" type="button" >Work</button>
      <button  class="myButton clickable" id="aboutButton" type="button">About</button>
-     
+
    </div>
-   <script>
-    // Load animation
-    var animation = bodymovin.loadAnimation({
-      container: document.getElementById('animation-container'), // Container to embed the animation
-      renderer: 'svg', // Renderer type
-      loop: true, // Whether the animation should loop
-      autoplay: true, // Whether the animation should play as soon as it's ready
-      path: 'TM_Logo_Animation.json' // Path to your JSON animation file
-    });
-
-     // Load animation
-     var smileyanimation = bodymovin.loadAnimation({
-      container: document.getElementById('smiley-animation-container'), // Container to embed the animation
-      renderer: 'svg', // Renderer type
-      loop: true, // Whether the animation should loop
-      autoplay: true, // Whether the animation should play as soon as it's ready
-      path: 'Smiley_Animation.json' // Path to your JSON animation file
-    });
-
-    
-  </script>
-
  </header>
 
 
@@ -277,21 +256,7 @@
   <div class="welcomeMessageContainer">
     <div id="intro-animation-container"></div>
   </div>
-  <script>
-    // Delayed load animation
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        var introanimation = bodymovin.loadAnimation({
-          container: document.getElementById('intro-animation-container'), // Container to embed the animation
-          renderer: 'svg', // Renderer type
-          loop: true, // Whether the animation should loop
-          autoplay: true, // Whether the animation should play as soon as it's ready
-          path: 'TM_Intro_Animation.json' // Path to your JSON animation file
-        });
-      }, 2000); // Delay in milliseconds (2000ms = 2s)
-    });
-  </script>
-  
+
 
 </body>
 
