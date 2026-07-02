@@ -803,9 +803,31 @@ body,
     height: auto;
 }
 
+/* Gallery media on project pages get soft corners (the full-bleed hero video
+   at the top stays square for contrast). */
+.workContainer img,
+.workContainer video {
+    border-radius: 16px;
+}
+
 .projectContainer img {
     transition: .3s;
-    border-radius: 0px;
+    border-radius: 16px;
+}
+
+/* Work-grid hover: preview lifts with a soft shadow, name italicises
+   (matching the social links' hover language). */
+.projectContainer:hover .projectNameWork,
+.projectContainer:focus-visible .projectNameWork {
+    font-style: italic;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .projectContainer:hover .projectPreview,
+    .projectContainer:focus-visible .projectPreview {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, .14);
+    }
 }
 
 .whitebackground {
@@ -912,10 +934,9 @@ flex-wrap: wrap;
 
 .caption {
     padding: 0;
-    margin: 0;
+    margin: 10px 0 0 0;
     opacity: .5;
     font-size: 14px;
-   
 }
 
 .projectText {
@@ -926,15 +947,13 @@ flex-wrap: wrap;
    display: flex;
    flex-wrap: wrap;
    align-items: flex-start;
-    /*border: red solid 2px;*/
    font-size: 18px;
 }
 
 .projectExplainer {
     width: 50%;
-    /* border: greenyellow solid 2px;*/
     margin: 40px 0 0 0;
-   
+    line-height: 1.6;
 }
 
 #fullProjectContainer {
