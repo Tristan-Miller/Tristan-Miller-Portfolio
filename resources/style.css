@@ -588,20 +588,11 @@ body,
   #aboutIntroText {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    max-width: 620px;
+    align-items: center;
+    text-align: center;
   }
 
-  #aboutBio {
-    margin: 14px 0 0 0;
-    padding: 0;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.55;
-    opacity: .85;
-  }
-
-  /* Experience / Education / Tools / Focus */
+  /* Experience / Tools */
   #aboutInfoGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -672,7 +663,7 @@ body,
   #awardsTable {
     width: 100%;
     border-collapse: collapse;
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
   }
 
@@ -747,7 +738,7 @@ body,
     padding: 0;
     margin: 0;
     font-size: 36px;
-    text-align: left;
+    text-align: center;
     font-weight: 300;
     line-height: 1.1;
     opacity: 1;
@@ -756,7 +747,7 @@ body,
     padding: 0;
     margin: 4px 0 0 0;
     font-size: 14px;
-    text-align: left;
+    text-align: center;
     font-weight: 300;
     opacity: .5;
 }
@@ -765,9 +756,8 @@ body,
     align-items: center;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 28px;
+    flex-direction: column;
+    gap: 16px;
     padding: 0;
     margin: 0;
     opacity: 0;
@@ -1027,21 +1017,11 @@ flex-wrap: wrap;
     #awardsTable td:nth-child(4) { display: none; }
     #awardsTable th:nth-child(3),
     #awardsTable td:nth-child(3) { text-align: right; padding-right: 0; }
-    #awardsTable, #awards {
-        font-size: 13px;
-        }
 
-    
+
 }
 
 @media only screen and (max-width: 500px) {
-
-    /* Stack the About intro: avatar above the name/role/bio. */
-    #headshotContainer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
-    }
 
     #developedTag{
       display: none;
