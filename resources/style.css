@@ -606,6 +606,21 @@ body,
     to   { opacity: 1; transform: none; }
 }
 
+/* About view: staggered fade-up of the sections each time it opens.
+   (#headshotContainer is excluded — it has its own fade choreography in
+   work.js, and a fill-forwards animation would override it on close.) */
+@media (prefers-reduced-motion: no-preference) {
+    #aboutPageContainer.about-reveal #aboutInfoGrid {
+        animation: workCardIn 0.5s ease both 0.05s;
+    }
+    #aboutPageContainer.about-reveal #awardsContainer {
+        animation: workCardIn 0.5s ease both 0.14s;
+    }
+    #aboutPageContainer.about-reveal #SocialButtonContainer {
+        animation: workCardIn 0.5s ease both 0.22s;
+    }
+}
+
 
 
   #awards {

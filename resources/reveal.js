@@ -7,14 +7,22 @@
   var reduce = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Re-triggerable staggered entrance for the work grid — called by work.js
-  // each time the Work view opens. No-op under reduced motion.
+  // Re-triggerable staggered entrances — called by work.js each time the
+  // Work / About view opens. No-op under reduced motion. Removing and
+  // re-adding the class (with a reflow between) restarts the animation.
+  function arm(el, className) {
+    if (!el || reduce) return;
+    el.classList.remove(className);
+    void el.offsetWidth;
+    el.classList.add(className);
+  }
+
   window.armWorkReveal = function () {
-    var grid = document.getElementById('allWorkContainer');
-    if (!grid || reduce) return;
-    grid.classList.remove('work-reveal');
-    void grid.offsetWidth; // force reflow so the animation restarts
-    grid.classList.add('work-reveal');
+    arm(document.getElementById('allWorkContainer'), 'work-reveal');
+  };
+
+  window.armAboutReveal = function () {
+    arm(document.getElementById('aboutPageContainer'), 'about-reveal');
   };
 
   if (reduce || !('IntersectionObserver' in window)) return;

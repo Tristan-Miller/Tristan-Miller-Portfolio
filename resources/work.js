@@ -227,6 +227,7 @@ if (showreelContainer) {
         aboutPage[i].style.zIndex = 999;
         movingWorkOne.style.transform = 'scale(0)';
         aboutPage[i].style.opacity = 1;
+        if (typeof armAboutReveal === 'function') armAboutReveal();
         backgroundColor = "#000000";
         textColor = "#ffffff"
         aboutButton.style.backgroundColor = textColor;
@@ -357,11 +358,15 @@ if (showreelContainer) {
   });
 
   // Reopen the minimised reel by clicking the video; close it via the backdrop
-  // or the Escape key (keyboard-accessible equivalent of clicking the backdrop).
+  // or the Escape key. Escape also closes the Work/About views (reusing the
+  // toggle buttons, so the router keeps the URL in sync).
   showreel.addEventListener('click', showReel);
   showreelVis.addEventListener('click', closeShowreel);
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && initialReelVis && reelVis) closeShowreel();
+    if (e.key !== 'Escape') return;
+    if (initialReelVis && reelVis) { closeShowreel(); return; }
+    if (workPageVis) { workButton.click(); return; }
+    if (aboutPageVis) { aboutButton.click(); }
   });
 
   window.addEventListener('orientationchange', function() {
