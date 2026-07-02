@@ -179,6 +179,7 @@ if (showreelContainer) {
         brushesHolder.style.zIndex = 6;
         workPageVis = true;
         movingWorkOne.style.transform = 'scale(0)';
+        if (typeof armWorkReveal === 'function') armWorkReveal();
         if (initialReelVis == true){
         showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
         }
