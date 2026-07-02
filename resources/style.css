@@ -814,31 +814,14 @@ body,
     height: auto;
 }
 
-/* Gallery media on project pages get soft corners (the full-bleed hero video
-   at the top stays square for contrast). */
-.workContainer img,
-.workContainer video {
-    border-radius: 16px;
-}
-
 .projectContainer img {
     transition: .3s;
-    border-radius: 16px;
+    border-radius: 0;
 }
 
-/* Work-grid hover: preview lifts with a soft shadow, name italicises
-   (matching the social links' hover language). */
-.projectContainer:hover .projectNameWork,
-.projectContainer:focus-visible .projectNameWork {
-    font-style: italic;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .projectContainer:hover .projectPreview,
-    .projectContainer:focus-visible .projectPreview {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 28px rgba(0, 0, 0, .14);
-    }
+/* A little air between the title row and the preview. */
+.projectContainer .projectPreview {
+    margin-top: 6px;
 }
 
 .whitebackground {
