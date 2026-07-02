@@ -56,7 +56,7 @@ function brushPanelColor() {
 }
 
 function changeColors() {
-  if(!workPageVis && !aboutPageVis) {
+  if(!workPageVis && !aboutPageVis && !vibesPageVis) {
     // Generate random colors until the contrast ratio is sufficient
     do {
       backgroundColor = getRandomColor();
@@ -77,10 +77,14 @@ function changeColors() {
      }
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
+    vibesPage.style.backgroundColor = backgroundColor;
     workButton.style.borderColor = textColor;
     aboutButton.style.borderColor = textColor;
     funButton.style.borderColor = textColor;
     brushes.style.color = textColor;
+    vibesButton.style.backgroundColor = backgroundColor;
+    vibesButton.style.color = textColor;
+    vibesButton.style.borderColor = textColor;
     if (workPageVis == true) {
       workButton.style.color = backgroundColor;
       workButton.style.borderColor = textColor;
@@ -126,6 +130,12 @@ function changeColors() {
     canvasContainer.style.zIndex = 2;
     brushesHolder.style.zIndex = 3;
     workPageVis = false;
+    vibesPage.style.opacity = 0;
+    vibesPage.style.zIndex = 1;
+    vibesPageVis = false;
+    vibesButton.style.backgroundColor = backgroundColor;
+    vibesButton.style.color = textColor;
+    vibesButton.style.borderColor = textColor;
     drawingEnable = false;
     movingWorkOne.style.transform = 'scale(1)';
     showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
@@ -192,6 +202,10 @@ function changeColors() {
     brushPanelColor();
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
+    vibesPage.style.backgroundColor = backgroundColor;
+    vibesButton.style.backgroundColor = backgroundColor;
+    vibesButton.style.color = textColor;
+    vibesButton.style.borderColor = textColor;
     workButton.style.borderColor = textColor;
     aboutButton.style.borderColor = textColor;
     funButton.style.borderColor = textColor;
@@ -222,6 +236,19 @@ function changeColors() {
           aboutButton.style.backgroundColor = backgroundColor;
           aboutButton.style.color = textColor;
           aboutButton.style.borderColor = textColor;
+          vibesButton.style.backgroundColor = backgroundColor;
+          vibesButton.style.color = textColor;
+          vibesButton.style.borderColor = textColor;
+        } else if (vibesPageVis == true) {
+          vibesButton.style.color = backgroundColor;
+          vibesButton.style.backgroundColor = textColor;
+          vibesButton.style.borderColor = textColor;
+          workButton.style.backgroundColor = backgroundColor;
+          workButton.style.color = textColor;
+          workButton.style.borderColor = textColor;
+          aboutButton.style.backgroundColor = backgroundColor;
+          aboutButton.style.color = textColor;
+          aboutButton.style.borderColor = textColor;
         } else if (aboutPageVis == true) {
           workButton.style.color = textColor;
           workButton.style.backgroundColor = backgroundColor;
@@ -229,6 +256,9 @@ function changeColors() {
           aboutButton.style.backgroundColor = textColor;
           aboutButton.style.color = backgroundColor;
           aboutButton.style.borderColor = textColor;
+          vibesButton.style.backgroundColor = backgroundColor;
+          vibesButton.style.color = textColor;
+          vibesButton.style.borderColor = textColor;
         } else if(drawingEnable == true) {
           funButton.style.backgroundColor = textColor;
           funButton.style.color = backgroundColor;
@@ -239,6 +269,9 @@ function changeColors() {
           aboutButton.style.backgroundColor = backgroundColor;
           aboutButton.style.color = textColor;
           aboutButton.style.borderColor = textColor;
+          vibesButton.style.backgroundColor = backgroundColor;
+          vibesButton.style.color = textColor;
+          vibesButton.style.borderColor = textColor;
           for (let i = 0; i < smileysvgElements.length; i++) {
           smileysvgElements[i].style.fill = backgroundColor;
         }

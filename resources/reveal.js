@@ -25,6 +25,10 @@
     arm(document.getElementById('aboutPageContainer'), 'about-reveal');
   };
 
+  window.armVibesReveal = function () {
+    arm(document.getElementById('vibesContainer'), 'vibes-reveal');
+  };
+
   if (reduce || !('IntersectionObserver' in window)) return;
 
   // ---- Project pages: reveal case-study blocks as they scroll into view ----

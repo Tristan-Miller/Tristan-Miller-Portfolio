@@ -613,6 +613,13 @@ body,
     to   { opacity: 1; transform: none; }
 }
 
+/* Vibes view: content fades up each time it opens. */
+@media (prefers-reduced-motion: no-preference) {
+    #vibesContainer.vibes-reveal > * {
+        animation: workCardIn 0.5s ease both;
+    }
+}
+
 /* About view: staggered fade-up of the sections each time it opens.
    (#headshotContainer is excluded — it has its own fade choreography in
    work.js, and a fill-forwards animation would override it on close.) */
@@ -754,16 +761,51 @@ body,
 
 
 #workPage{
-    
+
     transition: 0.2s;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;  
+    z-index: 1;
     opacity: 0;
-    
+
+}
+
+/* Vibes view — same show/hide shell as the Work view. */
+.vibesPage {
+    transition: 0.2s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+}
+
+#vibesContainer {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 50px 10px 10px 10px;
+}
+
+#vibesIntro {
+    width: 100%;
+    text-align: center;
+    margin: 38vh 0 0 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 300;
+    opacity: .5;
 }
 
 #workPage img{
@@ -999,8 +1041,11 @@ flex-wrap: wrap;
 
 @media only screen and (max-width: 800px) {
 
+    /* Three text buttons + smiley need to fit beside the logo. */
+    button {
+        font-size: 2em;
+    }
 
-   
     .projectvideo::-webkit-media-controls {
         display: initial;
       }
@@ -1076,7 +1121,7 @@ flex-wrap: wrap;
     }
 
     button {
-        font-size: 7vw;
+        font-size: 5.5vw;
         border-width: 1.5px;
         margin: 0;
     }
@@ -1191,8 +1236,10 @@ flex-wrap: wrap;
     }
     #allWorkContainer {
         padding: 50px 10vw 1vw 10vw;
-       
-        
+    }
+
+    #vibesContainer {
+        padding: 50px 10vw 1vw 10vw;
     }
 
     #fullProjectContainer {

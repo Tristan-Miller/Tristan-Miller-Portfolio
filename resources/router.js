@@ -13,7 +13,8 @@
 (function () {
   var workBtn = document.getElementById('workButton');
   var aboutBtn = document.getElementById('aboutButton');
-  if (!workBtn || !aboutBtn) return; // home page only
+  var vibesBtn = document.getElementById('vibesButton');
+  if (!workBtn || !aboutBtn || !vibesBtn) return; // home page only
 
   var syncing = false;   // true while we drive the UI from the URL (not the user)
   var syncTimer = null;
@@ -21,12 +22,13 @@
   function currentView() {
     if (typeof aboutPageVis !== 'undefined' && aboutPageVis) return 'about';
     if (typeof workPageVis !== 'undefined' && workPageVis) return 'work';
+    if (typeof vibesPageVis !== 'undefined' && vibesPageVis) return 'vibes';
     return 'home';
   }
 
   function viewFromHash() {
     var h = (location.hash || '').replace(/^#/, '').toLowerCase();
-    return (h === 'work' || h === 'about') ? h : 'home';
+    return (h === 'work' || h === 'about' || h === 'vibes') ? h : 'home';
   }
 
   // Drive the UI to `target` by reusing the toggle buttons. Each opening button
@@ -36,8 +38,10 @@
     if (cur === target) return;
     if (target === 'work') workBtn.click();
     else if (target === 'about') aboutBtn.click();
+    else if (target === 'vibes') vibesBtn.click();
     else if (cur === 'work') workBtn.click();      // -> home
     else if (cur === 'about') aboutBtn.click();     // -> home
+    else if (cur === 'vibes') vibesBtn.click();     // -> home
   }
 
   // After a real user click, reflect the resulting view in the URL. Delayed so
@@ -58,6 +62,7 @@
 
   workBtn.addEventListener('click', scheduleHashSync);
   aboutBtn.addEventListener('click', scheduleHashSync);
+  vibesBtn.addEventListener('click', scheduleHashSync);
 
   function route() {
     syncing = true;

@@ -6,6 +6,7 @@
 // ------------------------------------------------------- home-only state ----
 let workPageVis = false;
 let aboutPageVis = false;
+let vibesPageVis = false;
 let reelVis = true;
 let initialReelVis = false;
 
@@ -20,6 +21,8 @@ const showreelVis = document.getElementById('showreelVis');
 const showreelContainer = document.getElementById('showreelContainer');
 const showreel = document.getElementById('showreel');
 const workButton = document.getElementById('workButton');
+const vibesButton = document.getElementById('vibesButton');
+const vibesPage = document.getElementById('vibesPage');
 const showReelFooter = document.getElementById('showReelFooter');
 const canvasContainer = document.getElementById('canvas-container');
 const headshotContainer = document.getElementById('headshotContainer');
@@ -154,6 +157,13 @@ if (showreelContainer) {
       brushesHolder.style.transform = 'translateY(0px)';
       aboutPage[i].style.zIndex = 1;
     }
+    // Close the Vibes view (theme is already reset to white above).
+    vibesPage.style.opacity = 0;
+    vibesPage.style.zIndex = 1;
+    vibesPageVis = false;
+    vibesButton.style.backgroundColor = backgroundColor;
+    vibesButton.style.color = textColor;
+    vibesButton.style.borderColor = textColor;
     for (let i = 0; i < workPages.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(workPages[i]).opacity);
       if (currentOpacity === 0) {
@@ -196,6 +206,85 @@ if (showreelContainer) {
     }
   });
 
+  // ---- Vibes view toggle (vibe-coded experiments) ----
+  vibesButton.addEventListener('click', function () {
+    fruitSalad.pause();
+    for (let i = 0; i < svgElements.length; i++) {
+      svgElements[i].style.fill = textColor;
+    }
+    for (let i = 0; i < introsvgElements.length; i++) {
+      introsvgElements[i].style.fill = textColor;
+    }
+    // Close About and reset the theme to white (same as the Work toggle).
+    for (let i = 0; i < aboutPage.length; i++) {
+      backgroundColor = "#ffffff";
+      textColor = "#000000";
+      aboutButton.style.backgroundColor = backgroundColor;
+      aboutButton.style.color = textColor;
+      aboutButton.style.borderColor = textColor;
+      funButton.style.backgroundColor = backgroundColor;
+      funButton.style.color = textColor;
+      funButton.style.borderColor = backgroundColor;
+      themeContainer.style.backgroundColor = backgroundColor;
+      themeContainer.style.color = textColor;
+      aboutPageVis = false;
+      for (let j = 0; j < svgElements.length; j++) {
+        svgElements[j].style.fill = textColor;
+      }
+      for (let j = 0; j < smileysvgElements.length; j++) {
+        smileysvgElements[j].style.fill = textColor;
+      }
+      aboutPage[i].style.opacity = 0;
+      aboutPage[i].style.zIndex = 1;
+      funButton.style.visibility = "hidden";
+      drawingEnable = false;
+      brushesHolder.style.transform = 'translateY(0px)';
+    }
+    // Close the Work view.
+    for (let i = 0; i < workPages.length; i++) {
+      workPages[i].style.opacity = 0;
+      workPages[i].style.zIndex = 1;
+    }
+    workPageVis = false;
+    workButton.style.backgroundColor = backgroundColor;
+    workButton.style.color = textColor;
+    workButton.style.borderColor = textColor;
+    // Toggle Vibes.
+    if (!vibesPageVis) {
+      vibesPageVis = true;
+      vibesPage.style.opacity = 1;
+      vibesPage.style.backgroundColor = backgroundColor;
+      vibesPage.style.zIndex = 4;
+      canvasContainer.style.zIndex = 5;
+      brushesHolder.style.zIndex = 6;
+      vibesButton.style.backgroundColor = textColor;
+      vibesButton.style.color = backgroundColor;
+      vibesButton.style.borderColor = textColor;
+      movingWorkOne.style.transform = 'scale(0)';
+      if (typeof armVibesReveal === 'function') armVibesReveal();
+      if (initialReelVis == true) {
+        showreelContainer.style.transform = 'translateY(' + hideShowReel + 'px)' + 'translateX(-50%)';
+      }
+    } else {
+      vibesPageVis = false;
+      vibesPage.style.opacity = 0;
+      vibesPage.style.zIndex = 1;
+      canvasContainer.style.zIndex = 2;
+      brushesHolder.style.zIndex = 3;
+      brushPanelColor();
+      brushes.style.color = textColor;
+      vibesButton.style.backgroundColor = backgroundColor;
+      vibesButton.style.color = textColor;
+      vibesButton.style.borderColor = textColor;
+      funButton.style.visibility = "visible";
+      funButton.style.borderColor = textColor;
+      movingWorkOne.style.transform = 'scale(1)';
+      if (initialReelVis == true) {
+        showreelContainer.style.transform = 'translateY(' + finalTranslate + 'px)' + 'translateX(-50%)';
+      }
+    }
+  });
+
   // ---- About view toggle ----
   aboutButton.addEventListener('click', function () {
     fruitSalad.pause();
@@ -219,6 +308,11 @@ if (showreelContainer) {
 
     workPages[i].style.zIndex = 1;
     }
+    // Close the Vibes view too (its button is repainted with the new theme
+    // colours inside the open/close branches below).
+    vibesPage.style.opacity = 0;
+    vibesPage.style.zIndex = 1;
+    vibesPageVis = false;
     for (let i = 0; i < aboutPage.length; i++) {
       const currentOpacity = parseFloat(getComputedStyle(aboutPage[i]).opacity);
 
@@ -236,6 +330,9 @@ if (showreelContainer) {
         workButton.style.backgroundColor = backgroundColor;
         workButton.style.color = textColor;
         workButton.style.borderColor = textColor;
+        vibesButton.style.backgroundColor = backgroundColor;
+        vibesButton.style.color = textColor;
+        vibesButton.style.borderColor = textColor;
         funButton.style.backgroundColor = backgroundColor;
         funButton.style.color = textColor;
         funButton.style.borderColor = backgroundColor;
@@ -274,6 +371,9 @@ if (showreelContainer) {
         workButton.style.backgroundColor = backgroundColor;
         workButton.style.color = textColor;
         workButton.style.borderColor = textColor;
+        vibesButton.style.backgroundColor = backgroundColor;
+        vibesButton.style.color = textColor;
+        vibesButton.style.borderColor = textColor;
         themeContainer.style.backgroundColor = backgroundColor;
         themeContainer.style.color = textColor;
         aboutPage[i].style.backgroundColor = backgroundColor;
@@ -366,6 +466,7 @@ if (showreelContainer) {
     if (e.key !== 'Escape') return;
     if (initialReelVis && reelVis) { closeShowreel(); return; }
     if (workPageVis) { workButton.click(); return; }
+    if (vibesPageVis) { vibesButton.click(); return; }
     if (aboutPageVis) { aboutButton.click(); }
   });
 
