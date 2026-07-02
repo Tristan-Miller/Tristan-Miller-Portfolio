@@ -940,13 +940,48 @@ flex-wrap: wrap;
 #fullProjectContainer {
     box-sizing: border-box;
     width: 100%;
-    /* border: blue solid 2px;*/
     margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     padding: 0 20px;
+}
+
+/* Prev/next project pager at the foot of each project page. */
+.projectPager {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 0 20px 60px 20px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(127, 127, 127, .35);
+}
+
+.pagerLink {
+    overflow: visible;
+}
+
+.pagerDir {
+    display: block;
+    font-size: 14px;
+    opacity: .5;
+    margin-bottom: 2px;
+}
+
+.pagerName {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.pagerNext {
+    text-align: right;
+}
+
+.pagerLink:hover .pagerName,
+.pagerLink:focus-visible .pagerName {
+    font-style: italic;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1149,6 +1184,11 @@ flex-wrap: wrap;
 
     #fullProjectContainer {
         padding: 0vw 10vw 1vw 10vw;
+    }
+
+    .projectPager {
+        margin-left: 10vw;
+        margin-right: 10vw;
     }
 
     #aboutPageContainer {

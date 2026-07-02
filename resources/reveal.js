@@ -35,9 +35,13 @@
   if (!blocks.length) return;
 
   // The project page scrolls inside its own container (.projectPage /
-  // #project, overflow:scroll) rather than the window, so the observer must be
-  // rooted there to detect blocks entering the visible area.
+  // #project, overflow:auto) rather than the window, so the observer must be
+  // rooted there to detect blocks entering the visible area. The prev/next
+  // pager sits outside #fullProjectContainer, so it's picked up separately.
   var scrollRoot = projectRoot.closest('.projectPage');
+  var pager = scrollRoot ? scrollRoot.querySelector('.projectPager') : null;
+  blocks = Array.prototype.slice.call(blocks);
+  if (pager) blocks.push(pager);
 
   blocks.forEach(function (el) { el.classList.add('reveal'); });
 
