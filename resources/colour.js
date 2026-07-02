@@ -1,7 +1,5 @@
 let backgroundColor, textColor;
 var buttons = document.getElementsByClassName('myButton');
-var slideColor = document.getElementsByClassName('slider');
-const sliderButton = document.getElementById('slider');
 const workPaged = document.getElementById('workPage');
 const aboutPage = document.getElementsByClassName('aboutPage');
 const aboutPage2 = document.getElementById('aboutPage');
@@ -48,64 +46,13 @@ function getRandomColor() {
     return luminance;
   }
   
+// Highlights the selected brush swatch and resets the rest to the theme
+// background. brushSelect lives in sketch.js (loaded before this file).
 function brushPanelColor() {
-    if(brushSelect == 0){
-        imageOne.style.backgroundColor = textColor;
-        imageTwo.style.backgroundColor = backgroundColor;
-        imageThree.style.backgroundColor = backgroundColor;
-        imageFour.style.backgroundColor = backgroundColor;
-        imageFive.style.backgroundColor = backgroundColor;
-        imageSix.style.backgroundColor = backgroundColor;
-        
-    } else if(brushSelect == 1 ){
-        imageOne.style.backgroundColor = backgroundColor;
-        imageTwo.style.backgroundColor = textColor;
-        imageThree.style.backgroundColor = backgroundColor;
-        imageFour.style.backgroundColor = backgroundColor;
-        imageFive.style.backgroundColor = backgroundColor;
-        imageSix.style.backgroundColor = backgroundColor;
-        
-    } else if(brushSelect == 2 ){
-        imageOne.style.backgroundColor = backgroundColor;
-        imageTwo.style.backgroundColor = backgroundColor;
-        imageThree.style.backgroundColor = textColor;
-        imageFour.style.backgroundColor = backgroundColor;
-        imageFive.style.backgroundColor = backgroundColor;
-        imageSix.style.backgroundColor = backgroundColor;
-        
-    } else if(brushSelect == 3 ){
-        imageOne.style.backgroundColor = backgroundColor;
-        imageTwo.style.backgroundColor = backgroundColor;
-        imageThree.style.backgroundColor = backgroundColor;
-        imageFour.style.backgroundColor = textColor;
-        imageFive.style.backgroundColor = backgroundColor;
-        imageSix.style.backgroundColor = backgroundColor;
-       
-    } else if(brushSelect == 4 ){
-        imageOne.style.backgroundColor = backgroundColor;
-        imageTwo.style.backgroundColor = backgroundColor;
-        imageThree.style.backgroundColor = backgroundColor;
-        imageFour.style.backgroundColor = backgroundColor;
-        imageFive.style.backgroundColor = textColor;
-        imageSix.style.backgroundColor = backgroundColor;
-        
-    } else if(brushSelect == 5 ){
-        imageOne.style.backgroundColor = backgroundColor;
-        imageTwo.style.backgroundColor = backgroundColor;
-        imageThree.style.backgroundColor = backgroundColor;
-        imageFour.style.backgroundColor = backgroundColor;
-        imageFive.style.backgroundColor = backgroundColor;
-        imageSix.style.backgroundColor = textColor;
-       
-    } else if(brushSelect == 6 ){
-        imageOne.style.backgroundColor = backgroundColor;
-        imageTwo.style.backgroundColor = backgroundColor;
-        imageThree.style.backgroundColor = backgroundColor;
-        imageFour.style.backgroundColor = backgroundColor;
-        imageFive.style.backgroundColor = backgroundColor;
-        imageSix.style.backgroundColor = backgroundColor;
-        
-    }
+    if (typeof brushSelect === 'undefined') return;
+    document.querySelectorAll('#brushes > div').forEach(function (swatch, i) {
+        swatch.style.backgroundColor = i === brushSelect ? textColor : backgroundColor;
+    });
 }
 
 function changeColors() {
@@ -242,12 +189,7 @@ function changeColors() {
     themeContainer.style.color = textColor;
     aboutButton.style.backgroundColor = backgroundColor;
     funButton.style.backgroundColor = backgroundColor;
-    imageOne.style.backgroundColor = textColor;
-    imageTwo.style.backgroundColor = backgroundColor;
-    imageThree.style.backgroundColor = backgroundColor;
-    imageFour.style.backgroundColor = backgroundColor;
-    imageFive.style.backgroundColor = backgroundColor;
-    imageSix.style.backgroundColor = backgroundColor;
+    brushPanelColor();
     workPaged.style.backgroundColor = backgroundColor;
     aboutPage2.style.backgroundColor = backgroundColor;
     workButton.style.borderColor = textColor;

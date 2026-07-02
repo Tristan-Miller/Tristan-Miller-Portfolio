@@ -101,24 +101,18 @@ body {
 
   
 
-#menu {
-    height: 50px;
-    bottom: 0;
-}
-
 .header-holder {
     overflow: visible;
     margin-top: 20px;
     padding: 0 20px 0 20px;
     height: 5em;
     z-index: 1000;
-    /*border: 2px solid red;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Make it full width */
+    width: 100%;
     position: absolute;
-    top: 0 /* Position at the top of the page */
+    top: 0
 }
 
 
@@ -136,41 +130,6 @@ body {
     display: flex; /* This line enables Flexbox */
     justify-content: center; /* Centers content along the main axis (horizontally if flex-direction is row) */
     align-items: center; /* Centers content along the cross axis (vertically if flex-direction is row) */
-}
-
-.welcomeMessage {
-    width: 60%;
-    font-weight: 900;
-    font-size: 6vw;
-    text-align: center;
-    line-height: 5.5vw;
-    overflow: visible;
-
-}
-
-#welcomeMessageGif {
-    position: absolute;
-    width: 25.5vw;
-    transform: translate(6.5vw, -5.5vw);
-}
-
-.mute-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  border-width: 0;
-    z-index: 1000;
-    font-size: 1em;
-    mix-blend-mode: difference;
-    color: white;
-
-  }
-
-  
-#closeButton {
-    border-width: 0;
-    background-color: white; 
-    mix-blend-mode: difference;
 }
 
 button {
@@ -197,16 +156,6 @@ button {
     padding: .38em .38em .38em .38em;
 }
 
-
-
-#colourButton {
-    width: .5em;
-    padding: 0;
-    height: .5em;
-    color: inherit;
-    overflow: visible;
-   
-}
 
 
 /* The logo is a <button> (randomises theme colours) — strip the default
@@ -255,18 +204,8 @@ button {
 
 #workButton,
 #funButton,
-#colourButton,
-#closeButton, 
-#aboutButton{
-    transition:  background-color 0.2s, color 0.2s, border-color 0.2s;
-}
-#funButton:hover,
-#aboutButton:hover,
-#workButton:hover,
-#closeButton:hover,
-#colourButton:hover {
+#aboutButton {
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-    
 }
 
 
@@ -298,9 +237,6 @@ button {
     transition: 1s;
     filter: blur(0px);
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-}
-#showreelTitle {
-    border: 1px pink solid;
 }
 
 
@@ -455,16 +391,6 @@ button {
 
 
 
-.projectTitle {
-    position: fixed;
-    display: none;
-    color: white;
-    margin: 5px 25px;
-    z-index: 1002;
-    mix-blend-mode: difference;
-    font-weight: 400;
-    font-size: 20px;
-}
 
 
 #brushes-holder {
@@ -825,14 +751,13 @@ body,
     width: 100%;
     height: 100%;
     display: flex;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 50px 10px 10px 10px;
     opacity: 1;
-   
-    
 }
 .projectContainer {
     box-sizing: border-box;
@@ -913,9 +838,9 @@ flex-wrap: wrap;
     width: 100%;
     height: 100%;
     align-items: baseline;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     transition: 0.2s;
-   
 }
 
 #project {
@@ -1113,10 +1038,6 @@ flex-wrap: wrap;
       
       }
 
-      .projectTitle {
-        visibility: hidden;
-      }
-
     * {
         cursor: auto;
        /* overflow: auto;  */
@@ -1153,10 +1074,6 @@ flex-wrap: wrap;
    
     
     #custom-cursor {
-        visibility: hidden;
-      }
-
-      .projectTitle {
         visibility: hidden;
       }
 
@@ -1228,21 +1145,6 @@ flex-wrap: wrap;
 
 
 
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 200;
-
-
-}
 
 /* Reduced motion: drop the load fade and the slow showreel transitions.
    (The floating bubble, looping Lottie and auto-playing videos are calmed in

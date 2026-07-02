@@ -31,24 +31,11 @@ let hideShowReel = 0;
 
 // Bounces the floating showreel bubble around the viewport until it's hovered
 // or a full-screen view (work / about / draw) is open.
-function initializeMovingDivs(movingDivClass, tooltipId) {
+function initializeMovingDivs(movingDivClass) {
   const movingDivs = document.getElementsByClassName(movingDivClass);
-  const hoverElement = document.querySelector('.' + movingDivClass);
-  const tooltipElement = document.getElementById(tooltipId);
-  if (!hoverElement) return; // nothing to animate on this page
+  if (!movingDivs.length) return; // nothing to animate on this page
 
   let isHovered = false;
-
-  hoverElement.addEventListener('mousemove', function (event) {
-    if (!tooltipElement) return;
-    tooltipElement.style.display = 'block';
-    tooltipElement.style.left = event.clientX + 'px';
-    tooltipElement.style.top = event.clientY + 'px';
-  });
-
-  hoverElement.addEventListener('mouseout', function () {
-    if (tooltipElement) tooltipElement.style.display = 'none';
-  });
 
   for (const movingDiv of movingDivs) {
     movingDiv.addEventListener('mouseover', () => { isHovered = true; });
@@ -124,7 +111,7 @@ if (showreelContainer) {
   finalTranslate = translateYValue / 2.2 + containerHeight / 2.3;
   hideShowReel = translateYValue / 2 + containerHeight / 3 + 150;
 
-  initializeMovingDivs('movingWorkOne', 'D_AD');
+  initializeMovingDivs('movingWorkOne');
 
   // ---- Work view toggle ----
   workButton.addEventListener('click', function () {
@@ -378,7 +365,7 @@ if (showreelContainer) {
   });
 
   window.addEventListener('orientationchange', function() {
-    initializeMovingDivs('movingWorkOne', 'D_AD');
+    initializeMovingDivs('movingWorkOne');
   });
 
   // ---- About page: headshot easter egg ----
