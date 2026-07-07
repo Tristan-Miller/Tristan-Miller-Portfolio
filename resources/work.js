@@ -255,8 +255,10 @@ if (showreelContainer) {
       vibesPage.style.opacity = 1;
       vibesPage.style.backgroundColor = backgroundColor;
       vibesPage.style.zIndex = 4;
-      canvasContainer.style.zIndex = 5;
-      brushesHolder.style.zIndex = 6;
+      // Keep the p5 canvas below the Vibes view — there's no drawing mode
+      // here, and at z-index 5 it would swallow clicks meant for the CRT.
+      canvasContainer.style.zIndex = 0;
+      brushesHolder.style.zIndex = 3;
       vibesButton.style.backgroundColor = textColor;
       vibesButton.style.color = backgroundColor;
       vibesButton.style.borderColor = textColor;

@@ -285,12 +285,15 @@ button {
 }
 
 
-/* The showreel bubble is a <button>; reset the default button chrome. */
+/* The showreel bubble is a <button>; reset the default button chrome.
+   overflow: visible opts out of the global hidden so the SHOWREEL callout
+   can sit outside the circle (the video keeps its own border-radius). */
 #movingWork {
     width: 120px;
     height: 120px;
     position: absolute;
     border-radius: 50%;
+    overflow: visible;
     transition: transform 0.3s, scale 0.3s;
     display: flex;
     align-items: center;
@@ -304,17 +307,6 @@ button {
     font-family: inherit;
 }
 
-#movingWork .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* semi-transparent tint */
-    z-index: 1001; /* below h3 but above content */
-    border-radius: 50%; /* match circle shape */
-}
-
 /* The reel preview (muted looping video) fills the circular bubble. */
 #movingWork video {
     width: 100%;
@@ -323,28 +315,89 @@ button {
     border-radius: 50%;
 }
 
+/* SHOWREEL callout — an annotation tag tethered to the bubble by a hairline.
+   The text types itself on every few seconds (reel-type.js), and the tag
+   flips side when the bubble drifts near a viewport edge so it never clips. */
+#movingWork .reel-callout {
+    position: absolute;
+    left: 88%;
+    bottom: 88%;
+    width: 30px;
+    height: 26px;
+    pointer-events: none;
+    z-index: 1002;
+    overflow: visible;
+}
 
+#movingWork .reel-callout * {
+    overflow: visible;
+}
 
+#movingWork .reel-callout-line {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 
-#movingWork .reel-label {
-    position: absolute; /* layer on top of content */
-    top: 50%;
-    left: 50%;
-    color: white;
-    transform: translate(-50%, -50%); /* perfect centering */
-    margin: 0;
-    text-align: center;
-    z-index: 1002; /* above other content */
-    
-    font-size: 1.8em;
-    border-color: inherit;
+#movingWork .reel-callout-text {
+    position: absolute;
+    left: calc(100% + 7px);
+    bottom: calc(100% - 8px);
     font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    letter-spacing:-.01em;
-    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .16em;
+    white-space: nowrap;
+    line-height: 1;
+}
 
-    
+/* Blinking caret at the end of the typed text. */
+#movingWork .reel-callout-text::after {
+    content: "";
+    display: inline-block;
+    width: 1.5px;
+    height: .9em;
+    margin-left: 3px;
+    vertical-align: -1.5px;
+    background: currentColor;
+    animation: reelCaretBlink 1s step-end infinite;
+}
+@keyframes reelCaretBlink {
+    50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    #movingWork .reel-callout-text::after { animation: none; }
+}
+
+/* Near the right viewport edge: tag swings to the top-left of the bubble. */
+#movingWork .reel-callout.flip-x {
+    left: auto;
+    right: 88%;
+}
+#movingWork .reel-callout.flip-x .reel-callout-line {
+    transform: scaleX(-1);
+}
+#movingWork .reel-callout.flip-x .reel-callout-text {
+    left: auto;
+    right: calc(100% + 7px);
+}
+
+/* Near the top viewport edge: tag hangs below the bubble instead. */
+#movingWork .reel-callout.flip-y {
+    bottom: auto;
+    top: 88%;
+}
+#movingWork .reel-callout.flip-y .reel-callout-line {
+    transform: scaleY(-1);
+}
+#movingWork .reel-callout.flip-x.flip-y .reel-callout-line {
+    transform: scale(-1, -1);
+}
+#movingWork .reel-callout.flip-y .reel-callout-text {
+    bottom: auto;
+    top: calc(100% - 8px);
 }
 
 
@@ -487,17 +540,6 @@ body,
     
 }
 
-
-#developedTag {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    opacity: .5;
-    font-size: 14px;
-  
-    font-weight: 300;
-}
 
 #aboutPageContainer {
     width: 100%;
@@ -790,22 +832,346 @@ body,
     width: 100%;
     height: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 50px 10px 10px 10px;
+    padding: 90px 16px 30px 16px;
+}
+
+/* ---- 1980s CRT computer ---- */
+/* The monitor keeps its own fixed retro palette (beige case, phosphor-green
+   screen) regardless of the site theme — it's meant to read as an object
+   sitting on the page, not a themed panel. */
+
+#crtMonitor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(680px, 100%);
+    flex-shrink: 0;
+}
+
+#crtCase {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 26px 26px 14px 26px;
+    background: linear-gradient(160deg, #e8e2d2 0%, #d6cfba 55%, #c4bca4 100%);
+    border-radius: 18px 18px 22px 22px;
+    box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, .55),
+        inset 0 -3px 6px rgba(94, 84, 60, .35);
+}
+
+#crtScreen {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    /* Slight phosphor curvature: brighter centre falling off to the corners. */
+    background: radial-gradient(ellipse 105% 105% at 50% 45%, #141b14 0%, #0b100b 62%, #060906 100%);
+    border-radius: 12px;
+    border: 4px solid #171715;
+    box-shadow:
+        inset 0 0 22px rgba(0, 0, 0, .55),
+        0 0 0 4px #aaa189,
+        0 3px 8px rgba(94, 84, 60, .4);
+    overflow: hidden;
+}
+
+#crtContent {
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: clamp(14px, 4%, 28px);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: #4dff88;
+    font-family: "Courier New", Courier, monospace;
+    text-shadow: 0 0 6px rgba(77, 255, 136, .55);
+}
+
+/* Don't let the flex column squash items to fit — overflow scrolls instead. */
+#crtContent > * {
+    flex-shrink: 0;
+}
+
+/* Phosphor-green scrollbar so overflow fits the CRT look. */
+#crtContent {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(77, 255, 136, .45) rgba(77, 255, 136, .07);
+}
+#crtContent::-webkit-scrollbar { width: 8px; }
+#crtContent::-webkit-scrollbar-track { background: rgba(77, 255, 136, .07); }
+#crtContent::-webkit-scrollbar-thumb { background: rgba(77, 255, 136, .45); }
+
+/* Scanlines + slow phosphor shimmer sit above the content but let clicks
+   through. */
+#crtScanlines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, .28) 3px
+    );
+}
+
+#crtGlare {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 28% 18%, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, 0) 45%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    #crtScreen { animation: crtFlicker 4s infinite steps(1, end); }
+}
+@keyframes crtFlicker {
+    0%, 100% { opacity: 1; }
+    52% { opacity: .97; }
+    54% { opacity: 1; }
+    87% { opacity: .98; }
+    88% { opacity: 1; }
 }
 
 #vibesIntro {
-    width: 100%;
-    text-align: center;
-    margin: 38vh 0 0 0;
+    margin: 0;
     padding: 0;
-    font-size: 18px;
-    font-weight: 300;
-    opacity: .5;
+    font-size: clamp(13px, 2.4vw, 17px);
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 1;
+    overflow-wrap: break-word;
+}
+
+.crtPrompt {
+    opacity: .55;
+    margin-right: .4em;
+}
+
+
+#crtCaret {
+    display: inline-block;
+    width: .6em;
+    height: 1em;
+    margin-left: .25em;
+    vertical-align: text-bottom;
+    background: #4dff88;
+    box-shadow: 0 0 6px rgba(77, 255, 136, .8);
+}
+@media (prefers-reduced-motion: no-preference) {
+    #crtCaret { animation: crtBlink 1.1s step-end infinite; }
+}
+@keyframes crtBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* App launcher buttons — one chunky retro button per vibe-coded project,
+   stacked two per row so the screen reads as a grid rather than a list. */
+#crtApps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+@media (max-width: 480px) {
+    #crtApps {
+        grid-template-columns: 1fr;
+    }
+}
+
+.crtAppButton {
+    appearance: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(77, 255, 136, .08);
+    border: 2px solid #4dff88;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 rgba(77, 255, 136, .35);
+    color: #4dff88;
+    font-family: "Courier New", Courier, monospace;
+    text-align: left;
+    text-shadow: 0 0 6px rgba(77, 255, 136, .55);
+}
+
+.crtAppButton:hover {
+    background: #4dff88;
+    color: #0a0f0a;
+    text-shadow: none;
+    box-shadow: 2px 2px 0 rgba(77, 255, 136, .35);
+    transform: translate(2px, 2px);
+}
+
+/* No live URL wired up yet — the launcher is visible but inert. */
+.crtAppButton[data-app-src=""] {
+    opacity: .45;
+}
+.crtAppButton[data-app-src=""]:hover {
+    background: rgba(77, 255, 136, .08);
+    color: #4dff88;
+    text-shadow: 0 0 6px rgba(77, 255, 136, .55);
+    box-shadow: 4px 4px 0 rgba(77, 255, 136, .35);
+    transform: none;
+}
+
+.crtAppName {
+    font-size: clamp(13px, 2.4vw, 16px);
+    font-weight: 700;
+    letter-spacing: .06em;
+    overflow-wrap: anywhere;
+}
+
+.crtAppDesc {
+    font-size: clamp(11px, 2vw, 13px);
+    opacity: .75;
+    line-height: 1.4;
+}
+
+.crtAppRun {
+    margin-top: 4px;
+    padding: 2px 10px;
+    border: 1px solid currentColor;
+    font-size: clamp(11px, 2vw, 13px);
+    letter-spacing: .1em;
+}
+
+/* In-screen app window — fills the CRT screen when a program is launched.
+   Sits above the scanline/glare overlays so the app stays fully usable. */
+#crtWindow {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    background: #0a0f0a;
+}
+
+#crtWindow[hidden] {
+    display: none;
+}
+
+#crtWindowBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    background: #4dff88;
+    color: #0a0f0a;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+#crtWindowTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#crtWindowActions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+#crtWindowClose,
+#crtWindowFull {
+    flex-shrink: 0;
+    border: 1px solid #0a0f0a;
+    background: transparent;
+    color: #0a0f0a;
+    font: inherit;
+    padding: 1px 8px;
+}
+
+#crtWindowClose:hover,
+#crtWindowFull:hover {
+    background: #0a0f0a;
+    color: #4dff88;
+}
+
+/* Fullscreen mode: the app window leaves the CRT and fills the browser
+   window. Sits above everything except the custom cursor (z 9999). */
+#crtWindow.fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+}
+
+#crtWindowFrame {
+    flex: 1;
+    width: 100%;
+    border: 0;
+    background: #fff;
+}
+
+/* Hidden while the pointer is inside an embedded app's iframe (the app's own
+   cursor takes over there — ours can't track it). */
+#custom-cursor.cursor-hidden {
+    opacity: 0;
+}
+
+#crtChin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 6px 0 6px;
+}
+
+#crtBrand {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    color: #6f6650;
+}
+
+#crtPowerLed {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #37d13c;
+    box-shadow: 0 0 6px 1px rgba(55, 209, 60, .8), inset 0 -1px 1px rgba(0, 0, 0, .3);
+}
+
+#crtNeck {
+    width: 22%;
+    height: 22px;
+    background: linear-gradient(180deg, #b9b098 0%, #cdc5ae 100%);
+    box-shadow: inset 0 4px 6px rgba(94, 84, 60, .35);
+}
+
+#crtFoot {
+    width: 42%;
+    height: 16px;
+    background: linear-gradient(180deg, #d6cfba 0%, #b9b098 100%);
+    border-radius: 4px 4px 10px 10px;
+}
+
+/* Old Windows PC arrow — swapped in while the cursor is over the CRT screen
+   (toggled in cursor.js). Anchored at its top-left so the arrow tip sits on
+   the pointer position. */
+#custom-cursor.win95-cursor {
+    width: 21px;
+    height: 33px;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 19'%3E%3Cpolygon points='1,1 1,15.4 4.2,12.4 6.4,17.6 8.9,16.5 6.7,11.4 11,11.4' fill='%23fff' stroke='%23000' stroke-width='1.1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    mix-blend-mode: normal;
+    transform: none;
+    transition: none;
 }
 
 #workPage img{
@@ -831,14 +1197,16 @@ body,
     box-sizing: border-box;
     width: 50%;
     height: auto;
-    padding: 10px; 
+    padding: 10px;
     margin: 0;
     transition: .3s;
     position: relative;
     overflow: hidden;
-    top: 50px; 
-    /* border: 2px solid red; */
-    
+    top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .workContainer {
@@ -870,13 +1238,6 @@ body,
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-#workContainerOne, #workContainerTwo, #workContainerThree, #workContainerFour, #workContainerFive, #workContainerSix, #workContainerSeven, #workContainerEight {
-display: flex;
-align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
-}
 
 .projectNameWork {
     color: black;
@@ -1090,11 +1451,6 @@ flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 500px) {
-
-    #developedTag{
-      display: none;
-    }
-   
 
     /* Hide the Result column too; show Award + Client only. */
     #awardsTable th:nth-child(2),

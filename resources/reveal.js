@@ -26,7 +26,17 @@
   };
 
   window.armVibesReveal = function () {
-    arm(document.getElementById('vibesContainer'), 'vibes-reveal');
+    var el = document.getElementById('vibesContainer');
+    arm(el, 'vibes-reveal');
+    // Drop the class once the entrance finishes. A filled transform animation
+    // would otherwise make #crtMonitor a containing block forever, trapping
+    // the app window's position:fixed fullscreen mode inside the monitor.
+    if (el && !reduce) {
+      el.addEventListener('animationend', function handler() {
+        el.classList.remove('vibes-reveal');
+        el.removeEventListener('animationend', handler);
+      });
+    }
   };
 
   if (reduce || !('IntersectionObserver' in window)) return;

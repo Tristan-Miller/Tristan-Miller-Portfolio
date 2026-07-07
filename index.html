@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tristan Miller — 3D Motion Designer</title>
-  <meta name="description" content="Tristan Miller is a 3D motion designer. Portfolio of motion branding, title sequences, 3D and animation work — including D&amp;AD, Sydney Festival, Solflare, Weel and more.">
+  <title>Tristan Miller · 3D Motion Designer</title>
+  <meta name="description" content="Tristan Miller is a 3D motion designer. Portfolio of motion branding, title sequences, 3D and animation work, including D&amp;AD, Sydney Festival, Solflare, Weel and more.">
   <meta name="author" content="Tristan Miller">
   <link rel="canonical" href="https://tristanmiller.xyz/">
   <meta name="theme-color" content="#ffffff">
@@ -13,13 +13,13 @@
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tristan Miller">
-  <meta property="og:title" content="Tristan Miller — 3D Motion Designer">
-  <meta property="og:description" content="Portfolio of a 3D motion designer — motion branding, title sequences, 3D and animation.">
+  <meta property="og:title" content="Tristan Miller · 3D Motion Designer">
+  <meta property="og:description" content="Portfolio of a 3D motion designer: motion branding, title sequences, 3D and animation.">
   <meta property="og:url" content="https://tristanmiller.xyz/">
   <meta property="og:image" content="https://tristanmiller.xyz/resources/Images/ProjectPreviews/CP_Project_Static.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tristan Miller — 3D Motion Designer">
-  <meta name="twitter:description" content="Portfolio of a 3D motion designer — motion branding, title sequences, 3D and animation.">
+  <meta name="twitter:title" content="Tristan Miller · 3D Motion Designer">
+  <meta name="twitter:description" content="Portfolio of a 3D motion designer: motion branding, title sequences, 3D and animation.">
   <meta name="twitter:image" content="https://tristanmiller.xyz/resources/Images/ProjectPreviews/CP_Project_Static.jpg">
   <script src="resources/P5/p5.min.js" defer></script>
   <script src="resources/sketch.js" defer></script>
@@ -27,6 +27,8 @@
   <script src="resources/colour.js" defer></script>
   <script src="resources/router.js" defer></script>
   <script src="resources/cursor.js" defer></script>
+  <script src="resources/vibes.js" defer></script>
+  <script src="resources/reel-type.js" defer></script>
   <script src="resources/reveal.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.10/lottie.min.js" defer></script>
   <script src="resources/lottie-init.js" defer></script>
@@ -41,7 +43,7 @@
   <a class="skip-link" href="#mainContent">Skip to content</a>
   <div id="custom-cursor"></div>
   <main class="allMain" id="mainContent" tabindex="-1">
-    <h1 class="visually-hidden">Tristan Miller — 3D Motion Designer</h1>
+    <h1 class="visually-hidden">Tristan Miller · 3D Motion Designer</h1>
     <div  id="showreelContainer" class="clickable">
       <p id="showReelFooter"></p>
       <video id="showreel" controls playsinline>
@@ -69,9 +71,11 @@
 
 
     <div id="containerDiv" class="container">
-      <button id="movingWork" class="movingWorkOne clickable" type="button">
-        <span class="overlay"></span>
-        <span class="reel-label">Showreel</span>
+      <button id="movingWork" class="movingWorkOne clickable" type="button" aria-label="Play showreel">
+        <span class="reel-callout" aria-hidden="true">
+          <svg class="reel-callout-line" viewBox="0 0 30 26" xmlns="http://www.w3.org/2000/svg"><polyline points="1,25 15,1 29,1" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
+          <span class="reel-callout-text"></span>
+        </span>
         <video autoplay muted loop playsinline aria-hidden="true">
           <source src="resources/Images/HomePage/REEL.webm" type="video/webm">
           <source src="resources/Images/HomePage/REEL.mp4" type="video/mp4">
@@ -109,13 +113,37 @@
   <div id="workPage" class="workPage">
     <h2 class="visually-hidden">Selected work</h2>
     <div id="allWorkContainer">
+      <a id="workContainerTen" class="projectContainer clickable" href="projectTen.html">
+        <h3 class="projectNameWork">VEED Motion Design</h3>
+        <span class="projectDateWork">2026</span>
+        <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/VeedMotion_Project_Static.jpg"
+             data-static="resources/Images/ProjectPreviews/VeedMotion_Project_Static.jpg"
+             data-motion="resources/Images/ProjectPreviews/VeedMotion_Project_Motion.gif"
+             alt="VEED Motion Design, project preview">
+      </a>
+      <a id="workContainerEleven" class="projectContainer clickable" href="projectEleven.html">
+        <h3 class="projectNameWork">AI Production</h3>
+        <span class="projectDateWork">2026</span>
+        <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/AIProduction_Project_Static.jpg"
+             data-static="resources/Images/ProjectPreviews/AIProduction_Project_Static.jpg"
+             data-motion="resources/Images/ProjectPreviews/AIProduction_Project_Motion.gif"
+             alt="AI Production, project preview">
+      </a>
+      <a id="workContainerNine" class="projectContainer clickable" href="projectNine.html">
+        <h3 class="projectNameWork">Loading Animation</h3>
+        <span class="projectDateWork">2026</span>
+        <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/Loading_Project_Static.jpg"
+             data-static="resources/Images/ProjectPreviews/Loading_Project_Static.jpg"
+             data-motion="resources/Images/ProjectPreviews/Loading_Project_Motion.gif"
+             alt="Loading Animation, project preview">
+      </a>
       <a id="workContainerFive" class="projectContainer clickable" href="projectFive.html">
         <h3 class="projectNameWork">Cultural Power</h3>
         <span class="projectDateWork">2025</span>
         <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/CP_Project_Static.jpg"
              data-static="resources/Images/ProjectPreviews/CP_Project_Static.jpg"
              data-motion="resources/Images/ProjectPreviews/CP_Project_Motion.gif"
-             alt="Cultural Power — project preview">
+             alt="Cultural Power, project preview">
       </a>
       <a id="workContainerSix" class="projectContainer clickable" href="projectSix.html">
         <h3 class="projectNameWork">Solflare</h3>
@@ -123,7 +151,7 @@
         <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/Solflare_Project_Static.jpg"
              data-static="resources/Images/ProjectPreviews/Solflare_Project_Static.jpg"
              data-motion="resources/Images/ProjectPreviews/Solflare_Project_Motion.gif"
-             alt="Solflare — project preview">
+             alt="Solflare, project preview">
       </a>
       <a id="workContainerOne" class="projectContainer clickable" href="projectOne.html">
         <h3 class="projectNameWork">D&amp;AD</h3>
@@ -131,7 +159,7 @@
         <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/D_AD_Project_Static.jpg"
              data-static="resources/Images/ProjectPreviews/D_AD_Project_Static.jpg"
              data-motion="resources/Images/ProjectPreviews/D_AD_Project_Motion.gif"
-             alt="D&amp;AD — project preview">
+             alt="D&amp;AD, project preview">
       </a>
       <a id="workContainerEight" class="projectContainer clickable" href="projectEight.html">
         <h3 class="projectNameWork">Weel</h3>
@@ -139,7 +167,7 @@
         <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/Weel_Project_Static.jpg"
              data-static="resources/Images/ProjectPreviews/Weel_Project_Static.jpg"
              data-motion="resources/Images/ProjectPreviews/Weel_Project_Motion.gif"
-             alt="Weel — project preview">
+             alt="Weel, project preview">
       </a>
       <a id="workContainerTwo" class="projectContainer clickable" href="projectTwo.html">
         <h3 class="projectNameWork">Rolus</h3>
@@ -147,7 +175,7 @@
         <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/Rolus_Project_Static.jpg"
              data-static="resources/Images/ProjectPreviews/Rolus_Project_Static.jpg"
              data-motion="resources/Images/ProjectPreviews/Rolus_Project_Motion.gif"
-             alt="Rolus — project preview">
+             alt="Rolus, project preview">
       </a>
       <a id="workContainerThree" class="projectContainer clickable" href="projectThree.html">
         <h3 class="projectNameWork">Sydney Festival</h3>
@@ -155,7 +183,7 @@
         <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/SydneyFest_Project_Static.jpg"
              data-static="resources/Images/ProjectPreviews/SydneyFest_Project_Static.jpg"
              data-motion="resources/Images/ProjectPreviews/SydneyFest_Project_Motion.gif"
-             alt="Sydney Festival — project preview">
+             alt="Sydney Festival, project preview">
       </a>
       <a id="workContainerFour" class="projectContainer clickable" href="projectFour.html">
         <h3 class="projectNameWork">LCP</h3>
@@ -163,7 +191,7 @@
         <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/LCP_Project_Static.jpg"
              data-static="resources/Images/ProjectPreviews/LCP_Project_Static.jpg"
              data-motion="resources/Images/ProjectPreviews/LCP_Project_Motion.gif"
-             alt="LCP — project preview">
+             alt="LCP, project preview">
       </a>
       <a id="workContainerSeven" class="projectContainer clickable" href="projectSeven.html">
         <h3 class="projectNameWork">M&amp;C Saatchi Values</h3>
@@ -171,7 +199,7 @@
         <img class="projectPreview" loading="lazy" src="resources/Images/ProjectPreviews/Values_Project_Static.jpg"
              data-static="resources/Images/ProjectPreviews/Values_Project_Static.jpg"
              data-motion="resources/Images/ProjectPreviews/Values_Project_Motion.gif"
-             alt="M&amp;C Saatchi Values — project preview">
+             alt="M&amp;C Saatchi Values, project preview">
       </a>
      
     </div>
@@ -179,14 +207,58 @@
   <div id="vibesPage" class="vibesPage">
     <h2 class="visually-hidden">Vibes</h2>
     <div id="vibesContainer">
-      <p id="vibesIntro">Vibe-coded experiments — playful things built with Claude. First drops landing soon.</p>
-      <!-- Add entries like:
-      <a class="projectContainer clickable" href="...">
-        <h3 class="projectNameWork">Experiment name</h3>
-        <span class="projectDateWork">2026</span>
-        <img class="projectPreview" loading="lazy" src="..." alt="...">
-      </a>
-      -->
+      <div id="crtMonitor" role="group" aria-label="Retro computer displaying vibe-coded experiments">
+        <div id="crtCase">
+          <div id="crtScreen">
+            <div id="crtContent">
+              <p id="vibesIntro"><span class="crtPrompt">C:\VIBES&gt;</span> Vibe-coded experiments: playful things built with Claude.<span id="crtCaret" aria-hidden="true"></span></p>
+              <div id="crtApps">
+                <button class="crtAppButton clickable" type="button"
+                        data-app-src="https://image-mixer-206770062680.europe-west2.run.app/"
+                        data-app-title="IMAGE_MIXER.EXE">
+                  <span class="crtAppName">IMAGE_MIXER.EXE</span>
+                  <span class="crtAppDesc">AI image mixing studio · 2026</span>
+                  <span class="crtAppRun">► RUN</span>
+                </button>
+                <button class="crtAppButton clickable" type="button"
+                        data-app-src="https://tristan-miller.github.io/picture-trail/"
+                        data-app-title="PICTURE_TRAIL.EXE">
+                  <span class="crtAppName">PICTURE_TRAIL.EXE</span>
+                  <span class="crtAppDesc">Frame trail studio: draw with images, record, export · 2026</span>
+                  <span class="crtAppRun">► RUN</span>
+                </button>
+                <button class="crtAppButton clickable" type="button"
+                        data-app-src="https://finally-builder.vercel.app/"
+                        data-app-title="FINALLY_BUILDER.EXE">
+                  <span class="crtAppName">FINALLY_BUILDER.EXE</span>
+                  <span class="crtAppDesc">Talking-character campaign video builder · 2026</span>
+                  <span class="crtAppRun">► RUN</span>
+                </button>
+                <!-- Add more apps by copying the button above: set data-app-src
+                     to the live URL and data-app-title to the on-screen name. -->
+              </div>
+            </div>
+            <div id="crtScanlines" aria-hidden="true"></div>
+            <div id="crtGlare" aria-hidden="true"></div>
+            <div id="crtWindow" hidden>
+              <div id="crtWindowBar">
+                <span id="crtWindowTitle">APP.EXE</span>
+                <span id="crtWindowActions">
+                  <button id="crtWindowFull" class="clickable" type="button" aria-label="Toggle full screen">FULLSCREEN</button>
+                  <button id="crtWindowClose" class="clickable" type="button" aria-label="Close app">✕ EXIT</button>
+                </span>
+              </div>
+              <iframe id="crtWindowFrame" title="Vibe-coded app"></iframe>
+            </div>
+          </div>
+          <div id="crtChin" aria-hidden="true">
+            <span id="crtBrand">TM-1985</span>
+            <span id="crtPowerLed"></span>
+          </div>
+        </div>
+        <div id="crtNeck" aria-hidden="true"></div>
+        <div id="crtFoot" aria-hidden="true"></div>
+      </div>
     </div>
   </div>
   <div id="aboutPage" class="aboutPage">
@@ -199,7 +271,7 @@
           </video>
           <div id="aboutIntroText">
             <p id="headshotCaption">Tristan Miller</p>
-            <p id="headshotCaption2">3D &amp; Motion Designer — London, UK</p>
+            <p id="headshotCaption2">3D &amp; Motion Designer · London, UK</p>
           </div>
         </div>
 
@@ -209,15 +281,15 @@
             <ul class="aboutList">
               <li>
                 <span class="aboutRole">Motion Designer</span>
-                <span class="aboutMeta">VEED · London · 2025—Present</span>
+                <span class="aboutMeta">VEED · London · 2025-Present</span>
               </li>
               <li>
                 <span class="aboutRole">3D &amp; Motion Designer</span>
-                <span class="aboutMeta">Freelance (incl. Koto) · 2023—2025</span>
+                <span class="aboutMeta">Freelance (incl. Koto) · 2023-2025</span>
               </li>
               <li>
                 <span class="aboutRole">3D &amp; Motion Designer</span>
-                <span class="aboutMeta">Re — M&amp;C Saatchi Group · Sydney · 2021—2024</span>
+                <span class="aboutMeta">Re (M&amp;C Saatchi Group) · Sydney · 2021-2024</span>
               </li>
             </ul>
           </section>
@@ -225,14 +297,19 @@
           <section class="aboutBlock">
             <h3 class="aboutBlockLabel">Tools</h3>
             <ul class="aboutTags">
+              <li>Lovable</li>
+              <li>Claude Code</li>
               <li>Cinema 4D</li>
               <li>Redshift</li>
               <li>Adobe CC</li>
+              <li>After Effects</li>
               <li>Figma</li>
               <li>Spline</li>
               <li>Lottie</li>
               <li>Midjourney</li>
-              <li>Runway</li>
+              <li>Nano Banana Pro</li>
+              <li>ChatGPT Image 2</li>
+              <li>Seedance 2.0</li>
             </ul>
           </section>
         </div>
@@ -265,7 +342,6 @@
           <a class="socialButton clickable" id="Instagram" href="https://www.instagram.com/tristan_miller/" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a class="socialButton clickable" id="Email" href="mailto:tristanmiller.design@gmail.com">Email</a>
           <a class="socialButton clickable" id="LinkedIn" href="https://www.linkedin.com/in/tristan-m-4ab648142/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <p id="developedTag">Designed and developed by Tristan Miller</p>
         </nav>
         
     </div>
