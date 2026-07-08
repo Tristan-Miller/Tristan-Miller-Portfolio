@@ -5,6 +5,7 @@
   if (!win) return; // home page only
 
   var frame = document.getElementById('crtWindowFrame');
+  var viewport = document.getElementById('crtWindowViewport');
   var title = document.getElementById('crtWindowTitle');
   var closeBtn = document.getElementById('crtWindowClose');
   var fullBtn = document.getElementById('crtWindowFull');
@@ -12,12 +13,35 @@
 
   var vibesPage = document.getElementById('vibesPage');
 
+  // Embedded apps need a real desktop-width viewport, or they render their
+  // mobile layout inside the CRT's small box. The iframe is fixed at
+  // DESKTOP_WIDTH and scaled down with a transform: that keeps the app's
+  // own layout viewport wide (desktop breakpoints kick in) while the
+  // rendered output is shrunk to exactly fill the visible area.
+  var DESKTOP_WIDTH = 1440;
+
+  function fitFrame() {
+    var rect = viewport.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    var scale = rect.width / DESKTOP_WIDTH;
+    frame.style.width = DESKTOP_WIDTH + 'px';
+    frame.style.height = (rect.height / scale) + 'px';
+    frame.style.transform = 'scale(' + scale + ')';
+  }
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(fitFrame).observe(viewport);
+  } else {
+    window.addEventListener('resize', fitFrame);
+  }
+
   function setFullscreen(on) {
     win.classList.toggle('fullscreen', on);
     fullBtn.textContent = on ? 'WINDOWED' : 'FULLSCREEN';
     // The window can't escape the Vibes layer's stacking context, so lift
     // the whole layer above the site header (z 1000) while fullscreen.
     vibesPage.style.zIndex = on ? 9000 : 4;
+    fitFrame();
   }
 
   document.querySelectorAll('.crtAppButton').forEach(function (btn) {
@@ -31,6 +55,7 @@
       title.textContent = btn.dataset.appTitle || 'APP.EXE';
       frame.src = btn.dataset.appSrc;
       win.hidden = false;
+      fitFrame();
       closeBtn.focus();
     });
   });

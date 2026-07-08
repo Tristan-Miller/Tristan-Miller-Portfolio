@@ -353,24 +353,6 @@ button {
     line-height: 1;
 }
 
-/* Blinking caret at the end of the typed text. */
-#movingWork .reel-callout-text::after {
-    content: "";
-    display: inline-block;
-    width: 1.5px;
-    height: .9em;
-    margin-left: 3px;
-    vertical-align: -1.5px;
-    background: currentColor;
-    animation: reelCaretBlink 1s step-end infinite;
-}
-@keyframes reelCaretBlink {
-    50% { opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-    #movingWork .reel-callout-text::after { animation: none; }
-}
-
 /* Near the right viewport edge: tag swings to the top-left of the bubble. */
 #movingWork .reel-callout.flip-x {
     left: auto;
@@ -1108,9 +1090,22 @@ body,
     z-index: 9000;
 }
 
-#crtWindowFrame {
+/* The embedded app must see a real desktop-width viewport (otherwise it
+   renders its mobile layout inside the CRT's small box). #crtWindowFrame
+   gets a fixed desktop size and is scaled down with a CSS transform so the
+   iframe's own layout viewport stays wide while its rendered output fits
+   the visible box exactly (sized/positioned by vibes.js). */
+#crtWindowViewport {
+    position: relative;
     flex: 1;
-    width: 100%;
+    overflow: hidden;
+}
+
+#crtWindowFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
     border: 0;
     background: #fff;
 }
