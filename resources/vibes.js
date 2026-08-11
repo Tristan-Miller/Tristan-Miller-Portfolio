@@ -11,7 +11,9 @@
   var fullBtn = document.getElementById('crtWindowFull');
   var cursor = document.getElementById('custom-cursor');
 
-  var vibesPage = document.getElementById('vibesPage');
+  // Where #crtWindow normally lives, so fullscreen can put it back exactly
+  // where it was.
+  var screenParent = win.parentNode;
 
   // Embedded apps need a real desktop-width viewport, or they render their
   // mobile layout inside the CRT's small box. The iframe is fixed at
@@ -38,9 +40,18 @@
   function setFullscreen(on) {
     win.classList.toggle('fullscreen', on);
     fullBtn.textContent = on ? 'WINDOWED' : 'FULLSCREEN';
-    // The window can't escape the Vibes layer's stacking context, so lift
-    // the whole layer above the site header (z 1000) while fullscreen.
-    vibesPage.style.zIndex = on ? 9000 : 4;
+    // Move the window itself out of the CRT's nested overflow:hidden/auto
+    // ancestors instead of relying on position:fixed to escape them. Safari
+    // clips fixed-position descendants of overflow:hidden ancestors (a
+    // long-standing WebKit bug that Chrome doesn't have), so fullscreen
+    // rendered as a fixed box while still nested inside #crtScreen /
+    // #vibesContainer stayed trapped there in Safari. Moving the same DOM
+    // node (not recreating it) to <body> and back doesn't reload the iframe.
+    if (on) {
+      document.body.appendChild(win);
+    } else if (win.parentNode !== screenParent) {
+      screenParent.appendChild(win);
+    }
     fitFrame();
   }
 

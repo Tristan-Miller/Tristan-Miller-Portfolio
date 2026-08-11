@@ -1301,6 +1301,234 @@ body,
     width: 100vw;
 }
 
+/* ---- Image Templates project page ---- */
+/* Hero: a strip of four generated frames standing in for the main video. */
+.templateHeroStrip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100vw;
+}
+
+.templateHeroStrip img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    /* Soft crossfade while the strip cycles through the library
+       (templates.js swaps one slot at a time). */
+    transition: opacity .45s ease;
+}
+
+@media (max-width: 700px) {
+    .templateHeroStrip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* The library: a masonry flow (CSS columns) rendered from templates.json by
+   templates.js. Every preview keeps its natural aspect ratio — squares and
+   9:16 talls pack together like a moodboard. */
+.templateGrid {
+    columns: 3;
+    column-gap: 12px;
+}
+
+.tGridItem {
+    appearance: none;
+    position: relative;
+    margin: 0 0 12px 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    display: block;
+    font: inherit;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
+.tGridPreview {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Scroll-in: tiles fade up as they enter view (class added in templates.js,
+   skipped under reduced motion). Each tile carries a small inline
+   transition-delay for an organic stagger. */
+.tGridItem.tAnim {
+    opacity: 0;
+    transform: translateY(26px) scale(.98);
+    transition: opacity .5s ease, transform .65s cubic-bezier(.2, .9, .3, 1);
+}
+
+.tGridItem.tAnim.tIn {
+    opacity: 1;
+    transform: none;
+}
+
+/* Reference thumbs pinned to the cursor: one shared follower fixed to the
+   viewport (never clipped by the tiles), a straight row, no tilt, no
+   overlap. Each thumb pops in with a small stagger. */
+.tRefFollower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    gap: 8px;
+    pointer-events: none;
+    z-index: 9300;
+    overflow: visible;
+}
+
+.tRefFollower img {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .28);
+    opacity: 0;
+    transform: translateY(8px) scale(.6);
+    transition: transform .26s cubic-bezier(.2, 1.4, .4, 1), opacity .16s ease;
+}
+
+.tRefFollower img:nth-child(2) { transition-delay: .04s; }
+.tRefFollower img:nth-child(3) { transition-delay: .08s; }
+.tRefFollower img:nth-child(4) { transition-delay: .12s; }
+
+.tRefFollower.show img {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Lightbox: full-screen look at one template — preview, references, prompt. */
+.tLightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9400;
+    background: rgba(255, 255, 255, .97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 4vw;
+    overflow-y: auto;
+}
+
+.tLbInner {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    max-width: 1200px;
+    overflow: visible;
+}
+
+.tLbPreview {
+    display: block;
+    max-height: 82vh;
+    max-width: 58vw;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tLbSide {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 380px;
+    overflow: visible;
+}
+
+.tLbName {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.tLbMeta {
+    margin: 0;
+    font-size: 14px;
+    opacity: .5;
+}
+
+.tLbRefs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tLbRefs figure {
+    margin: 0;
+    padding: 0;
+}
+
+.tLbRefs img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+.tLbRefs figcaption {
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .45;
+}
+
+.tLbPrompt {
+    margin: 0;
+    padding: 12px 14px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    opacity: .65;
+    border-left: 1px solid currentColor;
+    max-height: 34vh;
+    overflow-y: auto;
+}
+
+.tLbClose {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    appearance: none;
+    background: none;
+    border: 1px solid currentColor;
+    padding: 4px 12px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    letter-spacing: .1em;
+    color: inherit;
+}
+
+.tLbClose:hover {
+    background: #000;
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .tLbInner {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tLbPreview {
+        max-width: 88vw;
+        max-height: 55vh;
+    }
+}
+
+@media (max-width: 700px) {
+    .templateGrid {
+        columns: 2;
+    }
+}
+
 .projectName {
     color: black;
     width: 50%;
