@@ -59,6 +59,11 @@
 
   blocks.forEach(function (el) { el.classList.add('reveal'); });
 
+  // threshold 0 (not a ratio): very tall blocks — e.g. the Image Templates
+  // library grid — can never have 12% of themselves visible at once, so a
+  // ratio threshold would keep them at opacity 0 forever. The negative
+  // bottom rootMargin still delays the trigger until the block is properly
+  // on screen.
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
@@ -66,7 +71,7 @@
         io.unobserve(e.target);
       }
     });
-  }, { root: scrollRoot, threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  }, { root: scrollRoot, threshold: 0, rootMargin: '0px 0px -8% 0px' });
 
   blocks.forEach(function (el) { io.observe(el); });
 })();
